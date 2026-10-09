@@ -1,0 +1,57 @@
+# Phase 0 download whitelist. Only 'direct' or 'ckan_resource' sources may be downloaded.
+# No bulk tiles, no historic map harvesting, no unauthenticated login bypass.
+
+[[source]]
+id = "gsi_jusho_midori"
+title = "国土地理院: 相模原市緑区 住居表示住所"
+mode = "direct"
+url = "https://saigai.gsi.go.jp/jusho/download/data/14151.zip"
+source_page = "https://data.e-gov.go.jp/data/dataset/mlit_20140919_3060/resource/b79eca7e-b47f-4bf7-9fd3-bed540d4c6f1?inner_span=True"
+license_note = "政府標準利用規約2.0とe-Govに記載; 取得直前に最新条件を確認"
+license_url = "https://data.e-gov.go.jp/data/dataset/mlit_20140919_3060/resource/b79eca7e-b47f-4bf7-9fd3-bed540d4c6f1?inner_span=True"
+expected_format = "zip"
+filename = "14151.zip"
+max_bytes = 10000000
+allowed_domains = ["saigai.gsi.go.jp"]
+
+[[source]]
+id = "sagamihara_cultural_assets"
+title = "相模原市: 文化財一覧 CSV"
+mode = "ckan_resource"
+api_url = "https://opendata.city.sagamihara.kanagawa.jp/api/3/action/resource_show?id=6247d67b-51a9-403e-8b63-6c2aa291e832"
+source_page = "https://opendata.city.sagamihara.kanagawa.jp/ne/dataset/bunkazai"
+license_note = "相模原市は原則CC BY 4.0; リソース個別のライセンス欄も確認"
+license_url = "https://www.city.sagamihara.kanagawa.jp/shisei/toukei/opendata/index.html"
+expected_format = "csv"
+filename = "bunkazai.csv"
+max_bytes = 3000000
+allowed_domains = ["opendata.city.sagamihara.kanagawa.jp"]
+
+[[source]]
+id = "mlit_n03_2026_kanagawa"
+title = "国土数値情報 N03 2026 神奈川県行政区域"
+mode = "manual"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"
+expected_filename = "N03-20260101_14_GML.zip"
+license_note = "CC BY 4.0; 正規のダウンロード画面から取得"
+
+[[source]]
+id = "gsi_historical_maps"
+title = "国土地理院 旧版地図・空中写真"
+mode = "manual"
+source_page = "https://service.gsi.go.jp/map-photos/app/"
+license_note = "閲覧とデータ入手は別。最高画質キャプチャ禁止。交付手続き検討。"
+
+[[source]]
+id = "gsi_fgd_dem"
+title = "国土地理院 基盤地図情報（基本項目・DEM）"
+mode = "manual"
+source_page = "https://service.gsi.go.jp/kiban/"
+license_note = "無料アカウント登録が必要。2026-07更新のCRSに注意。"
+
+[[source]]
+id = "konjaku_view_only"
+title = "今昔マップ（閲覧のみ）"
+mode = "reference_only"
+source_page = "https://ktgis.net/kjmapw/"
+license_note = "サイト画像ファイルのPC/サーバ保存は不可。自動ダウンロード厳禁。"

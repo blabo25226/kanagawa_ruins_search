@@ -1,0 +1,27 @@
+# Raw downloaded maps / zip / files and derived output
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/provenance.jsonl
+
+# Reproducible env/cache
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+.vscode/settings.local.json
+*.qgz~
+
+# Agent secrets, credentials
+*.pem
+*.key
+secrets/

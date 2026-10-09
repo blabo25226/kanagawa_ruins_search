@@ -1,0 +1,18 @@
+name: kanagawa-ruins
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - geopandas
+  - shapely
+  - pyproj
+  - rasterio
+  - gdal
+  - opencv
+  - folium
+  - matplotlib
+  - requests
+  - jupyterlab
+  - pytest
