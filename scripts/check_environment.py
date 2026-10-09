@@ -12,26 +12,13 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from storage_utils import load_env_var, is_rclone_mounted, safe_probe_write, StorageError  # noqa: E402
 
 MODULES = {'numpy': True, 'pandas': True, 'geopandas': True, 'shapely': True,
            'pyproj': True, 'rasterio': True, 'osgeo.gdal': True, 'cv2': True,
            'folium': False, 'matplotlib': False}
 CLI = {'gdalinfo': True, 'ogrinfo': True, 'gdalwarp': True, 'rclone': True, 'qgis_process': False}
-
-
-def load_env_var(name: str) -> str | None:
-    val = os.environ.get(name)
-    if val:
-        return val
-    env_file = ROOT / '.env'
-    if env_file.is_file():
-        for line in env_file.read_text(encoding='utf-8').splitlines():
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                k, v = line.split('=', 1)
-                if k.strip() == name:
-                    return v.strip().strip('"').strip("'")
-    return None
 
 
 def test_module(name, required):
@@ -77,43 +64,17 @@ def test_storage():
         return results
     results.append(dict(name='ruins_data_root_exists', required=True, status='PASS'))
 
-    # Check mount status (Google Drive FUSE / rclone)
-    is_mounted = False
-    mount_entry = ''
-    try:
-        proc_mounts = Path('/proc/mounts')
-        if proc_mounts.is_file():
-            mounts_content = proc_mounts.read_text(encoding='utf-8')
-            for line in mounts_content.splitlines():
-                parts = line.split()
-                if len(parts) >= 3:
-                    mp = parts[1]
-                    fstype = parts[2]
-                    if str(data_root).startswith(mp) and mp != '/' and ('rclone' in fstype or 'fuse' in fstype or 'google' in parts[0].lower() or 'gdrive' in parts[0].lower()):
-                        is_mounted = True
-                        mount_entry = f"{parts[0]} on {mp} ({fstype})"
-                        break
-    except Exception as e:
-        mount_entry = repr(e)
-
+    # Check mount status via strict path hierarchy (not simple string prefix)
+    is_mounted, mount_entry = is_rclone_mounted(data_root)
     results.append(dict(name='gdrive_mounted', required=True,
                         status='PASS' if is_mounted else 'FAIL',
                         mount_info=mount_entry))
 
-    # Read/write access test
-    test_file = data_root / '.ruins_probe_tmp'
+    # Safe probe read/write test (exclusive creation with UUID, no overwrite)
     try:
-        test_file.write_text('probe_ok\n', encoding='utf-8')
-        content = test_file.read_text(encoding='utf-8').strip()
-        assert content == 'probe_ok'
-        test_file.unlink()
+        safe_probe_write(data_root)
         results.append(dict(name='storage_read_write', required=True, status='PASS'))
     except Exception as e:
-        if test_file.exists():
-            try:
-                test_file.unlink()
-            except Exception:
-                pass
         results.append(dict(name='storage_read_write', required=True, status='FAIL', detail=repr(e)))
 
     # Disk usage

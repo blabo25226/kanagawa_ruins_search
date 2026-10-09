@@ -1,21 +1,31 @@
-"""Network-free tests of Phase 0 safety and project structure."""
+"""Network-free tests of Phase 0 safety, project structure, and Google Drive mount verification."""
 from __future__ import annotations
 import importlib.util
+import os
 from pathlib import Path
+import tempfile
 import tomllib
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Import fetch_sources
 SPEC = importlib.util.spec_from_file_location("fetch_sources", ROOT / "scripts" / "fetch_sources.py")
 assert SPEC is not None and SPEC.loader is not None
 fetch = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(fetch)
 
+# Import storage_utils
+SPEC_STORAGE = importlib.util.spec_from_file_location("storage_utils", ROOT / "scripts" / "storage_utils.py")
+assert SPEC_STORAGE is not None and SPEC_STORAGE.loader is not None
+storage_utils = importlib.util.module_from_spec(SPEC_STORAGE)
+SPEC_STORAGE.loader.exec_module(storage_utils)
+
 
 class Phase0ConfigTests(unittest.TestCase):
     def test_required_entrypoints_present(self):
         for name in ("README.md", "firstinstruction.md", "source.md", "GEMINI.md", "AGENTS.md",
-                     "environment.yml", "agent/rules/00-phase-gate.md"):
+                     "environment.yml", ".env.example", "agent/rules/00-phase-gate.md"):
             with self.subTest(name=name):
                 self.assertTrue((ROOT / name).is_file())
 
@@ -55,6 +65,97 @@ class Phase0ConfigTests(unittest.TestCase):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
         self.assertIn("/data/raw/*", ignored)
         self.assertIn("/data/provenance.jsonl", ignored)
+
+
+class StorageSecurityTests(unittest.TestCase):
+    """Abnormal and boundary condition tests for rclone mount security and storage safety."""
+
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.mounts_file = Path(self.temp_dir.name) / "mock_mounts"
+        # Create a mock mount table
+        mock_content = (
+            "/dev/sda1 / ext4 rw 0 0\n"
+            "gdrive: /mock/gdrive fuse.rclone rw,user_id=1000 0 0\n"
+            "/dev/sdb1 /mock/gdrive_local ext4 rw 0 0\n"
+        )
+        self.mounts_file.write_text(mock_content, encoding="utf-8")
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_is_rclone_mounted_valid_hierarchy(self):
+        # Descendant of rclone mount point
+        valid_path = Path("/mock/gdrive/kanagawa/data")
+        mounted, info = storage_utils.is_rclone_mounted(valid_path, mounts_path=self.mounts_file)
+        self.assertTrue(mounted)
+        self.assertIn("fuse.rclone", info)
+
+        # Exact mount point match
+        mounted, _ = storage_utils.is_rclone_mounted(Path("/mock/gdrive"), mounts_path=self.mounts_file)
+        self.assertTrue(mounted)
+
+    def test_is_rclone_mounted_rejects_string_prefix_spoof(self):
+        """Ensure /mock/gdrive_local or /mock/gdrive_fake does NOT match /mock/gdrive."""
+        fake_paths = [
+            Path("/mock/gdrive_local/data"),
+            Path("/mock/gdrive_fake"),
+            Path("/mock/gdrive2/databank"),
+            Path("/mock/gdrive.bak"),
+        ]
+        for p in fake_paths:
+            with self.subTest(path=p):
+                mounted, info = storage_utils.is_rclone_mounted(p, mounts_path=self.mounts_file)
+                # Must be False, or recognized as non-rclone ext4
+                self.assertFalse(mounted, f"Path {p} was incorrectly accepted as rclone mount: {info}")
+
+    def test_is_rclone_mounted_rejects_unmounted_path(self):
+        unmounted = Path("/some/random/unmounted/path")
+        mounted, info = storage_utils.is_rclone_mounted(unmounted, mounts_path=self.mounts_file)
+        self.assertFalse(mounted)
+        self.assertIn("non-rclone filesystem", info)
+
+    def test_get_verified_data_root_fails_when_unmounted(self):
+        """Ensure get_verified_data_root raises StorageError when path is not an rclone mount."""
+        local_dir = Path(self.temp_dir.name) / "local_unmounted"
+        local_dir.mkdir()
+
+        # Temporarily mock RUINS_DATA_ROOT
+        orig_env = os.environ.get("RUINS_DATA_ROOT")
+        try:
+            os.environ["RUINS_DATA_ROOT"] = str(local_dir)
+            with self.assertRaises(storage_utils.StorageError) as ctx:
+                storage_utils.get_verified_data_root(mounts_path=self.mounts_file)
+            self.assertIn("mount verification failed", str(ctx.exception))
+        finally:
+            if orig_env is not None:
+                os.environ["RUINS_DATA_ROOT"] = orig_env
+            else:
+                os.environ.pop("RUINS_DATA_ROOT", None)
+
+    def test_fetch_sources_stops_when_not_mounted(self):
+        """Ensure fetch_sources.get_data_root raises DownloadError on unmounted storage."""
+        local_dir = Path(self.temp_dir.name) / "local_test"
+        local_dir.mkdir()
+
+        orig_env = os.environ.get("RUINS_DATA_ROOT")
+        try:
+            os.environ["RUINS_DATA_ROOT"] = str(local_dir)
+            with self.assertRaises(fetch.DownloadError) as ctx:
+                fetch.get_data_root(mounts_path=self.mounts_file)
+            self.assertIn("Storage mount security verification failed", str(ctx.exception))
+        finally:
+            if orig_env is not None:
+                os.environ["RUINS_DATA_ROOT"] = orig_env
+            else:
+                os.environ.pop("RUINS_DATA_ROOT", None)
+
+    def test_safe_probe_write_exclusive(self):
+        probe_target = Path(self.temp_dir.name) / "probe_dir"
+        probe_target.mkdir()
+        # Should succeed without leaving temporary files behind
+        storage_utils.safe_probe_write(probe_target)
+        self.assertEqual(len(list(probe_target.iterdir())), 0)
 
 
 if __name__ == "__main__":

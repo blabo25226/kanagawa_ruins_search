@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 0 only: fetch small HTTPS-allowlisted official files into Google Drive data storage, record provenance; no analysis."""
+"""Phase 0 only: fetch small HTTPS-allowlisted official files into verified Google Drive data storage, record provenance; no analysis."""
 from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
@@ -14,6 +14,9 @@ from urllib.parse import urlparse
 from urllib.request import Request, HTTPRedirectHandler, build_opener
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from storage_utils import get_verified_data_root, StorageError  # noqa: E402
+
 CATALOG = ROOT / 'config/sources.toml'
 DOWNLOADABLE_MODES = {'direct', 'ckan_resource'}
 AGENT = 'KanagawaRuinsResearch/0.1 (approved public files, no bulk map tiles)'
@@ -23,31 +26,12 @@ class DownloadError(Exception):
     pass
 
 
-def load_env_var(name: str) -> str | None:
-    val = os.environ.get(name)
-    if val:
-        return val
-    env_file = ROOT / '.env'
-    if env_file.is_file():
-        for line in env_file.read_text(encoding='utf-8').splitlines():
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                k, v = line.split('=', 1)
-                if k.strip() == name:
-                    return v.strip().strip('"').strip("'")
-    return None
-
-
-def get_data_root() -> Path:
-    val = load_env_var('RUINS_DATA_ROOT')
-    if not val:
-        raise DownloadError(
-            'RUINS_DATA_ROOT is not set. Please set the environment variable or create .env file.'
-        )
-    p = Path(val).expanduser().resolve()
-    if not p.is_dir():
-        raise DownloadError(f'RUINS_DATA_ROOT directory does not exist: {p}')
-    return p
+def get_data_root(mounts_path: Path | None = None) -> Path:
+    """Resolve RUINS_DATA_ROOT and strictly verify rclone Google Drive mount."""
+    try:
+        return get_verified_data_root(root=ROOT, mounts_path=mounts_path)
+    except StorageError as e:
+        raise DownloadError(f"Storage mount security verification failed: {e}") from e
 
 
 def approved_url(url: str, domains: list[str]) -> bool:
@@ -109,13 +93,13 @@ def looks_like_format(header: bytes, fmt: str) -> bool:
     return False
 
 
-def download(src, url):
+def download(src, url, data_root: Path | None = None):
     limit = int(src['max_bytes'])
     if not 0 < limit <= 20000000:
         raise DownloadError('Unsafe size limit')
 
-    data_root = get_data_root()
-    target = data_root / 'raw' / src['id'] / src['filename']
+    target_root = data_root or get_data_root()
+    target = target_root / 'raw' / src['id'] / src['filename']
     target.parent.mkdir(parents=True, exist_ok=True)
     partial = target.with_suffix(target.suffix + '.partial')
     if target.exists() or partial.exists():
@@ -151,7 +135,7 @@ def download(src, url):
         if partial.exists():
             partial.unlink()
 
-    rel_path = str(target.relative_to(data_root))
+    rel_path = str(target.relative_to(target_root))
     record = {'source_id': src['id'], 'source_page': src['source_page'],
               'download_url': final_url, 'license_url': src['license_url'],
               'license_note': src['license_note'], 'phase': 0,
@@ -160,7 +144,7 @@ def download(src, url):
               'bytes': size, 'sha256': digest.hexdigest(), 'format': src['expected_format']}
 
     # Record provenance to Google Drive storage root
-    prov_gdrive = data_root / 'provenance.jsonl'
+    prov_gdrive = target_root / 'provenance.jsonl'
     with prov_gdrive.open('a', encoding='utf-8') as f:
         f.write(json.dumps(record, ensure_ascii=False) + '\n')
 
@@ -215,7 +199,7 @@ def main():
             print(f"DRY RUN: {sid} -> {target_path} (max={src['max_bytes']} bytes)")
             continue
         try:
-            record = download(src, resolve_download_url(src))
+            record = download(src, resolve_download_url(src), data_root=data_root)
             print(f"DOWNLOADED {sid}: bytes={record['bytes']} sha256={record['sha256']} -> {record['relative_path']}")
         except (DownloadError, HTTPError, URLError, OSError, ValueError, TimeoutError, json.JSONDecodeError) as e:
             errors += 1

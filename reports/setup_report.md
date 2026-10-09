@@ -33,10 +33,10 @@
 | gdalinfo / ogrinfo / gdalwarp | PASS | GDAL 3.13.3 "Iowa City", released 2026/08/13 | CLI実行確認 (exit code 0) |
 | rclone | PASS | rclone v1.60.1-DEV (go1.26.0) | `/usr/bin/rclone` 動作確認 |
 | qgis_process（任意） | OPTIONAL_MISSING | なし | QGIS Desktop GUIは使わず、CLIファースト構成で要件充足 |
-| Google Drive マウント検証 | PASS | `gdrive: on /home/blabo/gdrive (fuse.rclone)` | マウント状態の存在確認 |
-| Google Drive 読み書き検証 | PASS | 一時プローブファイル読み書き・削除成功 | パーミッション・I/O検証完了 |
+| Google Drive マウント検証 | PASS | `gdrive: on /home/blabo/gdrive (fuse.rclone)` | パス階層厳密検証（前方一致排除） |
+| Google Drive 読み書き検証 | PASS | UUID排他作成 (`O_CREAT \| O_EXCL`)・読込・削除成功 | 上書き事故防止・排他プローブ検証完了 |
 | 合成GIS smoke tests | PASS | - | 合成ベクトルのCRS変換 (EPSG:4326 <-> 3857)、合成GTiff入出力、OpenCV GaussianBlur |
-| unittest | PASS | - | `python -m unittest discover -s tests -v` (5/5 PASS) |
+| unittest | PASS | - | `python -m unittest discover -s tests -v` (11/11 PASS、異常系・偽装拒否含む) |
 
 ---
 

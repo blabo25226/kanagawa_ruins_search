@@ -3,7 +3,7 @@
 ## Git情報
 
 - リポジトリURL：`https://github.com/blabo25226/kanagawa_ruins_search.git`
-- branch / commit hash：main / 856abecc6b6e7cf5d800ac0be5876b480718ded8
+- branch / commit hash：main / c7c38b5a64f115f00a44b9f9cad0ac36ed8aedce
 - 直近のpush成否：push実行（成功確認済み）
 
 ## Phase 0で実際に完了した作業
@@ -51,16 +51,21 @@
 - [`scripts/check_environment.py`](file:///home/blabo/kanagawa_ruins_search/scripts/check_environment.py)
 - [`scripts/fetch_sources.py`](file:///home/blabo/kanagawa_ruins_search/scripts/fetch_sources.py)
 - [`tests/test_phase0.py`](file:///home/blabo/kanagawa_ruins_search/tests/test_phase0.py)
+- [`docs/phase1_plan.md`](file:///home/blabo/kanagawa_ruins_search/docs/phase1_plan.md)
+- [`reports/phase0_review_response.md`](file:///home/blabo/kanagawa_ruins_search/reports/phase0_review_response.md)
+- [`environment.lock.yml`](file:///home/blabo/kanagawa_ruins_search/environment.lock.yml)
 - [`agent/rules/10-source-legality.md`](file:///home/blabo/kanagawa_ruins_search/agent/rules/10-source-legality.md)
 - [`agent/rules/20-gis-cli.md`](file:///home/blabo/kanagawa_ruins_search/agent/rules/20-gis-cli.md)
+- [`agent/rules/30-field-ethics.md`](file:///home/blabo/kanagawa_ruins_search/agent/rules/30-field-ethics.md)
 
 ## GPTに判断してほしいこと
 
 1. **ストレージ構成とデータ管理方針**:
    - Google Drive上の `kanagawa_ruins_search_databank/data/` を環境変数 `RUINS_DATA_ROOT` で参照し、ローカルPCに生データ・大容量データを置かない（1GB制限）設計が適切か。
-   - rclone FUSEマウントの検出・読み書き検証ロジックおよび上書き防止機構の安全性。
-2. **公式データの選定と利用条件**:
-   - 住居表示住所（国土地理院）および文化財一覧（相模原市）を既知史跡・現役建造物の除外マスクとして使用する方針の妥当性。
+   - rclone FUSEマウントの階層検証ロジック（単純前方一致の排除）および排他的プローブI/Oの安全性。
+2. **公式データの選定と役割の位置付け**:
+   - 文化財一覧（相模原市）を指定文化財照合の参考データとし、住居表示住所（国土地理院）を現代字名・番地空間参照とし、両者を神社現存/廃絶の安易な自動判定・除外マスクとしない改訂方針の妥当性。
+   - 神奈川県神社庁データ、地誌史料（新編相模国風土記稿、津久井郡誌）、宗教法人名簿と多角的に照合するPhase 1設計。
    - 今昔マップ（画像PC保存禁止）の閲覧専用方針、国土地理院基盤地図情報（アカウント必須/JGD2024移行）の保留判断の妥当性。
    - 神奈川県オープンデータカタログおよび国立国会図書館デジタルコレクション（津久井郡誌等の地誌史料）のPhase 1での活用順序。
 3. **GIS環境とCRS設計**:
