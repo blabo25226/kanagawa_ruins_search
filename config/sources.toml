@@ -564,6 +564,148 @@ filename = "chubu-latest.osm.pbf"
 max_bytes = 650000000
 allowed_domains = ["download.geofabrik.de"]
 
+# --- Phase 0.4 Historical Data, Literature & Land Use Additions ---
+
+[[source]]
+id = "paper_tabayashi2026_oldmap"
+title = "田林 (2026): 機械学習を用いた古地図のジオリファレンス 論文 PDF (P02)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.jstage.jst.go.jp/article/tits/31/1/31_1_41/_pdf/-char/ja"
+source_page = "https://doi.org/10.5363/tits.31.1_41"
+license_note = "学術の動向; 学術調査利用 (J-STAGE OA)"
+license_url = "https://www.jstage.jst.go.jp/"
+expected_format = "pdf"
+filename = "Tabayashi2026_OldMapGeoreferencingAI.pdf"
+max_bytes = 5000000
+allowed_domains = ["www.jstage.jst.go.jp"]
+
+[[source]]
+id = "paper_luft2021_historical"
+title = "Luft & Schiewe (2021): Historical Map Georeferencing 論文 PDF (P05)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://kn.inf.tu-dresden.de/paper/luft2021historical.pdf"
+source_page = "https://doi.org/10.5194/ica-proc-4-64-2021"
+license_note = "ICA Proceedings (CC BY 4.0)"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+expected_format = "pdf"
+filename = "Luft2021_HistoricalMapGeoreferencing.pdf"
+max_bytes = 5000000
+allowed_domains = ["kn.inf.tu-dresden.de"]
+
+[[source]]
+id = "sagamihara_buried_cultural_properties_2026"
+title = "相模原市: 周知の埋蔵文化財包蔵地一覧 (令和8年2月12日更新版)"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/004/907/20260212_ichiran.pdf"
+source_page = "https://www.city.sagamihara.kanagawa.jp/kankou/bunka/1026674/bunkazai_hogo/1004907.html"
+license_note = "相模原市公式公開資料; 埋蔵文化財包蔵地台帳"
+license_url = "https://www.city.sagamihara.kanagawa.jp/"
+expected_format = "pdf"
+filename = "sagamihara_buried_cultural_properties_20260212.pdf"
+max_bytes = 2000000
+allowed_domains = ["www.city.sagamihara.kanagawa.jp"]
+
+[[source]]
+id = "mlit_landuse_1976_5338"
+title = "国土数値情報: 土地利用細分メッシュ 1976年 5338メッシュ (D07)"
+mode = "direct"
+dest_dir = "raw/landuse"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-76/L03-b-76_5338_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "L03-b-76_5338_GML.zip"
+max_bytes = 25000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_landuse_1976_5339"
+title = "国土数値情報: 土地利用細分メッシュ 1976年 5339メッシュ (D07)"
+mode = "direct"
+dest_dir = "raw/landuse"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-76/L03-b-76_5339_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "L03-b-76_5339_GML.zip"
+max_bytes = 25000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_landuse_2014_5338"
+title = "国土数値情報: 土地利用細分メッシュ 2014年 5338メッシュ (D07)"
+mode = "direct"
+dest_dir = "raw/landuse"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-14/L03-b-14_5338-jgd_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "L03-b-14_5338-jgd_GML.zip"
+max_bytes = 25000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_landuse_2021_5338"
+title = "国土数値情報: 土地利用細分メッシュ 2021年 5338メッシュ (D08)"
+mode = "direct"
+dest_dir = "raw/landuse"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-21/L03-b-21_5338-jgd2011_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b-2021.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "L03-b-21_5338-jgd2011_GML.zip"
+max_bytes = 35000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_landuse_2021_5339_jgd2011"
+title = "国土数値情報: 土地利用細分メッシュ 2021年 5339メッシュ JGD2011 (D08)"
+mode = "direct"
+dest_dir = "raw/landuse"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-21/L03-b-21_5339-jgd2011_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b-2021.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "L03-b-21_5339-jgd2011_GML.zip"
+max_bytes = 35000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "gsi_aerial_photos_catalog_tsukui"
+title = "国土地理院: 旧津久井地域空中写真単写真メタデータカタログ (Phase 0.4)"
+mode = "direct"
+dest_dir = "raw/aerial_photos/metadata"
+url = "https://service.gsi.go.jp/map-photos/app/api/photo"
+source_page = "https://service.gsi.go.jp/map-photos/app/"
+license_note = "国土地理院コンテンツ利用規約 (CC BY 4.0互換)"
+license_url = "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+expected_format = "json"
+filename = "tsukui_aerial_photos_catalog.json"
+max_bytes = 1000000
+allowed_domains = ["service.gsi.go.jp"]
+
+[[source]]
+id = "gsi_aerial_ortho_sample_1974"
+title = "国土地理院: 昭和49-53年空中写真オルソシームレスサンプルタイル (gazo1)"
+mode = "direct"
+dest_dir = "raw/aerial_photos/sample_ortho_1974"
+url = "https://cyberjapandata.gsi.go.jp/xyz/gazo1/"
+source_page = "https://maps.gsi.go.jp/development/ichiran.html"
+license_note = "国土地理院コンテンツ利用規約 (CC BY 4.0互換)"
+license_url = "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+expected_format = "jpg"
+filename = "aonohara_1974_z15_29054_12916.jpg"
+max_bytes = 1000000
+allowed_domains = ["cyberjapandata.gsi.go.jp"]
+
 # Manual / Reference-only entries
 
 [[source]]

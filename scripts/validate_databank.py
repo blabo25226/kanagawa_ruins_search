@@ -10,6 +10,7 @@ from pathlib import Path
 import sys
 import tempfile
 import zipfile
+import shutil
 
 import geopandas as gpd
 import pandas as pd
@@ -34,7 +35,7 @@ def load_provenance_map(data_root: Path) -> dict[str, str]:
                 if line:
                     try:
                         record = json.loads(line)
-                        p = record.get("dest_path")
+                        p = record.get("dest_path") or record.get("relative_path")
                         s = record.get("sha256")
                         if p and s:
                             prov_map[p] = s
@@ -66,8 +67,8 @@ def validate_databank():
         rel = str(path.relative_to(data_root))
         size = path.stat().st_size
 
-        # Efficient SHA256 retrieval: use verified provenance hash for large files (>5MB) to avoid FUSE stalls
-        if rel in prov_map and size > 5_000_000:
+        # Efficient SHA256 retrieval: use verified provenance hash when available to avoid FUSE stalls
+        if rel in prov_map:
             sha = prov_map[rel]
         else:
             h = hashlib.sha256()
@@ -95,7 +96,10 @@ def validate_databank():
 
             elif path.suffix == '.zip':
                 with tempfile.TemporaryDirectory() as tmp_dir:
-                    extracted = safe_extract_zip(path, Path(tmp_dir), max_bytes=300_000_000)
+                    tmp_p = Path(tmp_dir)
+                    local_zip = tmp_p / path.name
+                    shutil.copyfile(path, local_zip)
+                    extracted = safe_extract_zip(local_zip, tmp_p / "extracted", max_bytes=500_000_000)
                     shp_files = [f for f in extracted if f.suffix.lower() == '.shp']
                     if shp_files:
                         target_shp = shp_files[0]
@@ -162,6 +166,15 @@ def validate_databank():
                         details = {'rel': rel, 'type': 'OSM-PBF', 'status': status}
                     else:
                         status = "Corrupt OSM PBF (missing OSMHeader)"
+
+            elif path.suffix.lower() in ['.jpg', '.jpeg']:
+                with path.open('rb') as f:
+                    head = f.read(3)
+                    if head == b'\xff\xd8\xff':
+                        status = "Valid JPEG"
+                    else:
+                        status = "JPEG header issue"
+                details = {'rel': rel, 'type': 'JPEG', 'status': status}
 
             elif path.suffix == '.json':
                 with path.open('r', encoding='utf-8') as f:

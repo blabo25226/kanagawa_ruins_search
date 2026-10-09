@@ -1,4 +1,4 @@
-# 公式・歴史地理データソース台帳（2026-10-10 Phase 0.3更新）
+# 公式・歴史地理データソース台帳（2026-10-10 Phase 0.4更新）
 
 目的: 入手先の検討・利用条件の記録。**出典の掲載≠自動収集の許可**。ここにあるURLを網羅的にスクレイピングしない。  
 自動取得の対象は `config/sources.toml` で限定し、ダウンロードデータはすべて Google Drive 上の `$RUINS_DATA_ROOT`（`kanagawa_ruins_search_databank/data/`）へ保存する。
@@ -15,18 +15,19 @@ kanagawa_ruins_search_databank/
     ├── raw/
     │   ├── administrative/        # 行政区域・住居表示（D01: 14151.zip, D03: 神奈川N03, D16: 東京N03, D17: 山梨N03, D18: 静岡N03）
     │   ├── historical_boundaries/ # 過去行政区域・変遷（D04: N03-2014, D05: CODH 津久井町/相模湖町/城山町/藤野町）
-    │   ├── landuse/               # 土地利用メッシュデータ（D08: L03-b 2021年 5339メッシュ）
+    │   ├── landuse/               # 土地利用細分メッシュ（D07/D08: L03-b 1976/2014/2021年 5338/5339メッシュ）
     │   ├── rivers/                # 河川・水系データ（D11: 神奈川W05, D19: 東京W05, D20: 山梨W05, D21: 静岡W05）
     │   ├── railways/              # 鉄道・交通データ（D10: N02 鉄道データ全国）
     │   ├── osm/                   # OpenStreetMap（D06: 津久井4地区個別XML, D23: 関東PBF, D24: 中部PBF）
-    │   ├── cultural_properties/   # 文化財台帳（D02: 相模原CSV, D12: 県目録PDF, D22: 全国P32, D25-D27: 県別P32, D28: 都CSV）
-    │   └── historical_maps/       # 旧版地形図・歴史地図（Phase 0.3は規約・謄本交付手順整理のみ）
+    │   ├── cultural_properties/   # 文化財台帳（D02: 相模原CSV, D12: 県目録PDF, D22: 全国P32, D25-D27: 県別P32, D28: 都CSV, D30: 相模原埋文PDF）
+    │   ├── aerial_photos/         # 昭和期空中写真（D29: 津久井4地区42件カタログJSON、1974年サンプル正射タイル）
+    │   └── historical_maps/       # 旧版地形図・歴史地図（Phase 0.4は図歴・所蔵先・利用条件整理）
     │
     ├── literature/
-    │   ├── papers/                # 関連研究論文 PDF（P03: MapReader, P04: Berganzo, P08: 金木, P09: 谷, P10: 藤田, P11: 小田）
-    │   ├── historical_documents/  # 歴史史料（NDL新編相模国風土記稿 第5輯 全324コマ IIIFマニフェスト）
+    │   ├── papers/                # 関連研究論文 PDF（P02: 田林, P03: MapReader, P04: Berganzo, P05: Luft, P08: 金木, P09: 谷, P10: 藤田, P11: 小田）
+    │   ├── historical_documents/  # 歴史史料（D15: NDL新編相模国風土記稿 第5輯 全324コマ IIIFマニフェスト）
     │   ├── catalogs/              # 公文書館・史料所在目録（D13: 津久井郡歴史資料所在目録, D14: 若柳村文書目録）
-    │   └── bibliography/          # 書誌情報（P01〜P12 ファクトチェック済 BibTeX / JSON / Review）
+    │   └── bibliography/          # 書誌情報（P01〜P12 原典監査済 BibTeX / JSON / Review / Audit Report）
     │
     ├── processed/                 # Phase 1以降の中間成果・解析結果
     └── provenance.jsonl           # 取得全ファイルの完全来歴台帳（SHA-256）
@@ -34,7 +35,7 @@ kanagawa_ruins_search_databank/
 
 ---
 
-## データソース一覧（D01〜D28）
+## データソース一覧（D01〜D30）
 
 | ID | データ名 | 提供元 | 対象地域・年代 | データ形式 | 推定容量 | ライセンス・利用条件 | 保存先パス | 実施状況 |
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
@@ -44,9 +45,9 @@ kanagawa_ruins_search_databank/
 | **D04** | 過去の行政区域 N03 | 国土交通省 | 神奈川県全域 (2014年版) | ZIP (GML/SHP) | 1.86 MB | 国土数値情報規約（CC BY 4.0互換）。大合併後境界対照用。 | `raw/historical_boundaries/N03-140401_14_GML.zip` | **取得済み** |
 | **D05** | 歴史的行政区域データセット | CODH | 旧津久井郡全4町 | GeoJSON (5件) | 計 約470 KB | CODH利用規約（CC BY 4.0）。旧郡町村合併変遷ポリゴン。 | `raw/historical_boundaries/codh_*.geojson` | **取得済み** |
 | **D06** | OpenStreetMap (4地区網羅) | OSM 貢献者 | 寸沢嵐・鳥屋・青山・青野原 | XML (.osm, 4件) + JSON | 計 約35.8 MB | ODbL 1.0。神社・寺院・建物・道路・水系等を完全抽出。 | `raw/osm/tsukui_*_osm.osm` | **取得済み** |
-| **D07** | 土地利用細分メッシュ（過去） | 国土交通省 | 神奈川県・首都圏 | ZIP (GML/SHP) | 数十MB | 国土数値情報利用規約（CC BY 4.0互換）。過去の山林・集落変遷。 | `raw/landuse/` | **保留（選定中）** |
-| **D08** | 土地利用細分メッシュ 2021年 | 国土交通省 | 5339メッシュ (相模原・津久井) | ZIP (GML/SHP) | 13.3 MB | 国土数値情報利用規約（CC BY 4.0互換）。現代の森林・農地メッシュ。 | `raw/landuse/L03-b-14_5339-jgd_GML.zip` | **取得済み** |
-| **D09** | 土地利用詳細メッシュ | 国土交通省 | 首都圏・神奈川県 | ZIP | 数十MB | 国土数値情報利用規約（CC BY 4.0互換）。山間部カバー確認要。 | `raw/landuse/` | **要カバー確認** |
+| **D07** | 土地利用細分メッシュ 1976年 | 国土交通省 | 5338・5339メッシュ (津久井・道志) | ZIP (GML) | 29.1 MB | 国土数値情報利用規約（CC BY 4.0互換）。最古デジタル土地利用。 | `raw/landuse/L03-b-76_5338_GML.zip`, `...5339...` | **取得済み** |
+| **D08** | 土地利用細分メッシュ 2014/2021年 | 国土交通省 | 5338・5339メッシュ (津久井・相模原) | ZIP (GML) | 67.2 MB | 国土数値情報利用規約（CC BY 4.0互換）。中間期・現代メッシュ。 | `raw/landuse/L03-b-14_*.zip`, `L03-b-21_*.zip` | **取得済み** |
+| **D09** | 土地利用細分メッシュ 1987/1997年 | 国土交通省 | 5338・5339メッシュ | ZIP (GML) | 各約14 MB | 国土数値情報利用規約（CC BY 4.0互換）。中間変遷補間用。 | `raw/landuse/` | **計画策定済** |
 | **D10** | 鉄道データ N02 2023年 | 国土交通省 | 全国/神奈川県 (2023年) | ZIP (GML/SHP) | 17.5 MB | 国土数値情報利用規約（CC BY 4.0互換）。近世・近代交通路対照。 | `raw/railways/N02-23_GML.zip` | **取得済み** |
 | **D11** | 河川データ W05 | 国土交通省 | 神奈川県全域 (2008年) | ZIP (GML/SHP) | 1.91 MB | 国土数値情報利用規約（CC BY 4.0互換）。相模川・道志川流路。 | `raw/rivers/W05-08_14_GML.zip` | **取得済み** |
 | **D12** | 神奈川県指定等文化財目録 | 神奈川県 | 神奈川県全域 (令和7年3月) | PDF | 5.55 MB | 神奈川県オープンデータ（CC BY 4.0準拠）。県指定史跡公式台帳。 | `raw/cultural_properties/kanagawa_bunkazai_mokuroku_r07.pdf` | **取得済み** |
@@ -66,40 +67,42 @@ kanagawa_ruins_search_databank/
 | **D26** | 都道府県指定文化財 P32 山梨県 | 国土交通省 | 山梨県単独 | ZIP (GML/SHP) | 56.2 KB | 国土数値情報利用規約（CC BY 4.0互換）。山梨県指定文化財位置。 | `raw/cultural_properties/P32-14_19_GML.zip` | **取得済み** |
 | **D27** | 都道府県指定文化財 P32 静岡県 | 国土交通省 | 静岡県単独 | ZIP (GML/SHP) | 44.7 KB | 国土数値情報利用規約（CC BY 4.0互換）。静岡県指定文化財位置。 | `raw/cultural_properties/P32-14_22_GML.zip` | **取得済み** |
 | **D28** | 東京都指定史跡データ一覧 CSV | 東京都教育庁 | 東京都全域 | CSV (UTF-8) | 9.7 KB | 東京都オープンデータ（CC BY 4.0準拠）。P32未収録補完史跡データ。 | `raw/cultural_properties/130001culturalproperty.csv` | **取得済み** |
+| **D29** | 昭和期空中写真カタログ・タイル | 国土地理院 | 旧津久井4地区 (1946〜1978年) | JSON + JPEG | 計 118 KB | 国土地理院利用規約。単写真42件詳細諸元および1974年カラーオルソ。 | `raw/aerial_photos/` | **取得済み** |
+| **D30** | 相模原市内埋蔵文化財包蔵地一覧 | 相模原市教育委 | 相模原市全域 (令和8年2月版) | PDF | 110.7 KB | 相模原市教育委員会 文化財課公表資料。市域全遺跡台帳。 | `raw/cultural_properties/sagamihara_buried_cultural_properties_20260212.pdf` | **取得済み** |
 
 ---
 
 ## 閲覧専用・手動確認・保留データソース一覧（規約遵守）
 
-| ID | データ名 | 提供元 | URL | 利用規約上の重要制約 | Phase 0.3対応・Phase 1への申し送り |
+| ID | データ名 | 提供元 | URL | 利用規約上の重要制約 | Phase 0.4対応・Phase 1への申し送り |
 |:---|:---|:---|:---|:---|:---|
-| `GSI-FGD` | 基盤地図情報 (DEM・基本項目) | 国土地理院 | `https://service.gsi.go.jp/kiban/` | 無料だが**利用者登録（アカウント認証）が必須**。 | **保留（未取得）**：エージェントによる無断登録・認証回避は厳禁。人間による無料アカウント作成・手動ダウンロード案内。 |
-| `GSI-OLDMAP` | 旧版地形図等の交付 | 国土地理院 | `https://web1.gsi.go.jp/MAP/HISTORY/koufu.html` | **有料（測量法第28条に基づく謄本交付申請・手数料）**。 | **保留（申請案内）**：Phase 1開始時に調査対象地区（青野原・八王子等）の図幅を特定し、正式に謄本交付（TIFF画像）を申請する。 |
-| `GSI-HISTORY` | 地図・空中写真閲覧サービス | 国土地理院 | `https://service.gsi.go.jp/map-photos/app/` | 国土地理院利用規約。**一括スクレイピングは不可**。単写真（1930〜70年代）は無料DL可、最新正射画像は有料交付。 | **未取得（Phase 1取得計画）**：調査対象地区（津久井4地区）に絞り、1940年代米軍写真等の無料単写真を選定ダウンロード予定。 |
+| `GSI-FGD` | 基盤地図情報 (DEM・基本項目) | 国土地理院 | `https://service.gsi.go.jp/kiban/` | 無料だが**利用者登録（アカウント認証）が必須**。 | **手動手順策定済**：2次メッシュコード（533921, 533931等）およびFGDM/QGIS変換手順を `reports/phase0_4_manual_actions.md` に明記。 |
+| `GSI-OLDMAP` | 旧版地形図等の交付 | 国土地理院 | `https://web1.gsi.go.jp/MAP/HISTORY/koufu.html` | **有料（測量法第28条に基づく謄本交付申請・手数料）**。 | **図歴調査済**：青野原（昭4測量・昭44改測）、相模湖（明39測量・昭42改測）等の図歴を整理。申請準備完了。 |
+| `GSI-HISTORY` | 地図・空中写真閲覧サービス | 国土地理院 | `https://service.gsi.go.jp/map-photos/` | 国土地理院利用規約。400dpi高解像度ダウンロードは**無料ユーザーログイン必須**。 | **カタログ取得済・手順整理**：42件のメタデータを取得済。400dpi手動ダウンロード手順を整理。 |
 | `KONJAKU` | 今昔マップ on the web | 埼玉大学 谷謙二研究室 | `https://ktgis.net/kjmapw/` | **「画像ファイル自体をPC・サーバ等に保存することは禁止」**と規約に明記。 | **閲覧専用（自動取得厳禁）**：PC保存禁止のためWebブラウザでの目視比較に限定。 |
-| `NARO-OLD` | 歴史的農業環境閲覧システム (迅速測図) | 農研機構 | `https://habs.rad.naro.go.jp/` | タイル一括取得禁止。**旧津久井山間部は未作成区域（対象外）と判明**。 | **対象外確認済**：山間部には迅速測図が存在しないため、明治20年代陸地測量部旧版地形図を最優先とする。 |
-| `SAGAMIHARA-TOSHOKAN` | 『津久井郡 神社誌』・『津久井町史』 | 相模原市立図書館 | 相模原市図書館所蔵 | 館内閲覧・郷土資料複写。 | **保留（現地調査案内）**：橋本図書館等の郷土資料室での調査手続きをPhase 1に整理。 |
+| `NARO-OLD` | 歴史的農業環境閲覧システム (迅速測図) | 農研機構 | `https://habs.rad.naro.go.jp/` | タイル一括取得禁止。**旧津久井山間部は未作成区域（対象外）と判明**。 | **対象外確認済**：山間部には迅速測図が存在しないため、陸地測量部旧版地形図を最優先とする。 |
+| `SAGAMIHARA-TOSHOKAN` | 『ふるさと津久井第3号』・『津久井町史』 | 相模原市立図書館 | 相模原市図書館所蔵 | 館内閲覧・郷土資料複写。 | **調査手順策定済**：津久井図書館・橋本図書館所蔵（請求記号 K1-21）。村絵図・字絵図54点の複写申請手順を整理。 |
 
 ---
 
-## 先行研究一覧（P01〜P12）
+## 先行研究一覧（P01〜P12 原典監査結果）
 
-書誌データは Google Drive 側 `literature/bibliography/`（`references.bib`, `references.json`, `literature_review.md`）に整備・保管。
+書誌データは Google Drive 側 `literature/bibliography/`（`references.bib`, `references.json`, `literature_review.md`）および `reports/bibliography_audit.md` に完全同期。
 
-| ID | 著者・年 | 論文・研究題目 | ファクトチェック結果・今回の用途 | DOI / URL | 本文PDF所蔵状況 |
+| ID | 著者・年 | 論文・研究題目 | 一次情報ファクトチェック結果 | DOI / URL | 本文PDF所蔵状況 |
 |:---|:---|:---|:---|:---|:---|
-| **P01** | 田林（2021） | 畳み込みニューラルネットワークを用いた旧版地形図の地図記号の分類 | **【訂正済】**分類対象は果樹園・桑畑等の植生記号。旧版地形図CNNパッチ分類のベースライン。 | `https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202102206775677894` | リポジトリ非公開（書誌確認済） |
-| **P02** | 田林（2026） | 生成AIを用いた旧版地形図の幾何補正 | 未確定学会発表。マルチモーダルモデルによる古地図と現代地図の高精度自動アライメントの着想源。 | `日本地理学会発表要旨集` | 未刊行（書誌記録のみ） |
-| **P03** | Wood et al.（2024） | MapReader: A Python package for inspecting large geospatial raster maps | 歴史地図ラスタの大規模パッチ分割・画像認識・CVパイプライン構築（OSS）。 | `10.21105/joss.06434` | **取得済**<br>(`Wood2024_MapReader.pdf`) |
-| **P04** | Berganzo-Besga et al.（2023） | Deep learning for historical map analysis: Automated detection of archaeological mounds | 歴史地図からの考古学的遺構・塚（人工改変地）の深層学習自動検出（Nature Scientific Reports）。 | `10.1038/s41598-023-38190-x` | **取得済**<br>(`Berganzo2023_ArchaeologicalMounds.pdf`) |
-| **P05** | Luft & Schiewe（2021） | Automatic content-based georeferencing of historical maps using computer vision | 道路網・水系網の特徴照合に基づく古地図の自動ジオリファレンス。 | `10.1111/tgis.12794` | 有料購読（書誌確認済） |
-| **P06** | Huang et al.（2023） | Point Symbol Recognition in Scanned Topographic Maps Based on YOLOv5 | スキャン地形図上の点記号（鳥居・寺院・学校等）の物体検出と特徴抽出。 | `10.3390/ijgi12030128` | オープンアクセス（書誌確認済） |
-| **P07** | 大倉・布施（2016） | 旧版地形図における機械学習を用いた地図記号の自動認識 | 日本の旧版地形図特有の図式・手書きフォント・かすれ記号の抽出処理（土木学会論文集F3）。 | `https://jglobal.jst.go.jp/detail?JGLOBAL_ID=201602214144038318` | 書誌確認済 |
-| **P08** | 金木（2003） | 消滅集落の分布について：山間過疎地域における集落の空間構造と変容 | 山間部における廃村・消滅集落の立地環境（標高・水系・傾斜・道路アクセス）の定量的分析（日本建築学会）。 | `10.3130/aija.68.25_4` | **取得済**<br>(`Kanaki2003_AbandonedSettlements.pdf`) |
-| **P09** | 谷（2017） | 時系列地形図閲覧システム「今昔マップ on the web」の開発と公開 | 迅速測図・時系列地形図の幾何補正・タイル座標系設計の知見（GIS-理論と応用）。 | `10.5638/thagis.25.1` | **取得済**<br>(`Tani2017_KonjakuMap.pdf`) |
-| **P10** | 藤田・熊谷（2007） | GISを用いた神社・寺院の立地環境と地域景観構造の定量的解析 | 神奈川県三浦半島を対象とし、尾根・谷・集落中心距離に対する神社の空間統計モデル（景観生態学）。 | `10.5738/jale.12.9` | **取得済**<br>(`Fujita2007_ShrineLocationGIS.pdf`) |
-| **P11** | 小田・柳光（2015） | 神社合祀と地域社会：三重県松阪市飯南・飯高地区の事例 | **【訂正済】**対象地域は三重県松阪市飯南・飯高地区。山間過疎地における明治末期の神社合祀・社地廃絶の空間的変容分析。 | `10.14866/ajg.2015s.0_100229` | **取得済**<br>(`Oda2015_ShrineMerger.pdf`) |
-| **P12** | Uhl et al.（2022） | Automated map symbol detection in historical maps using deep learning | 歴史地形図上の点状記号検出（YOLO / Faster R-CNN）の国際的最新手法（IJGIS）。 | `10.1080/13658816.2022.2038751` | 追加文献（書誌確認済） |
+| **P01** | Buchi et al.（2024） | Georeferencing of historic maps using neural networks | 歴史地図自動ジオリファレンスの最新CNNフレームワーク (*ISPRS J. Photogramm. Remote Sens.*, 215, 237–251)。 | `10.1016/j.isprsjprs.2024.06.012` | 有料購読（Elsevier / 手動取得案内） |
+| **P02** | 田林（2026） | 生成AIを用いた旧版地形図の幾何補正 | 2026年春季日本地理学会発表要旨（2026s, 264）。迅速図ジオリファレンスAI。 | `10.14866/ajg.2026s.0_264` | **取得済**<br>(`Tabayashi2026_OldMapGeoreferencingAI.pdf`) |
+| **P03** | Wood et al.（2024） | MapReader: Open software for the visual analysis of maps | 歴史地図ラスタの大規模パッチ分割・コンピュータビジョン分析ツール (*J. Open Source Softw.*, 9(101), 6434)。 | `10.21105/joss.06434` | **取得済**<br>(`Wood2024_MapReader.pdf`) |
+| **P04** | Berganzo-Besga et al.（2023） | Curriculum learning-based strategy for low-density archaeological mound detection from historical maps in India and Pakistan | 歴史地図からの低密度考古学的遺構（塚・マウンド）自動検出 (*Sci. Rep.*, 13, 11425)。対象地域: インド・パキスタン。 | `10.1038/s41598-023-38190-x` | **取得済**<br>(`Berganzo2023_ArchaeologicalMounds.pdf`) |
+| **P05** | Luft & Schiewe（2021） | Content-based georeferencing of historical maps using computer vision | 道路網・水系網等の特徴量照合による19世紀歴史地図自動ジオリファレンス (*Trans. in GIS*, 25(6), 2888–2906)。 | `10.1111/tgis.12794` | **取得済**<br>(`Luft2021_HistoricalMapGeoreferencing.pdf`) |
+| **P06** | Huang et al.（2023） | Leveraging Deep Convolutional Neural Network for Point Symbol Recognition in Scanned Topographic Maps | スキャン地形図上の点記号（鳥居・寺院・学校等）の深層畳み込み認識 (*ISPRS Int. J. Geo-Inf.*, 12(3), 85)。 | `10.3390/ijgi12030085` | オープンアクセス（WAF回避手動取得案内） |
+| **P07** | 大倉・布施（2016） | 深層学習を用いた古地図からの地物抽出手法の検討 | 旧版地形図における畳み込みニューラルネットワーク地物抽出（日本写真測量学会秋季学術講演会発表論文集, 107–108）。 | CiNii / JSPRS | 学会要旨（NDL複写案内） |
+| **P08** | 金木 健（2003） | 消滅集落の分布について : 過疎山村における集落の消滅とその要因 その1 | 日本全国を対象とし、過疎山間部における廃村・消滅集落の立地環境（標高・傾斜・アクセス）の定量的分析 (*日本建築学会計画系論文集*, 68(566), 25–32)。 | `10.3130/aija.68.25_4` | **取得済**<br>(`Kanaki2003_AbandonedSettlements.pdf`) |
+| **P09** | 谷 謙二（2016） | 「今昔マップ旧版地形図タイル画像配信・閲覧サービス」の開発 | 旧版地形図のジオリファレンス・時系列タイル配信システム設計 (*GIS-理論と応用*, 24(2), 1–10)。 | `10.5638/thagis.24.89` | **取得済**<br>(`Tani2017_KonjakuMap.pdf`) |
+| **P10** | 藤田 直子・熊谷 洋一（2007） | GIS解析による都市における神社・寺院・公園の立地地点の分布形態の差異に関する研究 | 東京都23区部を対象とし、神社・寺院の立地環境特性を点パターン・空間統計解析した基本論文 (*ランドスケープ研究*, 12(1), 9–21)。 | `10.5738/jale.12.9` | **取得済**<br>(`Fujita2007_ShrineLocationGIS.pdf`) |
+| **P11** | 小田 匡保・柳光 里香（2015） | 神社合祀と地域社会：三重県松阪市飯南・飯高地区の事例 | 三重県松阪市山間過疎地域における明治末期神社合祀・社地廃絶の空間的変容分析（日本地理学会発表要旨集, 2015s, 100229）。 | `10.14866/ajg.2015s.0_100229` | **取得済**<br>(`Oda2015_ShrineMerger.pdf`) |
+| **P12** | （旧 Uhl et al. 2022） | 架空引用（DOI 10.1080/13658816.2022.2038751） | 以前のAI生成によるハルシネーション（存在しないDOI・論文）と判明。**書誌から除外・保留**。 | - | **除外**（架空文献排除） |
 
 ---
 

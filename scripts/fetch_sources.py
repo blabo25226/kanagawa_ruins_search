@@ -101,6 +101,8 @@ def looks_like_format(header: bytes, fmt: str) -> bool:
         return header.startswith(b'%PDF-')
     if fmt_lower == 'pbf':
         return b'OSMHeader' in header or (len(header) >= 4 and header[:2] == b'\x00\x00')
+    if fmt_lower in ('jpg', 'jpeg'):
+        return header.startswith(b'\xff\xd8\xff')
     return False
 
 
@@ -162,6 +164,13 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
                 if not looks_like_format(head, 'csv'):
                     return False, "Invalid CSV header"
             return True, "Valid CSV format confirmed"
+
+        elif fmt_lower in ('jpg', 'jpeg'):
+            with file_path.open('rb') as f:
+                head = f.read(3)
+                if head != b'\xff\xd8\xff':
+                    return False, "Missing JPEG SOI marker"
+            return True, "Valid JPEG format confirmed"
 
     except Exception as e:
         return False, f"Integrity check failed: {type(e).__name__}: {e}"

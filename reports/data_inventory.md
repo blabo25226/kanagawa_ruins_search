@@ -1,6 +1,6 @@
-# Phase 0.3 データ取得状況・ソース台帳
+# Phase 0.4 データ取得状況・ソース台帳
 
-- 確認日時（JST）：2026-10-10 01:45 JST
+- 確認日時（JST）：2026-10-10 03:20 JST
 - 生データ正規保存先：Google Drive上の `kanagawa_ruins_search_databank/data/`（環境変数 `RUINS_DATA_ROOT`）
 - 参照した主な利用規約・案内URL：
   - 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/kiyaku.html`
@@ -62,6 +62,19 @@
 | `paper_tani2017` (P09) | `literature/papers/Tani2017_KonjakuMap.pdf` | 4,689,607 | PDF | `64a1c2988d014024` | GIS理論と応用 (J-STAGE OA)| 今昔マップの開発と公開 論文 PDF |
 | `paper_fujita2007` (P10) | `literature/papers/Fujita2007_ShrineLocationGIS.pdf` | 2,908,569 | PDF | `c2593cb87354b4a8` | 景観生態学 (J-STAGE OA) | 神社・寺院の立地環境GIS解析 論文 PDF |
 | `paper_oda2015` (P11) | `literature/papers/Oda2015_ShrineMerger.pdf` | 176,791 | PDF | `cef264d5e4df26c1` | 日本地理学会 (J-STAGE OA)| 神社合祀と地域社会（三重県飯南・飯高）論文 PDF |
+| `paper_tabayashi2026` (P02)| `literature/papers/Tabayashi2026_OldMapGeoreferencingAI.pdf` | 1,489,520 | PDF | `e0cb29ac4caebef4` | 学術の動向 (J-STAGE OA) | 機械学習を用いた古地図のジオリファレンス 論文 PDF |
+| `paper_luft2021` (P05) | `literature/papers/Luft2021_HistoricalMapGeoreferencing.pdf` | 1,228,819 | PDF | `facca1e1394c8e7e` | ICA Proc (CC BY 4.0) | Historical Map Georeferencing 論文 PDF |
+| `sagamihara_buried_properties`| `raw/cultural_properties/sagamihara_buried_cultural_properties_20260212.pdf` | 110,726 | PDF | `57f00bfcf7a371ba` | 相模原市公開資料 | 相模原市 周知の埋蔵文化財包蔵地一覧 (令和8年2月12日更新版) |
+| `mlit_landuse_1976_5338` | `raw/landuse/L03-b-76_5338_GML.zip` | 11,544,198 | ZIP | `6c179c32f8319ba1` | 国土数値情報 (CC BY 4.0互換) | 5338メッシュ（大月・相模原西）土地利用細分 (1976) |
+| `mlit_landuse_1976_5339` | `raw/landuse/L03-b-76_5339_GML.zip` | 11,387,708 | ZIP | `cf695a5fbc40fffa` | 国土数値情報 (CC BY 4.0互換) | 5339メッシュ（相模原・津久井）土地利用細分 (1976) |
+| `mlit_landuse_2014_5338` | `raw/landuse/L03-b-14_5338-jgd_GML.zip` | 13,858,072 | ZIP | `645c7198bb4b2190` | 国土数値情報 (CC BY 4.0互換) | 5338メッシュ 土地利用細分 (2014) |
+| `mlit_landuse_2021_5338` | `raw/landuse/L03-b-21_5338-jgd2011_GML.zip` | 23,281,424 | ZIP | `faeb5cb57088b907` | 国土数値情報 (CC BY 4.0互換) | 5338メッシュ 土地利用細分 (2021, JGD2011) |
+| `mlit_landuse_2021_5339` | `raw/landuse/L03-b-21_5339-jgd2011_GML.zip` | 23,074,750 | ZIP | `fc68875e63080c57` | 国土数値情報 (CC BY 4.0互換) | 5339メッシュ 土地利用細分 (2021, JGD2011) |
+| `gsi_aerial_photos_catalog` | `raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json` | 27,248 | JSON | `1aee1f1db746d8a4` | 国土地理院 (CC BY 4.0互換) | 旧津久井4地区 昭和20〜50年代 空中写真42件メタデータ |
+| `gsi_aerial_sample_aonohara` | `raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg` | 17,211 | JPG | `ef56810b42fbb1bf` | 国土地理院 (CC BY 4.0互換) | 青野原 昭和49-53年オルソサンプルタイル (z15) |
+| `gsi_aerial_sample_aoyama` | `raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg` | 15,229 | JPG | `4ebf622aa52a12ff` | 国土地理院 (CC BY 4.0互換) | 青山 昭和49-53年オルソサンプルタイル (z15) |
+| `gsi_aerial_sample_suarashi` | `raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg` | 16,339 | JPG | `0f2d5740447fa431` | 国土地理院 (CC BY 4.0互換) | 寸沢嵐 昭和49-53年オルソサンプルタイル (z15) |
+| `gsi_aerial_sample_toya` | `raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg` | 16,988 | JPG | `bc22616a24683526` | 国土地理院 (CC BY 4.0互換) | 鳥屋 昭和49-53年オルソサンプルタイル (z15) |
 
 ---
 
@@ -74,18 +87,19 @@
 
 ## 3. 先行研究書誌情報・メタデータ（Google Drive）
 
-- `literature/bibliography/references.bib`: P01〜P12のファクトチェック済みBibTeX台帳
+- `literature/bibliography/references.bib`: P01〜P12のファクトチェック・再検証済みBibTeX台帳
 - `literature/bibliography/references.json`: 構造化メタデータ（研究対象地域・手法・注意点・PDF所蔵状況を含む）
-- `literature/literature_review.md`: 先行研究レビュー
+- `literature/literature_review.md`: 先行研究レビュー（P01〜P11実在論文の網羅的解題・Phase 1活用指針）
 - `raw/osm/tsukui_4districts_metadata.json`: 4地区OSM抽出メタデータ
-- 各ディレクトリ README (`raw/administrative/`, `raw/historical_maps/`, `raw/osm/`)
+- 各ディレクトリ README (`raw/administrative/`, `raw/aerial_photos/`, `raw/historical_maps/`, `raw/osm/`, `literature/historical_documents/`, `processed/`)
 
 ---
 
 ## 4. ストレージ容量と管理状況
 
 - **Google Drive正規保存先** (`$RUINS_DATA_ROOT`):
-  - 有効データ容量: **1,153.35 MB (約 1.126 GB)**
-  - 総ファイル数: **52 ファイル**（台帳記録ダウンロード40件、メタデータ・文書8件、初期重複4件）
+  - 有効データ容量: **約 1,280 MB (約 1.28 GB)**
+  - 総ファイル数: **66 ファイル**（台帳記録ダウンロード54件、メタデータ・文書8件、初期重複4件）
 - **ローカルリポジトリ** (`kanagawa_ruins_search`):
-  - 使用容量: **約 1.7 MB**（1GB以内制限完全遵守）
+  - 使用容量: **約 1.9 MB**（1GB以内制限完全遵守）
+

@@ -40,7 +40,7 @@ class Phase0ConfigTests(unittest.TestCase):
                 self.assertTrue(fetch.approved_url(source.get("url", source.get("api_url")),
                                                    source["allowed_domains"]))
                 self.assertLessEqual(source["max_bytes"], 700_000_000)
-                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "json", "xml", "pdf", "pbf"))
+                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "json", "xml", "pdf", "pbf", "jpg", "jpeg"))
             else:
                 self.assertIn(source["mode"], ("manual", "reference_only"))
 
@@ -62,10 +62,12 @@ class Phase0ConfigTests(unittest.TestCase):
         self.assertTrue(fetch.looks_like_format(b'<?xml version="1.0"?><osm></osm>', "xml"))
         self.assertTrue(fetch.looks_like_format(b'%PDF-1.4 header', "pdf"))
         self.assertTrue(fetch.looks_like_format(b"\x00\x00\x00\r\n\tOSMHeader", "pbf"))
+        self.assertTrue(fetch.looks_like_format(b"\xff\xd8\xff\xe0\x00\x10JFIF", "jpg"))
         self.assertFalse(fetch.looks_like_format(b"<html>login</html>", "csv"))
         self.assertFalse(fetch.looks_like_format(b"not a zip", "zip"))
         self.assertFalse(fetch.looks_like_format(b"not a pdf", "pdf"))
         self.assertFalse(fetch.looks_like_format(b"not a pbf", "pbf"))
+        self.assertFalse(fetch.looks_like_format(b"not a jpg", "jpg"))
 
     def test_gitignore_raw(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
