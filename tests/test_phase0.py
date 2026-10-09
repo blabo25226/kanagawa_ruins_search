@@ -39,8 +39,8 @@ class Phase0ConfigTests(unittest.TestCase):
                 self.assertTrue(source["allowed_domains"])
                 self.assertTrue(fetch.approved_url(source.get("url", source.get("api_url")),
                                                    source["allowed_domains"]))
-                self.assertLessEqual(source["max_bytes"], 20_000_000)
-                self.assertIn(source["expected_format"], ("csv", "zip"))
+                self.assertLessEqual(source["max_bytes"], 30_000_000)
+                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "xml", "pdf"))
             else:
                 self.assertIn(source["mode"], ("manual", "reference_only"))
 
@@ -58,8 +58,12 @@ class Phase0ConfigTests(unittest.TestCase):
     def test_simple_format_check(self):
         self.assertTrue(fetch.looks_like_format(b"PK\x03\x04more", "zip"))
         self.assertTrue(fetch.looks_like_format("名称,区分\n寺,文化財".encode(), "csv"))
+        self.assertTrue(fetch.looks_like_format(b'{"type": "FeatureCollection"}', "geojson"))
+        self.assertTrue(fetch.looks_like_format(b'<?xml version="1.0"?><osm></osm>', "xml"))
+        self.assertTrue(fetch.looks_like_format(b'%PDF-1.4 header', "pdf"))
         self.assertFalse(fetch.looks_like_format(b"<html>login</html>", "csv"))
         self.assertFalse(fetch.looks_like_format(b"not a zip", "zip"))
+        self.assertFalse(fetch.looks_like_format(b"not a pdf", "pdf"))
 
     def test_gitignore_raw(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")

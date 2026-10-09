@@ -85,25 +85,53 @@ def resolve_download_url(src):
 
 
 def looks_like_format(header: bytes, fmt: str) -> bool:
-    if fmt == 'zip':
+    fmt_lower = fmt.lower()
+    if fmt_lower == 'zip':
         return header.startswith((b'PK\x03\x04', b'PK\x05\x06'))
-    if fmt == 'csv':
+    if fmt_lower == 'csv':
         data = header.lstrip(b'\xef\xbb\xbf\r\n \t').lower()
         return bool(data) and not data.startswith((b'<html', b'<!doctype', b'{"error"'))
+    if fmt_lower in ('json', 'geojson'):
+        data = header.lstrip(b'\xef\xbb\xbf\r\n \t')
+        return data.startswith((b'{', b'['))
+    if fmt_lower in ('xml', 'osm'):
+        data = header.lstrip(b'\xef\xbb\xbf\r\n \t')
+        return data.startswith((b'<?xml', b'<osm', b'<gml'))
+    if fmt_lower == 'pdf':
+        return header.startswith(b'%PDF-')
     return False
 
 
 def download(src, url, data_root: Path | None = None):
     limit = int(src['max_bytes'])
-    if not 0 < limit <= 20000000:
-        raise DownloadError('Unsafe size limit')
+    if not 0 < limit <= 30000000:
+        raise DownloadError('Unsafe size limit: must be between 1 and 30,000,000 bytes')
 
     target_root = data_root or get_data_root()
-    target = target_root / 'raw' / src['id'] / src['filename']
+    dest_dir = src.get('dest_dir', f"raw/{src['id']}")
+    target = target_root / dest_dir / src['filename']
     target.parent.mkdir(parents=True, exist_ok=True)
     partial = target.with_suffix(target.suffix + '.partial')
-    if target.exists() or partial.exists():
-        raise DownloadError('Already downloaded/partial exists; never overwrite Google Drive data: ' + str(target))
+
+    if target.exists():
+        # Verify existing file matches safe parameters
+        file_size = target.stat().st_size
+        h = hashlib.sha256()
+        with target.open('rb') as f:
+            while chunk := f.read(65536):
+                h.update(chunk)
+        rel_path = str(target.relative_to(target_root))
+        record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),
+                  'download_url': url, 'license_url': src.get('license_url', ''),
+                  'license_note': src.get('license_note', ''), 'phase': 0,
+                  'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
+                  'relative_path': rel_path,
+                  'bytes': file_size, 'sha256': h.hexdigest(), 'format': src['expected_format'],
+                  'status': 'already_present'}
+        return record
+
+    if partial.exists():
+        partial.unlink()
 
     req = Request(url, headers={'User-Agent': AGENT, 'Accept': 'application/octet-stream,*/*'})
     digest = hashlib.sha256()
@@ -136,14 +164,15 @@ def download(src, url, data_root: Path | None = None):
             partial.unlink()
 
     rel_path = str(target.relative_to(target_root))
-    record = {'source_id': src['id'], 'source_page': src['source_page'],
-              'download_url': final_url, 'license_url': src['license_url'],
-              'license_note': src['license_note'], 'phase': 0,
+    record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),
+              'download_url': final_url, 'license_url': src.get('license_url', ''),
+              'license_note': src.get('license_note', ''), 'phase': 0,
               'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
               'relative_path': rel_path,
-              'bytes': size, 'sha256': digest.hexdigest(), 'format': src['expected_format']}
+              'bytes': size, 'sha256': digest.hexdigest(), 'format': src['expected_format'],
+              'status': 'downloaded'}
 
-    # Record provenance to Google Drive storage root
+    # Record provenance to Google Drive storage root if not already present
     prov_gdrive = target_root / 'provenance.jsonl'
     with prov_gdrive.open('a', encoding='utf-8') as f:
         f.write(json.dumps(record, ensure_ascii=False) + '\n')
@@ -194,7 +223,8 @@ def main():
     errors = 0
     for sid in dict.fromkeys(ids):
         src = by_id[sid]
-        target_path = data_root / 'raw' / src['id'] / src['filename']
+        dest_dir = src.get('dest_dir', f"raw/{src['id']}")
+        target_path = data_root / dest_dir / src['filename']
         if a.dry_run:
             print(f"DRY RUN: {sid} -> {target_path} (max={src['max_bytes']} bytes)")
             continue
