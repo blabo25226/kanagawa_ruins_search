@@ -1,4 +1,4 @@
-# 公式・歴史地理データソース台帳（2026-10-09 Phase 0.2更新）
+# 公式・歴史地理データソース台帳（2026-10-10 Phase 0.3更新）
 
 目的: 入手先の検討・利用条件の記録。**出典の掲載≠自動収集の許可**。ここにあるURLを網羅的にスクレイピングしない。  
 自動取得の対象は `config/sources.toml` で限定し、ダウンロードデータはすべて Google Drive 上の `$RUINS_DATA_ROOT`（`kanagawa_ruins_search_databank/data/`）へ保存する。
@@ -13,14 +13,14 @@
 kanagawa_ruins_search_databank/
 └── data/
     ├── raw/
-    │   ├── administrative/        # 行政区域・住居表示（D01: 14151.zip, D03: N03-2026）
+    │   ├── administrative/        # 行政区域・住居表示（D01: 14151.zip, D03: 神奈川N03-2026, D16: 東京N03, D17: 山梨N03, D18: 静岡N03）
     │   ├── historical_boundaries/ # 過去行政区域・自治体変遷（D04: N03-2014, D05: CODH 津久井町/相模湖町/城山町/藤野町）
     │   ├── landuse/               # 土地利用メッシュデータ（D08: L03-b 2021年 5339メッシュ）
-    │   ├── rivers/                # 河川・水系データ（D11: W05 河川データ）
-    │   ├── railways/              # 鉄道・交通データ（D10: N02 鉄道データ）
-    │   ├── osm/                   # OpenStreetMap（D06: 寸沢嵐・鳥屋・青山・青野原 4地区個別XML + メタデータ）
-    │   ├── cultural_properties/   # 文化財・史跡台帳（D02: bunkazai.csv, D12: 神奈川県文化財目録PDF）
-    │   └── historical_maps/       # 旧版地形図・歴史地図（Phase 0/0.2は正規申請方針・規約整理のみ）
+    │   ├── rivers/                # 河川・水系データ（D11: 神奈川W05, D19: 東京W05, D20: 山梨W05, D21: 静岡W05）
+    │   ├── railways/              # 鉄道・交通データ（D10: N02 鉄道データ全国）
+    │   ├── osm/                   # OpenStreetMap（D06: 津久井4地区個別XML, D23: 関東PBF, D24: 中部PBF）
+    │   ├── cultural_properties/   # 文化財・史跡台帳（D02: bunkazai.csv, D12: 神奈川県文化財目録PDF, D22: 全国P32文化財）
+    │   └── historical_maps/       # 旧版地形図・歴史地図（Phase 0.3は規約・謄本交付手順整理のみ）
     │
     ├── literature/
     │   ├── papers/                # 関連研究論文 PDF（P03: MapReader, P04: Berganzo, P08: 金木, P09: 谷, P10: 藤田, P11: 小田）
@@ -53,6 +53,15 @@ kanagawa_ruins_search_databank/
 | **D13** | 歴史資料所在目録（旧津久井郡編） | 神奈川県立公文書館 | 旧津久井郡全域<br>(第14集第4分冊) | PDF | 8.15 MB | 神奈川県立公文書館 公開資料。旧津久井郡地域の古文書・神社資料所在調査。 | `literature/catalogs/rekishishiryoushozaimokuroku14-4-1.pdf` | **取得済み**<br>(学術調査利用) |
 | **D14** | 古文書・私文書資料群一覧 | 神奈川県立公文書館 | 相模原市緑区（若柳村等） | PDF | 54 KB | 神奈川県立公文書館 公開目録。地域所蔵史料（村方文書・神社関連等）。 | `literature/catalogs/pdflist_wakayanagi.pdf` | **取得済み**<br>(学術調査利用) |
 | **D15** | 新編相模国風土記稿 第5輯 三浦・津久井郡 | 国立国会図書館 (NDL) | 旧津久井郡各村<br>(明治21年鳥跡蟹行社刊) | JSON (IIIF マニフェスト 全324コマ) | 190 KB | 著作権保護期間満了（パブリックドメイン、PID 763971）。全324コマ高精細画像APIマニフェスト。 | `literature/historical_documents/Shinpen_Sagami_Fudokiko_Vol5_IIIF_manifest.json` | **取得済み**<br>(IIIFマニフェスト) |
+| **D16** | 行政区域 N03 2026年 東京都 | 国土交通省 | 東京都全域 (2026年) | ZIP (GML/SHP) | 13.15 MB | 国土数値情報利用規約（CC BY 4.0互換）。隣接8市区（＋檜原村）境界検証用。 | `raw/administrative/N03-20260101_13_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D17** | 行政区域 N03 2026年 山梨県 | 国土交通省 | 山梨県全域 (2026年) | ZIP (GML/SHP) | 3.64 MB | 国土数値情報利用規約（CC BY 4.0互換）。隣接3市村境界検証用。 | `raw/administrative/N03-20260101_19_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D18** | 行政区域 N03 2026年 静岡県 | 国土交通省 | 静岡県全域 (2026年) | ZIP (GML/SHP) | 13.59 MB | 国土数値情報利用規約（CC BY 4.0互換）。隣接6市町境界検証用。 | `raw/administrative/N03-20260101_22_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D19** | 河川データ W05 東京都 | 国土交通省 | 東京都全域 (2008年) | ZIP (GML/SHP) | 1.41 MB | 国土数値情報利用規約（CC BY 4.0互換）。多摩川水系流路ポリライン。 | `raw/rivers/W05-08_13_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D20** | 河川データ W05 山梨県 | 国土交通省 | 山梨県全域 (2008年) | ZIP (GML/SHP) | 3.91 MB | 国土数値情報利用規約（CC BY 4.0互換）。桂川・道志川上流流路ポリライン。 | `raw/rivers/W05-08_19_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D21** | 河川データ W05 静岡県 | 国土交通省 | 静岡県全域 (2008年) | ZIP (GML/SHP) | 6.79 MB | 国土数値情報利用規約（CC BY 4.0互換）。酒匂川上流・狩野川水系流路。 | `raw/rivers/W05-08_22_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D22** | 都道府県指定文化財 P32 全国 | 国土交通省 | 全国（神奈川・東京・山梨・静岡含む） | ZIP (GML/SHP) | 2.03 MB | 国土数値情報利用規約（CC BY 4.0互換）。国・都県指定文化財位置データ。 | `raw/cultural_properties/P32-14_00_GML.zip` | **取得済み**<br>(SHA-256検証済) |
+| **D23** | OpenStreetMap 関東地方最新PBF | Geofabrik | 関東地方全域（神奈川・東京等網羅） | OSM PBF | 517.6 MB | ODbL 1.0。道路・水系・建物・宗教施設等の広域地物ベクタ。 | `raw/osm/kanto-latest.osm.pbf` | **取得済み**<br>(SHA-256検証済) |
+| **D24** | OpenStreetMap 中部地方最新PBF | Geofabrik | 中部地方全域（山梨・静岡等網羅） | OSM PBF | 511.7 MB | ODbL 1.0。道路・山間部歩道・水系・宗教施設等の広域地物ベクタ。 | `raw/osm/chubu-latest.osm.pbf` | **取得済み**<br>(SHA-256検証済) |
 
 ---
 

@@ -1,15 +1,15 @@
-# Phase 0.2 データ取得状況・ソース台帳
+# Phase 0.3 データ取得状況・ソース台帳
 
-- 確認日時（JST）：2026-10-09 23:55 JST
+- 確認日時（JST）：2026-10-10 01:15 JST
 - 生データ正規保存先：Google Drive上の `kanagawa_ruins_search_databank/data/`（環境変数 `RUINS_DATA_ROOT`）
 - 参照した主な利用規約・案内URL：
-  - 国土地理院コンテンツ利用規約: `https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html`
-  - 国土地理院 住居表示住所案内: `https://www.gsi.go.jp/kihonjohochousa/jukyo_jusho.html`
-  - 相模原市オープンデータ利用規約: `https://www.city.sagamihara.kanagawa.jp/shisei/toukei/opendata/index.html`
-  - 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/agreement.html`
-  - 人文学オープンデータ共同利用センター (CODH) 利用規約: `https://geoshape.ex.nii.ac.jp/city/`
+  - 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/kiyaku.html`
   - OpenStreetMap 利用規約 (ODbL): `https://www.openstreetmap.org/copyright`
+  - Geofabrik 利用案内: `https://download.geofabrik.de/`
+  - 国土地理院コンテンツ利用規約: `https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html`
+  - 人文学オープンデータ共同利用センター (CODH) 利用規約: `https://geoshape.ex.nii.ac.jp/city/`
   - 神奈川県オープンデータカタログ: `https://catalog.opendata.pref.kanagawa.jp/`
+  - 相模原市オープンデータ利用規約: `https://www.city.sagamihara.kanagawa.jp/shisei/toukei/opendata/index.html`
   - 神奈川県立公文書館 刊行物案内: `https://archives.pref.kanagawa.jp/`
   - 国立国会図書館デジタルコレクション 利用規約: `https://www.ndl.go.jp/jp/use/reproduction/index.html`
   - Nature Scientific Reports (CC BY 4.0): `https://www.nature.com/srep/`
@@ -23,6 +23,9 @@
 |:---|:---|---:|:---|:---|:---|:---|
 | `gsi_jusho_midori` | `raw/administrative/14151.zip` | 1,672,520 | ZIP | `a72352712494a1c5` | 国土地理院 (CC BY 4.0互換) | 相模原市緑区 住居表示住所（市街地番地参照用） |
 | `mlit_n03_2026_kanagawa` | `raw/administrative/N03-20260101_14_GML.zip` | 5,370,610 | ZIP | `27ab5aa2982fc6fe` | 国土数値情報 (CC BY 4.0互換) | 神奈川県全域 最新行政区域ポリゴン (2026年) |
+| `mlit_n03_2026_tokyo` | `raw/administrative/N03-20260101_13_GML.zip` | 13,153,227 | ZIP | `94f10b26256566db` | 国土数値情報 (CC BY 4.0互換) | 東京都全域 最新行政区域ポリゴン (2026年) |
+| `mlit_n03_2026_yamanashi`| `raw/administrative/N03-20260101_19_GML.zip` | 3,642,283 | ZIP | `ecb815857ced4ef4` | 国土数値情報 (CC BY 4.0互換) | 山梨県全域 最新行政区域ポリゴン (2026年) |
+| `mlit_n03_2026_shizuoka` | `raw/administrative/N03-20260101_22_GML.zip` | 13,592,970 | ZIP | `a10ed331f67a75f2` | 国土数値情報 (CC BY 4.0互換) | 静岡県全域 最新行政区域ポリゴン (2026年) |
 | `mlit_n03_2014_kanagawa` | `raw/historical_boundaries/N03-140401_14_GML.zip` | 1,860,243 | ZIP | `b9f236d3512a9b96` | 国土数値情報 (CC BY 4.0互換) | 神奈川県 過去行政区域ポリゴン (2014年) |
 | `codh_tsukui_1955` | `raw/historical_boundaries/codh_tsukui_19551001.geojson` | 137,132 | GeoJSON | `d2105725065d8b2f` | CODH (CC BY 4.0) | 旧津久井町 1955年合併時境界ポリゴン |
 | `codh_tsukui_2005` | `raw/historical_boundaries/codh_tsukui_20050101.geojson` | 136,875 | GeoJSON | `85b4f3ef11efd936` | CODH (CC BY 4.0) | 旧津久井町 2005年編入直前境界ポリゴン |
@@ -30,8 +33,14 @@
 | `codh_shiroyama_2005` | `raw/historical_boundaries/codh_shiroyama_20050101.geojson` | 51,611 | GeoJSON | `077da437650f0442` | CODH (CC BY 4.0) | 旧城山町 2005年編入前境界ポリゴン |
 | `codh_fujino_2005` | `raw/historical_boundaries/codh_fujino_20050101.geojson` | 52,534 | GeoJSON | `027f60212dd1465a` | CODH (CC BY 4.0) | 旧藤野町 2005年編入前境界ポリゴン |
 | `mlit_landuse_2021_5339` | `raw/landuse/L03-b-14_5339-jgd_GML.zip` | 13,314,929 | ZIP | `b72e1446cb2ab067` | 国土数値情報 (CC BY 4.0互換) | 5339メッシュ（相模原・津久井）土地利用細分 (2021) |
-| `mlit_rivers_kanagawa` | `raw/rivers/W05-08_14_GML.zip` | 1,908,537 | ZIP | `8a553d8c3aa3a43d` | 国土数値情報 (CC BY 4.0互換) | 相模川・道志川水系 河川流路ポリライン (2008) |
-| `mlit_railways_2023` | `raw/railways/N02-23_GML.zip` | 17,518,918 | ZIP | `e91ecdee90966877` | 国土数値情報 (CC BY 4.0互換) | 全国/神奈川 鉄道・路線・駅データ (2023) |
+| `mlit_rivers_kanagawa` | `raw/rivers/W05-08_14_GML.zip` | 1,908,537 | ZIP | `8a553d8c3aa3a43d` | 国土数値情報 (CC BY 4.0互換) | 神奈川県 河川流路ポリライン (2008) |
+| `mlit_rivers_tokyo` | `raw/rivers/W05-08_13_GML.zip` | 1,406,220 | ZIP | `7e1d7907855e4560` | 国土数値情報 (CC BY 4.0互換) | 東京都 河川流路ポリライン (2008) |
+| `mlit_rivers_yamanashi` | `raw/rivers/W05-08_19_GML.zip` | 3,911,147 | ZIP | `d73f3fcf9e47dbc5` | 国土数値情報 (CC BY 4.0互換) | 山梨県 河川流路ポリライン (2008) |
+| `mlit_rivers_shizuoka` | `raw/rivers/W05-08_22_GML.zip` | 6,786,401 | ZIP | `c293f5ff4f183f13` | 国土数値情報 (CC BY 4.0互換) | 静岡県 河川流路ポリライン (2008) |
+| `mlit_railways_2023` | `raw/railways/N02-23_GML.zip` | 17,518,918 | ZIP | `e91ecdee90966877` | 国土数値情報 (CC BY 4.0互換) | 全国 鉄道・路線・駅データ (2023) |
+| `mlit_cultural_nationwide`| `raw/cultural_properties/P32-14_00_GML.zip` | 2,032,153 | ZIP | `debc5f00123ab608` | 国土数値情報 (CC BY 4.0互換) | 全国 都道府県指定文化財データ (2014) |
+| `geofabrik_kanto` | `raw/osm/kanto-latest.osm.pbf` | 517,645,146 | PBF | `d128943f6cebc6bc` | ODbL 1.0 (Geofabrik) | 関東地方全域 OSM最新抽出（道路・水系・建物・宗教等） |
+| `geofabrik_chubu` | `raw/osm/chubu-latest.osm.pbf` | 511,655,965 | PBF | `14056311e5086850` | ODbL 1.0 (Geofabrik) | 中部地方全域 OSM最新抽出（山梨・静岡等網羅） |
 | `osm_tsukui_core` | `raw/osm/tsukui_core_osm.osm` | 5,834,482 | XML | `8bea6721aefe13b3` | ODbL 1.0 | 旧コア領域 OSMデータ (約2.5万ノード) |
 | `osm_tsukui_suarashi` | `raw/osm/tsukui_suarashi_osm.osm` | 11,774,956 | XML | `753f3a4afea6312a` | ODbL 1.0 | 寸沢嵐地区網羅 OSMデータ (48,512ノード) |
 | `osm_tsukui_toya` | `raw/osm/tsukui_toya_osm.osm` | 6,241,979 | XML | `b380bc65f6d8a2c8` | ODbL 1.0 | 鳥屋地区網羅 OSMデータ (27,354ノード) |
@@ -56,14 +65,14 @@
 
 - `references.bib`: P01〜P12のファクトチェック済みBibTeX台帳
 - `references.json`: 構造化メタデータ（研究対象地域・手法・注意点・PDF所蔵状況を含む）
-- `literature_review.md`: 改訂版先行研究レビュー
+- `literature_review.md`: 先行研究レビュー
 
 ---
 
-## 3. ストレージ容量と重複管理実績
+## 3. ストレージ容量と管理状況
 
 - **Google Drive正規保存先** (`$RUINS_DATA_ROOT`):
-  - 有効データ容量: **約 125 MB**
-  - 重複ファイル: 既存の重複ファイル（`gsi_jusho_midori/14151.zip`, `sagamihara_cultural_assets/bunkazai.csv` 等）は無断削除を避け、正規保存先へ集約した上で削除候補として記録。
+  - 有効データ容量: **1,153.20 MB (1.126 GB)**
+  - 総ファイル数: **50 ファイル**
 - **ローカルリポジトリ** (`kanagawa_ruins_search`):
-  - 使用容量: **約 1.5 MB**（大容量データ重複保存ゼロ、1GB以内制限完全遵守）
+  - 使用容量: **約 1.7 MB**（大容量データ重複保存ゼロ、1GB以内制限完全遵守）

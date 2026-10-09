@@ -99,6 +99,8 @@ def looks_like_format(header: bytes, fmt: str) -> bool:
         return data.startswith((b'<?xml', b'<osm', b'<gml'))
     if fmt_lower == 'pdf':
         return header.startswith(b'%PDF-')
+    if fmt_lower == 'pbf':
+        return b'OSMHeader' in header or (len(header) >= 4 and header[:2] == b'\x00\x00')
     return False
 
 
@@ -132,6 +134,13 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
                 if b'%%EOF' not in tail:
                     return False, "Missing %%EOF marker in PDF tail"
             return True, "Valid PDF format confirmed"
+
+        elif fmt_lower == 'pbf':
+            with file_path.open('rb') as f:
+                header = f.read(2048)
+                if b'OSMHeader' not in header:
+                    return False, "Missing OSMHeader marker in PBF file"
+            return True, "Valid OSM PBF format confirmed"
 
         elif fmt_lower in ('json', 'geojson'):
             with file_path.open('r', encoding='utf-8') as f:
@@ -190,8 +199,8 @@ def safe_extract_zip(zip_path: Path, dest_dir: Path, max_bytes: int = 200_000_00
 
 def download(src, url, data_root: Path | None = None):
     limit = int(src['max_bytes'])
-    if not 0 < limit <= 30000000:
-        raise DownloadError('Unsafe size limit: must be between 1 and 30,000,000 bytes')
+    if not 0 < limit <= 700000000:
+        raise DownloadError('Unsafe size limit: must be between 1 and 700,000,000 bytes')
 
     target_root = data_root or get_data_root()
     dest_dir = src.get('dest_dir', f"raw/{src['id']}")

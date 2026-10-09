@@ -380,6 +380,134 @@ filename = "Oda2015_ShrineMerger.pdf"
 max_bytes = 2000000
 allowed_domains = ["www.jstage.jst.go.jp"]
 
+# --- Phase 0.3 Wide-Area Geographic Data Sources ---
+
+[[source]]
+id = "mlit_n03_2026_tokyo"
+title = "国土数値情報: 行政区域 N03 2026年 東京都 (Phase 0.3 隣接検証)"
+mode = "direct"
+dest_dir = "raw/administrative"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_13_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "N03-20260101_13_GML.zip"
+max_bytes = 25000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_n03_2026_yamanashi"
+title = "国土数値情報: 行政区域 N03 2026年 山梨県 (Phase 0.3 隣接検証)"
+mode = "direct"
+dest_dir = "raw/administrative"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_19_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "N03-20260101_19_GML.zip"
+max_bytes = 10000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_n03_2026_shizuoka"
+title = "国土数値情報: 行政区域 N03 2026年 静岡県 (Phase 0.3 隣接検証)"
+mode = "direct"
+dest_dir = "raw/administrative"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_22_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "N03-20260101_22_GML.zip"
+max_bytes = 25000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_rivers_tokyo"
+title = "国土数値情報: 河川データ W05 東京都 (Phase 0.3 隣接水系)"
+mode = "direct"
+dest_dir = "raw/rivers"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/W05/W05-08/W05-08_13_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "W05-08_13_GML.zip"
+max_bytes = 10000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_rivers_yamanashi"
+title = "国土数値情報: 河川データ W05 山梨県 (Phase 0.3 隣接水系)"
+mode = "direct"
+dest_dir = "raw/rivers"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/W05/W05-08/W05-08_19_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "W05-08_19_GML.zip"
+max_bytes = 10000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_rivers_shizuoka"
+title = "国土数値情報: 河川データ W05 静岡県 (Phase 0.3 隣接水系)"
+mode = "direct"
+dest_dir = "raw/rivers"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/W05/W05-08/W05-08_22_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "W05-08_22_GML.zip"
+max_bytes = 15000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_cultural_properties_nationwide"
+title = "国土数値情報: 都道府県指定文化財 P32 全国 (Phase 0.3)"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/P32/P32-14/P32-14_00_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P32.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "P32-14_00_GML.zip"
+max_bytes = 10000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "geofabrik_kanto"
+title = "Geofabrik: OpenStreetMap 関東地方最新PBF抽出 (Phase 0.3 神奈川・東京広域網羅)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://download.geofabrik.de/asia/japan/kanto-latest.osm.pbf"
+source_page = "https://download.geofabrik.de/asia/japan/kanto.html"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "pbf"
+filename = "kanto-latest.osm.pbf"
+max_bytes = 650000000
+allowed_domains = ["download.geofabrik.de"]
+
+[[source]]
+id = "geofabrik_chubu"
+title = "Geofabrik: OpenStreetMap 中部地方最新PBF抽出 (Phase 0.3 山梨・静岡広域網羅)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://download.geofabrik.de/asia/japan/chubu-latest.osm.pbf"
+source_page = "https://download.geofabrik.de/asia/japan/chubu.html"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "pbf"
+filename = "chubu-latest.osm.pbf"
+max_bytes = 650000000
+allowed_domains = ["download.geofabrik.de"]
+
 # Manual / Reference-only entries
 
 [[source]]

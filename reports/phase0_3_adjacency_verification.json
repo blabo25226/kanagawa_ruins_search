@@ -1,0 +1,596 @@
+{
+  "verified_at_crs": "EPSG:6677 (JGD2011 / Japan Plane Rectangular CS IX)",
+  "target_17_results": [
+    {
+      "prefecture": "東京都",
+      "municipality": "世田谷区",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 7299.6,
+      "shared_length_km": 7.3,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 7299.6
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "八王子市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 17274.8,
+      "shared_length_km": 17.275,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 17274.8
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "多摩市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 2353.8,
+      "shared_length_km": 2.354,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 2353.8
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "大田区",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 16565.7,
+      "shared_length_km": 16.566,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 16565.7
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "狛江市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3344.9,
+      "shared_length_km": 3.345,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 3344.9
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "町田市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 62665.6,
+      "shared_length_km": 62.666,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "大和市",
+          "shared_length_m": 2595.1
+        },
+        {
+          "name": "川崎市",
+          "shared_length_m": 15380.7
+        },
+        {
+          "name": "横浜市",
+          "shared_length_m": 16118.2
+        },
+        {
+          "name": "相模原市",
+          "shared_length_m": 28571.7
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "稲城市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 11934.9,
+      "shared_length_km": 11.935,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 11934.9
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "調布市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3669.5,
+      "shared_length_km": 3.669,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 3669.5
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "上野原市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 19031.8,
+      "shared_length_km": 19.032,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 19031.8
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "山中湖村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6716.6,
+      "shared_length_km": 6.717,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "山北町",
+          "shared_length_m": 6716.6
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "道志村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 24101.4,
+      "shared_length_km": 24.101,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "山北町",
+          "shared_length_m": 16288.6
+        },
+        {
+          "name": "相模原市",
+          "shared_length_m": 7812.9
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "三島市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 1467.2,
+      "shared_length_km": 1.467,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 1467.2
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "函南町",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 5575.0,
+      "shared_length_km": 5.575,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "湯河原町",
+          "shared_length_m": 3788.3
+        },
+        {
+          "name": "箱根町",
+          "shared_length_m": 1786.7
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "小山町",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 24437.2,
+      "shared_length_km": 24.437,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "南足柄市",
+          "shared_length_m": 4999.3
+        },
+        {
+          "name": "山北町",
+          "shared_length_m": 18136.0
+        },
+        {
+          "name": "箱根町",
+          "shared_length_m": 1301.8
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "御殿場市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6500.6,
+      "shared_length_km": 6.501,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 6500.6
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "熱海市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 8046.9,
+      "shared_length_km": 8.047,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "湯河原町",
+          "shared_length_m": 8046.9
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "裾野市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6441.1,
+      "shared_length_km": 6.441,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 6441.1
+        }
+      ]
+    }
+  ],
+  "all_contacting_municipalities_in_gis": [
+    {
+      "prefecture": "東京都",
+      "municipality": "世田谷区",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 7299.6,
+      "shared_length_km": 7.3,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 7299.6
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "八王子市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 17274.8,
+      "shared_length_km": 17.275,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 17274.8
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "多摩市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 2353.8,
+      "shared_length_km": 2.354,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 2353.8
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "大田区",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 16565.7,
+      "shared_length_km": 16.566,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 16565.7
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "檜原村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3132.5,
+      "shared_length_km": 3.133,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 3132.5
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "狛江市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3344.9,
+      "shared_length_km": 3.345,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 3344.9
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "町田市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 62665.6,
+      "shared_length_km": 62.666,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "大和市",
+          "shared_length_m": 2595.1
+        },
+        {
+          "name": "川崎市",
+          "shared_length_m": 15380.7
+        },
+        {
+          "name": "横浜市",
+          "shared_length_m": 16118.2
+        },
+        {
+          "name": "相模原市",
+          "shared_length_m": 28571.7
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "稲城市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 11934.9,
+      "shared_length_km": 11.935,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 11934.9
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "調布市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3669.5,
+      "shared_length_km": 3.669,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "川崎市",
+          "shared_length_m": 3669.5
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "上野原市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 19031.8,
+      "shared_length_km": 19.032,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 19031.8
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "山中湖村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6716.6,
+      "shared_length_km": 6.717,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "山北町",
+          "shared_length_m": 6716.6
+        }
+      ]
+    },
+    {
+      "prefecture": "山梨県",
+      "municipality": "道志村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 24101.4,
+      "shared_length_km": 24.101,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "山北町",
+          "shared_length_m": 16288.6
+        },
+        {
+          "name": "相模原市",
+          "shared_length_m": 7812.9
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "三島市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 1467.2,
+      "shared_length_km": 1.467,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 1467.2
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "函南町",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 5575.0,
+      "shared_length_km": 5.575,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "湯河原町",
+          "shared_length_m": 3788.3
+        },
+        {
+          "name": "箱根町",
+          "shared_length_m": 1786.7
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "小山町",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 24437.2,
+      "shared_length_km": 24.437,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "南足柄市",
+          "shared_length_m": 4999.3
+        },
+        {
+          "name": "山北町",
+          "shared_length_m": 18136.0
+        },
+        {
+          "name": "箱根町",
+          "shared_length_m": 1301.8
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "御殿場市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6500.6,
+      "shared_length_km": 6.501,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 6500.6
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "熱海市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 8046.9,
+      "shared_length_km": 8.047,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "湯河原町",
+          "shared_length_m": 8046.9
+        }
+      ]
+    },
+    {
+      "prefecture": "静岡県",
+      "municipality": "裾野市",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 6441.1,
+      "shared_length_km": 6.441,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "箱根町",
+          "shared_length_m": 6441.1
+        }
+      ]
+    }
+  ],
+  "in_target_17_but_not_contacting": [],
+  "contacting_in_gis_but_not_in_target_17": [
+    [
+      "東京都",
+      "檜原村"
+    ]
+  ],
+  "point_contact_only_municipalities": []
+}

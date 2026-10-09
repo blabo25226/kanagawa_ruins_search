@@ -39,8 +39,8 @@ class Phase0ConfigTests(unittest.TestCase):
                 self.assertTrue(source["allowed_domains"])
                 self.assertTrue(fetch.approved_url(source.get("url", source.get("api_url")),
                                                    source["allowed_domains"]))
-                self.assertLessEqual(source["max_bytes"], 30_000_000)
-                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "json", "xml", "pdf"))
+                self.assertLessEqual(source["max_bytes"], 700_000_000)
+                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "json", "xml", "pdf", "pbf"))
             else:
                 self.assertIn(source["mode"], ("manual", "reference_only"))
 
@@ -61,9 +61,11 @@ class Phase0ConfigTests(unittest.TestCase):
         self.assertTrue(fetch.looks_like_format(b'{"type": "FeatureCollection"}', "geojson"))
         self.assertTrue(fetch.looks_like_format(b'<?xml version="1.0"?><osm></osm>', "xml"))
         self.assertTrue(fetch.looks_like_format(b'%PDF-1.4 header', "pdf"))
+        self.assertTrue(fetch.looks_like_format(b"\x00\x00\x00\r\n\tOSMHeader", "pbf"))
         self.assertFalse(fetch.looks_like_format(b"<html>login</html>", "csv"))
         self.assertFalse(fetch.looks_like_format(b"not a zip", "zip"))
         self.assertFalse(fetch.looks_like_format(b"not a pdf", "pdf"))
+        self.assertFalse(fetch.looks_like_format(b"not a pbf", "pbf"))
 
     def test_gitignore_raw(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
@@ -205,6 +207,18 @@ class DownloadSecurityTests(unittest.TestCase):
         ok, msg = fetch.validate_file_integrity(empty_file, "zip")
         self.assertFalse(ok)
         self.assertIn("too small", msg)
+
+        # 4. Valid and invalid PBF
+        valid_pbf = self.dir_path / "test.pbf"
+        valid_pbf.write_bytes(b"\x00\x00\x00\r\n\tOSMHeader\x08\x00" + b"\x00" * 50)
+        ok, _ = fetch.validate_file_integrity(valid_pbf, "pbf")
+        self.assertTrue(ok)
+
+        bad_pbf = self.dir_path / "bad.pbf"
+        bad_pbf.write_bytes(b"garbage without header" + b"\x00" * 50)
+        ok, msg = fetch.validate_file_integrity(bad_pbf, "pbf")
+        self.assertFalse(ok)
+        self.assertIn("OSMHeader", msg)
 
     def test_safe_extract_zip_zip_slip_rejection(self):
         import zipfile
