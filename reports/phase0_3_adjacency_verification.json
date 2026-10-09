@@ -1,6 +1,6 @@
 {
   "verified_at_crs": "EPSG:6677 (JGD2011 / Japan Plane Rectangular CS IX)",
-  "target_17_results": [
+  "target_18_results": [
     {
       "prefecture": "東京都",
       "municipality": "世田谷区",
@@ -58,6 +58,21 @@
         {
           "name": "川崎市",
           "shared_length_m": 16565.7
+        }
+      ]
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "檜原村",
+      "contact_type": "Line Contact (Shared Boundary)",
+      "shared_length_m": 3132.5,
+      "shared_length_km": 3.133,
+      "point_count": 0,
+      "buffer_contact_5m": false,
+      "touching_kanagawa_municipalities": [
+        {
+          "name": "相模原市",
+          "shared_length_m": 3132.5
         }
       ]
     },
@@ -585,12 +600,7 @@
       ]
     }
   ],
-  "in_target_17_but_not_contacting": [],
-  "contacting_in_gis_but_not_in_target_17": [
-    [
-      "東京都",
-      "檜原村"
-    ]
-  ],
+  "in_target_18_but_not_contacting": [],
+  "contacting_in_gis_but_not_in_target_18": [],
   "point_contact_only_municipalities": []
 }

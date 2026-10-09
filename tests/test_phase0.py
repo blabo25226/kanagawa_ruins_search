@@ -243,6 +243,60 @@ class DownloadSecurityTests(unittest.TestCase):
             fetch.safe_extract_zip(bomb_zip_path, dest_dir, max_bytes=1000)
         self.assertIn("Zip Bomb protection", str(ctx.exception))
 
+    def test_safe_extract_zip_symlink_rejection(self):
+        import zipfile
+        symlink_zip_path = self.dir_path / "symlink.zip"
+        with zipfile.ZipFile(symlink_zip_path, 'w') as zf:
+            zi = zipfile.ZipInfo("symlink_entry")
+            zi.external_attr = 0o120777 << 16  # S_IFLNK
+            zf.writestr(zi, "/etc/passwd")
+
+        dest_dir = self.dir_path / "symlink_dest"
+        with self.assertRaises(fetch.DownloadError) as ctx:
+            fetch.safe_extract_zip(symlink_zip_path, dest_dir)
+        self.assertIn("Symlink rejected", str(ctx.exception))
+
+    def test_osm_pbf_structure_and_header_reading(self):
+        """Test low-overhead OSM PBF header validation and binary block parsing."""
+        import struct
+        header_type = b"OSMHeader"
+        blob_header = b"\n\t" + header_type + b"\x18\x20"
+        header_len = len(blob_header)
+        blob_content = b"\x78\x9c" + b"\x00" * 30
+        pbf_data = struct.pack(">I", header_len) + blob_header + blob_content
+
+        pbf_path = self.dir_path / "synthetic.osm.pbf"
+        pbf_path.write_bytes(pbf_data)
+
+        # 1. Format integrity validation
+        ok, msg = fetch.validate_file_integrity(pbf_path, "pbf")
+        self.assertTrue(ok, msg)
+
+        # 2. Block header verification
+        with pbf_path.open("rb") as f:
+            h_len = struct.unpack(">I", f.read(4))[0]
+            self.assertEqual(h_len, header_len)
+            b_hdr = f.read(h_len)
+            self.assertIn(b"OSMHeader", b_hdr)
+
+    def test_databank_osm_pbf_live_header(self):
+        """Verify actual databank PBF header structure without full-file read latency."""
+        import struct
+        try:
+            root = storage_utils.get_verified_data_root()
+        except Exception:
+            self.skipTest("Data root is not mounted or verified")
+
+        pbf_path = root / "raw/osm/kanto-latest.osm.pbf"
+        if not pbf_path.exists():
+            self.skipTest("kanto-latest.osm.pbf not yet present in databank")
+
+        with pbf_path.open("rb") as f:
+            h_len = struct.unpack(">I", f.read(4))[0]
+            self.assertTrue(10 <= h_len <= 1024, f"Unexpected header len {h_len}")
+            b_hdr = f.read(h_len)
+            self.assertIn(b"OSMHeader", b_hdr)
+
 
 if __name__ == "__main__":
     unittest.main()

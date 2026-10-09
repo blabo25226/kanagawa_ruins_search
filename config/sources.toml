@@ -468,17 +468,73 @@ allowed_domains = ["nlftp.mlit.go.jp"]
 
 [[source]]
 id = "mlit_cultural_properties_nationwide"
-title = "国土数値情報: 都道府県指定文化財 P32 全国 (Phase 0.3)"
+title = "国土数値情報: 都道府県指定文化財 P32 全国44道府県一括 (Phase 0.3)"
 mode = "direct"
 dest_dir = "raw/cultural_properties"
 url = "https://nlftp.mlit.go.jp/ksj/gml/data/P32/P32-14/P32-14_00_GML.zip"
 source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P32.html"
-license_note = "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）; ※東京都・奈良県・大分県は仕様上未収録"
 license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
 expected_format = "zip"
 filename = "P32-14_00_GML.zip"
 max_bytes = 10000000
 allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_cultural_properties_kanagawa"
+title = "国土数値情報: 都道府県指定文化財 P32 神奈川県単独"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/P32/P32-14/P32-14_14_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P32.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "P32-14_14_GML.zip"
+max_bytes = 1000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_cultural_properties_yamanashi"
+title = "国土数値情報: 都道府県指定文化財 P32 山梨県単独"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/P32/P32-14/P32-14_19_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P32.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "P32-14_19_GML.zip"
+max_bytes = 1000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "mlit_cultural_properties_shizuoka"
+title = "国土数値情報: 都道府県指定文化財 P32 静岡県単独"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://nlftp.mlit.go.jp/ksj/gml/data/P32/P32-14/P32-14_22_GML.zip"
+source_page = "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P32.html"
+license_note = "国土数値情報利用規約（CC BY 4.0互換）"
+license_url = "https://nlftp.mlit.go.jp/ksj/other/kiyaku.html"
+expected_format = "zip"
+filename = "P32-14_22_GML.zip"
+max_bytes = 1000000
+allowed_domains = ["nlftp.mlit.go.jp"]
+
+[[source]]
+id = "tokyo_cultural_properties"
+title = "東京都教育庁: 東京都指定史跡データ一覧 CSV"
+mode = "direct"
+dest_dir = "raw/cultural_properties"
+url = "https://www.opendata.metro.tokyo.lg.jp/kyouiku/130001culturalproperty.csv"
+source_page = "https://catalog.data.metro.tokyo.lg.jp/dataset/t000021d0000000005"
+license_note = "東京都オープンデータ（CC BY 4.0準拠）; P32未収録の東京都分補完"
+license_url = "https://catalog.data.metro.tokyo.lg.jp/"
+expected_format = "csv"
+filename = "130001culturalproperty.csv"
+max_bytes = 500000
+allowed_domains = ["www.opendata.metro.tokyo.lg.jp"]
 
 [[source]]
 id = "geofabrik_kanto"

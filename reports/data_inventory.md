@@ -1,9 +1,10 @@
 # Phase 0.3 データ取得状況・ソース台帳
 
-- 確認日時（JST）：2026-10-10 01:15 JST
+- 確認日時（JST）：2026-10-10 01:45 JST
 - 生データ正規保存先：Google Drive上の `kanagawa_ruins_search_databank/data/`（環境変数 `RUINS_DATA_ROOT`）
 - 参照した主な利用規約・案内URL：
   - 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/kiyaku.html`
+  - 東京都オープンデータ利用規約: `https://catalog.data.metro.tokyo.lg.jp/`
   - OpenStreetMap 利用規約 (ODbL): `https://www.openstreetmap.org/copyright`
   - Geofabrik 利用案内: `https://download.geofabrik.de/`
   - 国土地理院コンテンツ利用規約: `https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html`
@@ -21,7 +22,7 @@
 
 | ソースID | 格納パス (Google Drive相対) | 容量 (bytes) | 形式 | SHA-256 (先頭16桁) | ライセンス・利用条件 | 概要・対象地域 |
 |:---|:---|---:|:---|:---|:---|:---|
-| `gsi_jusho_midori` | `raw/administrative/14151.zip` | 1,672,520 | ZIP | `a72352712494a1c5` | 国土地理院 (CC BY 4.0互換) | 相模原市緑区 住居表示住所（市街地番地参照用） |
+| `gsi_jusho_midori` | `raw/administrative/gsi_jusho_midori/14151.zip` | 1,672,520 | ZIP | `a72352712494a1c5` | 国土地理院 (CC BY 4.0互換) | 相模原市緑区 住居表示住所（市街地番地参照用） |
 | `mlit_n03_2026_kanagawa` | `raw/administrative/N03-20260101_14_GML.zip` | 5,370,610 | ZIP | `27ab5aa2982fc6fe` | 国土数値情報 (CC BY 4.0互換) | 神奈川県全域 最新行政区域ポリゴン (2026年) |
 | `mlit_n03_2026_tokyo` | `raw/administrative/N03-20260101_13_GML.zip` | 13,153,227 | ZIP | `94f10b26256566db` | 国土数値情報 (CC BY 4.0互換) | 東京都全域 最新行政区域ポリゴン (2026年) |
 | `mlit_n03_2026_yamanashi`| `raw/administrative/N03-20260101_19_GML.zip` | 3,642,283 | ZIP | `ecb815857ced4ef4` | 国土数値情報 (CC BY 4.0互換) | 山梨県全域 最新行政区域ポリゴン (2026年) |
@@ -38,7 +39,11 @@
 | `mlit_rivers_yamanashi` | `raw/rivers/W05-08_19_GML.zip` | 3,911,147 | ZIP | `d73f3fcf9e47dbc5` | 国土数値情報 (CC BY 4.0互換) | 山梨県 河川流路ポリライン (2008) |
 | `mlit_rivers_shizuoka` | `raw/rivers/W05-08_22_GML.zip` | 6,786,401 | ZIP | `c293f5ff4f183f13` | 国土数値情報 (CC BY 4.0互換) | 静岡県 河川流路ポリライン (2008) |
 | `mlit_railways_2023` | `raw/railways/N02-23_GML.zip` | 17,518,918 | ZIP | `e91ecdee90966877` | 国土数値情報 (CC BY 4.0互換) | 全国 鉄道・路線・駅データ (2023) |
-| `mlit_cultural_nationwide`| `raw/cultural_properties/P32-14_00_GML.zip` | 2,032,153 | ZIP | `debc5f00123ab608` | 国土数値情報 (CC BY 4.0互換) | 全国 都道府県指定文化財データ (2014) |
+| `mlit_cultural_nationwide`| `raw/cultural_properties/P32-14_00_GML.zip` | 2,032,153 | ZIP | `debc5f00123ab608` | 国土数値情報 (CC BY 4.0互換) | 全国44道府県指定文化財データ (2014) |
+| `mlit_cultural_kanagawa` | `raw/cultural_properties/P32-14_14_GML.zip` | 37,598 | ZIP | `032139919ca1fe52` | 国土数値情報 (CC BY 4.0互換) | 神奈川県指定文化財データ (2014) |
+| `mlit_cultural_yamanashi` | `raw/cultural_properties/P32-14_19_GML.zip` | 56,165 | ZIP | `64a2859c35f61091` | 国土数値情報 (CC BY 4.0互換) | 山梨県指定文化財データ (2014) |
+| `mlit_cultural_shizuoka` | `raw/cultural_properties/P32-14_22_GML.zip` | 44,694 | ZIP | `7a3c26fe954a46a1` | 国土数値情報 (CC BY 4.0互換) | 静岡県指定文化財データ (2014) |
+| `tokyo_cultural_properties` | `raw/cultural_properties/130001culturalproperty.csv` | 9,696 | CSV | `be7d9aa6950801dd` | 東京都オープンデータ (CC BY 4.0) | 東京都指定史跡一覧（P32未収録補完） |
 | `geofabrik_kanto` | `raw/osm/kanto-latest.osm.pbf` | 517,645,146 | PBF | `d128943f6cebc6bc` | ODbL 1.0 (Geofabrik) | 関東地方全域 OSM最新抽出（道路・水系・建物・宗教等） |
 | `geofabrik_chubu` | `raw/osm/chubu-latest.osm.pbf` | 511,655,965 | PBF | `14056311e5086850` | ODbL 1.0 (Geofabrik) | 中部地方全域 OSM最新抽出（山梨・静岡等網羅） |
 | `osm_tsukui_core` | `raw/osm/tsukui_core_osm.osm` | 5,834,482 | XML | `8bea6721aefe13b3` | ODbL 1.0 | 旧コア領域 OSMデータ (約2.5万ノード) |
@@ -46,8 +51,7 @@
 | `osm_tsukui_toya` | `raw/osm/tsukui_toya_osm.osm` | 6,241,979 | XML | `b380bc65f6d8a2c8` | ODbL 1.0 | 鳥屋地区網羅 OSMデータ (27,354ノード) |
 | `osm_tsukui_aoyama` | `raw/osm/tsukui_aoyama_osm.osm` | 10,936,667 | XML | `2cee8ec50206676e` | ODbL 1.0 | 青山地区網羅 OSMデータ (47,098ノード) |
 | `osm_tsukui_aonohara` | `raw/osm/tsukui_aonohara_osm.osm` | 6,828,635 | XML | `ed6961c5a73313d5` | ODbL 1.0 | 青野原地区網羅 OSMデータ (29,698ノード) |
-| `osm_4districts_meta` | `raw/osm/tsukui_4districts_metadata.json` | 3,075 | JSON | `b5cd347a34cf4fd6` | 学術調査メタデータ | 4地区のBBOX・地物数統計メタデータ |
-| `sagamihara_cultural` | `raw/cultural_properties/bunkazai.csv` | 210,799 | CSV | `dec1117a21869988` | 相模原市 (CC BY 4.0) | 相模原市文化財一覧（参考データ） |
+| `sagamihara_cultural` | `raw/cultural_properties/sagamihara_cultural_assets/bunkazai.csv` | 210,799 | CSV | `dec1117a21869988` | 相模原市 (CC BY 4.0) | 相模原市文化財一覧（参考データ） |
 | `kanagawa_cultural` | `raw/cultural_properties/kanagawa_bunkazai_mokuroku_r07.pdf` | 5,545,067 | PDF | `b7c5294ec088af04` | 神奈川県 (CC BY 4.0準拠) | 神奈川県指定等文化財目録 令和7年3月版 |
 | `kanagawa_archives_tsukui`| `literature/catalogs/rekishishiryoushozaimokuroku14-4-1.pdf`| 8,153,399 | PDF | `6c8f05077508427d` | 公文書館公開資料 | 歴史資料所在目録 旧津久井郡編 (第14集第4分冊) |
 | `kanagawa_archives_waka` | `literature/catalogs/pdflist_wakayanagi.pdf` | 53,950 | PDF | `e57f983037ed2346` | 公文書館公開資料 | 相模原市若柳村文書 古文書資料群目録 |
@@ -61,18 +65,27 @@
 
 ---
 
-## 2. 先行研究書誌情報（Google Drive `literature/bibliography/`）
+## 2. 初期重複ファイル（非推奨・互換性維持のため残置）
 
-- `references.bib`: P01〜P12のファクトチェック済みBibTeX台帳
-- `references.json`: 構造化メタデータ（研究対象地域・手法・注意点・PDF所蔵状況を含む）
-- `literature_review.md`: 先行研究レビュー
+- `raw/administrative/14151.zip` (1,672,520 bytes): `raw/administrative/gsi_jusho_midori/14151.zip` と同一
+- `raw/cultural_properties/bunkazai.csv` (210,799 bytes): `raw/cultural_properties/sagamihara_cultural_assets/bunkazai.csv` と同一
 
 ---
 
-## 3. ストレージ容量と管理状況
+## 3. 先行研究書誌情報・メタデータ（Google Drive）
+
+- `literature/bibliography/references.bib`: P01〜P12のファクトチェック済みBibTeX台帳
+- `literature/bibliography/references.json`: 構造化メタデータ（研究対象地域・手法・注意点・PDF所蔵状況を含む）
+- `literature/literature_review.md`: 先行研究レビュー
+- `raw/osm/tsukui_4districts_metadata.json`: 4地区OSM抽出メタデータ
+- 各ディレクトリ README (`raw/administrative/`, `raw/historical_maps/`, `raw/osm/`)
+
+---
+
+## 4. ストレージ容量と管理状況
 
 - **Google Drive正規保存先** (`$RUINS_DATA_ROOT`):
-  - 有効データ容量: **1,153.20 MB (1.126 GB)**
-  - 総ファイル数: **50 ファイル**
+  - 有効データ容量: **1,153.35 MB (約 1.126 GB)**
+  - 総ファイル数: **52 ファイル**（台帳記録ダウンロード40件、メタデータ・文書8件、初期重複4件）
 - **ローカルリポジトリ** (`kanagawa_ruins_search`):
-  - 使用容量: **約 1.7 MB**（大容量データ重複保存ゼロ、1GB以内制限完全遵守）
+  - 使用容量: **約 1.7 MB**（1GB以内制限完全遵守）

@@ -18,6 +18,7 @@ from shapely.ops import unary_union
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from storage_utils import get_verified_data_root  # noqa: E402
+from fetch_sources import safe_extract_zip  # noqa: E402
 
 # Ensure PROJ paths are configured cleanly
 proj_dir = '/home/blabo/miniconda3/envs/kanagawa-ruins/share/proj'
@@ -25,7 +26,7 @@ if os.path.isdir(proj_dir):
     os.environ['PROJ_DATA'] = proj_dir
     os.environ['PROJ_LIB'] = proj_dir
 
-TARGET_17 = [
+TARGET_18 = [
     {"pref": "東京都", "name": "八王子市"},
     {"pref": "東京都", "name": "町田市"},
     {"pref": "東京都", "name": "多摩市"},
@@ -34,6 +35,7 @@ TARGET_17 = [
     {"pref": "東京都", "name": "狛江市"},
     {"pref": "東京都", "name": "世田谷区"},
     {"pref": "東京都", "name": "大田区"},
+    {"pref": "東京都", "name": "檜原村"},
     {"pref": "山梨県", "name": "上野原市"},
     {"pref": "山梨県", "name": "道志村"},
     {"pref": "山梨県", "name": "山中湖村"},
@@ -47,14 +49,15 @@ TARGET_17 = [
 
 
 def load_n03_from_zip(zip_path: Path) -> gpd.GeoDataFrame:
-    """Safely extract ZIP archive to temporary directory and load Shapefile into GeoDataFrame."""
+    """Safely extract ZIP archive to temporary directory using safe_extract_zip and load Shapefile."""
     if not zip_path.is_file():
         raise FileNotFoundError(f"N03 archive not found: {zip_path}")
     
     with tempfile.TemporaryDirectory() as tmp_dir:
-        with zipfile.ZipFile(zip_path, 'r') as zf:
-            zf.extractall(tmp_dir)
-        shp_files = list(Path(tmp_dir).glob("*.shp"))
+        extracted = safe_extract_zip(zip_path, Path(tmp_dir), max_bytes=300_000_000)
+        shp_files = [f for f in extracted if f.suffix.lower() == ".shp"]
+        if not shp_files:
+            shp_files = list(Path(tmp_dir).glob("*.shp"))
         if not shp_files:
             raise FileNotFoundError(f"No shapefile found in {zip_path}")
         gdf = gpd.read_file(shp_files[0])
@@ -111,6 +114,10 @@ def run_verification(data_root: Path | None = None) -> dict:
             if geom is None or geom.is_empty:
                 continue
 
+            # Quick envelope rejection to optimize processing
+            if not kanagawa_union.envelope.intersects(geom):
+                continue
+
             # Exact intersection with Kanagawa
             inter = geom.intersection(kanagawa_union)
             
@@ -150,6 +157,8 @@ def run_verification(data_root: Path | None = None) -> dict:
                 for _, kg_row in kanagawa_munis.iterrows():
                     kg_m = kg_row["muni_name"]
                     kg_geom = kg_row.geometry
+                    if not kg_geom.envelope.intersects(geom):
+                        continue
                     kg_inter = geom.intersection(kg_geom)
                     if not kg_inter.is_empty:
                         l = kg_inter.length if kg_inter.geom_type in ("LineString", "MultiLineString", "GeometryCollection") else 0
@@ -169,14 +178,14 @@ def run_verification(data_root: Path | None = None) -> dict:
             if line_length > 0 or point_count > 0 or buffer_contact:
                 contacting_all.append(res)
             
-            # Check if in target 17
-            for t in TARGET_17:
+            # Check if in target 18
+            for t in TARGET_18:
                 if t["pref"] == pref_name and t["name"] == m_name:
                     all_adjacent_results.append(res)
                     break
 
-    # Evaluation against target 17 list
-    target_names = {(t["pref"], t["name"]) for t in TARGET_17}
+    # Evaluation against target 18 list
+    target_names = {(t["pref"], t["name"]) for t in TARGET_18}
     found_target_names = {(r["prefecture"], r["municipality"]) for r in all_adjacent_results}
     all_contacting_names = {(r["prefecture"], r["municipality"]) for r in contacting_all}
 
@@ -186,10 +195,10 @@ def run_verification(data_root: Path | None = None) -> dict:
 
     summary = {
         "verified_at_crs": "EPSG:6677 (JGD2011 / Japan Plane Rectangular CS IX)",
-        "target_17_results": all_adjacent_results,
+        "target_18_results": all_adjacent_results,
         "all_contacting_municipalities_in_gis": contacting_all,
-        "in_target_17_but_not_contacting": list(in_target_not_contacting),
-        "contacting_in_gis_but_not_in_target_17": list(missing_from_target),
+        "in_target_18_but_not_contacting": list(in_target_not_contacting),
+        "contacting_in_gis_but_not_in_target_18": list(missing_from_target),
         "point_contact_only_municipalities": point_only,
     }
 

@@ -170,29 +170,36 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
 
 
 def safe_extract_zip(zip_path: Path, dest_dir: Path, max_bytes: int = 200_000_000) -> list[Path]:
-    """Safely extract a ZIP file guarding against Zip Bomb and directory traversal (Zip Slip)."""
+    """Safely extract a ZIP file guarding against Zip Bomb, directory traversal (Zip Slip), and symlink attacks."""
     import zipfile
-    if not zipfile.is_zipfile(zip_path):
+    import stat
+    if not zip_path.is_file() or not zipfile.is_zipfile(zip_path):
         raise DownloadError(f"Cannot extract non-zip file: {zip_path}")
 
-    dest_dir.resolve().mkdir(parents=True, exist_ok=True)
+    dest_resolved = dest_dir.resolve()
+    dest_resolved.mkdir(parents=True, exist_ok=True)
     extracted_files: list[Path] = []
     total_uncompressed = 0
 
     with zipfile.ZipFile(zip_path, 'r') as zf:
         for member in zf.infolist():
+            # Check symlink attributes
+            mode = member.external_attr >> 16
+            if stat.S_ISLNK(mode):
+                raise DownloadError(f"Symlink rejected for security: member {member.filename}")
+
             total_uncompressed += member.file_size
             if total_uncompressed > max_bytes:
                 raise DownloadError(f"Zip Bomb protection: uncompressed size exceeds limit ({total_uncompressed} > {max_bytes} bytes)")
 
-            # Guard against Zip Slip
-            target_path = (dest_dir / member.filename).resolve()
-            if not str(target_path).startswith(str(dest_dir.resolve())):
+            # Check Zip Slip: path must be strictly within dest_resolved
+            target_path = (dest_resolved / member.filename).resolve()
+            if target_path != dest_resolved and dest_resolved not in target_path.parents:
                 raise DownloadError(f"Zip Slip detected: member {member.filename} escapes destination")
 
-        zf.extractall(dest_dir)
         for member in zf.infolist():
-            extracted_files.append(dest_dir / member.filename)
+            zf.extract(member, dest_resolved)
+            extracted_files.append(dest_resolved / member.filename)
 
     return extracted_files
 
