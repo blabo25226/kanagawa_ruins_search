@@ -40,28 +40,55 @@
     └── templates/               # レビュー提出用テンプレート
 ```
 
+## ストレージ構成とデータ保存ルール
+
+本プロジェクトでは、コードと大容量データを分離管理します。
+
+1. **ローカルPC (`kanagawa_ruins_search`)**:
+   - 保存対象: ソースコード、設定ファイル、エージェント指示書、Markdownレポート、テストコード、小容量ログ
+   - 一時データ容量制限: 原則 **1GB以内**
+2. **Google Driveデータバンク (`kanagawa_ruins_search_databank`)**:
+   - 保存対象: 古地図、航空写真、標高データ、地理空間データ、歴史資料、GIS解析用大容量ファイル、中間生成物
+   - 正規保存先: Google Drive側の `data/` 配下（`raw/`, `processed/`, `provenance.jsonl` など）
+
+### 環境変数 `RUINS_DATA_ROOT` の設定
+
+Google Drive側のデータディレクトリを環境変数 `RUINS_DATA_ROOT` で参照します。パスをコードに直接ハードコードしないでください。
+
+```bash
+# .env ファイルの作成（プロジェクトルート、.gitignore対象）
+cp .env.example .env
+# .env 内にGoogle Driveマウント先を設定
+# 例: RUINS_DATA_ROOT=/home/blabo/gdrive/kanagawa_ruins_search_databank/data
+
+# またはシェルの環境変数としてエクスポート
+export RUINS_DATA_ROOT=/home/blabo/gdrive/kanagawa_ruins_search_databank/data
+```
+
+※Google Driveのマウント状態（`fuse.rclone`等）や読み書き可能性は `python scripts/check_environment.py` で自動検証されます。
+
 ## ローカルで開始（Ubuntu + Conda）
 
 ```bash
-# 1. 空のGitHubリポジトリを作成後、このZIPの内容を配置
-cd kanagawa-ruins-research
-
-# 2. conda-forge によるGIS環境作成
+# 1. 仮想環境の構築 (conda-forge)
 conda env create -f environment.yml
 conda activate kanagawa-ruins
 
-# 3. 環境テスト: 環境とCLIの状態をレポート出力
+# 2. 環境変数設定 (.env作成)
+cp .env.example .env
+
+# 3. 環境テスト: GISライブラリ・CLI・rclone・ストレージマウントの検証
 python scripts/check_environment.py --output reports/environment_check.json
 
-# 4. 外部通信なしのファイル/ルールテスト
+# 4. ユニットテスト
 python -m unittest discover -s tests -v
 
-# 5. 公式取得ソースの一覧と取得予定確認（ネットワーク不要）
+# 5. 公式取得ソースの一覧と取得予定確認（ドライラン）
 python scripts/fetch_sources.py --list
 python scripts/fetch_sources.py --dry-run --all-approved
 
-# 6. firstinstruction.md に従い、利用条件を確認したのち取得を実行
-# python scripts/fetch_sources.py --execute --all-approved
+# 6. 承認済み公式データのGoogle Drive側への取得
+python scripts/fetch_sources.py --execute --all-approved
 ```
 
 `conda`未導入なら環境構築は停止し、導入方法を報告すること。QGISは任意。`qgis_process`の未導入は失敗と扱わない。
@@ -70,11 +97,11 @@ python scripts/fetch_sources.py --dry-run --all-approved
 
 `config/sources.toml`に登録済みの**明示的に許可したデータ資源**のみ自動取得。初期登録は、国土地理院の「住居表示住所（相模原市緑区）」ZIPと、相模原市オープンデータ「文化財一覧」CSV。これらは廃墟候補そのものではなく、取得・出典管理の仕組みを検証するための基礎資料。
 
-- 取得物: `data/raw/<source_id>/`
-- 来歴: `data/provenance.jsonl`（取得日時、URL、SHA-256、バイト数、利用条件参照先等）
+- 取得物: `$RUINS_DATA_ROOT/raw/<source_id>/`（Google Drive上）
+- 来歴: `$RUINS_DATA_ROOT/provenance.jsonl`（取得日時、URL、SHA-256、バイト数、利用条件参照先等）
 - 別途手続きが必要な旧版地形図・基盤地図情報等は**自動取得しない**。
-- 今昔マップの画像をローカル保存する行為は禁止されているため、自動収集しない。
-- Gitには通常データ本体を含めない。出典と検査結果のみ共有する。
+- 今昔マップの画像をローカル/サーバ保存する行為は禁止されているため、自動収集しない。
+- Gitにはデータ本体を含めない。出典と検査結果のみ共有する。
 
 ## フェーズ0の完了条件（すべて確認）
 

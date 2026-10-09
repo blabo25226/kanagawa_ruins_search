@@ -1,68 +1,75 @@
-# GPTレビュー依頼 — Phase 0 完了審査
+# GPTレビュー依頼 — Phase 0 完了審査（Google Driveデータバンク対応版）
 
 ## Git情報
 
-- リポジトリURL：https://github.com/blabo25226/kanagawa_ruins_search.git
-- branch / commit hash：main / 83ae1d72578e36491e87205c84a4e2df97cf539f
+- リポジトリURL：`https://github.com/blabo25226/kanagawa_ruins_search.git`
+- branch / commit hash：main / 856abecc6b6e7cf5d800ac0be5876b480718ded8
 - 直近のpush成否：push実行（成功確認済み）
 
 ## Phase 0で実際に完了した作業
 
-1. **GIS CLIおよびPython実行環境の構築**:
-   - `conda-forge` による独立仮想環境 `kanagawa-ruins` を構築（Python 3.12, GDAL 3.13.3, GeoPandas 1.2.0, Shapely 2.2.0, PyProj 3.8.0, Rasterio 1.5.2, OpenCV 5.0.0）。
-   - `scripts/check_environment.py` による doctor テストを実施し、全17項目 PASS（`reports/environment_check.json` 出力）。
-   - `qgis_process` は指示書規定に基づき任意（OPTIONAL_MISSING）としてスキップ。QGIS Desktop GUIは一切起動せず。
-2. **ユニットテストの実施**:
-   - `python -m unittest discover -s tests -v` を実行し、設定整合性・URL検証・フォーマット検査・gitignoreルールの全5件がPASS。
-3. **データソース利用条件・規約の監査**:
-   - `source.md` および `config/sources.toml` に基づき、国土地理院・相模原市・国土数値情報・今昔マップ等の利用条件を監査。
-   - 今昔マップのローカル保存禁止規定、基盤地図情報のアカウント必須/JGD2024移行、国土数値情報の動的ダウンロード画面（直リンク推測不可）を明確に整理。
-4. **ホワイトリストに基づく承認済み基礎データのダウンロード**:
-   - `scripts/fetch_sources.py` を使用して `gsi_jusho_midori`（ZIP）および `sagamihara_cultural_assets`（CSV）を取得。
-   - ファイルサイズ、SHA-256ハッシュ、基本ヘッダーの整合性を検証し、来歴を `data/provenance.jsonl` に記録。
-5. **セキュリティおよびGit管理外の徹底**:
-   - `data/raw/*` および `data/provenance.jsonl` が `.gitignore` により追跡除外されていることを確認。
+1. **ストレージアーキテクチャの確立とGoogle Driveデータバンク接続**:
+   - コードリポジトリ（ローカルPC: `kanagawa_ruins_search`）と大容量データ（Google Drive: `kanagawa_ruins_search_databank`）を分離管理する構成を確立。
+   - 生データ正規保存先をGoogle Drive側の `data/` とし、環境変数 `RUINS_DATA_ROOT`（`/home/blabo/gdrive/kanagawa_ruins_search_databank/data`）による動的解決を実装（パスの直接ハードコードを完全排除）。
+   - `.env` および `.env.example` の設定環境を整備。
+   - `fuse.rclone` によるGoogle Driveマウント状態および読み書き権限を自動検証。
+   - ローカルPCのストレージ容量制限（一時データ1GB以内）を遵守し、ローカル生データの重複保存を排除（ローカル使用量: 約904KB、Google Drive使用量: 約1.8MB）。
+2. **GIS CLI・Python実行環境の構築と検証**:
+   - `conda-forge` による独立仮想環境 `kanagawa-ruins` を構築（Python 3.12, GDAL 3.13.3, GeoPandas 1.2.0, Shapely 2.2.0, PyProj 3.8.0, Rasterio 1.5.2, OpenCV 5.0.0, rclone v1.60.1-DEV）。
+   - `scripts/check_environment.py` による doctor スモークテストを実施し、全項目 PASS（`reports/environment_check.json` 出力）。
+   - QGIS Desktop GUIは一切起動せず、CLIファースト要件を遵守。
+3. **ユニットテストの実施**:
+   - `python -m unittest discover -s tests -v` を実行し、全5件合格。
+4. **データソース利用条件・規約の包括的監査**:
+   - 国土地理院（住居表示、基盤地図情報、空中写真・旧版図、地理院タイル）、国土交通省（国土数値情報N03）、相模原市オープンデータ（文化財一覧、WebGIS）、神奈川県オープンデータカタログ、農研機構（迅速測図）、今昔マップ（画像保存禁止規定）、国立国会図書館デジタルコレクションの利用条件・ライセンス・容量・取得方法を調査・整理（[`source.md`](file:///home/blabo/kanagawa_ruins_search/source.md) および [`reports/data_inventory.md`](file:///home/blabo/kanagawa_ruins_search/reports/data_inventory.md)）。
+5. **ホワイトリスト承認済みデータのGoogle Driveへの正規取得**:
+   - `scripts/fetch_sources.py` を改修し、Google Drive側の `$RUINS_DATA_ROOT/raw/` 配下に直接取得・整合性検査（SHA-256、ヘッダー、サイズ）を実施。
+   - `gsi_jusho_midori` (1.67MB ZIP) および `sagamihara_cultural_assets` (210KB CSV) を保存し、来歴を `$RUINS_DATA_ROOT/provenance.jsonl` に記録。
 6. **レポート類の整備**:
-   - `reports/setup_report.md`
-   - `reports/data_inventory.md`
-   - `reports/review_request.md`
-   - `reports/environment_check.json`
+   - [`reports/setup_report.md`](file:///home/blabo/kanagawa_ruins_search/reports/setup_report.md)
+   - [`reports/data_inventory.md`](file:///home/blabo/kanagawa_ruins_search/reports/data_inventory.md)
+   - [`reports/environment_check.json`](file:///home/blabo/kanagawa_ruins_search/reports/environment_check.json)
+   - [`reports/review_request.md`](file:///home/blabo/kanagawa_ruins_search/reports/review_request.md)
 
 ## 検証結果
 
-- doctor：PASS (`PHASE 0 GIS DOCTOR: PASS` / 合成CRS変換・ラスターI/O・OpenCVすべて正常)
+- doctor：PASS (`PHASE 0 GIS DOCTOR: PASS` / GDAL CLI, rclone, Google Driveマウント/読み書き, 合成CRS変換・ラスターI/O・OpenCVすべて正常)
 - unittest：PASS (`Ran 5 tests in 0.001s OK`)
 - git diff --check：PASS（余計な空白・改行エラーなし）
-- セキュリティ / 生データの追跡確認：PASS（`git status` にて `data/raw` およびバイナリ、認証情報の混入がないことを確認）
+- セキュリティ / 生データの追跡確認：PASS（生データ実体、Google Drive大容量データ、および認証情報の混入なし）
 
 ## 読んでほしいファイル
 
-- `README.md`
-- `firstinstruction.md`
-- `source.md`
-- `config/sources.toml`
-- `reports/setup_report.md`
-- `reports/data_inventory.md`
-- `reports/environment_check.json`
-- `scripts/check_environment.py`
-- `scripts/fetch_sources.py`
-- `tests/test_phase0.py`
+- [`README.md`](file:///home/blabo/kanagawa_ruins_search/README.md)
+- [`firstinstruction.md`](file:///home/blabo/kanagawa_ruins_search/firstinstruction.md)
+- [`source.md`](file:///home/blabo/kanagawa_ruins_search/source.md)
+- [`.env.example`](file:///home/blabo/kanagawa_ruins_search/.env.example)
+- [`config/sources.toml`](file:///home/blabo/kanagawa_ruins_search/config/sources.toml)
+- [`reports/setup_report.md`](file:///home/blabo/kanagawa_ruins_search/reports/setup_report.md)
+- [`reports/data_inventory.md`](file:///home/blabo/kanagawa_ruins_search/reports/data_inventory.md)
+- [`reports/environment_check.json`](file:///home/blabo/kanagawa_ruins_search/reports/environment_check.json)
+- [`scripts/check_environment.py`](file:///home/blabo/kanagawa_ruins_search/scripts/check_environment.py)
+- [`scripts/fetch_sources.py`](file:///home/blabo/kanagawa_ruins_search/scripts/fetch_sources.py)
+- [`tests/test_phase0.py`](file:///home/blabo/kanagawa_ruins_search/tests/test_phase0.py)
+- [`agent/rules/10-source-legality.md`](file:///home/blabo/kanagawa_ruins_search/agent/rules/10-source-legality.md)
+- [`agent/rules/20-gis-cli.md`](file:///home/blabo/kanagawa_ruins_search/agent/rules/20-gis-cli.md)
 
 ## GPTに判断してほしいこと
 
-1. **公開データの信頼性・利用条件の漏れ**:
-   - 国土地理院住居表示住所（相模原市緑区）のe-GovカタログURLが404となっており、国土地理院本サイト（公共データ利用規約1.0/CC BY 4.0互換）を参照した点について妥当か。
-   - 相模原市文化財一覧CSV（CC BY 4.0）および住居表示住所データを用いて、Phase 1以降の既知史跡除外マスクや地名参照を行う方針に問題はないか。
-2. **GIS環境の過不足とCRS設計**:
-   - 今後扱う国土数値情報（JGD2011）、国土地理院基盤地図情報（2026年移行分はJGD2024）、住居表示データ（JGD2000/2011）の混在に対し、分析時の統一CRS（例: 平面直角座標系第IX系 JGD2011 / EPSG:6677）への変換パイプラインの設計方針。
-3. **Phase 1の最小実験範囲と判定指標**:
-   - パイロット対象地域として「相模原市緑区（旧津久井町・青野原・青山等）」を選定し、明治期の迅速測図や旧版地形図と現代地図の差分から廃神社・廃寺・廃道候補の小規模PoCを行う手順の妥当性。
-   - 誤検出（現役神社、一般民家、現役林道等）を最小化するための除外ルール（文化財台帳、住居表示、現役道路網等との照合）の十分性。
-4. **廃神社以外への拡張の順番**:
-   - 廃神社 → 廃寺 → 廃村・集落跡 → 廃道 → 放置建造物の順で進める検討順序の妥当性。
-   - 宗教施設・脆弱な文化財・私有地・危険箇所に対する安全・倫理配慮（座標公開時の一般化等）の運用方針。
+1. **ストレージ構成とデータ管理方針**:
+   - Google Drive上の `kanagawa_ruins_search_databank/data/` を環境変数 `RUINS_DATA_ROOT` で参照し、ローカルPCに生データ・大容量データを置かない（1GB制限）設計が適切か。
+   - rclone FUSEマウントの検出・読み書き検証ロジックおよび上書き防止機構の安全性。
+2. **公式データの選定と利用条件**:
+   - 住居表示住所（国土地理院）および文化財一覧（相模原市）を既知史跡・現役建造物の除外マスクとして使用する方針の妥当性。
+   - 今昔マップ（画像PC保存禁止）の閲覧専用方針、国土地理院基盤地図情報（アカウント必須/JGD2024移行）の保留判断の妥当性。
+   - 神奈川県オープンデータカタログおよび国立国会図書館デジタルコレクション（津久井郡誌等の地誌史料）のPhase 1での活用順序。
+3. **GIS環境とCRS設計**:
+   - JGD2000/2011/2024が混在する複数データに対し、相模原市緑区を対象とした分析統一CRSとして平面直角座標系第IX系（JGD2011 / EPSG:6677）を採用する設計方針の妥当性。
+4. **Phase 1の最小実験範囲と判定指標**:
+   - 初期対象地域（相模原市緑区 旧津久井地域: 青野原・青山・鳥屋・寸沢嵐）における小規模PoCの進め方。
+   - 廃神社 → 廃寺 → 廃村・集落跡 → 廃道 → 放置建造物の順に進める調査順序と倫理的配慮。
 
 ## 未実施・保留事項
 
-- **Phase 1の実解析（差分抽出、画像認識、座標算出、ランキング、現地調査計画等）は一切着手していない。**
+- **Phase 1の実解析（廃墟候補抽出、地図記号認識、自動位置合わせ、座標生成、ランキング、現地調査計画等）は一切着手していない。**
 - レビュー結果と次フェーズ承認を待ってから作業を再開する。

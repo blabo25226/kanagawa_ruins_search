@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 0: check GIS packages and CLI using synthetic test data only."""
+"""Phase 0: check GIS packages, CLI, and Google Drive storage using synthetic test data only."""
 import argparse
 from datetime import datetime, timezone
 import importlib
@@ -11,10 +11,27 @@ import shutil
 import subprocess
 import sys
 
+ROOT = Path(__file__).resolve().parents[1]
+
 MODULES = {'numpy': True, 'pandas': True, 'geopandas': True, 'shapely': True,
            'pyproj': True, 'rasterio': True, 'osgeo.gdal': True, 'cv2': True,
            'folium': False, 'matplotlib': False}
-CLI = {'gdalinfo': True, 'ogrinfo': True, 'gdalwarp': True, 'qgis_process': False}
+CLI = {'gdalinfo': True, 'ogrinfo': True, 'gdalwarp': True, 'rclone': True, 'qgis_process': False}
+
+
+def load_env_var(name: str) -> str | None:
+    val = os.environ.get(name)
+    if val:
+        return val
+    env_file = ROOT / '.env'
+    if env_file.is_file():
+        for line in env_file.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                if k.strip() == name:
+                    return v.strip().strip('"').strip("'")
+    return None
 
 
 def test_module(name, required):
@@ -40,6 +57,76 @@ def test_cli(name, required):
                     path=path, exit_code=p.returncode, version=(output[0] if output else '')[:200])
     except Exception as e:
         return dict(name=name, required=required, status='FAIL', detail=repr(e))
+
+
+def test_storage():
+    results = []
+    data_root_str = load_env_var('RUINS_DATA_ROOT')
+    if not data_root_str:
+        return [dict(name='ruins_data_root_configured', required=True, status='FAIL',
+                     detail='RUINS_DATA_ROOT not found in environment or .env')]
+
+    data_root = Path(data_root_str).expanduser().resolve()
+    results.append(dict(name='ruins_data_root_configured', required=True, status='PASS',
+                        configured_path=str(data_root)))
+
+    # Directory existence
+    if not data_root.is_dir():
+        results.append(dict(name='ruins_data_root_exists', required=True, status='FAIL',
+                            detail=f'Path does not exist: {data_root}'))
+        return results
+    results.append(dict(name='ruins_data_root_exists', required=True, status='PASS'))
+
+    # Check mount status (Google Drive FUSE / rclone)
+    is_mounted = False
+    mount_entry = ''
+    try:
+        proc_mounts = Path('/proc/mounts')
+        if proc_mounts.is_file():
+            mounts_content = proc_mounts.read_text(encoding='utf-8')
+            for line in mounts_content.splitlines():
+                parts = line.split()
+                if len(parts) >= 3:
+                    mp = parts[1]
+                    fstype = parts[2]
+                    if str(data_root).startswith(mp) and mp != '/' and ('rclone' in fstype or 'fuse' in fstype or 'google' in parts[0].lower() or 'gdrive' in parts[0].lower()):
+                        is_mounted = True
+                        mount_entry = f"{parts[0]} on {mp} ({fstype})"
+                        break
+    except Exception as e:
+        mount_entry = repr(e)
+
+    results.append(dict(name='gdrive_mounted', required=True,
+                        status='PASS' if is_mounted else 'FAIL',
+                        mount_info=mount_entry))
+
+    # Read/write access test
+    test_file = data_root / '.ruins_probe_tmp'
+    try:
+        test_file.write_text('probe_ok\n', encoding='utf-8')
+        content = test_file.read_text(encoding='utf-8').strip()
+        assert content == 'probe_ok'
+        test_file.unlink()
+        results.append(dict(name='storage_read_write', required=True, status='PASS'))
+    except Exception as e:
+        if test_file.exists():
+            try:
+                test_file.unlink()
+            except Exception:
+                pass
+        results.append(dict(name='storage_read_write', required=True, status='FAIL', detail=repr(e)))
+
+    # Disk usage
+    try:
+        local_usage = shutil.disk_usage(ROOT)
+        gdrive_usage = shutil.disk_usage(data_root)
+        results.append(dict(name='storage_capacity', required=False, status='PASS',
+                            local_free_bytes=local_usage.free,
+                            gdrive_free_bytes=gdrive_usage.free))
+    except Exception:
+        pass
+
+    return results
 
 
 def smoke():
@@ -85,13 +172,15 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--output', default='reports/environment_check.json')
     args = ap.parse_args()
+    storage_results = test_storage()
     report = {'phase': 0, 'timestamp_utc': datetime.now(timezone.utc).isoformat(),
               'host': {'platform': platform.platform(), 'python': sys.version.split()[0],
                        'executable': sys.executable, 'conda_prefix': os.environ.get('CONDA_PREFIX')},
               'modules': [test_module(n, req) for n, req in MODULES.items()],
               'cli': [test_cli(n, req) for n, req in CLI.items()],
+              'storage': storage_results,
               'smoke_tests': smoke()}
-    report['required_failures'] = [item['name'] for group in ('modules', 'cli', 'smoke_tests')
+    report['required_failures'] = [item['name'] for group in ('modules', 'cli', 'storage', 'smoke_tests')
                                    for item in report[group]
                                    if item['status'] == 'FAIL' and item.get('required', True)]
     report['overall'] = 'PASS' if not report['required_failures'] else 'FAIL'
@@ -99,9 +188,11 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('PHASE 0 GIS DOCTOR:', report['overall'])
-    for group in ('modules', 'cli', 'smoke_tests'):
+    for group in ('modules', 'cli', 'storage', 'smoke_tests'):
+        print(f"[{group.upper()}]")
         for item in report[group]:
-            print(f"  {item['name']:<22} {item['status']} {item.get('version', '')}")
+            extra = item.get('version', '') or item.get('mount_info', '') or item.get('configured_path', '')
+            print(f"  {item['name']:<28} {item['status']} {extra}")
     print('Report:', path)
     return 1 if report['required_failures'] else 0
 

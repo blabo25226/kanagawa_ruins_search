@@ -1,41 +1,45 @@
-# 公式・歴史地理データソース台帳（2026-10-09確認）
+# 公式・歴史地理データソース台帳（2026-10-09更新）
 
-目的: 入手先の検討・利用条件の記録。**出典の掲載≠自動収集の許可**。ここにあるURLを網羅的にスクレイピングしない。自動取得の対象は`config/sources.toml`で限定する。
+目的: 入手先の検討・利用条件の記録。**出典の掲載≠自動収集の許可**。ここにあるURLを網羅的にスクレイピングしない。
+自動取得の対象は `config/sources.toml` で限定し、ダウンロードデータはすべて Google Drive 上の `$RUINS_DATA_ROOT`（`kanagawa_ruins_search_databank/data/`）へ保存する。
 
-| ID | データ・提供者 | URL | 取得・用途 | 注意 |
-|---|---|---|---|---|
-| MLIT-N03 | 国土交通省 国土数値情報 行政区域 N03（2026） | https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html | 神奈川県2026 ZIP（`N03-20260101_14_GML.zip`、約5.12 MB）、行政区画の基礎。GeoJSON等の形式あり | CC BY 4.0。Web画面から取得；リンクを憶測して組み立てない。2026版はJGD2011表記。 |
-| GSI-JUSHO | 国土地理院 住居表示住所 相模原市緑区 | https://data.e-gov.go.jp/data/dataset/mlit_20140919_3060/resource/b79eca7e-b47f-4bf7-9fd3-bed540d4c6f1?inner_span=True | 公開ZIP（`https://saigai.gsi.go.jp/jusho/download/data/14151.zip`）を少量取得して検証 | e-Govカタログに政府標準利用規約2.0と記載。住所データは神社跡の実在証明ではない。 |
-| SAGAMIHARA-CULTURAL | 相模原市オープンデータ 文化財一覧 | https://opendata.city.sagamihara.kanagawa.jp/ne/dataset/bunkazai | 公開CSVを基礎資料として取得（CKAN resource_showで正規URLを取得） | 市公式は原則 CC BY 4.0と説明。リソース別表記との相違は記録し再配布時再確認。収録対象は指定・登録等の文化財であり廃墟の網羅データではない。 |
-| GSI-HISTORY | 国土地理院 地図・空中写真閲覧サービス | https://service.gsi.go.jp/map-photos/app/ | 旧版地形図の索引と過去航空写真の存在・年代を確認 | 高画質閲覧の画面キャプチャ禁止。必要な画像は正式な交付・提供手続き。登録・購入が必要な場合あり。 |
-| GSI-OLDMAP | 国土地理院 旧版地図等の交付 | https://web1.gsi.go.jp/MAP/HISTORY/koufu.html | 旧版図の取得手順を確認 | 交付・閲覧条件を満たして入手。自動スクレイピング不可。 |
-| GSI-FGD | 国土地理院 基盤地図情報 基本項目・DEM | https://service.gsi.go.jp/kiban/ | 境界・道路縁・数値標高モデル | 無料だが利用者登録必須。2026-07-31以降の提供はJGD2024へ移行。ユーザー側で取得。 |
-| GSI-TILES | 国土地理院 地理院タイル | https://maps.gsi.go.jp/help/use.html | リアルタイム表示用の背景図、地形参考 | タイルごとに条件が異なる。広域連続DLをしない。測量成果に該当する場合は申請要否を確認。 |
-| NARO-OLD | 農研機構 歴史的農業環境閲覧システム（迅速測図） | https://habs.rad.naro.go.jp/ | 明治の地図との比較。関東の一部のみ | 原則 CC BY 2.1 JPと案内。地域カバーと測量精度を要確認（100m程度の誤差例）。タイル一括取得はしない。 |
-| NARO-FAQ | 農研機構 利用条件FAQ | https://habs.rad.naro.go.jp/habs_faq.html | 出典表記、精度、ダウンロード可能なデータの確認 | 必ず個別条件確認。 |
-| KONJAKU | 今昔マップ on the web | https://ktgis.net/kjmapw/ | ブラウザでの歴史地形図比較 | **画像ファイル自体をPC・サーバに保存する使用は禁止**。自動DLしない。規約: https://ktgis.net/kjmapw/note.html |
-| SAGAMIHARA-GIS | さがみはら地図情報（Web公開型GIS） | https://www.city.sagamihara.kanagawa.jp/shisei/1026823/1004480/1026832/1024999.html | 地形図・埋蔵文化財包蔵地の参考 | 津久井地域の一部でデータ提供対象外あり。閲覧サイトはDL APIとみなさない。 |
-| SAGAMIHARA-OPEN | 相模原市オープンデータ案内 | https://www.city.sagamihara.kanagawa.jp/shisei/toukei/opendata/index.html | 市CSVの利用条件確認 | 市案内は CC BY 4.0、取得の際に最新規約を確認。 |
+---
 
-## Phase 0の取得優先度
+## 優先公式データソース一覧（10項目整理）
 
-1. **取得を自動化可能**: `GSI-JUSHO` ZIPおよび`SAGAMIHARA-CULTURAL` CSV（正規のAPIでURLを確認して取得）。
-2. **ブラウザから利用者が取得**: `MLIT-N03` 神奈川県単位の2026版（行政境界・座標系の記録を重視）。
-3. **登録・購入等を確認**: `GSI-FGD`、`GSI-HISTORY`。エージェントは登録・購入を代行しない。
-4. **比較閲覧のみ**: `KONJAKU`、`NARO-OLD`、`SAGAMIHARA-GIS`。利用条件を守る。
+| ID | データ名 | 提供元 | URL | 対象地域 | 対象年代 | データ形式 | ライセンス・利用条件 | 推定容量 | ダウンロード方法 | 実施状況 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `GSI-JUSHO` | 住居表示住所（相模原市緑区） | 国土地理院 | `https://saigai.gsi.go.jp/jusho/download/data/14151.zip` (案内: `https://www.gsi.go.jp/kihonjohochousa/jukyo_jusho.html`) | 相模原市緑区 (14151) | 現代 (2025年版) | ZIP (CSV + Shapefile: shp, shx, dbf, prj, cpg) | 国土地理院コンテンツ利用規約（公共データ利用規約1.0/政府標準利用規約2.0準拠、CC BY 4.0互換）。出典明記・加工表示要。 | 1.67 MB (展開後約26.2 MB) | HTTPS直接ダウンロード（自動化） | **取得済み**（Google Drive `raw/gsi_jusho_midori/14151.zip` に保存、ハッシュ検証済） |
+| `SAGAMIHARA-CULTURAL` | 文化財一覧 CSV | 相模原市 | `https://opendata.city.sagamihara.kanagawa.jp/ne/dataset/bunkazai` (API: `.../api/3/action/resource_show?id=6247d67b-51a9-403e-8b63-6c2aa291e832`) | 相模原市全域（緑区含む） | 現代（指定文化財台帳） | CSV (UTF-8 with BOM) | 相模原市オープンデータ利用規約（CC BY 4.0）。出典明記で二次利用・商用利用可能。 | 約 210 KB | CKAN API経由で正規URL取得後HTTPSダウンロード（自動化） | **取得済み**（Google Drive `raw/sagamihara_cultural_assets/bunkazai.csv` に保存、ハッシュ検証済） |
+| `MLIT-N03` | 国土数値情報 行政区域 N03 (2026年版) | 国土交通省 | `https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html` | 神奈川県 (14) | 2026年 (令和8年) | ZIP (GML/Shapefile/GeoJSON, `N03-20260101_14_GML.zip`) | 国土数値情報利用規約（CC BY 4.0）。出典明記要。2026年版はJGD2011表記。 | 約 5.12 MB | Webダウンロード画面（JavaScript `DownLd`関数・規約同意UI）経由。直リンク推測不可。 | **保留（未取得）**：手動ブラウザ取得案内。 |
+| `GSI-FGD` | 基盤地図情報（基本項目・DEM） | 国土地理院 | `https://service.gsi.go.jp/kiban/` | 神奈川県全域 / 相模原市緑区周辺 | 現代 (2026年更新等) | XML / GML / DEM (GeoTIFF等変換可) | 基盤地図情報利用規約。無料だが**利用者登録（アカウント認証）が必須**。2026-07-31以降提供分はJGD2024へ移行。 | 数十MB〜数百MB（メッシュ単位） | Webポータルよりログインしてダウンロード。 | **保留（未取得）**：エージェントによる無断登録・認証回避は禁止。利用者による取得手続き待ち。 |
+| `GSI-HISTORY` | 地図・空中写真閲覧サービス | 国土地理院 | `https://service.gsi.go.jp/map-photos/app/` | 日本全国（旧津久井地域含む） | 明治〜昭和〜現代 | Webタイル画像 / 高精細画像 | 国土地理院コンテンツ利用規約等。**高画質閲覧画面のキャプチャ保存・一括スクレイピングは厳禁**。正式交付・購入要。 | メディア・図幅単位 | Web閲覧 / 正式な交付申請・購入手続き。 | **保留（閲覧・索引確認のみ）**：調査対象地絞り込み後に必要図幅の交付手続きを検討。 |
+| `GSI-OLDMAP` | 旧版地図等の交付 | 国土地理院 | `https://web1.gsi.go.jp/MAP/HISTORY/koufu.html` | 神奈川県内各図幅 | 明治・大正・昭和 | TIFF / 印刷物等 | 測量成果の交付手続き・規約。申請・手数料が必要な場合あり。 | 図幅あたり数十MB | 交付申請手続き（謄本交付等）。 | **保留（未取得）**：Phase 0では手続きを行わない。 |
+| `GSI-TILES` | 地理院タイル（標準地図・淡色・陰影起伏等） | 国土地理院 | `https://maps.gsi.go.jp/help/use.html` | 日本全国 | 現代 | ラスタタイル (PNG/JPEG), ベクトルタイル | 地理院タイル利用規約。広域一括・連続ダウンロード禁止。背景表示等に利用。 | タイル単位（数十KB） | オンライン参照（リアルタイム表示）。 | **参照のみ**：一括ダウンロードは行わない。 |
+| `NARO-OLD` | 歴史的農業環境閲覧システム（迅速測図） | 農研機構 | `https://habs.rad.naro.go.jp/` | 関東平野周辺（神奈川県東部・北部一部） | 明治初期 (1880年代) | Webマップ / 一部GeoTIFF | 原則 CC BY 2.1 JP（FAQ参照: `https://habs.rad.naro.go.jp/habs_faq.html`）。タイル一括取得禁止。約100mの測量誤差留意。 | 数百MB（広域の場合） | Web閲覧 / 公開GeoTIFFの個別確認。 | **保留（閲覧・対象範囲確認のみ）**：相模原市緑区山間部のカバー状況を要確認。 |
+| `KANAGAWA-CATALOG` | 神奈川県オープンデータカタログサイト | 神奈川県 | `https://catalog.opendata.pref.kanagawa.jp/` | 神奈川県全域 | 現代 | CSV, JSON, GeoJSON 等 | 神奈川県オープンデータ利用規約（原則 CC BY 4.0）。無償・商用利用可、出典明記要。 | データセットにより数百KB〜数十MB | ポータル検索・CKAN API / 直接ダウンロード | **未取得（調査済み）**：県全域の無差別DLは避け、緑区・歴史関連データに限定して選定。 |
+| `SAGAMIHARA-GIS` | さがみはら地図情報（Web公開型GIS） | 相模原市 | `https://www.city.sagamihara.kanagawa.jp/shisei/1026823/1004480/1026832/1024999.html` | 相模原市（※津久井地域の一部未提供エリアあり） | 現代 | WebGIS閲覧 | 閲覧サービス利用規約。ダウンロードAPIではない。埋蔵文化財包蔵地・行政境界の参考。 | 画面表示 | Webブラウザ閲覧のみ。 | **閲覧のみ**：自動取得不可。津久井地域の網羅性制限に注意。 |
+| `KONJAKU` | 今昔マップ on the web | 埼玉大学 谷謙二研究室 | `https://ktgis.net/kjmapw/` (規約: `https://ktgis.net/kjmapw/note.html`) | 首都圏・神奈川県 | 明治〜現代（年代別変遷） | Web地図 | **「画像ファイル自体をPC・サーバ等に保存することは禁止」**と利用規約に明記。 | - | Webブラウザでの目視比較のみ。 | **閲覧専用（自動取得厳禁）**：PC保存禁止のためダウンロードは一切行わない。 |
+| `NDL-DIGITAL` | 国立国会図書館デジタルコレクション | 国立国会図書館 (NDL) | `https://dl.ndl.go.jp/` (規約: `https://www.ndl.go.jp/jp/use/reproduction/index.html`) | 神奈川県・旧郡部（津久井郡等） | 明治以前〜近代・昭和 | デジタル化画像 (JPEG/PDF) | 著作権保護期間満了資料（PD）は申請不要・出典明記で二次利用可。ログインなし閲覧/送信サービス/館内限定に区分。 | 点数により数MB〜数百MB | 個別資料ページの公式ビューア・ダウンロード機能。 | **未取得（調査済み）**：津久井郡誌、皇国地誌、古地名誌等の特定資料をPhase 1以降に精査。 |
 
-## 記録する最低限のメタデータ
+---
 
-- dataset_id, organization, source_page, direct_url（該当時のみ）
-- license_name, license_url, license_reviewed_at, attribution_text, redistribution_allowed (yes/no/unknown)
-- geographic_coverage, years, format, data_crs, current_crs_assumption (記入不可: 推測禁止)
-- downloaded_at_utc, downloaded_bytes, sha256, relative_path
-- access_requirement (none/account/manual_application/purchase/unknown)
-- remarks (検証状態と制約)
+## データ保存場所とストレージ管理方針
 
-## 注意: 精度・調査倫理
+- **正規保存先**: Google Drive側の `kanagawa_ruins_search_databank/data/`（環境変数 `RUINS_DATA_ROOT`）
+  - 生データ: `$RUINS_DATA_ROOT/raw/<source_id>/<filename>`
+  - 来歴台帳: `$RUINS_DATA_ROOT/provenance.jsonl`
+- **ローカルリポジトリ (`kanagawa_ruins_search`)**:
+  - 大容量データは一切コミット・保存しない。
+  - ローカル一時データは原則 **1GB以内** に抑え、処理後は速やかに削除。
+- **Git管理**:
+  - メタデータ、URL、ハッシュ値（SHA-256）、利用規約、MarkdownレポートのみをGitHubにプッシュする。
 
-- 古地図の鳥居記号不掲載だけでは廃社と断定できない。
-- 大正以前の史料に現代の境界・地名をそのまま適用しない。
-- 個人宅・私有地や危険施設の立ち入りを推奨する位置情報は公開しない。
-- 素材に利用規約・第三者権利・測量法による制限がある場合、その条件を優先する。
+---
+
+## 調査倫理・法令遵守の原則
+
+1. **廃墟の断定禁止**: 古地図で神社・寺院・集落が存在し現代地図に見当たらない場合でも、直ちに「廃墟」と断定しない（合祀・移転・非公開文化財・個人所有地・祭祀継続の可能性）。
+2. **私有地立入・危険箇所の非推奨**: 私有地への無断侵入、危険な廃建造物への立ち入りを助長する行為は厳禁。
+3. **個人情報の保護**: 個人の住居・別荘を廃墟候補と誤認し、正確な番地や氏名を公開しない。
+4. **測地系（CRS）の混同禁止**: JGD2000, JGD2011, JGD2024 等の異なる測地成果を推測で統合せず、データごとにメタデータを完全記録する。

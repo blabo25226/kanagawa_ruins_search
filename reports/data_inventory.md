@@ -1,35 +1,58 @@
-# Phase 0 データ取得状況
+# Phase 0 データ取得状況・ソース台帳
 
-- 確認日時（JST）：2026-10-09 21:58:25 JST
-- 参照した利用条件のURL：
+- 確認日時（JST）：2026-10-09 22:25:50 JST
+- 生データ正規保存先：Google Drive上の `kanagawa_ruins_search_databank/data/`（環境変数 `RUINS_DATA_ROOT`）
+- 参照した主な利用規約・案内URL：
   - 国土地理院コンテンツ利用規約: `https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html`
-  - 国土地理院 電子国土基本図（地名情報）「住居表示住所」案内: `https://www.gsi.go.jp/kihonjohochousa/jukyo_jusho.html`
+  - 国土地理院 住居表示住所案内: `https://www.gsi.go.jp/kihonjohochousa/jukyo_jusho.html`
   - 相模原市オープンデータ利用規約: `https://www.city.sagamihara.kanagawa.jp/shisei/toukei/opendata/index.html`
-  - 国土交通省 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/agreement.html`
-  - 国土地理院 地図・空中写真閲覧サービス: `https://service.gsi.go.jp/map-photos/app/`
+  - 神奈川県オープンデータカタログ: `https://catalog.opendata.pref.kanagawa.jp/`
+  - 国土数値情報利用規約: `https://nlftp.mlit.go.jp/ksj/other/agreement.html`
   - 国土地理院 基盤地図情報: `https://service.gsi.go.jp/kiban/`
   - 今昔マップ on the web 利用上の注意: `https://ktgis.net/kjmapw/note.html`
   - 農研機構 歴史的農業環境閲覧システム FAQ: `https://habs.rad.naro.go.jp/habs_faq.html`
+  - 国立国会図書館デジタルコレクション 利用規約: `https://www.ndl.go.jp/jp/use/reproduction/index.html`
 
-## データ台帳
+---
 
-| ソースID | 状態（取得済み/保留/失敗） | 形式/容量 | 配布条件 | 保留理由・備考 |
-|---|---|---|---|---|
-| `gsi_jusho_midori` | 取得済み | ZIP (1,672,520 bytes, 展開後26.2MB, 6ファイル) | 国土地理院コンテンツ利用規約（公共データ利用規約1.0 / 政府標準利用規約2.0準拠, CC BY 4.0互換）。出典明記・加工内容の表示が必要。 | 直リンク（`saigai.gsi.go.jp`）より正常取得。展開検査でCSVおよびシェープファイル（shp, shx, dbf, prj, cpg）を確認。なおe-Gov掲載URLは404となっていたため国土地理院一次情報ページを参照。 |
-| `sagamihara_cultural_assets` | 取得済み | CSV (210,799 bytes, 218行) | 相模原市オープンデータ利用規約（CC BY 4.0）。商用・非商用問わず二次利用可能、出典表記必要。 | 市公式CKAN API（`resource_show`）経由で最新リソースURLを動的解決して取得。ヘッダーおよび文字コード（UTF-8 with BOM）の正常性を確認。 |
-| `mlit_n03_2026_kanagawa` | 保留 | ZIP (予定: 約5.12MB, `N03-20260101_14_GML.zip`) | 国土数値情報利用規約（CC BY 4.0）。出典明記必要。 | Webダウンロード画面上のJavaScript（`DownLd`関数）を経由する仕様であり、直リンク推測が禁止されているため自動取得から除外。手動取得または人間による取得案内として保留。 |
-| `gsi_historical_maps` | 保留 | Web地図 / 画像交付 | 国土地理院コンテンツ利用規約等。画面キャプチャ・一括取得禁止。 | 旧版地形図および過去空中写真の高画質データはオンライン一括取得不可。研究に必要な対象地点が絞られた段階で正式な交付手続き・購入等を検討。 |
-| `gsi_fgd_dem` | 保留 | 基盤地図情報 (XML/GML/DEM) | 国土地理院 基盤地図情報利用規約。無料だがアカウント登録が必須。 | エージェントによる無断アカウント登録や認証バイパスは規約違反となるため保留。また2026年7月31日以降提供データはJGD2024へ移行しているためCRS統一時の注意が必要。 |
-| `konjaku_view_only` | 閲覧のみ | Webブラウザ表示 | 今昔マップ利用規約: **「画像ファイル自体をPC・サーバ等に保存することは禁止」**。 | 自動スクレイピング・ローカルキャッシュ保存は厳禁。Phase 1以降の比較検証においてもブラウザでの手動目視対照のみに限定する。 |
+## 1. データ台帳（詳細10項目）
 
-## 保管・来歴管理状況
+| ソースID | データ名・提供元 | 対象地域・年代 | 状態 | 形式/容量 | 配布条件・ライセンス | ダウンロード方法 | Google Drive保存先 (相対) | ハッシュ (SHA-256) | 備考・保留理由 |
+|---|---|---|---|---|---|---|---|---|---|
+| `gsi_jusho_midori` | 国土地理院 住居表示住所（相模原市緑区） | 相模原市緑区 (14151) / 2025年 | **取得済み** | ZIP / 1,672,520 bytes (展開後約26.2MB, 6ファイル) | 国土地理院コンテンツ利用規約（公共データ利用規約1.0/政府標準利用規約2.0準拠, CC BY 4.0互換）。出典明記・加工表示要。 | HTTPS直接取得（`scripts/fetch_sources.py`） | `raw/gsi_jusho_midori/14151.zip` | `a72352712494a1c598745fe87ee4a4c4f555849a86a2478725913964ebda531d` | CSVおよびShapefile（shp, shx, dbf, prj, cpg）を含む。住所照合・既知地名参照の基礎データ。 |
+| `sagamihara_cultural_assets` | 相模原市 文化財一覧 | 相模原市全域 / 現代台帳 | **取得済み** | CSV / 210,799 bytes (218行) | 相模原市オープンデータ利用規約（CC BY 4.0）。出典明記で二次利用可。 | CKAN API経由で正規URL取得後HTTPSダウンロード | `raw/sagamihara_cultural_assets/bunkazai.csv` | `dec1117a21869988457f1d06a578e6b891e85700b7efee4b52521b16e79b08b7` | 指定文化財等の台帳。廃墟誤認防止用（既知文化財除外マスク）の基礎データ。 |
+| `mlit_n03_2026_kanagawa` | 国土交通省 国土数値情報 行政区域 N03（2026年版） | 神奈川県全域 / 2026年 (令和8年) | **保留（未取得）** | ZIP / 約 5.12 MB (`N03-20260101_14_GML.zip`) | 国土数値情報利用規約（CC BY 4.0）。出典明記要。JGD2011表記。 | Webダウンロード画面（JavaScript `DownLd`関数）経由。直リンク推測不可。 | - | - | 動的ダウンロード画面経由での提供のため直リンクの自動生成を禁止。手動取得案内。 |
+| `gsi_fgd_dem` | 国土地理院 基盤地図情報（基本項目・DEM） | 神奈川県・旧津久井地域 / 現代 | **保留（未取得）** | XML / GML / DEM (メッシュ単位) | 基盤地図情報利用規約。無料だが**利用者登録（アカウント認証）必須**。2026-07-31以降JGD2024へ移行。 | Webポータルログイン取得 | - | - | エージェントによる無断登録・認証回避を禁止。Phase 1で必要な範囲のみ人間が取得手続きを行う。 |
+| `gsi_historical_maps` | 国土地理院 地図・空中写真閲覧サービス | 旧津久井地域周辺 / 明治〜昭和 | **保留（索引確認のみ）** | Web地図 / 画像交付 | 高画質画像の画面キャプチャ・一括ダウンロード禁止。正式な交付手続き・購入が必要。 | Web閲覧 / 正式交付申請 | - | - | 調査対象地点の絞り込み後に必要図幅の謄本交付等を検討。 |
+| `konjaku_view_only` | 今昔マップ on the web | 首都圏・神奈川県 / 明治〜現代 | **閲覧専用（取得厳禁）** | Web地図 | **「画像ファイル自体をPC・サーバ等に保存することは禁止」**（利用規約明記）。 | ブラウザ手動閲覧のみ | - | - | 画像保存が規約で禁止されているため自動取得・ローカル保存は一切行わない。 |
+| `naro_old` | 農研機構 歴史的農業環境閲覧システム（迅速測図） | 関東平野周辺 / 明治初期 | **保留（閲覧確認のみ）** | Webマップ / 一部GeoTIFF | 原則 CC BY 2.1 JP。タイル一括取得禁止。約100mの測量誤差留意。 | Web閲覧 | - | - | 津久井山間部のカバー状況を事前確認。Phase 1での参照候補。 |
+| `kanagawa_catalog` | 神奈川県オープンデータカタログサイト | 神奈川県全域 / 現代 | **未取得（調査済み）** | CSV / GeoJSON 等 | 神奈川県オープンデータ利用規約（原則 CC BY 4.0）。無償・商用利用可。 | Webポータル / CKAN API | - | - | 県全域の無差別DLは行わず、緑区・歴史関連データに限定して選定。 |
+| `ndl_digital` | 国立国会図書館デジタルコレクション | 神奈川県・津久井郡 / 近代・昭和以前 | **未取得（調査済み）** | デジタル化画像 (JPEG/PDF) | 著作権保護期間満了資料（PD）は申請不要・出典明記で二次利用可。 | Webビューア / 公式DL | - | - | 津久井郡誌等の歴史的地誌・郡村誌の特定資料をPhase 1以降に精査。 |
 
-- 原本保存先: `data/raw/`（`.gitignore` によりGit管理から除外済み）
-  - `data/raw/gsi_jusho_midori/14151.zip` (1,672,520 bytes)
-  - `data/raw/sagamihara_cultural_assets/bunkazai.csv` (210,799 bytes)
-- 来歴管理ファイル: `data/provenance.jsonl`（`.gitignore` によりGit管理から除外済み）
-  - 記録項目: `source_id`, `source_page`, `download_url`, `license_url`, `license_note`, `phase`, `downloaded_at_utc`, `relative_path`, `bytes`, `sha256`, `format`
-- ハッシュ値確認（SHA-256）:
-  - `14151.zip`: `a72352712494a1c598745fe87ee4a4c4f555849a86a2478725913964ebda531d`
-  - `bunkazai.csv`: `dec1117a21869988457f1d06a578e6b891e85700b7efee4b52521b16e79b08b7`
-- 内容の探索的分析・廃墟候補抽出: **一切未実施（原本の形式・サイズ・ハッシュ・ヘッダー検査のみ完了）**
+---
+
+## 2. ストレージ容量と配置状況
+
+- **Google Drive正規保存先**: `/home/blabo/gdrive/kanagawa_ruins_search_databank/data/`
+  - 使用容量: **約 1.8 MB**
+  - 保存ファイル:
+    - `provenance.jsonl`（取得来歴）
+    - `raw/gsi_jusho_midori/14151.zip` (1,672,520 bytes)
+    - `raw/sagamihara_cultural_assets/bunkazai.csv` (210,799 bytes)
+- **ローカルリポジトリ**: `/home/blabo/kanagawa_ruins_search/`
+  - 使用容量: **約 904 KB**
+  - 生データ実体: **0 B**（重複保存完全排除、`.gitkeep` のみ保持）
+  - 一時データ容量制限（1GB以内）: 完全遵守
+
+---
+
+## 3. Phase 1に向けた推奨事項
+
+1. **CRS（座標参照系）変換パイプラインの設計**:
+   - 住居表示住所（JGD2000/2011）、国土数値情報（JGD2011）、基盤地図情報（2026年版JGD2024）の測地系不一致を解消するため、対象地域に適した平面直角座標系（第IX系 JGD2011 / EPSG:6677）への変換基盤をPhase 1初期に整備する。
+2. **誤検出防止マスクの構築**:
+   - 取得済みの文化財一覧（`bunkazai.csv`）、住居表示（`14151.zip`）、および現代道路網（基盤地図情報等）を重ね合わせ、現役神社・指定史跡・個人宅・現道を除外するフィルタリングルールを定義する。
+3. **歴史的地誌（NDL等）の参照計画**:
+   - 津久井地域（青野原・青山・鳥屋・寸沢嵐等）の廃村・神社合祀・廃道履歴を裏付ける一次史料（津久井郡誌、新編相模国風土記稿等）をピンポイントで確認し、地名・字名リストを作成する。
+4. **段階的調査順序の維持**:
+   - 廃神社 → 廃寺 → 廃村・集落跡 → 廃道 → 放置建造物の順で進め、私有地侵入や危険箇所への誘導を防止する。

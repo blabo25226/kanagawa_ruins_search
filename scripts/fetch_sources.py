@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Phase 0 only: fetch small HTTPS-allowlisted official files, record provenance; no analysis."""
+"""Phase 0 only: fetch small HTTPS-allowlisted official files into Google Drive data storage, record provenance; no analysis."""
 from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import tomllib
@@ -20,6 +21,33 @@ AGENT = 'KanagawaRuinsResearch/0.1 (approved public files, no bulk map tiles)'
 
 class DownloadError(Exception):
     pass
+
+
+def load_env_var(name: str) -> str | None:
+    val = os.environ.get(name)
+    if val:
+        return val
+    env_file = ROOT / '.env'
+    if env_file.is_file():
+        for line in env_file.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                if k.strip() == name:
+                    return v.strip().strip('"').strip("'")
+    return None
+
+
+def get_data_root() -> Path:
+    val = load_env_var('RUINS_DATA_ROOT')
+    if not val:
+        raise DownloadError(
+            'RUINS_DATA_ROOT is not set. Please set the environment variable or create .env file.'
+        )
+    p = Path(val).expanduser().resolve()
+    if not p.is_dir():
+        raise DownloadError(f'RUINS_DATA_ROOT directory does not exist: {p}')
+    return p
 
 
 def approved_url(url: str, domains: list[str]) -> bool:
@@ -85,11 +113,14 @@ def download(src, url):
     limit = int(src['max_bytes'])
     if not 0 < limit <= 20000000:
         raise DownloadError('Unsafe size limit')
-    target = ROOT / 'data/raw' / src['id'] / src['filename']
+
+    data_root = get_data_root()
+    target = data_root / 'raw' / src['id'] / src['filename']
     target.parent.mkdir(parents=True, exist_ok=True)
     partial = target.with_suffix(target.suffix + '.partial')
     if target.exists() or partial.exists():
-        raise DownloadError('Already downloaded/partial exists; never overwrite: ' + str(target))
+        raise DownloadError('Already downloaded/partial exists; never overwrite Google Drive data: ' + str(target))
+
     req = Request(url, headers={'User-Agent': AGENT, 'Accept': 'application/octet-stream,*/*'})
     digest = hashlib.sha256()
     header = b''
@@ -119,14 +150,26 @@ def download(src, url):
     finally:
         if partial.exists():
             partial.unlink()
+
+    rel_path = str(target.relative_to(data_root))
     record = {'source_id': src['id'], 'source_page': src['source_page'],
               'download_url': final_url, 'license_url': src['license_url'],
               'license_note': src['license_note'], 'phase': 0,
               'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
-              'relative_path': str(target.relative_to(ROOT)),
+              'relative_path': rel_path,
               'bytes': size, 'sha256': digest.hexdigest(), 'format': src['expected_format']}
-    with (ROOT / 'data/provenance.jsonl').open('a', encoding='utf-8') as f:
+
+    # Record provenance to Google Drive storage root
+    prov_gdrive = data_root / 'provenance.jsonl'
+    with prov_gdrive.open('a', encoding='utf-8') as f:
         f.write(json.dumps(record, ensure_ascii=False) + '\n')
+
+    # Also record to local project (gitignored) for convenient local inspection
+    prov_local = ROOT / 'data/provenance.jsonl'
+    prov_local.parent.mkdir(parents=True, exist_ok=True)
+    with prov_local.open('a', encoding='utf-8') as f:
+        f.write(json.dumps(record, ensure_ascii=False) + '\n')
+
     return record
 
 
@@ -157,15 +200,23 @@ def main():
             parser.error('Unknown source id: ' + sid)
         if by_id[sid]['mode'] not in DOWNLOADABLE_MODES:
             parser.error('This source is not automatable: ' + sid)
+
+    try:
+        data_root = get_data_root()
+    except DownloadError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
     errors = 0
     for sid in dict.fromkeys(ids):
         src = by_id[sid]
+        target_path = data_root / 'raw' / src['id'] / src['filename']
         if a.dry_run:
-            print(f"DRY RUN: {sid}, {src['filename']}, max={src['max_bytes']} bytes")
+            print(f"DRY RUN: {sid} -> {target_path} (max={src['max_bytes']} bytes)")
             continue
         try:
             record = download(src, resolve_download_url(src))
-            print(f"DOWNLOADED {sid}: bytes={record['bytes']} sha256={record['sha256']}")
+            print(f"DOWNLOADED {sid}: bytes={record['bytes']} sha256={record['sha256']} -> {record['relative_path']}")
         except (DownloadError, HTTPError, URLError, OSError, ValueError, TimeoutError, json.JSONDecodeError) as e:
             errors += 1
             print(f"FAILED {sid}: {type(e).__name__}: {e}", file=sys.stderr)
