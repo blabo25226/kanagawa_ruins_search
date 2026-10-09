@@ -40,7 +40,7 @@ class Phase0ConfigTests(unittest.TestCase):
                 self.assertTrue(fetch.approved_url(source.get("url", source.get("api_url")),
                                                    source["allowed_domains"]))
                 self.assertLessEqual(source["max_bytes"], 30_000_000)
-                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "xml", "pdf"))
+                self.assertIn(source["expected_format"], ("csv", "zip", "geojson", "json", "xml", "pdf"))
             else:
                 self.assertIn(source["mode"], ("manual", "reference_only"))
 
@@ -160,6 +160,74 @@ class StorageSecurityTests(unittest.TestCase):
         # Should succeed without leaving temporary files behind
         storage_utils.safe_probe_write(probe_target)
         self.assertEqual(len(list(probe_target.iterdir())), 0)
+
+
+class DownloadSecurityTests(unittest.TestCase):
+    """Safety and integrity tests for download and archive handling."""
+
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.dir_path = Path(self.temp_dir.name)
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_validate_file_integrity(self):
+        # 1. Valid JSON
+        valid_json = self.dir_path / "test.json"
+        valid_json.write_text('{"name": "test"}', encoding="utf-8")
+        ok, _ = fetch.validate_file_integrity(valid_json, "json")
+        self.assertTrue(ok)
+
+        # Corrupted JSON
+        corrupted_json = self.dir_path / "bad.json"
+        corrupted_json.write_text('{broken json', encoding="utf-8")
+        ok, msg = fetch.validate_file_integrity(corrupted_json, "json")
+        self.assertFalse(ok)
+        self.assertIn("Integrity check failed", msg)
+
+        # 2. Valid PDF
+        valid_pdf = self.dir_path / "doc.pdf"
+        valid_pdf.write_bytes(b"%PDF-1.4\n1 0 obj\n<<>>\nendobj\ntrailer\n<<>>\nstartxref\n10\n%%EOF\n")
+        ok, _ = fetch.validate_file_integrity(valid_pdf, "pdf")
+        self.assertTrue(ok)
+
+        # Invalid PDF (missing EOF)
+        bad_pdf = self.dir_path / "bad.pdf"
+        bad_pdf.write_bytes(b"%PDF-1.4 truncated without eof")
+        ok, msg = fetch.validate_file_integrity(bad_pdf, "pdf")
+        self.assertFalse(ok)
+        self.assertIn("%%EOF", msg)
+
+        # 3. File too small
+        empty_file = self.dir_path / "empty.bin"
+        empty_file.write_bytes(b"")
+        ok, msg = fetch.validate_file_integrity(empty_file, "zip")
+        self.assertFalse(ok)
+        self.assertIn("too small", msg)
+
+    def test_safe_extract_zip_zip_slip_rejection(self):
+        import zipfile
+        evil_zip_path = self.dir_path / "evil.zip"
+        with zipfile.ZipFile(evil_zip_path, 'w') as zf:
+            zf.writestr('../../escaped.txt', 'evil content')
+
+        dest_dir = self.dir_path / "extract_dest"
+        with self.assertRaises(fetch.DownloadError) as ctx:
+            fetch.safe_extract_zip(evil_zip_path, dest_dir)
+        self.assertIn("Zip Slip detected", str(ctx.exception))
+
+    def test_safe_extract_zip_zip_bomb_rejection(self):
+        import zipfile
+        bomb_zip_path = self.dir_path / "bomb.zip"
+        with zipfile.ZipFile(bomb_zip_path, 'w') as zf:
+            zf.writestr('large.bin', b'0' * 2000)
+
+        dest_dir = self.dir_path / "bomb_dest"
+        with self.assertRaises(fetch.DownloadError) as ctx:
+            # Set max limit lower than 2000
+            fetch.safe_extract_zip(bomb_zip_path, dest_dir, max_bytes=1000)
+        self.assertIn("Zip Bomb protection", str(ctx.exception))
 
 
 if __name__ == "__main__":

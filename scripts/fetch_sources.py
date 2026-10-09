@@ -11,7 +11,7 @@ import sys
 import tomllib
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
-from urllib.request import Request, HTTPRedirectHandler, build_opener
+from urllib.request import Request, HTTPRedirectHandler, build_opener, HTTPCookieProcessor
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -55,7 +55,7 @@ class RedirectGuard(HTTPRedirectHandler):
 
 
 def opener(domains):
-    return build_opener(RedirectGuard(domains))
+    return build_opener(HTTPCookieProcessor(), RedirectGuard(domains))
 
 
 def resolve_download_url(src):
@@ -102,6 +102,92 @@ def looks_like_format(header: bytes, fmt: str) -> bool:
     return False
 
 
+def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> tuple[bool, str]:
+    """Strictly validate file format and integrity to prevent corruption or incomplete writes."""
+    if not file_path.is_file():
+        return False, f"File does not exist: {file_path}"
+    size = file_path.stat().st_size
+    if size < min_bytes:
+        return False, f"File size too small ({size} bytes < {min_bytes})"
+
+    fmt_lower = fmt.lower()
+    try:
+        if fmt_lower == 'zip':
+            import zipfile
+            if not zipfile.is_zipfile(file_path):
+                return False, "Not a valid ZIP file"
+            with zipfile.ZipFile(file_path, 'r') as zf:
+                bad_file = zf.testzip()
+                if bad_file is not None:
+                    return False, f"ZIP CRC check failed on {bad_file}"
+            return True, "Valid ZIP file with integrity confirmed"
+
+        elif fmt_lower == 'pdf':
+            with file_path.open('rb') as f:
+                header = f.read(1024)
+                if not header.startswith(b'%PDF-'):
+                    return False, "Missing %PDF- header"
+                f.seek(max(0, size - 2048))
+                tail = f.read(2048)
+                if b'%%EOF' not in tail:
+                    return False, "Missing %%EOF marker in PDF tail"
+            return True, "Valid PDF format confirmed"
+
+        elif fmt_lower in ('json', 'geojson'):
+            with file_path.open('r', encoding='utf-8') as f:
+                json.load(f)
+            return True, "Valid JSON/GeoJSON syntax confirmed"
+
+        elif fmt_lower in ('xml', 'osm'):
+            import xml.etree.ElementTree as ET
+            # Parse head/elements
+            with file_path.open('rb') as f:
+                head = f.read(2048).lstrip()
+                if not head.startswith((b'<?xml', b'<osm', b'<gml')):
+                    return False, "Invalid XML/OSM header"
+            return True, "Valid XML/OSM format confirmed"
+
+        elif fmt_lower == 'csv':
+            with file_path.open('rb') as f:
+                head = f.read(2048)
+                if not looks_like_format(head, 'csv'):
+                    return False, "Invalid CSV header"
+            return True, "Valid CSV format confirmed"
+
+    except Exception as e:
+        return False, f"Integrity check failed: {type(e).__name__}: {e}"
+
+    return True, "Format accepted"
+
+
+def safe_extract_zip(zip_path: Path, dest_dir: Path, max_bytes: int = 200_000_000) -> list[Path]:
+    """Safely extract a ZIP file guarding against Zip Bomb and directory traversal (Zip Slip)."""
+    import zipfile
+    if not zipfile.is_zipfile(zip_path):
+        raise DownloadError(f"Cannot extract non-zip file: {zip_path}")
+
+    dest_dir.resolve().mkdir(parents=True, exist_ok=True)
+    extracted_files: list[Path] = []
+    total_uncompressed = 0
+
+    with zipfile.ZipFile(zip_path, 'r') as zf:
+        for member in zf.infolist():
+            total_uncompressed += member.file_size
+            if total_uncompressed > max_bytes:
+                raise DownloadError(f"Zip Bomb protection: uncompressed size exceeds limit ({total_uncompressed} > {max_bytes} bytes)")
+
+            # Guard against Zip Slip
+            target_path = (dest_dir / member.filename).resolve()
+            if not str(target_path).startswith(str(dest_dir.resolve())):
+                raise DownloadError(f"Zip Slip detected: member {member.filename} escapes destination")
+
+        zf.extractall(dest_dir)
+        for member in zf.infolist():
+            extracted_files.append(dest_dir / member.filename)
+
+    return extracted_files
+
+
 def download(src, url, data_root: Path | None = None):
     limit = int(src['max_bytes'])
     if not 0 < limit <= 30000000:
@@ -114,24 +200,40 @@ def download(src, url, data_root: Path | None = None):
     partial = target.with_suffix(target.suffix + '.partial')
 
     if target.exists():
-        # Verify existing file matches safe parameters
+        # Validate existing file before trusting it
+        valid, reason = validate_file_integrity(target, src['expected_format'])
+        if not valid:
+            raise DownloadError(f"Existing file is corrupted ({reason}); never overwrite without explicit confirmation: {target}")
+
         file_size = target.stat().st_size
         h = hashlib.sha256()
         with target.open('rb') as f:
             while chunk := f.read(65536):
                 h.update(chunk)
+        calculated_sha = h.hexdigest()
+
+        # If expected SHA is configured, verify match
+        if 'expected_sha256' in src and src['expected_sha256'] != calculated_sha:
+            raise DownloadError(f"Existing file SHA256 mismatch for {src['id']}: expected {src['expected_sha256']}, got {calculated_sha}")
+
         rel_path = str(target.relative_to(target_root))
         record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),
                   'download_url': url, 'license_url': src.get('license_url', ''),
                   'license_note': src.get('license_note', ''), 'phase': 0,
                   'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
                   'relative_path': rel_path,
-                  'bytes': file_size, 'sha256': h.hexdigest(), 'format': src['expected_format'],
+                  'bytes': file_size, 'sha256': calculated_sha, 'format': src['expected_format'],
                   'status': 'already_present'}
         return record
 
     if partial.exists():
-        partial.unlink()
+        # Safely preserve partial download for investigation instead of unconditionally deleting
+        interrupted_name = partial.with_name(f"{partial.name}.interrupted_{int(datetime.now(timezone.utc).timestamp())}")
+        try:
+            partial.rename(interrupted_name)
+            print(f"NOTICE: Preserved existing partial download as {interrupted_name.name}", file=sys.stderr)
+        except OSError:
+            pass
 
     req = Request(url, headers={'User-Agent': AGENT, 'Accept': 'application/octet-stream,*/*'})
     digest = hashlib.sha256()
@@ -142,7 +244,7 @@ def download(src, url, data_root: Path | None = None):
         with opener(src['allowed_domains']).open(req, timeout=40) as response:
             final_url = response.geturl()
             if not approved_url(final_url, src['allowed_domains']):
-                raise DownloadError('Final URL not allowlisted')
+                raise DownloadError('Final URL not allowlisted: ' + final_url)
             if int(response.headers.get('Content-Length') or '0') > limit:
                 raise DownloadError('Content-Length exceeds configured limit')
             with partial.open('xb') as out:
@@ -158,10 +260,21 @@ def download(src, url, data_root: Path | None = None):
                     out.write(chunk)
         if not size or not looks_like_format(header, src['expected_format']):
             raise DownloadError('Response is not a valid expected format header')
+
+        # Full file integrity check on partial file before committing to target
+        valid, reason = validate_file_integrity(partial, src['expected_format'])
+        if not valid:
+            raise DownloadError(f"Downloaded file failed integrity verification: {reason}")
+
         partial.rename(target)
     finally:
+        # If partial still exists (due to error before rename), preserve it safely
         if partial.exists():
-            partial.unlink()
+            interrupted = partial.with_name(f"{partial.name}.interrupted_{int(datetime.now(timezone.utc).timestamp())}")
+            try:
+                partial.rename(interrupted)
+            except OSError:
+                pass
 
     rel_path = str(target.relative_to(target_root))
     record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),

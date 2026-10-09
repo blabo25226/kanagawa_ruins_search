@@ -1,4 +1,4 @@
-# Phase 0 & Phase 0.1 download whitelist.
+# Phase 0 & Phase 0.2 download whitelist.
 # Direct and CKAN downloads are strictly allowlisted by domain and verified against safe parameters.
 # Data is organized strictly according to kanagawa_ruins_search_databank/data/ directory hierarchy.
 
@@ -87,8 +87,50 @@ max_bytes = 1000000
 allowed_domains = ["geoshape.ex.nii.ac.jp"]
 
 [[source]]
+id = "codh_sagamiko_2005"
+title = "CODH: 歴史的行政区域 相模湖町 2005年編入前 (寸沢嵐所属旧自治体)"
+mode = "direct"
+dest_dir = "raw/historical_boundaries"
+url = "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14424A1968.geojson"
+source_page = "https://geoshape.ex.nii.ac.jp/city/"
+license_note = "CODH 歴史的行政区域データセット（CC BY 4.0）"
+license_url = "https://geoshape.ex.nii.ac.jp/city/"
+expected_format = "geojson"
+filename = "codh_sagamiko_20050101.geojson"
+max_bytes = 1000000
+allowed_domains = ["geoshape.ex.nii.ac.jp"]
+
+[[source]]
+id = "codh_shiroyama_2005"
+title = "CODH: 歴史的行政区域 城山町 2005年編入前 (津久井郡旧自治体)"
+mode = "direct"
+dest_dir = "raw/historical_boundaries"
+url = "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14421A1968.geojson"
+source_page = "https://geoshape.ex.nii.ac.jp/city/"
+license_note = "CODH 歴史的行政区域データセット（CC BY 4.0）"
+license_url = "https://geoshape.ex.nii.ac.jp/city/"
+expected_format = "geojson"
+filename = "codh_shiroyama_20050101.geojson"
+max_bytes = 1000000
+allowed_domains = ["geoshape.ex.nii.ac.jp"]
+
+[[source]]
+id = "codh_fujino_2005"
+title = "CODH: 歴史的行政区域 藤野町 2005年編入前 (津久井郡旧自治体)"
+mode = "direct"
+dest_dir = "raw/historical_boundaries"
+url = "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14423A1968.geojson"
+source_page = "https://geoshape.ex.nii.ac.jp/city/"
+license_note = "CODH 歴史的行政区域データセット（CC BY 4.0）"
+license_url = "https://geoshape.ex.nii.ac.jp/city/"
+expected_format = "geojson"
+filename = "codh_fujino_20050101.geojson"
+max_bytes = 1000000
+allowed_domains = ["geoshape.ex.nii.ac.jp"]
+
+[[source]]
 id = "osm_tsukui_core"
-title = "OpenStreetMap: 旧津久井地域コア（鳥屋・青山・青野原・寸沢嵐） (D06)"
+title = "OpenStreetMap: 旧津久井地域コア（D06）"
 mode = "direct"
 dest_dir = "raw/osm"
 url = "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60"
@@ -97,6 +139,62 @@ license_note = "OpenStreetMap 貢献者（ODbL 1.0）"
 license_url = "https://www.openstreetmap.org/copyright"
 expected_format = "xml"
 filename = "tsukui_core_osm.osm"
+max_bytes = 10000000
+allowed_domains = ["api.openstreetmap.org"]
+
+[[source]]
+id = "osm_tsukui_suarashi"
+title = "OpenStreetMap: 寸沢嵐地区網羅 (Phase 0.2)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62"
+source_page = "https://www.openstreetmap.org/export"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "xml"
+filename = "tsukui_suarashi_osm.osm"
+max_bytes = 20000000
+allowed_domains = ["api.openstreetmap.org"]
+
+[[source]]
+id = "osm_tsukui_toya"
+title = "OpenStreetMap: 鳥屋地区網羅 (Phase 0.2)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56"
+source_page = "https://www.openstreetmap.org/export"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "xml"
+filename = "tsukui_toya_osm.osm"
+max_bytes = 10000000
+allowed_domains = ["api.openstreetmap.org"]
+
+[[source]]
+id = "osm_tsukui_aoyama"
+title = "OpenStreetMap: 青山地区網羅 (Phase 0.2)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.55,139.25,35.59"
+source_page = "https://www.openstreetmap.org/export"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "xml"
+filename = "tsukui_aoyama_osm.osm"
+max_bytes = 20000000
+allowed_domains = ["api.openstreetmap.org"]
+
+[[source]]
+id = "osm_tsukui_aonohara"
+title = "OpenStreetMap: 青野原地区網羅 (Phase 0.2)"
+mode = "direct"
+dest_dir = "raw/osm"
+url = "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57"
+source_page = "https://www.openstreetmap.org/export"
+license_note = "OpenStreetMap 貢献者（ODbL 1.0）"
+license_url = "https://www.openstreetmap.org/copyright"
+expected_format = "xml"
+filename = "tsukui_aonohara_osm.osm"
 max_bytes = 10000000
 allowed_domains = ["api.openstreetmap.org"]
 
@@ -185,6 +283,20 @@ max_bytes = 2000000
 allowed_domains = ["archives.pref.kanagawa.jp"]
 
 [[source]]
+id = "ndl_shinpen_sagami_vol5"
+title = "国立国会図書館: 新編相模国風土記稿 第5輯 三浦・津久井郡 IIIFマニフェスト"
+mode = "direct"
+dest_dir = "literature/historical_documents"
+url = "https://dl.ndl.go.jp/api/iiif/763971/manifest.json"
+source_page = "https://dl.ndl.go.jp/pid/763971"
+license_note = "著作権保護期間満了（パブリックドメイン）; NDL IIIF API"
+license_url = "https://www.ndl.go.jp/jp/use/reproduction/index.html"
+expected_format = "json"
+filename = "Shinpen_Sagami_Fudokiko_Vol5_IIIF_manifest.json"
+max_bytes = 5000000
+allowed_domains = ["dl.ndl.go.jp"]
+
+[[source]]
 id = "paper_wood2024_mapreader"
 title = "Wood et al. (2024): MapReader 論文 PDF (P03)"
 mode = "direct"
@@ -198,7 +310,77 @@ filename = "Wood2024_MapReader.pdf"
 max_bytes = 5000000
 allowed_domains = ["www.theoj.org"]
 
-# Manual / Reference-only entries (terms require login, portal UI, or prohibit storage)
+[[source]]
+id = "paper_berganzo2023_mounds"
+title = "Berganzo-Besga et al. (2023): 古地図からの考古学的遺構深層学習検出 (P04)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.nature.com/articles/s41598-023-38190-x.pdf"
+source_page = "https://doi.org/10.1038/s41598-023-38190-x"
+license_note = "Nature Scientific Reports (CC BY 4.0)"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+expected_format = "pdf"
+filename = "Berganzo2023_ArchaeologicalMounds.pdf"
+max_bytes = 10000000
+allowed_domains = ["www.nature.com", "idp.nature.com"]
+
+[[source]]
+id = "paper_kanaki2003_abandoned"
+title = "金木 (2003): 消滅集落の分布について 論文 PDF (P08)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.jstage.jst.go.jp/article/aija/68/566/68_KJ00004226773/_pdf/-char/ja"
+source_page = "https://doi.org/10.3130/aija.68.25_4"
+license_note = "日本建築学会計画系論文集; 学術調査利用 (J-STAGE)"
+license_url = "https://www.jstage.jst.go.jp/"
+expected_format = "pdf"
+filename = "Kanaki2003_AbandonedSettlements.pdf"
+max_bytes = 5000000
+allowed_domains = ["www.jstage.jst.go.jp"]
+
+[[source]]
+id = "paper_tani2017_konjaku"
+title = "谷 (2017): 今昔マップの開発と公開 論文 PDF (P09)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.jstage.jst.go.jp/article/thagis/25/1/25_1/_pdf/-char/ja"
+source_page = "https://doi.org/10.5638/thagis.25.1"
+license_note = "GIS-理論と応用; 学術調査利用 (J-STAGE)"
+license_url = "https://www.jstage.jst.go.jp/"
+expected_format = "pdf"
+filename = "Tani2017_KonjakuMap.pdf"
+max_bytes = 5000000
+allowed_domains = ["www.jstage.jst.go.jp"]
+
+[[source]]
+id = "paper_fujita2007_shrine_gis"
+title = "藤田・熊谷 (2007): 神社・寺院の立地環境GIS解析 論文 PDF (P10)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.jstage.jst.go.jp/article/jale2004/12/1/12_1_9/_pdf/-char/ja"
+source_page = "https://doi.org/10.5738/jale.12.9"
+license_note = "景観生態学; 学術調査利用 (J-STAGE)"
+license_url = "https://www.jstage.jst.go.jp/"
+expected_format = "pdf"
+filename = "Fujita2007_ShrineLocationGIS.pdf"
+max_bytes = 5000000
+allowed_domains = ["www.jstage.jst.go.jp"]
+
+[[source]]
+id = "paper_oda2015_shrine_merger"
+title = "小田・柳光 (2015): 神社合祀と地域社会（三重県飯南・飯高地区）論文 PDF (P11)"
+mode = "direct"
+dest_dir = "literature/papers"
+url = "https://www.jstage.jst.go.jp/article/ajg/2015s/0/2015s_100229/_pdf/-char/ja"
+source_page = "https://doi.org/10.14866/ajg.2015s.0_100229"
+license_note = "日本地理学会発表要旨集; 学術調査利用 (J-STAGE)"
+license_url = "https://www.jstage.jst.go.jp/"
+expected_format = "pdf"
+filename = "Oda2015_ShrineMerger.pdf"
+max_bytes = 2000000
+allowed_domains = ["www.jstage.jst.go.jp"]
+
+# Manual / Reference-only entries
 
 [[source]]
 id = "mlit_landuse_past"
