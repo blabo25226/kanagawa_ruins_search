@@ -2,6 +2,9 @@
 
 本レポートは、受入された国土地理院 基盤地図情報（基本項目・数値標高モデル）の新規データについて、Phase 1-A（ベクトル基盤）およびPhase 1-B（ラスタ・標高基盤）の既存コードベースにおける処理可否を検証し、未対応形式の課題および次期フェーズ（Codex担当）に向けた実装仕様と引き継ぎ事項を整理したものである。
 
+> [!NOTE] **XML検査スコープ**
+> 本監査におけるXML内容の確認は、各内部ZIPの先頭XMLヘッダー（スキーマ、名前空間、CRS宣言、整備日、情報レベル）および代表的フィーチャタグを抽出した**サンプル検査**である。全16,039件（重複除外後）のXMLファイルに対する完全な構文木パースや地物バリデーションではない。
+
 ---
 
 ## 1. 既存基盤コードベースにおける処理可否の評価
@@ -25,7 +28,7 @@
 
 ### 2.2 Shift_JIS エンコーディングへの未対応
 - **現状**: `dem.py` は XML読み込み時に `UTF-8` をハードコードしている。
-- **課題**: 2008年基本項目、2009年DEM10B、2015年DEM5A/5B は `Shift_JIS`（CP932）で格納されており、`UnicodeDecodeError` または不正文字列の生成を引き起こす。
+- **課題**: 2008年基本項目、2009年DEM10B/DEM5A、2015年DEM5A/DEM5B は `Shift_JIS`（CP932）で格納されており、`UnicodeDecodeError` または不正文字列の生成を引き起こす。
 - **要件**: 先頭行の `<?xml ... encoding="..."?>` またはバイト列シグネチャによる**エンコーディング自動判定（Shift_JIS / UTF-8）**の実装。
 
 ### 2.3 DEM5A サブタイル（100ファイル/メッシュ）のモザイク結合処理の欠落
@@ -33,18 +36,18 @@
 - **課題**: 既存コードは各XMLを個別のTIFF（`dem_0.tif`, `dem_1.tif`...）として独立変換するため、1つの2次メッシュあたり100個の微小COGが生成されてしまい、空間解析に耐えない。
 - **要件**: 2次メッシュ単位（2,250 × 1,500 ピクセル）のNumPy配列を確保し、各1kmサブタイル（225 × 150 ピクセル）をメッシュインデックス（`startPoint` およびバウンディングボックス）に基づいて**2次メッシュ全体へ正しく配置・モザイク結合（Stitching）**してから単一のGeoTIFF/COGを出力する構造が必要。
 
-### 2.4 JGD2024 (`fguuid:jgd2024.bl`) の未登録
+### 2.4 2015年DEM5A欠損メッシュ（`523951`）とDEM5Bフォールバック
+- **現状**: 2015年DEM5Aは45メッシュ中44メッシュのみ収録されており、三浦海岸・横須賀南端（`523951`）が欠損している。
+- **要件**: 標高変換パイプラインにおいて、DEM5Aが存在しないメッシュまたはセルでは、自動的にDEM5B（写真測量）をフォールバックとして読み込む**ハイブリッド合成処理**の実装。
+
+### 2.5 JGD2024 (`fguuid:jgd2024.bl`) の未登録
 - **現状**: `src/kanagawa_ruins/geo/crs.py` は JGD2011（EPSG:6668）および JGD2000（EPSG:4612）のみをホワイトリスト検証している。
 - **課題**: 2025年版データに宣言されている `fguuid:jgd2024.bl` が渡されると、未許可CRSとしてバリデーション例外を投げる。
 - **要件**: 水平CRS検証テーブルに `JGD2024`（EPSG:6668 / 日本測地系2024）をエイリアスとして追加し、平面直角座標系第IX系（EPSG:6677）への変換を許容する設定が必要。
 
-### 2.5 DEM5A / DEM5B の重複・補完統合ロジックの欠落
-- **現状**: 同一メッシュに航空レーザ（DEM5A）と写真測量（DEM5B）が併録されている場合がある。
-- **要件**: 高精度な DEM5A をベースとし、欠損値（`-9999.0` / データなし）のセルにのみ DEM5B の値を補完する**優先順位付きハイブリッドマージ処理**の実装。
-
-### 2.6 同一メッシュにおける複数更新日版の重複排除
-- **現状**: `20261011010053768-001.zip` 内に同一メッシュの `20250214版` と `20250620版` が同居している。
-- **要件**: 同一メッシュ・同一サブタイルのXMLが存在する場合、より新しい更新日（`devDate` / ファイル日付）を採用する**最新版優先デデュープ処理**の実装。
+### 2.6 パッケージ間メッシュ重複・複数日付更新の重複排除
+- **基本項目パッケージ間重複**: 2014年基本項目（`533935`）、2025年基本項目（`533924`）が別パッケージ間で重複しているため、フィーチャID（`fid`）によるデデュープが必須。
+- **DEM更新版同居**: `20261011010053768-001.zip` 内に同一メッシュの `20250214版` と `20250620版` が同居しているため、最新更新日（`devDate` / ファイル日付）を優先採用するロジックが必要。
 
 ---
 
@@ -60,9 +63,10 @@ flowchart LR
     Z[Raw FGD Outer ZIP] -->|in-memory| S[Streaming Inner ZIP Reader]
     S --> P[lxml.etree.iterparse / GML Parser]
     P --> F[Feature Extraction<br>BldA / RdEdg / AdmArea]
-    F --> C[CRS Transform<br>JGD2000/2011/2024 -> EPSG:6677]
+    F --> D[Deduplication by Feature ID]
+    D --> C[CRS Transform<br>JGD2000/2011/2024 -> EPSG:6677]
     C --> PQ[GeoParquet Normalized Store<br>processed/phase1c/vectors/]
-    PQ --> D[DuckDB Spatial Queryable]
+    PQ --> DB[DuckDB Spatial Queryable]
 ```
 
 1. **ストリーミングパース**: 巨大なXMLファイルをオンメモリDOM（`xml.etree.ElementTree`）で一括読み込みするとメモリを圧迫するため、`lxml.etree.iterparse` を使用してフィーチャ単位（`<BldA>`, `<RdEdg>` 等）で逐次抽出・破棄する。
@@ -70,7 +74,7 @@ flowchart LR
    - `buildings__gsi_fgd_YYYY.parquet`（建築物外周線: 形状、種別、整備日、情報レベル）
    - `roads__gsi_fgd_YYYY.parquet`（道路縁・道路構成線）
    - `admin__gsi_fgd_YYYY.parquet`（行政区画・町字界）
-3. **メタデータの保持**: 各フィーチャに必ず `source_pkg`, `mesh_code`, `dev_date`, `org_gi_lvl` を属性列として付与する。
+3. **2008年データの扱い**: 2008年データは相模原市(`14209`)等17市町村が欠損しているため、県全域ベースラインとしては使用せず、「2008年市街地比較用レイヤ」として位置付ける。
 
 ### 3.2 標高取り込み（DEM）の実装方針
 `src/kanagawa_ruins/terrain/dem.py` を改修し、以下のパイプラインを実装する。
@@ -79,10 +83,10 @@ flowchart LR
 # 推奨実装パターン（抜粋）
 def process_mesh_dem(inner_zips_for_mesh, output_dir, target_crs="EPSG:6677"):
     """
-    1. 同一メッシュに属するZIPから最新のDEM5A（優先）およびDEM5Bを取得
-    2. 文字コード（Shift_JIS / UTF-8）を動的判定してXMLパース
+    1. 同一メッシュに属するZIPから最新のDEM5A（優先）を取得。DEM5Aがない場合はDEM5Bを取得。
+    2. 文字コード（Shift_JIS / UTF-8）をXML宣言から動的判定してXMLパース
     3. 2次メッシュ全体の2D NumPy配列 (2250, 1500, float32) を初期化 (NODATA = -9999.0)
-    4. 各サブタイルのtupleListを行列に埋め込み (DEM5A -> 空白部をDEM5Bで補完)
+    4. 各サブタイルのtupleListを行列に埋め込み (DEM5A優先、空白部をDEM5Bで補完)
     5. RasterioでGeoTIFFを出力し、gdalwarpで target_crs (EPSG:6677) へ投影
     6. COG (Cloud-Optimized GeoTIFF) へ変換
     """
@@ -92,7 +96,11 @@ def process_mesh_dem(inner_zips_for_mesh, output_dir, target_crs="EPSG:6677"):
 
 ## 4. Google Drive取得台帳（`provenance.jsonl`）への登録設計（提案）
 
-Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準拠し、本新規データ10件（重複削除後）を取得台帳へ正式登録する設計を提案する。
+Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準拠し、本新規データの一意な10パッケージ（重複除外後、16,039 XML）を取得台帳へ正式登録する設計を提案する。
+
+> [!NOTE] **原本および取得台帳の現状保持**
+> Google Drive上の原本（11 ZIP）および取得台帳（`provenance.jsonl`）は一切改変していない。
+> 重複ファイル `20261011005332598-001.zip`（`bd7f0acb...`）はストレージ上に保持したまま台帳登録対象から除外（スキップ）し、正規の10パッケージのみをアペンド登録する。
 
 ### 4.1 登録対象10パッケージのメタデータ定義
 
@@ -108,7 +116,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2014,
     "crs": "JGD2011",
-    "mesh_coverage": "5238系",
+    "mesh_coverage": "5238系等 24メッシュ",
     "collected_at": "2026-10-11T01:28:00+09:00"
   },
   {
@@ -121,7 +129,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2025,
     "crs": "JGD2024 / JGD2011",
-    "mesh_coverage": "5238系",
+    "mesh_coverage": "5238系等 24メッシュ",
     "collected_at": "2026-10-11T01:29:00+09:00"
   },
   {
@@ -134,7 +142,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_muni",
     "era_year": 2008,
     "crs": "JGD2000",
-    "mesh_coverage": "神奈川県内41市区町村",
+    "mesh_coverage": "神奈川県内18自治体（41コード、相模原市等17市町村欠損）",
     "collected_at": "2026-10-11T01:23:00+09:00"
   },
   {
@@ -147,7 +155,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2014,
     "crs": "JGD2011",
-    "mesh_coverage": "5239-5339系",
+    "mesh_coverage": "5239-5339系 21メッシュ（533935重複含む）",
     "collected_at": "2026-10-11T01:29:00+09:00"
   },
   {
@@ -160,7 +168,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2025,
     "crs": "JGD2024 / JGD2011",
-    "mesh_coverage": "5239-5339系",
+    "mesh_coverage": "5239-5339系 16メッシュ（533924重複含む）",
     "collected_at": "2026-10-11T01:29:00+09:00"
   },
   {
@@ -173,7 +181,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2014,
     "crs": "JGD2011",
-    "mesh_coverage": "533935メッシュ",
+    "mesh_coverage": "533935メッシュ（PKG 58と重複）",
     "collected_at": "2026-10-11T01:13:00+09:00"
   },
   {
@@ -186,7 +194,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "basic_mesh",
     "era_year": 2025,
     "crs": "JGD2024 / JGD2011",
-    "mesh_coverage": "5339系",
+    "mesh_coverage": "5339系 6メッシュ（533924重複含む）",
     "collected_at": "2026-10-11T01:29:00+09:00"
   },
   {
@@ -199,7 +207,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "dem5a",
     "era_year": 2025,
     "crs": "JGD2024 / JGD2011",
-    "mesh_coverage": "神奈川県全45メッシュ（最新LiDAR）",
+    "mesh_coverage": "神奈川県全45メッシュ（DEM5A 84内部ZIP＋DEM5B 17内部ZIP）",
     "collected_at": "2026-10-11T01:25:00+09:00"
   },
   {
@@ -212,7 +220,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "dem5a",
     "era_year": 2015,
     "crs": "JGD2011",
-    "mesh_coverage": "神奈川県全45メッシュ（LiDAR/写真）",
+    "mesh_coverage": "DEM5A 44メッシュ（523951欠損）＋DEM5B 20メッシュ",
     "collected_at": "2026-10-11T01:21:00+09:00"
   },
   {
@@ -225,7 +233,7 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
     "item_category": "dem10b",
     "era_year": 2009,
     "crs": "JGD2000",
-    "mesh_coverage": "神奈川県全45メッシュ（等高線内挿/初期LiDAR）",
+    "mesh_coverage": "DEM10B 45メッシュ＋初期DEM5A 16メッシュ",
     "collected_at": "2026-10-11T01:15:00+09:00"
   }
 ]
@@ -234,4 +242,4 @@ Phase 0の合意規則および安全な排他制御（`ProvenanceLock`）に準
 ### 4.2 排他制御とアペンド登録手順
 1. 本監査期間中は台帳への書き込みを行わず、上記メタデータをCodex実装の入力とする。
 2. 次期フェーズでの登録時は、Phase 0.4.2で検証済みの `ProvenanceLock`（ローカルファイルシステム排他ロック）を確保した上で、`$RUINS_DATA_ROOT/provenance.jsonl` に追記（アペンド）する。
-3. 削除された重複ファイル（`20261011005332598-001.zip`）は台帳に登録せず、監査レポートの証跡にのみ記録を残す。
+3. 重複ファイル `20261011005332598-001.zip` は台帳登録対象外としてスキップする。
