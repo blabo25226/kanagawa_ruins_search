@@ -194,11 +194,54 @@ Google Drive上の正規カタログファイル `raw/aerial_photos/metadata/tsu
    - `test_sources_catalog_structure`: `config/sources.toml` のID一意性および保存先ディレクトリ構造テスト
 
 ### 10.2 テスト実行結果
-- `python -m unittest discover -s tests -v`: **28 tests passed (OK)**
-- `pytest tests/ -v`: **39 passed, 17 subtests passed (100% PASS)**
-- `make test`: **28 tests passed (OK)**
+- `python -m unittest discover -s tests -v`: **34 tests passed (OK)**
+- `pytest tests/ -v`: **45 passed, 17 subtests passed (100% PASS)**
+- `make test`: **34 tests passed (OK)**
 
 ---
+
+### 10.3 PR #2 レビュー指摘事項（3点）の追加解決と回帰テスト
+
+PR #2に対するレビューで指摘された以下の未解決3点について、完全な修正と回帰テストを実装した。
+
+#### 1. PBFファイルの全体構造検証の実装と検証範囲の明示
+- **問題点**: 従来のPBF検証は先頭ブロック（OSMHeader）の確認のみであり、ファイル途中のデータ切断や破損を検出できなかった。
+- **対応内容**:
+  - `scripts/fetch_sources.py` に `validate_pbf_file(file_path, full_scan=False)` を実装。
+  - 軽量なProtobuf VarintおよびBlobHeaderパーサーを外部重厚ライブラリ依存なしで実装し、4バイト長プレフィックス、BlobHeader（wire_type, datasize）、ブロック種別（OSMHeader, OSMData）の妥当性を走査。
+  - `cur_pos + datasize <= file_size` の厳格な境界検査により、ファイル終端や途中の不完全な切断（Truncated blob）を100%検出可能とした（実データ `chubu-latest.osm.pbf` 9,197ブロックの走査にも完全合格）。
+  - `full_scan=False` の場合は「Valid OSM PBF (ヘッダー確認のみ・全体ブロック未走査)」と明記し、ヘッダーのみの確認であることをレポートおよびログで一切隠蔽しない仕様に改修。
+
+#### 2. 監査レポートにおけるハッシュ検証状態の誠実な分離（虚偽報告の根絶）
+- **問題点**: Fastモードや大容量PBFハッシュ計算省略時でも、監査レポートが「全件SHA-256独立再計算済み（完全整合）」と出力可能な構造的欠陥があった。
+- **対応内容**:
+  - 各資産のハッシュ状態を `RECALCULATED_MATCH`（再計算一致）, `RECALCULATED_MISMATCH`（不一致）, `HEADER_ONLY_OMITTED`（ヘッダー確認のみ・再計算省略）, `UNCHECKED_FAST`（高速検証・未再計算）の4状態に厳格分離。
+  - FastモードやPBF省略時に `actual_sha256` に台帳値を代入したり `hash_match = True` と見なす処理を全廃。
+  - 監査判定 `audit_verdict` を **`FULL_PASS`**, **`PARTIAL_PASS`**, **`FAST_PASS`**, **`FAIL`** の4段階に刷新：
+    - `FAST_PASS`: 実ファイル存在・サイズ整合確認済。ハッシュは「未再計算 (0件)」と警告付きで明記。
+    - `PARTIAL_PASS`: 大容量PBFのハッシュ再計算のみI/O保護のため省略し、他全件再計算一致。
+    - `FULL_PASS`: `--check-all-hashes` により全53件のSHA-256がrawディスクから独立再計算され完全一致した場合にのみ「完全整合」と報告。
+
+#### 3. `provenance.jsonl` の排他制御（Concurrency Lock）と破損行保護（ゼロデータロス）
+- **問題点**: 複数エージェント並行実行時の排他制御がなく、またJSONパースエラー行を無視（`pass`）して全体書き換えを行うことで過去の来歴履歴が不可逆的に喪失するリスクがあった。
+- **対応内容**:
+  - `scripts/fetch_sources.py` に `ProvenanceLock` コンテキストマネージャを実装。Google Drive（rcloneマウント）上でも有効な `fcntl.flock` によるアドバイザリ排他ロック、PID/ホスト名/タイムスタンプのメタデータ記録、およびタイムアウト機構（リトライループ）を導入。
+  - `load_provenance_records(data_root, strict=True)` を刷新。壊れた行（不正JSON）が存在する場合は `ProvenanceCorruptedError` を発生させ、台帳の更新・書き換え処理を即時中断することで、壊れた行が上書きにより不可逆的に失われることを完全に防護。
+  - 一時ファイル置換（`replace`）前後の行数検証を二重化し、アトミック性を保証。
+
+#### 4. 追加された回帰テスト（`tests/test_phase0_4_2.py`）
+1. `test_osm_pbf_full_scan_valid_and_truncated`:
+   - 複数ブロックを持つPBFストリームを作成し、途中切断時にヘッダー検証は通過するが全体走査（`full_scan=True`）では厳密に切断を検出して拒否することを確認。
+2. `test_provenance_lock_mutual_exclusion`:
+   - ロック取得中に同一リソースへの並行ロック要求がタイムアウトで正しく拒絶される排他性を検証。
+3. `test_load_provenance_records_strict_corrupted_line_protection`:
+   - 不正なJSONL行が含まれる台帳に対して、strict読み込みおよび追加書き込みが `ProvenanceCorruptedError` を送出し、既存履歴が1バイトも破損・喪失しないことを検証。
+4. `test_audit_verdict_fast_pass_and_no_hash_claims`:
+   - Fastモード実行時に `FAST_PASS` となり、ハッシュ再計算件数が0件と誠実に報告され、「完全整合」「全件完了」の文言が出力されないことを検証。
+5. `test_audit_verdict_partial_pass_when_pbf_omitted`:
+   - PBF省略時に `PARTIAL_PASS` となり、部分検証である旨が明記されることを検証。
+6. `test_audit_verdict_full_pass_only_when_all_recalculated`:
+   - 全件再計算時のみ `FULL_PASS` となり、完全整合が報告されることを検証。
 
 ## 11. Claude Codeの設計提案（PR #1）の評価とPhase 1への採用可否
 

@@ -1,6 +1,6 @@
 # Phase 0.4.1 データ品質・整合性検証レポート
 
-- 検証実施日時: 2026-10-10T06:43:52.624697+00:00 (UTC)
+- 検証実施日時: 2026-10-10T08:22:15.454477+00:00 (UTC)
 - 検証対象ストレージ: Google Drive `/home/blabo/gdrive/kanagawa_ruins_search_databank/data`
 - 検証モード: **FAST** (高速メタデータ・形式整合性検証（ハッシュ未再計算）)
 
@@ -61,8 +61,8 @@
 | `raw/landuse/L03-b-21_5339-jgd2011_GML.zip` | .ZIP | 22,386,507 | `f6bbebb3fa80` | 未再計算 (台帳参照) | OK | EPSG:6668 | 630000 |
 | `raw/landuse/L03-b-76_5338_GML.zip` | .ZIP | 14,630,483 | `1071994099b4` | 未再計算 (台帳参照) | OK | None | 640000 |
 | `raw/landuse/L03-b-76_5339_GML.zip` | .ZIP | 14,450,493 | `b2e5a7210f51` | 未再計算 (台帳参照) | OK | None | 630000 |
-| `raw/osm/chubu-latest.osm.pbf` | .PBF | 511,655,965 | `14056311e508` | 未再計算 (台帳参照) | Valid OSM PBF (Header verified) | EPSG:4326 (WGS84) | PBF Binary Stream |
-| `raw/osm/kanto-latest.osm.pbf` | .PBF | 517,645,146 | `d128943f6ceb` | 未再計算 (台帳参照) | Valid OSM PBF (Header verified) | EPSG:4326 (WGS84) | PBF Binary Stream |
+| `raw/osm/chubu-latest.osm.pbf` | .PBF | 511,655,965 | `14056311e508` | 未再計算 (台帳参照) | Valid OSM PBF (Valid OSM PBF: ヘッダー確認のみ (全体ブロック未走査)) | EPSG:4326 (WGS84) | PBF Binary Stream |
+| `raw/osm/kanto-latest.osm.pbf` | .PBF | 517,645,146 | `d128943f6ceb` | 未再計算 (台帳参照) | Valid OSM PBF (Valid OSM PBF: ヘッダー確認のみ (全体ブロック未走査)) | EPSG:4326 (WGS84) | PBF Binary Stream |
 | `raw/osm/tsukui_4districts_metadata.json` | .JSON | 3,075 | `-` | 未再計算 (台帳参照) | OK | - | Keys: 4 |
 | `raw/osm/tsukui_aonohara_osm.osm` | .OSM | 6,828,635 | `ed6961c5a733` | 未再計算 (台帳参照) | OK | EPSG:4326 (WGS84) | Nodes: 29,698, Ways: 2,887 |
 | `raw/osm/tsukui_aoyama_osm.osm` | .OSM | 10,936,667 | `2cee8ec50206` | 未再計算 (台帳参照) | OK | EPSG:4326 (WGS84) | Nodes: 47,098, Ways: 6,514 |
@@ -336,7 +336,7 @@
 - **フォーマット・ロード異常件数**: **0 件**
 - **SHA-256不一致件数**: **0 件**
 
-1. **実ファイル基本検証（FASTモード）**: 全登録ファイルの存在、ファイルサイズ、およびファイル形式構文を検証完了。ハッシュ照合は台帳記録値との参照のみで、ディスクからの全件再計算は省略。
-2. **総合判定: 合格（PASS）**: 全ての検証対象ファイルについて、フォーマット破壊・文字化け・切り詰め欠損・ハッシュ不一致は検出されませんでした。
+1. **実ファイル基本検証（FASTモード）**: 全登録ファイルの存在、ファイルサイズ、およびファイル形式構文を検証完了。**SHA-256ハッシュはディスクから再計算しておらず、台帳記録値との参照のみです。**
+2. **総合判定: 高速検証合格（FAST PASS）**: 実ファイルの存在、ファイルサイズ、およびフォーマット整合性を確認完了（ハッシュ独立再計算は未実施）。
 3. **CRS統一の留意事項**: 行政区域データ（JGD2011/EPSG:6668）、住居表示（JGD2000/JGD2011）、CODH・OSM（WGS84/EPSG:4326）の測地系が混在しているため、Phase 1の実解析前に**平面直角座標系 第IX系（JGD2011 / EPSG:6677）**へ統一変換するパイプラインを必須とする。
 4. **大字・地番境界の補完**: 住居表示未実施地域（旧津久井郡山間部）は大字レベルの行政界（CODHおよびN03）を参照することを確認。

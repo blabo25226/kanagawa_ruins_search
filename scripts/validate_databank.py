@@ -35,7 +35,7 @@ except Exception:
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scripts.fetch_sources import safe_extract_zip
+from scripts.fetch_sources import safe_extract_zip, validate_pbf_file
 from scripts.storage_utils import get_verified_data_root
 
 
@@ -166,13 +166,13 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
         if mode == "full":
             if is_large_pbf and skip_large_pbf:
                 sha = prov_map.get(rel, "-")
-                hash_match_status = "PBFヘッダー確認（I/O保護のため省略）"
+                hash_match_status = "ヘッダー確認のみ（ハッシュ未再計算）"
             else:
                 sha = calculate_sha256(path)
                 expected_sha = prov_map.get(rel)
                 if expected_sha:
                     if sha.lower() == expected_sha.lower():
-                        hash_match_status = "一致 (OK)"
+                        hash_match_status = "再計算一致 (OK)"
                     else:
                         hash_match_status = f"不一致 (MISMATCH)"
                 else:
@@ -291,23 +291,15 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
                     status = f"ERROR: Truncated OSM XML ({type(e).__name__})"
 
             elif path.suffix == ".pbf":
-                with path.open("rb") as f:
-                    len_bytes = f.read(4)
-                    if len(len_bytes) < 4:
-                        status = "ERROR: Truncated PBF block length"
-                    else:
-                        hlen = int.from_bytes(len_bytes, "big")
-                        if hlen <= 0 or hlen > 64 * 1024:
-                            status = f"ERROR: Invalid PBF header length {hlen}"
-                        else:
-                            hdr = f.read(hlen)
-                            if b"OSMHeader" in hdr:
-                                status = "Valid OSM PBF (Header verified)"
-                                records = "PBF Binary Stream"
-                                crs_info = "EPSG:4326 (WGS84)"
-                                details = {"rel": rel, "type": "OSM-PBF", "status": status}
-                            else:
-                                status = "ERROR: Corrupt OSM PBF (missing OSMHeader)"
+                do_full_scan = (mode == "full" and not skip_large_pbf)
+                pbf_ok, pbf_msg = validate_pbf_file(path, full_scan=do_full_scan)
+                if pbf_ok:
+                    status = f"Valid OSM PBF ({pbf_msg})"
+                    records = "PBF Binary Stream"
+                    crs_info = "EPSG:4326 (WGS84)"
+                    details = {"rel": rel, "type": "OSM-PBF", "status": status}
+                else:
+                    status = f"ERROR: PBF validation failed ({pbf_msg})"
 
             elif path.suffix.lower() in [".jpg", ".jpeg"]:
                 with path.open("rb") as f:
@@ -375,14 +367,23 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
     report_lines.append("")
 
     if mode == "fast":
-        report_lines.append("1. **実ファイル基本検証（FASTモード）**: 全登録ファイルの存在、ファイルサイズ、およびファイル形式構文を検証完了。ハッシュ照合は台帳記録値との参照のみで、ディスクからの全件再計算は省略。")
+        report_lines.append("1. **実ファイル基本検証（FASTモード）**: 全登録ファイルの存在、ファイルサイズ、およびファイル形式構文を検証完了。**SHA-256ハッシュはディスクから再計算しておらず、台帳記録値との参照のみです。**")
+        if total_errors == 0:
+            report_lines.append("2. **総合判定: 高速検証合格（FAST PASS）**: 実ファイルの存在、ファイルサイズ、およびフォーマット整合性を確認完了（ハッシュ独立再計算は未実施）。")
+        else:
+            report_lines.append(f"2. **総合判定: 要対応（FAIL）**: 異常が検出されました（エラー {total_errors} 件）。")
+    elif skip_large_pbf:
+        report_lines.append("1. **実ファイル部分検証（FULLモード・PBF省略）**: 大容量OSM PBF（ヘッダー検証のみ）を除く全実ファイルのSHA-256ハッシュ再計算・台帳照合を実施。")
+        if total_errors == 0 and total_hash_mismatches == 0:
+            report_lines.append("2. **総合判定: 部分検証合格（PARTIAL PASS）**: フォーマット破壊やハッシュ不一致は検出されませんでした（大容量PBFハッシュのみI/O保護のため省略）。")
+        else:
+            report_lines.append(f"2. **総合判定: 要対応（FAIL）**: 異常が検出されました（エラー {total_errors} 件、ハッシュ不一致 {total_hash_mismatches} 件）。")
     else:
-        report_lines.append("1. **実ファイル完全整合性検証（FULLモード）**: 全登録ファイルの存在、実ファイルサイズ、および全件SHA-256ハッシュの再計算による台帳照合を実施。")
-
-    if total_errors == 0 and total_hash_mismatches == 0:
-        report_lines.append("2. **総合判定: 合格（PASS）**: 全ての検証対象ファイルについて、フォーマット破壊・文字化け・切り詰め欠損・ハッシュ不一致は検出されませんでした。")
-    else:
-        report_lines.append(f"2. **総合判定: 要対応（FAIL）**: 異常が検出されました（エラー {total_errors} 件、ハッシュ不一致 {total_hash_mismatches} 件）。")
+        report_lines.append("1. **実ファイル完全整合性検証（FULLモード・全件再計算）**: 全登録ファイルの存在、実ファイルサイズ、および全件SHA-256ハッシュの再計算（大容量PBFを含む）による台帳照合を完了。")
+        if total_errors == 0 and total_hash_mismatches == 0:
+            report_lines.append("2. **総合判定: 完全整合合格（FULL PASS）**: 全ての検証対象ファイルについて、フォーマット破壊・文字化け・切り詰め欠損・ハッシュ不一致は一切検出されず、100%の完全整合を確認しました。")
+        else:
+            report_lines.append(f"2. **総合判定: 要対応（FAIL）**: 異常が検出されました（エラー {total_errors} 件、ハッシュ不一致 {total_hash_mismatches} 件）。")
 
     report_lines.append("3. **CRS統一の留意事項**: 行政区域データ（JGD2011/EPSG:6668）、住居表示（JGD2000/JGD2011）、CODH・OSM（WGS84/EPSG:4326）の測地系が混在しているため、Phase 1の実解析前に**平面直角座標系 第IX系（JGD2011 / EPSG:6677）**へ統一変換するパイプラインを必須とする。")
     report_lines.append("4. **大字・地番境界の補完**: 住居表示未実施地域（旧津久井郡山間部）は大字レベルの行政界（CODHおよびN03）を参照することを確認。")
