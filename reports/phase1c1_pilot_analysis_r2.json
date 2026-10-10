@@ -1,0 +1,189 @@
+{
+  "status": "INTERRUPTED_FOR_PREPARED_MASK_PERFORMANCE_FIX",
+  "run_id": "pilot_r2_20261011",
+  "meshes": [
+    "523867",
+    "533935"
+  ],
+  "results": [
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 1,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 321,
+        "missing_in_newer_dataset": 59,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 8,
+        "possible_split": 2,
+        "ambiguous_many_to_many": 2
+      },
+      "new_status": {
+        "matched": 321,
+        "only_in_newer_dataset": 31,
+        "large_shape_or_position_change": 9,
+        "possible_split": 4,
+        "possible_merge": 3,
+        "ambiguous_many_to_many": 3,
+        "indeterminate_partition_boundary": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 5,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 308,
+        "missing_in_newer_dataset": 57,
+        "ambiguous_many_to_many": 17,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 8,
+        "possible_split": 1,
+        "indeterminate_partition_boundary": 1
+      },
+      "new_status": {
+        "matched": 308,
+        "only_in_newer_dataset": 30,
+        "ambiguous_many_to_many": 19,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 3,
+        "indeterminate_partition_boundary": 2,
+        "possible_split": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 10,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 293,
+        "missing_in_newer_dataset": 55,
+        "ambiguous_many_to_many": 30,
+        "possible_merge": 12,
+        "large_shape_or_position_change": 8,
+        "possible_split": 2,
+        "indeterminate_partition_boundary": 1
+      },
+      "new_status": {
+        "matched": 293,
+        "ambiguous_many_to_many": 32,
+        "only_in_newer_dataset": 29,
+        "large_shape_or_position_change": 8,
+        "possible_merge": 5,
+        "possible_split": 4,
+        "indeterminate_partition_boundary": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 416,
+        "edge_geometry_disagreement": 202,
+        "indeterminate_partition_boundary": 76
+      },
+      "new_status": {
+        "spatially_agreeing": 678,
+        "edge_geometry_disagreement": 224,
+        "indeterminate_partition_boundary": 81
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 505,
+        "edge_geometry_disagreement": 108,
+        "indeterminate_partition_boundary": 81
+      },
+      "new_status": {
+        "spatially_agreeing": 819,
+        "indeterminate_partition_boundary": 90,
+        "edge_geometry_disagreement": 74
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 538,
+        "indeterminate_partition_boundary": 87,
+        "edge_geometry_disagreement": 69
+      },
+      "new_status": {
+        "spatially_agreeing": 843,
+        "indeterminate_partition_boundary": 98,
+        "edge_geometry_disagreement": 42
+      }
+    }
+  ],
+  "errors": [],
+  "artifacts": [
+    {
+      "kind": "matching_validation",
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures/matching_validation.png",
+      "sha256": "db3477e7297b90710e2eef463b35236ee18cc9d75c4b3c1f16d5eb856fba66db",
+      "bytes": 37747
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    }
+  ],
+  "implementation_sha256": "21ced02671c77a2462ff898962986f82a7c2067221d93e23571cc450d217a8e2",
+  "coverage_claim": "selected archives with observed features; feature completeness not established",
+  "spatial_allocation": "EPSG:6677 centroid allocation, whole area/length per record; boundary totals are not clipped area/length",
+  "comparison": "2014_2025",
+  "tolerances_m": [
+    1,
+    5,
+    10
+  ],
+  "input_report_sha256": "2dbc2073a7f55a033892724184dfd5ae71c1a8cd55565dff473b709b55f463c6",
+  "admin_layer": "admin__n03__2026_kanagawa",
+  "interruption_reason": "Unprepared complex prefecture polygon caused slow bulk intersects; verified temporary inputs reused without raw re-ingestion. Superseded by phase1c1_analysis.json."
+}

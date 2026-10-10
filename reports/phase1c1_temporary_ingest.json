@@ -1,0 +1,951 @@
+{
+  "stage": "temporary_real_analysis_fallback",
+  "status": "TEMPORARY_INPUTS_VERIFIED_ANALYSIS_RUN",
+  "results": [
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523867-ALL-20141001.zip",
+      "code": "523867",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 13877123,
+      "crc": 658067039,
+      "acquisition_registered": false,
+      "members": [
+        {
+          "name": "FG-GML-523867-BldA-20141001-0001.xml",
+          "bytes": 32996418,
+          "crs": {
+            "fguuid:jgd2011.bl": 32254
+          },
+          "orgGILvl": {
+            "2500": 32252,
+            "25000": 2
+          },
+          "devDate": {
+            "2014-10-16": 32254
+          },
+          "orgMDId_missing": 32254,
+          "orgMDId": {
+            "unknown": 32254
+          },
+          "xml_mesh": {
+            "unknown": 32254
+          },
+          "count": 32254,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-523867-RdEdg-20141001-0001.xml",
+          "bytes": 33867055,
+          "crs": {
+            "fguuid:jgd2011.bl": 39310
+          },
+          "orgGILvl": {
+            "2500": 38911,
+            "0": 62,
+            "25000": 337
+          },
+          "devDate": {
+            "2014-10-16": 39310
+          },
+          "orgMDId_missing": 39310,
+          "orgMDId": {
+            "unknown": 39310
+          },
+          "xml_mesh": {
+            "unknown": 39310
+          },
+          "count": 39310,
+          "encoding": "utf-8"
+        }
+      ],
+      "counts": {
+        "BldA": 32254,
+        "RdEdg": 39310
+      },
+      "excluded_invalid": {},
+      "duplicates": {},
+      "layers": [
+        {
+          "layer_id": "fgd__2014_523867__blda_v1",
+          "output_sha256": "f4ddd4456ad370f75799fcc9d73d1eaebaefa7c22f5f17c2e6f3ae9e83c60b76",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 32254,
+          "bbox": [
+            -87295.73383475536,
+            -92094.98031321078,
+            -75835.145990697,
+            -82812.24945085938
+          ],
+          "geometry_type": [
+            "Polygon"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 3764540,
+          "status": "temporary_only_cleaned_on_exit"
+        },
+        {
+          "layer_id": "fgd__2014_523867__rdedg_v1",
+          "output_sha256": "1ccc7ba7acd8d7f58dd2f5a03b35315d82f7666b9c6adb8cf70a8938d9fe9a6b",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 39310,
+          "bbox": [
+            -87299.35140972563,
+            -92131.75722985387,
+            -75834.79196192975,
+            -82785.5934946029
+          ],
+          "geometry_type": [
+            "LineString"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 5253990,
+          "status": "temporary_only_cleaned_on_exit"
+        }
+      ],
+      "source_sha256": "243e99cd83f2f3d5853d99aff273068392eca8523e0c43db062ba16d946658d4",
+      "xml_names": [
+        "FG-GML-523867-AdmArea-20141001-0001.xml",
+        "FG-GML-523867-AdmBdry-20141001-0001.xml",
+        "FG-GML-523867-AdmPt-20141001-0001.xml",
+        "FG-GML-523867-BldA-20141001-0001.xml",
+        "FG-GML-523867-BldL-20141001-0001.xml",
+        "FG-GML-523867-Cntr-20141001-0001.xml",
+        "FG-GML-523867-CommBdry-20141001-0001.xml",
+        "FG-GML-523867-CommPt-20141001-0001.xml",
+        "FG-GML-523867-ElevPt-20141001-0001.xml",
+        "FG-GML-523867-GCP-20141001-0001.xml",
+        "FG-GML-523867-RailCL-20141001-0001.xml",
+        "FG-GML-523867-RdCompt-20141001-0001.xml",
+        "FG-GML-523867-RdEdg-20141001-0001.xml",
+        "FG-GML-523867-WA-20141001-0001.xml",
+        "FG-GML-523867-WL-20141001-0001.xml",
+        "FG-GML-523867-WStrA-20141001-0001.xml",
+        "FG-GML-523867-WStrL-20141001-0001.xml",
+        "fmdid14-1001.xml"
+      ],
+      "excluded_outside_mask": {},
+      "converted_kinds": [
+        "BldA",
+        "RdEdg"
+      ],
+      "spatial_mask": null,
+      "temporal_comparison_ready": true,
+      "crs_limitation": null,
+      "scratch_peak_bytes": 22803557,
+      "vfs_bytes": 7374540800
+    },
+    {
+      "source_id": "gsi_fgd_20261011005917320_002",
+      "member": "FG-GML-533935-ALL-20141001.zip",
+      "code": "533935",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 72999208,
+      "crc": 2326604852,
+      "acquisition_registered": false,
+      "members": [
+        {
+          "name": "FG-GML-533935-BldA-20141001-0001.xml",
+          "bytes": 103463890,
+          "crs": {
+            "fguuid:jgd2011.bl": 92561
+          },
+          "orgGILvl": {
+            "2500": 92554,
+            "25000": 7
+          },
+          "devDate": {
+            "2014-10-16": 92561
+          },
+          "orgMDId_missing": 92561,
+          "orgMDId": {
+            "unknown": 92561
+          },
+          "xml_mesh": {
+            "unknown": 92561
+          },
+          "count": 92561,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20141001-0002.xml",
+          "bytes": 104661638,
+          "crs": {
+            "fguuid:jgd2011.bl": 103057
+          },
+          "orgGILvl": {
+            "2500": 103056,
+            "25000": 1
+          },
+          "devDate": {
+            "2014-10-16": 103057
+          },
+          "orgMDId_missing": 103057,
+          "orgMDId": {
+            "unknown": 103057
+          },
+          "xml_mesh": {
+            "unknown": 103057
+          },
+          "count": 103057,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20141001-0003.xml",
+          "bytes": 105100705,
+          "crs": {
+            "fguuid:jgd2011.bl": 107166
+          },
+          "orgGILvl": {
+            "2500": 107166
+          },
+          "devDate": {
+            "2014-10-16": 107166
+          },
+          "orgMDId_missing": 107166,
+          "orgMDId": {
+            "unknown": 107166
+          },
+          "xml_mesh": {
+            "unknown": 107166
+          },
+          "count": 107166,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20141001-0004.xml",
+          "bytes": 45287750,
+          "crs": {
+            "fguuid:jgd2011.bl": 47477
+          },
+          "orgGILvl": {
+            "2500": 47477
+          },
+          "devDate": {
+            "2014-10-16": 47477
+          },
+          "orgMDId_missing": 47477,
+          "orgMDId": {
+            "unknown": 47477
+          },
+          "xml_mesh": {
+            "unknown": 47477
+          },
+          "count": 47477,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-RdEdg-20141001-0001.xml",
+          "bytes": 136266192,
+          "crs": {
+            "fguuid:jgd2011.bl": 188841
+          },
+          "orgGILvl": {
+            "2500": 188437,
+            "25000": 107,
+            "0": 2,
+            "500": 295
+          },
+          "devDate": {
+            "2014-10-16": 188841
+          },
+          "orgMDId_missing": 188841,
+          "orgMDId": {
+            "unknown": 188841
+          },
+          "xml_mesh": {
+            "unknown": 188841
+          },
+          "count": 188841,
+          "encoding": "utf-8"
+        }
+      ],
+      "counts": {
+        "BldA": 350261,
+        "RdEdg": 188841
+      },
+      "excluded_invalid": {
+        "BldA": 1
+      },
+      "duplicates": {},
+      "layers": [
+        {
+          "layer_id": "fgd__2014_533935__blda_v1",
+          "output_sha256": "0f829e33805b57909d97f56631d6fe55abd35dccf5fe0e5bbc0937e898037b9a",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 350260,
+          "bbox": [
+            -18880.49661623406,
+            -46223.474342628615,
+            -7544.378928127845,
+            -36961.612877835796
+          ],
+          "geometry_type": [
+            "Polygon"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 41267178,
+          "status": "temporary_only_cleaned_on_exit"
+        },
+        {
+          "layer_id": "fgd__2014_533935__rdedg_v1",
+          "output_sha256": "a124d3ec285e6bd92521c6e907ff75cbae94a600dce1566307ac2a6614a125fe",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 188841,
+          "bbox": [
+            -18880.46966804883,
+            -46223.380440556226,
+            -7544.392859539716,
+            -36961.746191094244
+          ],
+          "geometry_type": [
+            "LineString"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 11213945,
+          "status": "temporary_only_cleaned_on_exit"
+        }
+      ],
+      "source_sha256": "51c41b4e064c6967bc344dbe1028090f54db431170e3fe70176aa6ec7987f597",
+      "xml_names": [
+        "FG-GML-533935-AdmArea-20141001-0001.xml",
+        "FG-GML-533935-AdmBdry-20141001-0001.xml",
+        "FG-GML-533935-AdmPt-20141001-0001.xml",
+        "FG-GML-533935-BldA-20141001-0001.xml",
+        "FG-GML-533935-BldA-20141001-0002.xml",
+        "FG-GML-533935-BldA-20141001-0003.xml",
+        "FG-GML-533935-BldA-20141001-0004.xml",
+        "FG-GML-533935-BldL-20141001-0001.xml",
+        "FG-GML-533935-Cntr-20141001-0001.xml",
+        "FG-GML-533935-CommBdry-20141001-0001.xml",
+        "FG-GML-533935-CommPt-20141001-0001.xml",
+        "FG-GML-533935-Cstline-20141001-0001.xml",
+        "FG-GML-533935-ElevPt-20141001-0001.xml",
+        "FG-GML-533935-GCP-20141001-0001.xml",
+        "FG-GML-533935-RailCL-20141001-0001.xml",
+        "FG-GML-533935-RdCompt-20141001-0001.xml",
+        "FG-GML-533935-RdEdg-20141001-0001.xml",
+        "FG-GML-533935-SBAPt-20141001-0001.xml",
+        "FG-GML-533935-SBBdry-20141001-0001.xml",
+        "FG-GML-533935-WA-20141001-0001.xml",
+        "FG-GML-533935-WL-20141001-0001.xml",
+        "FG-GML-533935-WStrA-20141001-0001.xml",
+        "FG-GML-533935-WStrL-20141001-0001.xml",
+        "fmdid14-1001.xml"
+      ],
+      "excluded_outside_mask": {},
+      "converted_kinds": [
+        "BldA",
+        "RdEdg"
+      ],
+      "spatial_mask": null,
+      "temporal_comparison_ready": true,
+      "crs_limitation": null,
+      "scratch_peak_bytes": 134208425,
+      "vfs_bytes": 7374540800
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533935-ALL-20250701.zip",
+      "code": "533935",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 71143676,
+      "crc": 130264941,
+      "acquisition_registered": false,
+      "members": [
+        {
+          "name": "FG-GML-533935-BldA-20250701-0001.xml",
+          "bytes": 95088476,
+          "crs": {
+            "fguuid:jgd2024.bl": 86169
+          },
+          "orgGILvl": {
+            "2500": 86141,
+            "25000": 28
+          },
+          "devDate": {
+            "2025-06-19": 86169
+          },
+          "orgMDId_missing": 86169,
+          "orgMDId": {
+            "unknown": 86169
+          },
+          "xml_mesh": {
+            "unknown": 86169
+          },
+          "count": 86169,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20250701-0002.xml",
+          "bytes": 95267098,
+          "crs": {
+            "fguuid:jgd2024.bl": 94433
+          },
+          "orgGILvl": {
+            "2500": 94430,
+            "25000": 3
+          },
+          "devDate": {
+            "2025-06-19": 94433
+          },
+          "orgMDId_missing": 94433,
+          "orgMDId": {
+            "unknown": 94433
+          },
+          "xml_mesh": {
+            "unknown": 94433
+          },
+          "count": 94433,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20250701-0003.xml",
+          "bytes": 95511944,
+          "crs": {
+            "fguuid:jgd2024.bl": 97061
+          },
+          "orgGILvl": {
+            "2500": 97058,
+            "25000": 3
+          },
+          "devDate": {
+            "2025-06-19": 97061
+          },
+          "orgMDId_missing": 97061,
+          "orgMDId": {
+            "unknown": 97061
+          },
+          "xml_mesh": {
+            "unknown": 97061
+          },
+          "count": 97061,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-BldA-20250701-0004.xml",
+          "bytes": 66278434,
+          "crs": {
+            "fguuid:jgd2024.bl": 68816
+          },
+          "orgGILvl": {
+            "2500": 68812,
+            "25000": 4
+          },
+          "devDate": {
+            "2025-06-19": 68816
+          },
+          "orgMDId_missing": 68816,
+          "orgMDId": {
+            "unknown": 68816
+          },
+          "xml_mesh": {
+            "unknown": 68816
+          },
+          "count": 68816,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-533935-RdEdg-20250701-0001.xml",
+          "bytes": 53881373,
+          "crs": {
+            "fguuid:jgd2024.bl": 59564
+          },
+          "orgGILvl": {
+            "2500": 59142,
+            "25000": 221,
+            "500": 201
+          },
+          "devDate": {
+            "2025-06-19": 59564
+          },
+          "orgMDId_missing": 59564,
+          "orgMDId": {
+            "unknown": 59564
+          },
+          "xml_mesh": {
+            "unknown": 59564
+          },
+          "count": 59564,
+          "encoding": "utf-8"
+        }
+      ],
+      "counts": {
+        "BldA": 346479,
+        "RdEdg": 59564
+      },
+      "excluded_invalid": {},
+      "duplicates": {},
+      "layers": [
+        {
+          "layer_id": "fgd__2025_533935__blda_v1",
+          "output_sha256": "f1b4c0f955d2513e509645c88bf7b0916b2bd66abcfc7dcdf62e285b3d73b69e",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 346479,
+          "bbox": [
+            -18880.49661623406,
+            -46223.474342628615,
+            -7544.378928127845,
+            -36961.612877835796
+          ],
+          "geometry_type": [
+            "Polygon"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 38887832,
+          "status": "temporary_only_cleaned_on_exit"
+        },
+        {
+          "layer_id": "fgd__2025_533935__rdedg_v1",
+          "output_sha256": "12aff37560bcbe8c6f57336b4108b1c4ff1a10061a2f00d6d4396f3f5a81ad80",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 59564,
+          "bbox": [
+            -18880.46966804883,
+            -46223.380440556226,
+            -7544.392859539716,
+            -36961.746191094244
+          ],
+          "geometry_type": [
+            "LineString"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 9480908,
+          "status": "temporary_only_cleaned_on_exit"
+        }
+      ],
+      "source_sha256": "d68339a1f908152c0a14467cb2cd1f309ba0fcdfa93cacdf56a74966f7e7353c",
+      "xml_names": [
+        "FG-GML-533935-AdmArea-20250701-0001.xml",
+        "FG-GML-533935-AdmBdry-20250701-0001.xml",
+        "FG-GML-533935-AdmPt-20250701-0001.xml",
+        "FG-GML-533935-BldA-20250701-0001.xml",
+        "FG-GML-533935-BldA-20250701-0002.xml",
+        "FG-GML-533935-BldA-20250701-0003.xml",
+        "FG-GML-533935-BldA-20250701-0004.xml",
+        "FG-GML-533935-BldL-20250701-0001.xml",
+        "FG-GML-533935-Cntr-20250701-0001.xml",
+        "FG-GML-533935-CommBdry-20250701-0001.xml",
+        "FG-GML-533935-CommPt-20250701-0001.xml",
+        "FG-GML-533935-Cstline-20250701-0001.xml",
+        "FG-GML-533935-ElevPt-20250701-0001.xml",
+        "FG-GML-533935-GCP-20250701-0001.xml",
+        "FG-GML-533935-RailCL-20250701-0001.xml",
+        "FG-GML-533935-RdCompt-20250701-0001.xml",
+        "FG-GML-533935-RdEdg-20250701-0001.xml",
+        "FG-GML-533935-SBAPt-20250701-0001.xml",
+        "FG-GML-533935-SBBdry-20250701-0001.xml",
+        "FG-GML-533935-WA-20250701-0001.xml",
+        "FG-GML-533935-WL-20250701-0001.xml",
+        "FG-GML-533935-WStrA-20250701-0001.xml",
+        "FG-GML-533935-WStrL-20250701-0001.xml",
+        "fmdid25-0701.xml"
+      ],
+      "excluded_outside_mask": {},
+      "converted_kinds": [
+        "BldA",
+        "RdEdg"
+      ],
+      "spatial_mask": null,
+      "temporal_comparison_ready": true,
+      "crs_limitation": null,
+      "scratch_peak_bytes": 180878033,
+      "vfs_bytes": 7374540800
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523867-ALL-20250701.zip",
+      "code": "523867",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 12785112,
+      "crc": 3301462436,
+      "acquisition_registered": false,
+      "members": [
+        {
+          "name": "FG-GML-523867-BldA-20250701-0001.xml",
+          "bytes": 31779069,
+          "crs": {
+            "fguuid:jgd2024.bl": 31018
+          },
+          "orgGILvl": {
+            "2500": 31017,
+            "25000": 1
+          },
+          "devDate": {
+            "2025-06-19": 31018
+          },
+          "orgMDId_missing": 31018,
+          "orgMDId": {
+            "unknown": 31018
+          },
+          "xml_mesh": {
+            "unknown": 31018
+          },
+          "count": 31018,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-523867-RdEdg-20250701-0001.xml",
+          "bytes": 16630238,
+          "crs": {
+            "fguuid:jgd2024.bl": 11148
+          },
+          "orgGILvl": {
+            "2500": 10865,
+            "25000": 283
+          },
+          "devDate": {
+            "2025-06-19": 11148
+          },
+          "orgMDId_missing": 11148,
+          "orgMDId": {
+            "unknown": 11148
+          },
+          "xml_mesh": {
+            "unknown": 11148
+          },
+          "count": 11148,
+          "encoding": "utf-8"
+        }
+      ],
+      "counts": {
+        "BldA": 31018,
+        "RdEdg": 11148
+      },
+      "excluded_invalid": {},
+      "duplicates": {},
+      "layers": [
+        {
+          "layer_id": "fgd__2025_523867__blda_v1",
+          "output_sha256": "00dd57f0bf3de2e079e1d1ea799fc6c0a859ea2934e3379861d796757774a978",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 31018,
+          "bbox": [
+            -87298.61383186006,
+            -92097.36409335448,
+            -75835.145990697,
+            -82812.24945085938
+          ],
+          "geometry_type": [
+            "Polygon"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 3640998,
+          "status": "temporary_only_cleaned_on_exit"
+        },
+        {
+          "layer_id": "fgd__2025_523867__rdedg_v1",
+          "output_sha256": "821ed5514fbddf5d2f2c6b6bb19bff172c6188b2da095ecd246b0dffbdcd1e16",
+          "original_crs": "EPSG:6668",
+          "processed_crs": "EPSG:6677",
+          "analysis_ready": true,
+          "source_crs_info": {
+            "authority": "EPSG:6668",
+            "datum": "Japanese Geodetic Datum 2024",
+            "geographic": true,
+            "axes": [
+              "north",
+              "east"
+            ],
+            "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+          },
+          "feature_count": 11148,
+          "bbox": [
+            -87299.35140972563,
+            -92131.75722985387,
+            -75834.78327193404,
+            -82785.5934946029
+          ],
+          "geometry_type": [
+            "LineString"
+          ],
+          "columns": [
+            "fid",
+            "feature_kind",
+            "devDate",
+            "lfSpanFr",
+            "orgMDId",
+            "orgGILvl",
+            "xml_mesh",
+            "feature_type",
+            "declared_crs",
+            "geometry",
+            "geometry_valid",
+            "source_xml",
+            "source_inner_zip",
+            "source_code",
+            "file_edition",
+            "acquisition_registered",
+            "source_id",
+            "source_vintage",
+            "original_crs"
+          ],
+          "bytes": 5210705,
+          "status": "temporary_only_cleaned_on_exit"
+        }
+      ],
+      "source_sha256": "024f37e6a39ed12d8a06b16ef84233c0f1add5a590ac936abdf45414e46f7324",
+      "xml_names": [
+        "FG-GML-523867-AdmArea-20250701-0001.xml",
+        "FG-GML-523867-AdmBdry-20250701-0001.xml",
+        "FG-GML-523867-AdmPt-20250701-0001.xml",
+        "FG-GML-523867-BldA-20250701-0001.xml",
+        "FG-GML-523867-BldL-20250701-0001.xml",
+        "FG-GML-523867-Cntr-20250701-0001.xml",
+        "FG-GML-523867-CommBdry-20250701-0001.xml",
+        "FG-GML-523867-CommPt-20250701-0001.xml",
+        "FG-GML-523867-ElevPt-20250701-0001.xml",
+        "FG-GML-523867-GCP-20250701-0001.xml",
+        "FG-GML-523867-RailCL-20250701-0001.xml",
+        "FG-GML-523867-RdCompt-20250701-0001.xml",
+        "FG-GML-523867-RdEdg-20250701-0001.xml",
+        "FG-GML-523867-WA-20250701-0001.xml",
+        "FG-GML-523867-WL-20250701-0001.xml",
+        "FG-GML-523867-WStrA-20250701-0001.xml",
+        "FG-GML-523867-WStrL-20250701-0001.xml",
+        "fmdid25-0701.xml"
+      ],
+      "excluded_outside_mask": {},
+      "converted_kinds": [
+        "BldA",
+        "RdEdg"
+      ],
+      "spatial_mask": null,
+      "temporal_comparison_ready": true,
+      "crs_limitation": null,
+      "scratch_peak_bytes": 180878033,
+      "vfs_bytes": 7374540800
+    }
+  ],
+  "errors": [],
+  "scratch_peak_bytes": 180878033,
+  "analysis_reuse_scratch_peak_bytes": 113509391
+}

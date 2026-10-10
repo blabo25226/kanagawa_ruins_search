@@ -1,0 +1,158 @@
+{
+  "phase": 0,
+  "timestamp_utc": "2026-10-10T17:55:46.451297+00:00",
+  "host": {
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "python": "3.12.15",
+    "executable": "/home/blabo/miniconda3/envs/kanagawa-ruins/bin/python",
+    "conda_prefix": "/home/blabo/miniconda3"
+  },
+  "modules": [
+    {
+      "name": "numpy",
+      "required": true,
+      "status": "PASS",
+      "version": "2.5.3"
+    },
+    {
+      "name": "pandas",
+      "required": true,
+      "status": "PASS",
+      "version": "3.0.6"
+    },
+    {
+      "name": "geopandas",
+      "required": true,
+      "status": "PASS",
+      "version": "1.2.0"
+    },
+    {
+      "name": "shapely",
+      "required": true,
+      "status": "PASS",
+      "version": "2.2.0"
+    },
+    {
+      "name": "pyproj",
+      "required": true,
+      "status": "PASS",
+      "version": "3.8.0"
+    },
+    {
+      "name": "rasterio",
+      "required": true,
+      "status": "PASS",
+      "version": "1.5.2"
+    },
+    {
+      "name": "osgeo.gdal",
+      "required": true,
+      "status": "PASS",
+      "version": "3.13.3"
+    },
+    {
+      "name": "cv2",
+      "required": true,
+      "status": "PASS",
+      "version": "5.0.0"
+    },
+    {
+      "name": "folium",
+      "required": false,
+      "status": "PASS",
+      "version": "0.20.0"
+    },
+    {
+      "name": "matplotlib",
+      "required": false,
+      "status": "PASS",
+      "version": "3.11.2"
+    }
+  ],
+  "cli": [
+    {
+      "name": "gdalinfo",
+      "required": true,
+      "status": "PASS",
+      "path": "/home/blabo/miniconda3/envs/kanagawa-ruins/bin/gdalinfo",
+      "exit_code": 0,
+      "version": "GDAL 3.13.3 \"Iowa City\", released 2026/08/13"
+    },
+    {
+      "name": "ogrinfo",
+      "required": true,
+      "status": "PASS",
+      "path": "/home/blabo/miniconda3/envs/kanagawa-ruins/bin/ogrinfo",
+      "exit_code": 0,
+      "version": "GDAL 3.13.3 \"Iowa City\", released 2026/08/13"
+    },
+    {
+      "name": "gdalwarp",
+      "required": true,
+      "status": "PASS",
+      "path": "/home/blabo/miniconda3/envs/kanagawa-ruins/bin/gdalwarp",
+      "exit_code": 0,
+      "version": "GDAL 3.13.3 \"Iowa City\", released 2026/08/13"
+    },
+    {
+      "name": "rclone",
+      "required": true,
+      "status": "PASS",
+      "path": "/usr/bin/rclone",
+      "exit_code": 0,
+      "version": "rclone v1.60.1-DEV"
+    },
+    {
+      "name": "qgis_process",
+      "required": false,
+      "status": "OPTIONAL_MISSING"
+    }
+  ],
+  "storage": [
+    {
+      "name": "ruins_data_root_configured",
+      "required": true,
+      "status": "PASS",
+      "configured_path": "/home/blabo/gdrive/kanagawa_ruins_search_databank/data"
+    },
+    {
+      "name": "ruins_data_root_exists",
+      "required": true,
+      "status": "PASS"
+    },
+    {
+      "name": "gdrive_mounted",
+      "required": true,
+      "status": "PASS",
+      "mount_info": "gdrive{_p9vl}: on /home/blabo/gdrive (fuse.rclone)"
+    },
+    {
+      "name": "storage_read_write",
+      "required": true,
+      "status": "PASS"
+    },
+    {
+      "name": "storage_capacity",
+      "required": false,
+      "status": "PASS",
+      "local_free_bytes": 71939018752,
+      "gdrive_free_bytes": 5244904570880
+    }
+  ],
+  "smoke_tests": [
+    {
+      "name": "synthetic_vector_crs",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic_raster",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic_opencv",
+      "status": "PASS"
+    }
+  ],
+  "required_failures": [],
+  "overall": "PASS"
+}

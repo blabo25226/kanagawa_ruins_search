@@ -1,0 +1,125 @@
+{
+  "status": "approval_required_no_ledger_write",
+  "ledger_sha256_before": "10668128cf2333acbc35e2478b662a33eba57eb78f56769e1330ab0483ba1e25",
+  "records": [
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "relative_path": "raw/fgd/20261011005041318-001.zip",
+      "sha256": "243e99cd83f2f3d5853d99aff273068392eca8523e0c43db062ba16d946658d4",
+      "size_bytes": 638547984,
+      "temporal_coverage": "2014",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "relative_path": "raw/fgd/20261011005145933-001.zip",
+      "sha256": "024f37e6a39ed12d8a06b16ef84233c0f1add5a590ac936abdf45414e46f7324",
+      "size_bytes": 865319242,
+      "temporal_coverage": "2025",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "relative_path": "raw/fgd/20261011005322943-001.zip",
+      "sha256": "bd7f0acb77085c8a23fa00a75774f408c251b96546b825a004b9bb0c6aba5e5d",
+      "size_bytes": 360785659,
+      "temporal_coverage": "2008",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "relative_path": "raw/fgd/20261011005809187-001.zip",
+      "sha256": "c20b5ca9f5784816a492f9300f182e4b6626983fbf88ae012a4d81bb33ea55b8",
+      "size_bytes": 1062273085,
+      "temporal_coverage": "2014",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "relative_path": "raw/fgd/20261011005833192-001.zip",
+      "sha256": "e853dcbc0b9c279d5af9ad201f6c0a1c15017efd952eea3e0145f4c15bdc4a2d",
+      "size_bytes": 1095127327,
+      "temporal_coverage": "2025",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005917320_002",
+      "relative_path": "raw/fgd/20261011005917320-002.zip",
+      "sha256": "51c41b4e064c6967bc344dbe1028090f54db431170e3fe70176aa6ec7987f597",
+      "size_bytes": 71345639,
+      "temporal_coverage": "2014",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "relative_path": "raw/fgd/20261011005942447-002.zip",
+      "sha256": "d68339a1f908152c0a14467cb2cd1f309ba0fcdfa93cacdf56a74966f7e7353c",
+      "size_bytes": 909325306,
+      "temporal_coverage": "2025",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": false,
+      "hash_matches_phase1b5": true
+    }
+  ],
+  "duplicate_records": [
+    {
+      "source_id": "gsi_fgd_20261011005332598_001",
+      "relative_path": "raw/fgd/20261011005332598-001.zip",
+      "sha256": "bd7f0acb77085c8a23fa00a75774f408c251b96546b825a004b9bb0c6aba5e5d",
+      "size_bytes": 360785659,
+      "temporal_coverage": "2008",
+      "acquired_at": null,
+      "source_url": null,
+      "source_page": "https://service.gsi.go.jp/kiban/app/",
+      "license": "国土地理院コンテンツ利用規約; 出典と加工の明示; 個別の測量成果利用条件に従う",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "is_duplicate": true,
+      "hash_matches_phase1b5": true
+    }
+  ],
+  "unknown_fields": [
+    "acquired_at",
+    "source_url"
+  ],
+  "source_confirmation": "provider/page confirmed; original authenticated download URL and exact acquisition time not independently available"
+}
