@@ -30,7 +30,7 @@ kanagawa_ruins_search_databank/
     │   └── bibliography/          # 書誌情報（P01〜P12 原典監査済 BibTeX / JSON / Review / Audit Report）
     │
     ├── processed/                 # Phase 1以降の中間成果・解析結果
-    └── provenance.jsonl           # 取得全ファイルの完全来歴台帳（SHA-256）
+    └── provenance.jsonl           # 取得全ファイルの完全来歴台帳（53件正規取得レコード、実ファイル計65件、SHA-256検証済）
 ```
 
 ---
@@ -91,18 +91,19 @@ kanagawa_ruins_search_databank/
 
 | ID | 著者・年 | 論文・研究題目 | 一次情報ファクトチェック結果 | DOI / URL | 本文PDF所蔵状況 |
 |:---|:---|:---|:---|:---|:---|
-| **P01** | Buchi et al.（2024） | Georeferencing of historic maps using neural networks | 歴史地図自動ジオリファレンスの最新CNNフレームワーク (*ISPRS J. Photogramm. Remote Sens.*, 215, 237–251)。 | `10.1016/j.isprsjprs.2024.06.012` | 有料購読（Elsevier / 手動取得案内） |
-| **P02** | 田林（2026） | 生成AIを用いた旧版地形図の幾何補正 | 2026年春季日本地理学会発表要旨（2026s, 264）。迅速図ジオリファレンスAI。 | `10.14866/ajg.2026s.0_264` | **取得済**<br>(`Tabayashi2026_OldMapGeoreferencingAI.pdf`) |
-| **P03** | Wood et al.（2024） | MapReader: Open software for the visual analysis of maps | 歴史地図ラスタの大規模パッチ分割・コンピュータビジョン分析ツール (*J. Open Source Softw.*, 9(101), 6434)。 | `10.21105/joss.06434` | **取得済**<br>(`Wood2024_MapReader.pdf`) |
-| **P04** | Berganzo-Besga et al.（2023） | Curriculum learning-based strategy for low-density archaeological mound detection from historical maps in India and Pakistan | 歴史地図からの低密度考古学的遺構（塚・マウンド）自動検出 (*Sci. Rep.*, 13, 11425)。対象地域: インド・パキスタン。 | `10.1038/s41598-023-38190-x` | **取得済**<br>(`Berganzo2023_ArchaeologicalMounds.pdf`) |
-| **P05** | Luft & Schiewe（2021） | Content-based georeferencing of historical maps using computer vision | 道路網・水系網等の特徴量照合による19世紀歴史地図自動ジオリファレンス (*Trans. in GIS*, 25(6), 2888–2906)。 | `10.1111/tgis.12794` | **取得済**<br>(`Luft2021_HistoricalMapGeoreferencing.pdf`) |
-| **P06** | Huang et al.（2023） | Leveraging Deep Convolutional Neural Network for Point Symbol Recognition in Scanned Topographic Maps | スキャン地形図上の点記号（鳥居・寺院・学校等）の深層畳み込み認識 (*ISPRS Int. J. Geo-Inf.*, 12(3), 85)。 | `10.3390/ijgi12030085` | オープンアクセス（WAF回避手動取得案内） |
-| **P07** | 大倉・布施（2016） | 深層学習を用いた古地図からの地物抽出手法の検討 | 旧版地形図における畳み込みニューラルネットワーク地物抽出（日本写真測量学会秋季学術講演会発表論文集, 107–108）。 | CiNii / JSPRS | 学会要旨（NDL複写案内） |
-| **P08** | 金木 健（2003） | 消滅集落の分布について : 過疎山村における集落の消滅とその要因 その1 | 日本全国を対象とし、過疎山間部における廃村・消滅集落の立地環境（標高・傾斜・アクセス）の定量的分析 (*日本建築学会計画系論文集*, 68(566), 25–32)。 | `10.3130/aija.68.25_4` | **取得済**<br>(`Kanaki2003_AbandonedSettlements.pdf`) |
-| **P09** | 谷 謙二（2016） | 「今昔マップ旧版地形図タイル画像配信・閲覧サービス」の開発 | 旧版地形図のジオリファレンス・時系列タイル配信システム設計 (*GIS-理論と応用*, 24(2), 1–10)。 | `10.5638/thagis.24.89` | **取得済**<br>(`Tani2017_KonjakuMap.pdf`) |
-| **P10** | 藤田 直子・熊谷 洋一（2007） | GIS解析による都市における神社・寺院・公園の立地地点の分布形態の差異に関する研究 | 東京都23区部を対象とし、神社・寺院の立地環境特性を点パターン・空間統計解析した基本論文 (*ランドスケープ研究*, 12(1), 9–21)。 | `10.5738/jale.12.9` | **取得済**<br>(`Fujita2007_ShrineLocationGIS.pdf`) |
-| **P11** | 小田 匡保・柳光 里香（2015） | 神社合祀と地域社会：三重県松阪市飯南・飯高地区の事例 | 三重県松阪市山間過疎地域における明治末期神社合祀・社地廃絶の空間的変容分析（日本地理学会発表要旨集, 2015s, 100229）。 | `10.14866/ajg.2015s.0_100229` | **取得済**<br>(`Oda2015_ShrineMerger.pdf`) |
+| **P01** | 田林 雄（2021） | 畳み込みニューラルネットワークを用いた旧版地形図の地図記号の分類 | 旧版地形図の植生・土地利用記号のCNN画像パッチ分類 (*自然・人間・社会*, 69・70合併号, 43–65)。 | J-GLOBAL: `202102206775677894` | 機関リポジトリ非公開<br>(冊子体所蔵) |
+| **P02** | 田林 雄（2026） | 生成AIを用いた旧版地形図の幾何補正 | 2026年春季日本地理学会発表要旨（2026s, 264）。迅速図ジオリファレンスAI。 | `10.14866/ajg.2026s.0_264` | **取得済**<br>(`Tabayashi2026_OldMapGeoreferencingAI.pdf`) |
+| **P03** | Wood et al.（2024） | MapReader: Open software for the visual analysis of maps | 歴史地図ラスタの大規模パッチ分割・コンピュータビジョン分析ツール (*J. Open Source Softw.*, 9(98), 6434)。 | `10.21105/joss.06434` | **取得済**<br>(`Wood2024_MapReader.pdf`) |
+| **P04** | Berganzo-Besga et al.（2023） | Curriculum learning-based strategy for low-density archaeological mound detection from historical maps in India and Pakistan | 歴史地図からの低密度考古学的遺構（塚・マウンド）自動検出 (*Sci. Rep.*, 13, 11295)。対象地域: インド・パキスタン。 | `10.1038/s41598-023-38190-x` | **取得済**<br>(`Berganzo2023_ArchaeologicalMounds.pdf`) |
+| **P05** | Luft & Schiewe（2021） | Automatic content-based georeferencing of historical topographic maps | 道路網・水系網等の特徴量照合による19世紀歴史地図自動ジオリファレンス (*Trans. in GIS*, 25(6), 2888–2906)。 | `10.1111/tgis.12794` | **取得済**<br>(`Luft2021_HistoricalMapGeoreferencing.pdf`) |
+| **P06** | Huang et al.（2023） | Leveraging Deep Convolutional Neural Network for Point Symbol Recognition in Scanned Topographic Maps | スキャン地形図上の点記号（鳥居・寺院・学校等）の深層畳み込み認識 (*ISPRS Int. J. Geo-Inf.*, 12(3), 128)。 | `10.3390/ijgi12030128` | オープンアクセス（WAF回避手動取得案内） |
+| **P07** | 大倉・布施（2016） | 旧版地形図における地図記号の自動認識 | 近代旧版地形図特有のかすれ・歪み記号の幾何・輪郭特徴抽出（日本写真測量学会秋季学術講演会発表論文集, 99–102）。 | CiNii / JSPRS | 学会要旨（無料公開PDFなし） |
+| **P08** | 金木 健（2003） | 消滅集落の分布について：戦後日本における消滅集落発生過程に関する研究 その1 | 日本全国を対象とし、過疎山間部における廃村・消滅集落の立地環境（標高・傾斜・アクセス）の定量的分析 (*日本建築学会計画系論文集*, 68(566), 25–32)。 | `10.3130/aija.68.25_4` | **取得済**<br>(`Kanaki2003_AbandonedSettlements.pdf`) |
+| **P09** | 谷 謙二（2017） | 「今昔マップ旧版地形図タイル画像配信・閲覧サービス」の開発 | 旧版地形図のジオリファレンス・時系列タイル配信システム設計 (*GIS-理論と応用*, 25(1), 1–10, 2017-06-30公開)。 | `10.5638/thagis.25.1` | **取得済**<br>(`Tani2017_KonjakuMap.pdf`) |
+| **P10** | 藤田 直子・熊谷 洋一（2007） | GIS解析による都市における神社・寺院・公園の立地地点の分布形態の差異に関する研究 | 東京都23区部を対象とし、神社・寺院の立地環境特性を点パターン・空間統計解析した基本論文 (*景観生態学*, 12(1), 9–21)。 | `10.5738/jale.12.9` | **取得済**<br>(`Fujita2007_ShrineLocationGIS.pdf`) |
+| **P11** | 小田 匡保・柳光 里香（2015） | 神社合祀と地域社会―三重県松阪市飯南・飯高地区を事例に― | 三重県松阪市山間過疎地域における明治末期神社合祀・社地廃絶の空間的変容分析（日本地理学会発表要旨集, 2015s, 100229）。 | `10.14866/ajg.2015s.0_100229` | **取得済**<br>(`Oda2015_ShrineMerger.pdf`) |
 | **P12** | （旧 Uhl et al. 2022） | 架空引用（DOI 10.1080/13658816.2022.2038751） | 以前のAI生成によるハルシネーション（存在しないDOI・論文）と判明。**書誌から除外・保留**。 | - | **除外**（架空文献排除） |
+| **参考** | Buchi et al.（2024） | Georeferencing of historic maps using neural networks | 歴史地図自動ジオリファレンスの最新CNNフレームワーク (*ISPRS J. Photogramm. Remote Sens.*, 215, 237–251)。 | `10.1016/j.isprsjprs.2024.06.012` | 有料購読（将来候補） |
 
 ---
 

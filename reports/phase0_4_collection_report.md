@@ -47,11 +47,11 @@ Phase 0.4においてGoogle Driveデータバンク（`$RUINS_DATA_ROOT`）へ�
 | **土地利用** | `mlit_l03_b_2014_5338` | `raw/landuse/L03-b-14_5338-jgd_GML.zip` | 国土数値情報 (GML/ZIP) | 13,398,459 B | `09e03256f41a` | 国土交通省 国土数値情報利用規約（CC BY 4.0互換） | 2014年（平成26年）土地利用メッシュ（津久井西部・JGD2000） |
 | **土地利用** | `mlit_l03_b_2021_5338` | `raw/landuse/L03-b-21_5338-jgd2011_GML.zip` | 国土数値情報 (GML/ZIP) | 22,476,659 B | `3f9d82c098eb` | 国土交通省 国土数値情報利用規約（CC BY 4.0互換） | 2021年（令和3年）最新土地利用メッシュ（津久井西部・JGD2011） |
 | **土地利用** | `mlit_l03_b_2021_5339` | `raw/landuse/L03-b-21_5339-jgd2011_GML.zip` | 国土数値情報 (GML/ZIP) | 22,386,507 B | `f6bbebb3fa80` | 国土交通省 国土数値情報利用規約（CC BY 4.0互換） | 2021年（令和3年）最新土地利用メッシュ（津久井東部・JGD2011） |
-| **空中写真** | `gsi_aerial_photo_catalog_tsukui` | `raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json` | 検索台帳 (JSON) | 39,268 B | `db0f0985c707` | 国土地理院 地図・空中写真閲覧サービス API成果 | 津久井4地区を捉えた昭和期空中写真42件の詳細諸元（コース・番号・座標等） |
-| **空中写真** | `gsi_aerial_tile_1974_aonohara` | `raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg` | 正射画像タイル (JPEG) | 20,452 B | `0be53715c0e7` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 青野原中心部 正射写真タイル (Zoom 15) |
-| **空中写真** | `gsi_aerial_tile_1974_aoyama` | `raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg` | 正射画像タイル (JPEG) | 18,502 B | `0d89280f2d5e` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 青山中心部 正射写真タイル (Zoom 15) |
-| **空中写真** | `gsi_aerial_tile_1974_toya` | `raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg` | 正射画像タイル (JPEG) | 22,088 B | `ddadfe6344d5` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 鳥屋中心部 正射写真タイル (Zoom 15) |
-| **空中写真** | `gsi_aerial_tile_1974_suarashi` | `raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg` | 正射画像タイル (JPEG) | 17,121 B | `0f7236d89552` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 寸沢嵐中心部 正射写真タイル (Zoom 15) |
+| **空中写真** | `gsi_aerial_photo_catalog_tsukui` | `raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json` | 検索台帳 (JSON) | 59,394 B | `205325245d13` | 国土地理院 地図・空中写真閲覧サービス API成果 | 津久井4地区を捉えた昭和期空中写真42件の詳細諸元（正規化済） |
+| **空中写真** | `gsi_aerial_tile_1974_aonohara` | `raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg` | 正射画像タイル (JPEG) | 20,452 B | `5c8b6e2b8008` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 青野原中心部 正射写真タイル (Zoom 15) |
+| **空中写真** | `gsi_aerial_tile_1974_aoyama` | `raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg` | 正射画像タイル (JPEG) | 18,502 B | `025d60d1e3d6` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 青山中心部 正射写真タイル (Zoom 15) |
+| **空中写真** | `gsi_aerial_tile_1974_toya` | `raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg` | 正射画像タイル (JPEG) | 22,088 B | `b347e2a9705f` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 鳥屋中心部 正射写真タイル (Zoom 15) |
+| **空中写真** | `gsi_aerial_tile_1974_suarashi` | `raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg` | 正射画像タイル (JPEG) | 17,121 B | `6ae487f32965` | 国土地理院コンテンツ利用規約（gazo1 レイヤ） | 1974〜1978年 寸沢嵐中心部 正射写真タイル (Zoom 15) |
 | **埋蔵文化財** | `sagamihara_buried_cultural_properties_2026` | `raw/cultural_properties/sagamihara_buried_cultural_properties_20260212.pdf` | 公式台帳 (PDF) | 110,726 B | `de14000fe289` | 相模原市教育委員会 文化財課（公式オープン情報） | 令和8年2月12日改訂版。相模原市内全埋蔵文化財包蔵地一覧 |
 
 ---
@@ -101,13 +101,13 @@ kanagawa_ruins_search_databank/data/
 │   ├── osm/ (関東・中部最新OSM PBF、Overpass津久井抽出XML)
 │   ├── railways/ (N02鉄道ラインZIP)
 │   └── rivers/ (W05河川流路ZIP)
-└── provenance.jsonl                                  [累計54件記録]
+└── provenance.jsonl                                  [累計53件記録]
 ```
 
-- **総実ファイル数**: 66ファイル
-- **総データ容量**: 約 1.28 GB（Google Drive上）
-- **ローカルリポジトリ容量**: 約 1.9 MB（Git管理下はコード・設定・レポートのみに徹底）
-- **取得台帳（`provenance.jsonl`）**: 54件の正規取得レコードを記録
+- **総実ファイル数**: 65ファイル（正規取得53件 + 重複4件 + メタデータ/解題7件 + 来歴台帳1件）
+- **総データ容量**: 1,279,520,207 Bytes（1,279.52 MB / 1,220.25 MiB）
+- **ローカルリポジトリ容量**: 約 2.2 MB（Git管理下はコード・設定・レポートのみに徹底）
+- **取得台帳（`provenance.jsonl`）**: 53件の正規取得レコードを記録（ハッシュ・サイズ不一致0件）
 
 ---
 

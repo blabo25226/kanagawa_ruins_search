@@ -107,29 +107,35 @@
 
 Phase 0.4の文献監査において、オープンアクセスとして自動取得できなかった以下の重要論文について、人間による取得を推奨する。
 
-### 5.1 P01 (Buchi et al. 2024)
-- **文献名**: "Georeferencing of historic maps using neural networks" (*ISPRS J. Photogramm. Remote Sens.*, 215, 237–251)
-- **DOI**: `10.1016/j.isprsjprs.2024.06.012`
-- **状態**: Elsevier発行、有料（ペイウォール）。
+### 5.1 P01 (田林 2021)
+- **文献名**: 「畳み込みニューラルネットワークを用いた旧版地形図の地図記号の分類」（『自然・人間・社会：関東学院大学経済学部・経営学部総合学術論叢』第69・70合併号, pp. 43-65, 2021年）
+- **識別子**: J-GLOBAL ID: `202102206775677894`（DOIなし）
+- **状態**: 関東学院大学機関リポジトリ非公開（冊子体所蔵）。
 - **取得手段**:
-  - 大学・研究機関の学術情報認証（学認 / ScienceDirect）経由でのPDFダウンロード。
-  - 著者のプレプリントリポジトリ（arXiv / ResearchGate）におけるAuthor's Accepted Manuscript (AAM) の確認。
-  - ダウンロード後、`literature/papers/Buchi2024_HistoricMapGeoreferencing.pdf` として配置。
+  - 関東学院大学図書館または国立国会図書館（NDL）への遠隔複写（文献複写）サービス申請。
+  - ダウンロード・受取後、`literature/papers/Tabayashi2021_MapSymbolClassificationCNN.pdf` として配置。
 
 ### 5.2 P06 (Huang et al. 2023)
-- **文献名**: "Leveraging Deep Convolutional Neural Network for Point Symbol Recognition in Scanned Topographic Maps" (*ISPRS Int. J. Geo-Inf.*, 12(3), 85)
-- **DOI**: `10.3390/ijgi12030085`
-- **状態**: オープンアクセス（CC BY 4.0）であるが、MDPIのAkamai/Cloudflare WAFによりCLI自動取得がブロックされる。
+- **文献名**: "Leveraging Deep Convolutional Neural Network for Point Symbol Recognition in Scanned Topographic Maps" (*ISPRS Int. J. Geo-Inf.*, 12(3), 128)
+- **正式DOI**: `10.3390/ijgi12030128`（※旧版記載の 10.3390/ijgi12030085 は別論文DOIのため訂正）
+- **状態**: オープンアクセス（CC BY 4.0）であるが、MDPIのAkamai/Cloudflare WAF（403）によりCLI自動取得がブロックされる。
 - **取得手段**:
   - 一般のPCブラウザ（Chrome, Firefox等）で上記DOI URLを開き、公式ページ上の「Download PDF」ボタンから直接保存。
   - ダウンロード後、`literature/papers/Huang2023_PointSymbolRecognition.pdf` として配置。
 
 ### 5.3 P07 (大倉・布施 2016)
-- **文献名**: 「深層学習を用いた古地図からの地物抽出手法の検討」（日本写真測量学会秋季学術講演会発表論文集, 107–108）
-- **状態**: 学会講演要旨集。J-STAGEまたはCiNii Research未収載。
+- **文献名**: 「旧版地形図における地図記号の自動認識」（『日本写真測量学会 平成28年度秋季学術講演会発表論文集』pp. 99-102, 2016年）
+- **識別子**: J-GLOBAL ID: `201602214144038318`（DOIなし）
+- **状態**: 学会講演論文集（非オープンアクセス、冊子体）。
 - **取得手段**:
   - 日本写真測量学会（JSPRS）会員サイトまたは国立国会図書館（NDL）東京本館での遠隔複写サービス申請。
-  - 請求記号確認の上、NDLデジタル化資料・複写申し込みを利用。
+  - ダウンロード・受取後、`literature/papers/Okura2016_MapSymbolRecognition.pdf` として配置。
+
+### 5.4 参考・発展的海外文献（Phase 1候補：Buchi et al. 2024）
+- **文献名**: "Georeferencing of historic maps using neural networks" (*ISPRS J. Photogramm. Remote Sens.*, 215, 237–251, 2024)
+- **DOI**: `10.1016/j.isprsjprs.2024.06.012`
+- **位置づけ**: P01とは無関係の独立した最新海外文献（古地図のニューラルネットワーク幾何補正研究）。P01の文献IDは割り当てず、Phase 1以降の追加検討文献として扱う。
+- **取得手段**: 学術機関認証（学認 / ScienceDirect）または著者プレプリント（AAM）の確認。
 
 ---
 
