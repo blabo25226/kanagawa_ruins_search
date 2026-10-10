@@ -16,3 +16,9 @@ dependencies:
   - requests
   - jupyterlab
   - pytest
+  - pyogrio
+  - pip
+  - pip:
+      - pyarrow==23.0.1
+      - duckdb==1.4.3
+      - osmium==4.2.0

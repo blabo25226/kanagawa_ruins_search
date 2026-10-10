@@ -3,7 +3,7 @@
 このリポジトリの正本指示書は [`firstinstruction.md`](firstinstruction.md) である。まずこれを読んでから [`agent/rules/`](agent/rules/) の全ファイルを確認すること。
 
 - 主担当はGemini 3.8 Flash（モデル名・提供状況はクライアント側で確認。更新可）。
-- 現在は **Phase 0.3: 広域データ収集と境界検証のみ許可**。探索・廃墟候補地の抽出・画像認識・古地図比較等の解析には一切着手しない。
+- 現在の許可範囲は `agent/rules/00-phase-gate.md` の **Phase 1-A: GIS基盤実装と検証のみ**。Phase 0の初回手順は履歴。候補抽出・実在判定・画像認識は引き続き禁止。
 - VS Code / CLI主体。GIS用のQGIS Desktop GUIは使わない。`qgis_process`は任意。
 - `agent/skills/phase0-preparation/SKILL.md`の手順を実施。
 - 取得候補は`source.md`、自動取得のホワイトリストは`config/sources.toml`。

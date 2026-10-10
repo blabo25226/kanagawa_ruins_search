@@ -151,7 +151,12 @@ def test_databank_actual_files_classification(data_root: Path):
         if p.is_file() and not any(part == "backups" for part in p.parts)
     ]
 
-    assert len(all_files) == 65, f"Expected 65 actual files on Google Drive, found {len(all_files)}"
+    # Phase 0's 65-file snapshot stays protected; only complete, registered Phase 1-A
+    # output/manifest pairs are accounted for separately (not a blanket path exclusion).
+    from kanagawa_ruins.qa.derived import registered_derived_files
+    derived = registered_derived_files(data_root, {r: data_root / r for r in all_files})
+    all_files = [r for r in all_files if r not in derived]
+    assert len(all_files) == 65, f"Expected 65 original Phase 0 files, found {len(all_files)}"
 
     prov_path = data_root / "provenance.jsonl"
     prov_records = [
