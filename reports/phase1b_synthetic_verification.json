@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "data_kind": "synthetic_only",
+  "gcp": {
+    "affine": [
+      5.000000000000227,
+      -4.547473508864641e-13,
+      -60000.0,
+      0.0,
+      -5.000000000000455,
+      -39999.99999999999
+    ],
+    "training": {
+      "count": 4,
+      "rmse_m": 1.1504299109832135e-11,
+      "mean_error_m": 1.1031252328841182e-11,
+      "max_error_m": 1.626953582672133e-11,
+      "points": [
+        {
+          "point_id": "0",
+          "dx_m": 0.0,
+          "dy_m": 7.275957614183426e-12,
+          "error_m": 7.275957614183426e-12
+        },
+        {
+          "point_id": "1",
+          "dx_m": 7.275957614183426e-12,
+          "dy_m": 7.275957614183426e-12,
+          "error_m": 1.0289757937229989e-11
+        },
+        {
+          "point_id": "2",
+          "dx_m": -1.4551915228366852e-11,
+          "dy_m": -7.275957614183426e-12,
+          "error_m": 1.626953582672133e-11
+        },
+        {
+          "point_id": "3",
+          "dx_m": -7.275957614183426e-12,
+          "dy_m": -7.275957614183426e-12,
+          "error_m": 1.0289757937229989e-11
+        }
+      ]
+    },
+    "independent_validation": {
+      "count": 1,
+      "rmse_m": 0.0,
+      "mean_error_m": 0.0,
+      "max_error_m": 0.0,
+      "points": [
+        {
+          "point_id": "validation",
+          "dx_m": 0.0,
+          "dy_m": 0.0,
+          "error_m": 0.0
+        }
+      ]
+    },
+    "independent_3m_4m_offset": {
+      "count": 1,
+      "rmse_m": 5.0,
+      "mean_error_m": 5.0,
+      "max_error_m": 5.0,
+      "points": [
+        {
+          "point_id": "validation",
+          "dx_m": -3.0,
+          "dy_m": -4.0,
+          "error_m": 5.0
+        }
+      ]
+    },
+    "bbox": [
+      -60000.0,
+      -40160.0,
+      -59840.0,
+      -40000.0
+    ],
+    "crs": "EPSG:6677",
+    "output_sha256": "3c954a0febebb492c91354092ff2a7ae0fc678999cd1036ae7d1c5aa9aa2b502",
+    "gdal_commands": [
+      [
+        "gdal_translate",
+        "-of",
+        "GTiff",
+        "-a_srs",
+        "EPSG:6677",
+        "-gcp",
+        "0",
+        "0",
+        "-60000",
+        "-40000",
+        "-gcp",
+        "32",
+        "0",
+        "-59840",
+        "-40000",
+        "-gcp",
+        "0",
+        "32",
+        "-60000",
+        "-40160",
+        "-gcp",
+        "32",
+        "32",
+        "-59840",
+        "-40160",
+        "/tmp/ruins-phase1a-mv67h9ta/synthetic.tif",
+        "/tmp/ruins-phase1a-mv67h9ta/gcp_control.tif"
+      ],
+      [
+        "gdalwarp",
+        "-order",
+        "1",
+        "-r",
+        "near",
+        "-t_srs",
+        "EPSG:6677",
+        "-wm",
+        "64",
+        "-of",
+        "GTiff",
+        "/tmp/ruins-phase1a-mv67h9ta/gcp_control.tif",
+        "/tmp/ruins-phase1a-mv67h9ta/gcp_warped.tif"
+      ]
+    ]
+  },
+  "dem": {
+    "horizontal_crs": "EPSG:6677",
+    "vertical_reference": "synthetic metre heights",
+    "expected_slope_degree": 12.604382648379184,
+    "products": [
+      {
+        "kind": "slope",
+        "valid_count": 3844,
+        "nodata_count": 252,
+        "minimum": 12.604382514953613,
+        "maximum": 12.604382514953613,
+        "output_sha256": "fb821addf2957f2d74b4e7c83a4229015bf7d861f05aa7e47a6cb7d512704932",
+        "cog_full_check": true
+      },
+      {
+        "kind": "hillshade",
+        "valid_count": 3844,
+        "nodata_count": 252,
+        "minimum": 188.40943908691406,
+        "maximum": 188.40943908691406,
+        "output_sha256": "014047738ce72c9dafa08eb69c8c4b05432e39363516817c4a266ceaf4f6a93a",
+        "cog_full_check": true
+      }
+    ]
+  },
+  "fgd": {
+    "data_kind": "synthetic spec-shaped XML",
+    "mesh": "533921",
+    "declared_srs": "fguuid:jgd2011.bl",
+    "bbox": [
+      139.125,
+      35.5,
+      139.25,
+      35.58333333333333
+    ],
+    "nodata": -9999.0,
+    "cog_full_check": true
+  },
+  "scratch_peak_bytes": 32760,
+  "rclone_cache_bytes_best_effort": 2468216832
+}

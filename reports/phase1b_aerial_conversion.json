@@ -1,0 +1,361 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "event": "derived",
+      "phase": "phase1b",
+      "asset_id": "aerial__gazo1__z15_x29054_y12916_v1",
+      "source_id": "gsi_aerial_tile_1974_aonohara_1974",
+      "original_path": "raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg",
+      "source_sha256": "5c8b6e2b80081aa6b33553842d040ad30d6d26b6f389fe94086a0831128c2b30",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29054_y12916_v1.tif",
+      "output_sha256": "6c77ec2ffa3a53b3c7d519f89b5006edac12e6491996c15a2132701d650f4082",
+      "bytes": 207372,
+      "processing_version": "phase1b-0.1.0",
+      "implementation_sha256": "d28654cbffe5ff4c5e0d2dd5eb2996bafd8b0ad4af49de30d5a8bbfb01247d76",
+      "created_at": "2026-10-10T15:09:54.920914+00:00",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "rasterio": "1.5.2",
+        "numpy": "2.5.3",
+        "pyproj": "3.8.0",
+        "rasterio_gdal": "3.13.3",
+        "gdal_cli": "3.13.3"
+      },
+      "source_url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29054/12916.jpg",
+      "source_page": "https://maps.gsi.go.jp/development/ichiran.html",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "acquired_at": "2026-10-09T18:06:50.317467+00:00",
+      "temporal_coverage": "1974-1978",
+      "parameters": {
+        "method": "xyz_affine",
+        "compression": "DEFLATE",
+        "overview_resampling": "NEAREST",
+        "expected_bbox_wgs84": [
+          139.0,
+          35.4,
+          139.4,
+          35.8
+        ]
+      },
+      "kind": "xyz_tile",
+      "original_crs": null,
+      "processed_crs": "EPSG:3857",
+      "capture_date": null,
+      "geometric_accuracy": "unverified",
+      "source_period_evidence": "registered gazo1 source; 1974-1978 interval, not an exact capture date",
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15495314.37397093,
+        4240114.833035297,
+        15496537.366423493,
+        4241337.82548786
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15495314.37397093,
+        0.0,
+        -4.777314267823385,
+        4241337.82548786
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": [],
+      "xyz": {
+        "z": 15,
+        "x": 29054,
+        "y": 12916
+      },
+      "geographic_bbox": [
+        139.19677734375,
+        35.55904339525895,
+        139.207763671875,
+        35.56798045801208
+      ],
+      "pixels_preserved": true,
+      "resampling": "none_base_nearest_overviews",
+      "tile_scheme": "XYZ",
+      "status": "created"
+    },
+    {
+      "event": "derived",
+      "phase": "phase1b",
+      "asset_id": "aerial__gazo1__z15_x29058_y12912_v1",
+      "source_id": "gsi_aerial_tile_1974_aoyama_1974",
+      "original_path": "raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg",
+      "source_sha256": "025d60d1e3d600a968626c424ec4c32f9a2353b9650647b2af05a6cd31bf80ef",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29058_y12912_v1.tif",
+      "output_sha256": "4f36bfaabe230e662c5337b07fe38c5738367b17e139ea27a26fa7c6fea424ab",
+      "bytes": 199844,
+      "processing_version": "phase1b-0.1.0",
+      "implementation_sha256": "d28654cbffe5ff4c5e0d2dd5eb2996bafd8b0ad4af49de30d5a8bbfb01247d76",
+      "created_at": "2026-10-10T15:10:53.276491+00:00",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "rasterio": "1.5.2",
+        "numpy": "2.5.3",
+        "pyproj": "3.8.0",
+        "rasterio_gdal": "3.13.3",
+        "gdal_cli": "3.13.3"
+      },
+      "source_url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29058/12912.jpg",
+      "source_page": "https://maps.gsi.go.jp/development/ichiran.html",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "acquired_at": "2026-10-09T18:06:50.406066+00:00",
+      "temporal_coverage": "1974-1978",
+      "parameters": {
+        "method": "xyz_affine",
+        "compression": "DEFLATE",
+        "overview_resampling": "NEAREST",
+        "expected_bbox_wgs84": [
+          139.0,
+          35.4,
+          139.4,
+          35.8
+        ]
+      },
+      "kind": "xyz_tile",
+      "original_crs": null,
+      "processed_crs": "EPSG:3857",
+      "capture_date": null,
+      "geometric_accuracy": "unverified",
+      "source_period_evidence": "registered gazo1 source; 1974-1978 interval, not an exact capture date",
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15500206.343781184,
+        4245006.802845548,
+        15501429.336233748,
+        4246229.795298111
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15500206.343781184,
+        0.0,
+        -4.777314267823385,
+        4246229.795298111
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": [],
+      "xyz": {
+        "z": 15,
+        "x": 29058,
+        "y": 12912
+      },
+      "geographic_bbox": [
+        139.24072265625003,
+        35.59478566548724,
+        139.25170898437503,
+        35.6037187406973
+      ],
+      "pixels_preserved": true,
+      "resampling": "none_base_nearest_overviews",
+      "tile_scheme": "XYZ",
+      "status": "created"
+    },
+    {
+      "event": "derived",
+      "phase": "phase1b",
+      "asset_id": "aerial__gazo1__z15_x29055_y12920_v1",
+      "source_id": "gsi_aerial_tile_1974_toya_1974",
+      "original_path": "raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg",
+      "source_sha256": "b347e2a9705f5bbf6de5f109631912d1f4fa0ca6b043a73b2aed312f1f70aa72",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29055_y12920_v1.tif",
+      "output_sha256": "26be1443979e91297db12e94041062398005a339d51d697857272a34a4071c27",
+      "bytes": 216874,
+      "processing_version": "phase1b-0.1.0",
+      "implementation_sha256": "d28654cbffe5ff4c5e0d2dd5eb2996bafd8b0ad4af49de30d5a8bbfb01247d76",
+      "created_at": "2026-10-10T15:10:53.988437+00:00",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "rasterio": "1.5.2",
+        "numpy": "2.5.3",
+        "pyproj": "3.8.0",
+        "rasterio_gdal": "3.13.3",
+        "gdal_cli": "3.13.3"
+      },
+      "source_url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29055/12920.jpg",
+      "source_page": "https://maps.gsi.go.jp/development/ichiran.html",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "acquired_at": "2026-10-09T18:06:50.486192+00:00",
+      "temporal_coverage": "1974-1978",
+      "parameters": {
+        "method": "xyz_affine",
+        "compression": "DEFLATE",
+        "overview_resampling": "NEAREST",
+        "expected_bbox_wgs84": [
+          139.0,
+          35.4,
+          139.4,
+          35.8
+        ]
+      },
+      "kind": "xyz_tile",
+      "original_crs": null,
+      "processed_crs": "EPSG:3857",
+      "capture_date": null,
+      "geometric_accuracy": "unverified",
+      "source_period_evidence": "registered gazo1 source; 1974-1978 interval, not an exact capture date",
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15496537.366423491,
+        4235222.863225046,
+        15497760.358876055,
+        4236445.855677608
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15496537.366423491,
+        0.0,
+        -4.777314267823385,
+        4236445.855677608
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": [],
+      "xyz": {
+        "z": 15,
+        "x": 29055,
+        "y": 12920
+      },
+      "geographic_bbox": [
+        139.20776367187497,
+        35.52328517910781,
+        139.21874999999997,
+        35.532226227703376
+      ],
+      "pixels_preserved": true,
+      "resampling": "none_base_nearest_overviews",
+      "tile_scheme": "XYZ",
+      "status": "created"
+    },
+    {
+      "event": "derived",
+      "phase": "phase1b",
+      "asset_id": "aerial__gazo1__z15_x29054_y12906_v1",
+      "source_id": "gsi_aerial_tile_1974_suarashi_1974",
+      "original_path": "raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg",
+      "source_sha256": "6ae487f3296568a605a63c9565c31aded5326462e383b836b28f865e36cb93cb",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29054_y12906_v1.tif",
+      "output_sha256": "2c1c8297ce3b5572a9bfc0bf00974c10d35c85159e813c90ea31410bf7837802",
+      "bytes": 180212,
+      "processing_version": "phase1b-0.1.0",
+      "implementation_sha256": "d28654cbffe5ff4c5e0d2dd5eb2996bafd8b0ad4af49de30d5a8bbfb01247d76",
+      "created_at": "2026-10-10T15:10:54.164410+00:00",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "rasterio": "1.5.2",
+        "numpy": "2.5.3",
+        "pyproj": "3.8.0",
+        "rasterio_gdal": "3.13.3",
+        "gdal_cli": "3.13.3"
+      },
+      "source_url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29054/12906.jpg",
+      "source_page": "https://maps.gsi.go.jp/development/ichiran.html",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "acquired_at": "2026-10-09T18:06:50.571168+00:00",
+      "temporal_coverage": "1974-1978",
+      "parameters": {
+        "method": "xyz_affine",
+        "compression": "DEFLATE",
+        "overview_resampling": "NEAREST",
+        "expected_bbox_wgs84": [
+          139.0,
+          35.4,
+          139.4,
+          35.8
+        ]
+      },
+      "kind": "xyz_tile",
+      "original_crs": null,
+      "processed_crs": "EPSG:3857",
+      "capture_date": null,
+      "geometric_accuracy": "unverified",
+      "source_period_evidence": "registered gazo1 source; 1974-1978 interval, not an exact capture date",
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15495314.37397093,
+        4252344.757560925,
+        15496537.366423493,
+        4253567.750013487
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15495314.37397093,
+        0.0,
+        -4.777314267823385,
+        4253567.750013487
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": [],
+      "xyz": {
+        "z": 15,
+        "x": 29054,
+        "y": 12906
+      },
+      "geographic_bbox": [
+        139.19677734375,
+        35.648369157374255,
+        139.207763671875,
+        35.65729624809627
+      ],
+      "pixels_preserved": true,
+      "resampling": "none_base_nearest_overviews",
+      "tile_scheme": "XYZ",
+      "status": "created"
+    }
+  ]
+}

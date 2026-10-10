@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "event": "derived",
+      "phase": "phase1b",
+      "asset_id": "aerial__photo_catalog__tsukui_v1",
+      "source_id": "gsi_aerial_photo_catalog_tsukui",
+      "original_path": "raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json",
+      "source_sha256": "205325245d13387c31ec29eb47bb3e2240f010dfd0064de276ab872fc6163327",
+      "processed_path": "processed/phase1b/aerial/catalog/aerial__photo_catalog__tsukui_v1.json",
+      "output_sha256": "c75f9a86b5329e74c73299f10ecc5640ea11c50e504fb57e77df086c4030582d",
+      "bytes": 94917,
+      "processing_version": "phase1b-0.1.0",
+      "implementation_sha256": "d28654cbffe5ff4c5e0d2dd5eb2996bafd8b0ad4af49de30d5a8bbfb01247d76",
+      "created_at": "2026-10-10T15:13:51.590581+00:00",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "rasterio": "1.5.2",
+        "numpy": "2.5.3",
+        "pyproj": "3.8.0",
+        "rasterio_gdal": "3.13.3",
+        "gdal_cli": "3.13.3"
+      },
+      "source_url": "https://service.gsi.go.jp/map-photos/app/api/photo/",
+      "source_page": "https://service.gsi.go.jp/map-photos/",
+      "license": "国土地理院コンテンツ利用規約; 測量法第27条に基づく測量成果閲覧APIより抽出",
+      "acquired_at": "2026-10-09T18:06:49.881784+00:00",
+      "temporal_coverage": "1940-1978",
+      "parameters": {
+        "method": "preserve_actual_keys_normalize_dates_and_geometry_status",
+        "schema_version": 1
+      },
+      "kind": "photo_catalog",
+      "original_crs": null,
+      "processed_crs": null,
+      "feature_count": 42,
+      "coordinate_accuracy": "unverified",
+      "spatial_search_mode": "native_coordinate_bbox_only_until_crs_verified",
+      "status": "created"
+    }
+  ]
+}

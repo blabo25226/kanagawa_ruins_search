@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "kanagawa-ruins"
 version = "0.1.0"
-description = "Provenance-aware Phase 1-A GIS ingestion foundation"
+description = "Provenance-aware GIS and historical raster processing foundation"
 requires-python = ">=3.12"
-dependencies = ["geopandas>=1.1,<2", "shapely>=2.1,<3", "pyproj>=3.7,<4", "pyogrio>=0.11,<1", "pyarrow==23.0.1", "duckdb==1.4.3", "osmium==4.2.0"]
+dependencies = ["geopandas>=1.1,<2", "shapely>=2.1,<3", "pyproj>=3.7,<4", "pyogrio>=0.11,<1", "pyarrow==23.0.1", "duckdb==1.4.3", "osmium==4.2.0", "rasterio>=1.5,<2", "numpy>=2,<3"]
 
 [project.scripts]
 ruins-ingest = "kanagawa_ruins.cli:ingest_main"

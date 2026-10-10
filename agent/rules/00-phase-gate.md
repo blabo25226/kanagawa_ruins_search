@@ -1,9 +1,8 @@
 # Rule 00 — Phase Gate
 
-- Current phase: **Phase 1-A / GIS ingestion foundation**, explicitly authorized by the user on 2026-10-10.
-- Allowed: read/validate existing GIS, transform known CRS, normalize to GeoParquet, build metadata catalogs, run spatial SQL for infrastructure verification, synthetic/live tests and reports.
-- New derived files may be written only to `$RUINS_DATA_ROOT/processed/phase1a/` after genuine Drive mount verification. Raw and Phase 0 acquisition ledger remain immutable.
-- No candidate inference, abandonment judgments, scoring, ranking, publication, historical image recognition, DEM acquisition, bulk new downloads or scraping.
-- No oaza boundary claims from municipality polygons. OSM worship/historic and P32 are general features, never evidence of abandonment or exhaustive religious registries.
-- Work on a new branch from latest main. Commit, push, open a PR, then STOP for independent GPT review. Never merge or push directly to main.
-- Phase 0 reports and firstinstruction.md remain historical. This gate supersedes their preparation-only execution restriction solely within the above scope.
+- Current phase: **Phase 1-B / historical imagery and terrain foundation**, explicitly authorized by the user on 2026-10-10. Phase 1-A was merged as PR #3.
+- Allowed: inspect existing imagery/metadata, georeference existing XYZ tiles, create COGs, implement GCP correction and DEM terrain tools, test synthetic data, audit derivatives, research official specifications/acquisition conditions.
+- New derivatives only under `$RUINS_DATA_ROOT/processed/phase1b/`, after genuine Drive mount verification and SHA-256 readback. Raw, acquisition ledger and Phase 1-A derivatives are immutable. Synthetic DEMs remain temporary.
+- No new dataset downloads, accounts, terms acceptance, login, purchases, applications, scraping, candidate inference/ranking, shrine-symbol detection, abandonment judgments or external publication.
+- Unknown dates, CRS, vertical datum, footprint accuracy and licensing remain unknown. Center points do not establish photo coverage. Synthetic tests do not establish real-map/DEM accuracy.
+- Preserve Phase 0 and Phase 1-A historical reports. Work from latest main on `codex/phase1b-historical-raster-foundation`; commit, push, create PR, then STOP for independent review. No direct main push or merge without a later explicit user instruction.

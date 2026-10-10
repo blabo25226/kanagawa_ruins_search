@@ -1,0 +1,9 @@
+{
+  "status": "PLANNED",
+  "action": "dry-run",
+  "command": "georef",
+  "sources": [],
+  "manual_action_required": true,
+  "required_metadata": "training and independent validation GCP JSON",
+  "writes": false
+}

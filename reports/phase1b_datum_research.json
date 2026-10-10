@@ -1,0 +1,42 @@
+{
+  "status": "deferred_missing_official_parameters",
+  "proj_version": "9.9.0",
+  "proj_data_dir": "/home/blabo/miniconda3/envs/kanagawa-ruins/share/proj",
+  "network_enabled": false,
+  "best_available": false,
+  "available_operations": [],
+  "unavailable_operations": [
+    {
+      "name": "Tokyo to JGD2024 (2) + Japan Plane Rectangular CS zone IX",
+      "accuracy_m": 0.2,
+      "grids": [
+        {
+          "name": "tky2jgd.gsb",
+          "available": false,
+          "url": "",
+          "open_license": false
+        }
+      ]
+    },
+    {
+      "name": "Tokyo to JGD2000 (2) + JGD2000 to JGD2024 (1) + Japan Plane Rectangular CS zone IX",
+      "accuracy_m": 0.4,
+      "grids": [
+        {
+          "name": "tky2jgd.gsb",
+          "available": false,
+          "url": "",
+          "open_license": false
+        },
+        {
+          "name": "touhokutaiheiyouoki2011.gsb",
+          "available": false,
+          "url": "",
+          "open_license": false
+        }
+      ]
+    }
+  ],
+  "transformation_executed": false,
+  "phase1a_changed": false
+}

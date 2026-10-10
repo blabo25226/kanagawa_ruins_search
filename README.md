@@ -1,12 +1,12 @@
 # 神奈川県廃墟調査プロジェクト
 
-**Kanagawa Ruins Research Project** | フェーズ: **1-A / GISデータ統一処理基盤** | 作成日: 2026-10-09
+**Kanagawa Ruins Research Project** | フェーズ: **1-B / 歴史画像・地形処理基盤** | 作成日: 2026-10-09
 
 神奈川県の歴史地図・行政資料・地理空間データを収集・整理し、将来的に廃神社、廃村、廃道、廃寺、廃施設等の歴史的変遷を調査するための、再現可能なCLI主体の研究基盤。
 
-> **2026-10-10のユーザー指示によりPhase 1-Aを開始。既存GISの読み込み・検証・CRS変換・GeoParquet化・SQL検索のみ許可。候補地点の検出・ランキング・実在判定・外部公開・画像認識・現地調査はしない。**
+> **2026-10-10のユーザー指示によりPhase 1-Bを開始。既存航空写真のGIS化、GCP位置合わせ・DEM地形処理の基盤実装、合成データ検証、公式取得条件の調査を許可。新規データ取得・登録・購入・候補検出・ランキング・記号検出・外部公開は行わない。**
 
-実行方法: [Phase 1-A利用ガイド](docs/phase1a_usage.md)。派生物は `$RUINS_DATA_ROOT/processed/phase1a/`、取得台帳とrawは不変。下記Phase 0手順・完了条件は履歴として保持する。
+実行方法: [Phase 1-B利用ガイド](docs/phase1b_usage.md)、[Phase 1-A利用ガイド](docs/phase1a_usage.md)。今回の派生物は `$RUINS_DATA_ROOT/processed/phase1b/`。取得台帳・raw・Phase 1-A成果物は不変。下記Phase 0手順・完了条件は履歴として保持する。
 
 ## 対象と体制
 

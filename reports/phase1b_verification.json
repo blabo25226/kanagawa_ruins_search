@@ -1,0 +1,280 @@
+{
+  "status": "PASS",
+  "asset_count": 5,
+  "results": [
+    {
+      "asset_id": "aerial__gazo1__z15_x29054_y12906_v1",
+      "status": "PASS",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29054_y12906_v1.tif",
+      "bytes": 180212,
+      "source_sha256": "6ae487f3296568a605a63c9565c31aded5326462e383b836b28f865e36cb93cb",
+      "output_sha256": "2c1c8297ce3b5572a9bfc0bf00974c10d35c85159e813c90ea31410bf7837802",
+      "checks": {
+        "source_hash": true,
+        "output_hash": true,
+        "source_ledger_match": true,
+        "cog_full_check": true,
+        "xyz_bbox": true,
+        "north_up": true,
+        "source_pixels_identical": true
+      },
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15495314.37397093,
+        4252344.757560925,
+        15496537.366423493,
+        4253567.750013487
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15495314.37397093,
+        0.0,
+        -4.777314267823385,
+        4253567.750013487
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": []
+    },
+    {
+      "asset_id": "aerial__gazo1__z15_x29054_y12916_v1",
+      "status": "PASS",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29054_y12916_v1.tif",
+      "bytes": 207372,
+      "source_sha256": "5c8b6e2b80081aa6b33553842d040ad30d6d26b6f389fe94086a0831128c2b30",
+      "output_sha256": "6c77ec2ffa3a53b3c7d519f89b5006edac12e6491996c15a2132701d650f4082",
+      "checks": {
+        "source_hash": true,
+        "output_hash": true,
+        "source_ledger_match": true,
+        "cog_full_check": true,
+        "xyz_bbox": true,
+        "north_up": true,
+        "source_pixels_identical": true
+      },
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15495314.37397093,
+        4240114.833035297,
+        15496537.366423493,
+        4241337.82548786
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15495314.37397093,
+        0.0,
+        -4.777314267823385,
+        4241337.82548786
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": []
+    },
+    {
+      "asset_id": "aerial__gazo1__z15_x29055_y12920_v1",
+      "status": "PASS",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29055_y12920_v1.tif",
+      "bytes": 216874,
+      "source_sha256": "b347e2a9705f5bbf6de5f109631912d1f4fa0ca6b043a73b2aed312f1f70aa72",
+      "output_sha256": "26be1443979e91297db12e94041062398005a339d51d697857272a34a4071c27",
+      "checks": {
+        "source_hash": true,
+        "output_hash": true,
+        "source_ledger_match": true,
+        "cog_full_check": true,
+        "xyz_bbox": true,
+        "north_up": true,
+        "source_pixels_identical": true
+      },
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15496537.366423491,
+        4235222.863225046,
+        15497760.358876055,
+        4236445.855677608
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15496537.366423491,
+        0.0,
+        -4.777314267823385,
+        4236445.855677608
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": []
+    },
+    {
+      "asset_id": "aerial__gazo1__z15_x29058_y12912_v1",
+      "status": "PASS",
+      "processed_path": "processed/phase1b/aerial/georeferenced/aerial__gazo1__z15_x29058_y12912_v1.tif",
+      "bytes": 199844,
+      "source_sha256": "025d60d1e3d600a968626c424ec4c32f9a2353b9650647b2af05a6cd31bf80ef",
+      "output_sha256": "4f36bfaabe230e662c5337b07fe38c5738367b17e139ea27a26fa7c6fea424ab",
+      "checks": {
+        "source_hash": true,
+        "output_hash": true,
+        "source_ledger_match": true,
+        "cog_full_check": true,
+        "xyz_bbox": true,
+        "north_up": true,
+        "source_pixels_identical": true
+      },
+      "crs": "EPSG:3857",
+      "width": 256,
+      "height": 256,
+      "bands": 3,
+      "dtypes": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "bbox": [
+        15500206.343781184,
+        4245006.802845548,
+        15501429.336233748,
+        4246229.795298111
+      ],
+      "transform": [
+        4.777314267827023,
+        0.0,
+        15500206.343781184,
+        0.0,
+        -4.777314267823385,
+        4246229.795298111
+      ],
+      "nodata": null,
+      "compression": "DEFLATE",
+      "overviews": [
+        2
+      ],
+      "cog_full_check": true,
+      "cog_warnings": []
+    },
+    {
+      "asset_id": "aerial__photo_catalog__tsukui_v1",
+      "status": "PASS",
+      "processed_path": "processed/phase1b/aerial/catalog/aerial__photo_catalog__tsukui_v1.json",
+      "bytes": 94917,
+      "source_sha256": "205325245d13387c31ec29eb47bb3e2240f010dfd0064de276ab872fc6163327",
+      "output_sha256": "c75f9a86b5329e74c73299f10ecc5640ea11c50e504fb57e77df086c4030582d",
+      "checks": {
+        "source_hash": true,
+        "output_hash": true,
+        "source_ledger_match": true,
+        "original_attributes_retained": true,
+        "catalog_reproduced": true
+      },
+      "feature_count": 42,
+      "date_unknown": 6,
+      "coordinate_crs": null
+    }
+  ],
+  "unregistered_files": [],
+  "source_and_phase1a_integrity": "See separate baseline integrity comparison; verifier never writes source/Phase1A",
+  "checked_at": "2026-10-10T15:38:05.165461+00:00",
+  "verified_implementation_sha256": "bbf0febf9624427ca79a7b803e6688e2d146878e0e1beafd2d5e9444b0ac185c",
+  "versions": {
+    "kanagawa-ruins": "0.1.0",
+    "rasterio": "1.5.2",
+    "numpy": "2.5.3",
+    "pyproj": "3.8.0",
+    "rasterio_gdal": "3.13.3",
+    "gdal_cli": "3.13.3"
+  },
+  "original_integrity": {
+    "status": "PASS",
+    "files_checked": 279,
+    "phase1a_files_checked": 214,
+    "report": "reports/phase1b_original_integrity.json"
+  },
+  "full_audit": {
+    "verdict": "FULL_PASS",
+    "source_hashes_matched": 53,
+    "actual_file_count": 289,
+    "unregistered_file_count": 0
+  },
+  "reproduction": {
+    "status": "PASS",
+    "asset_count": 5,
+    "outputs": [
+      {
+        "asset_id": "aerial__gazo1__z15_x29054_y12916_v1",
+        "output_sha256": "6c77ec2ffa3a53b3c7d519f89b5006edac12e6491996c15a2132701d650f4082",
+        "status": "already_present_reproduced"
+      },
+      {
+        "asset_id": "aerial__gazo1__z15_x29058_y12912_v1",
+        "output_sha256": "4f36bfaabe230e662c5337b07fe38c5738367b17e139ea27a26fa7c6fea424ab",
+        "status": "already_present_reproduced"
+      },
+      {
+        "asset_id": "aerial__gazo1__z15_x29055_y12920_v1",
+        "output_sha256": "26be1443979e91297db12e94041062398005a339d51d697857272a34a4071c27",
+        "status": "already_present_reproduced"
+      },
+      {
+        "asset_id": "aerial__gazo1__z15_x29054_y12906_v1",
+        "output_sha256": "2c1c8297ce3b5572a9bfc0bf00974c10d35c85159e813c90ea31410bf7837802",
+        "status": "already_present_reproduced"
+      },
+      {
+        "asset_id": "aerial__photo_catalog__tsukui_v1",
+        "output_sha256": "c75f9a86b5329e74c73299f10ecc5640ea11c50e504fb57e77df086c4030582d",
+        "status": "already_present_reproduced"
+      }
+    ]
+  },
+  "synthetic_verification": {
+    "status": "PASS",
+    "report": "reports/phase1b_synthetic_verification.json",
+    "gcp_training_rmse_m": 1.1504299109832135e-11,
+    "gcp_independent_rmse_m": 0.0,
+    "independent_offset_rmse_m": 5.0,
+    "real_map_verified": false,
+    "real_dem_verified": false
+  },
+  "tests": {
+    "summary": "125 passed, 7 warnings, 35 subtests passed in 9.55s",
+    "log": "reports/phase1b_test_results.txt"
+  }
+}

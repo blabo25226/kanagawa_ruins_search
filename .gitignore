@@ -31,9 +31,12 @@ scratch/
 
 # Derived GIS stays on Drive, never in Git
 *.parquet
+*.tif
+*.tiff
 *.duckdb
 *.duckdb.wal
 *.pbf
 *.partial
 /build/
 /dist/
+kokudochiriin_idpassword.txt

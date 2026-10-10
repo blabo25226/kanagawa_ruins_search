@@ -1,6 +1,6 @@
 # Rule 50 — Agent Roles & Git
 
-- Phase 1-A executor: Codex. Phase 0 executor: Gemini. モデル情報はログで管理しモデル依存コードは禁止。
+- Phase 1-B executor: Codex. Phase 1-A implementation: Codex. Phase 0 executor: Gemini. モデル情報はログで管理しモデル依存コードは禁止。
 - Reviewer: GPT-5.6 Sol High. Geminiはレビュー結果を捏造しない。
 - Subagents: Cursor/ClaudeはPhase 0で呼び出さない。
 - Push は指定済み`origin`へ通常のpushのみ。`git push --force` / `git reset --hard`は禁止。
