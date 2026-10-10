@@ -12,6 +12,20 @@ from ..geo.spatial import (
 from ..pipeline import implementation_sha256, versions
 
 
+def register_landuse_attributes(con, paths):
+    """Register only aggregation attributes; input geometries may have different CRSs."""
+    arms = [
+        "SELECT source_vintage, landuse_code, landuse_label FROM read_parquet('"
+        + str(p).replace("'", "''")
+        + "')"
+        for p in paths
+    ]
+    if not arms:
+        raise ValueError("At least one landuse layer required")
+    # Project before UNION: no mixed-CRS geometry may enter this attribute view.
+    con.execute("CREATE VIEW landuse AS " + " UNION ALL BY NAME ".join(arms))
+
+
 def validate_sql():
     layers = list_layers()
     result = {"implementation_sha256": implementation_sha256(), "versions": versions()}
@@ -82,14 +96,17 @@ def validate_sql():
             "shapely_count": len(expected),
             "match": True,
         }
-        arms = []
-        for m in layers:
-            if m["layer_id"].startswith("landuse__l03b__"):
-                _, p = get_layer(m["layer_id"])
-                arms.append(
-                    "SELECT * FROM read_parquet('" + str(p).replace("'", "''") + "')"
-                )
-        con.execute("CREATE VIEW landuse AS " + " UNION ALL BY NAME ".join(arms))
+        register_landuse_attributes(
+            con,
+            [
+                get_layer(m["layer_id"])[1]
+                for m in layers
+                if m["layer_id"].startswith("landuse__l03b__")
+            ],
+        )
+        result["landuse_attribute_columns"] = [
+            row[0] for row in con.execute("DESCRIBE landuse").fetchall()
+        ]
         result["landuse_counts"] = (
             con.execute(
                 (

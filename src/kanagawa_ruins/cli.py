@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 from .config import Settings
-from .pipeline import plan, classify, ingest_source
+from .pipeline import TSUKUI_BBOX, plan, classify, ingest_source
 from .qa.verify import verify_all
 
 
@@ -14,7 +14,17 @@ def ingest_main(argv=None):
     a.add_argument("--list", action="store_true")
     a.add_argument("--dry-run", action="store_true")
     a.add_argument("--execute", action="store_true")
-    p.add_argument("--area", choices=["tsukui", "all"], default="tsukui")
+    p.add_argument(
+        "--area",
+        choices=["tsukui", "all"],
+        default="tsukui",
+        help=(
+            "OSM PBF only: tsukui (default) selects geometries intersecting the "
+            "Tsukui bbox without clipping; all disables this selection. "
+            "OSM XML and all other GIS inputs retain their original coverage. "
+            "PBFs require --include-pbf."
+        ),
+    )
     p.add_argument("--layers", default="admin,osm,railways,rivers,cultural,landuse")
     p.add_argument(
         "--include-pbf",
@@ -36,6 +46,11 @@ def ingest_main(argv=None):
             selected = [s for s in selected if s.source_id in args.source_id]
         if not args.execute:
             for s in selected:
+                bbox_selection = (
+                    classify(s) == "osm"
+                    and Path(s.relative_path).suffix == ".pbf"
+                    and args.area == "tsukui"
+                )
                 print(
                     json.dumps(
                         dict(
@@ -43,6 +58,13 @@ def ingest_main(argv=None):
                             path=s.relative_path,
                             group=classify(s),
                             action="list" if args.list else "dry-run",
+                            area=args.area,
+                            spatial_scope=(
+                                "tsukui_bbox_intersection_no_clipping"
+                                if bbox_selection
+                                else "original_source_coverage"
+                            ),
+                            bbox_wgs84=TSUKUI_BBOX if bbox_selection else None,
                         ),
                         ensure_ascii=False,
                     )

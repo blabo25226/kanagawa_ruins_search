@@ -55,7 +55,17 @@ python scripts/phase1a_ingest.py --execute --layers osm --include-pbf --area tsu
   --source-id geofabrik_kanto --source-id geofabrik_chubu --report reports/phase1a_pbf.json
 ```
 
-`--area tsukui` はPBFをPhase 0の4区画の外接矩形で抽出する指定。大字境界ではなく、geometryとの交差による選択で、切り詰めは行わない。他のベクトルとXMLは入力の全範囲を保持する。全国・県別資産の出力範囲を津久井だけと解釈しない。`--area all` はPBFの範囲選択を解除する（全域での実データ実行は未検証）。
+`--area tsukui`（既定値）は**OSM PBFだけ**をPhase 0の4区画の外接矩形（WGS84の経度・緯度順で `139.12,35.51,139.25,35.62`）との交差で選択する。大字境界ではなく、geometryの切り詰めも行わない。
+
+| 入力 | `--area tsukui` の適用範囲 |
+| --- | --- |
+| 関東・中部OSM PBF（`--include-pbf` が必要） | 矩形と交差する地物を選択。地物全体のgeometryを保持 |
+| 津久井OSM XML | 原本に収録された全範囲を保持。追加の範囲選択なし |
+| N03・CODH・N02・W05・P32・L03-b | 原本の行政区域・全国・県別・メッシュ等の収録範囲を保持。追加の範囲選択なし |
+
+全国・県別資産の出力範囲を津久井だけと解釈しない。`--include-pbf` を省略した場合、`--area tsukui` による空間的な絞り込みは発生しない。入力資産の選択は `--layers` と `--source-id` で行う。`--area all` はPBFの矩形選択を解除する（全域での実データ実行は未検証）。XMLや他のGISの収録範囲を拡大する指定ではない。
+
+`--list` とdry-runは、入力ごとのJSONに `area`、`spatial_scope`、`bbox_wgs84` を表示する。PBFの津久井選択は `spatial_scope="tsukui_bbox_intersection_no_clipping"` と上記bbox、それ以外は `spatial_scope="original_source_coverage"` と `bbox_wgs84=null` になる。dry-runは変換・保存を行わないため、範囲の確認だけなら `--execute` は不要。
 
 同一IDの再実行は入力から再生成し、既存成果物とSHA-256が一致した場合だけ `already_present_reproduced` を返す。出力・条件・入力ハッシュが違う場合は既存を上書きせず停止する。破損や台帳未登録の出力も停止する。失敗ソースは個別に記録しCLIは非ゼロ終了する。入力ファイルの形状不正は自動修復せず停止する。
 
@@ -92,7 +102,9 @@ with spatial_connection() as con:
 
 DuckDBは必ずインメモリ。メモリ1GB、2 threads、ディスクspill無効のため、大きいクエリは無制限にローカルへ書かず失敗する。更新型DBはDriveに置かない。永続正規データはGeoParquet。実行環境はDuckDB 1.4.3、Spatial `2f2668d`。拡張はDuckDB版・プラットフォームに依存する。検証CLIが実際の拡張版を記録する。
 
-`queries/` にbbox、行政区域による抽出、土地利用分類集計、年次件数集計を保存した。登録したビューをSQLに記載された `layer`, `roads`, `admin`, `landuse` として別名登録し、値はパラメータで渡す。全ビューのCRSを揃える責任は呼出側にある。`register_layer` はEPSG:6677以外を拒否する。
+`queries/` にbbox、行政区域による抽出、土地利用分類集計、年次件数集計を保存した。登録したビューをSQLに記載された `layer`, `roads`, `admin`, `landuse` として別名登録し、値はパラメータで渡す。空間ビューのCRSを揃える責任は呼出側にある。`register_layer` はEPSG:6677以外を拒否する。
+
+SQL検証の土地利用集計では `register_landuse_attributes` が `source_vintage`、`landuse_code`、`landuse_label` の3属性だけを選択してから結合する。`landuse` と、その年次集計用の別名 `layer` はgeometryを持たない属性ビューである。1976年（EPSG:4301）と2014・2021年（EPSG:6677）は属性件数だけを一緒に集計でき、このビューから空間演算は行えない。元のGeoParquetや保存CRSは変更しない。
 
 OSMの複数抽出の重複は `register_osm_union(con, layer_ids)` で調べる。同一ドメインのtype/idごとに、指定順で最初のソースを採用した `osm_unique` ビューと重複表を返す。タグ差・geometry差を報告し、欠損属性の補完はしない。道路と土地利用のような異なるドメインは混ぜない。単独ソースの完全同一重複は取り込み時に除去し、内容が矛盾する同一IDはエラー。
 
