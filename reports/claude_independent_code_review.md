@@ -158,3 +158,52 @@ GDAL は `RuntimeWarning: One or several characters couldn't be converted correc
 ## 4. 運用上の注意（共有ワークツリー）
 
 作業開始時に `claude_20261010_prepare_data` を共有ワークツリー上で作成したため、Gemini の未コミット変更が一時的に私のブランチ上に見える状態になった。直ちに `main` に戻し、私のブランチは別ワークツリー `../kanagawa_ruins_search_claude` に分離した。Gemini の未コミット変更（`.gitignore` ほか）は変更・コミットしていない。今後も並行作業は worktree を分けることを推奨する。
+
+---
+
+# 追補 A: 最新 `main`（`96707a4`）との照合（2026-10-10）
+
+上記 §0〜§4 は `main` @ `5069867` を対象とした**当時の監査結果であり、履歴として改変していない**。その後 `main` は `96707a4`（Gemini: Phase 0.4.1）へ進んだため、F1〜F9 を最新コードと Drive 実体で再確認した。
+
+## A.1 照合方法
+
+- `git diff 5069867 96707a4`: 変更は `scripts/validate_databank.py`、新規 `audit_databank.py` / `migrate_provenance_schema.py` / `generate_bibliography.py` / `validate_bibliography.py`、`tests/test_phase0_4_1.py`、各種レポート。**`scripts/fetch_sources.py`・`storage_utils.py`・`verify_adjacency.py`・`tests/test_phase0.py`・`config/sources.toml`・`Makefile`・`environment.yml` は無変更**。
+- `origin/main` を detached worktree で展開し、`unittest discover`（17 件 OK）、`pytest tests/test_phase0_4_1.py`（11 件 passed）を実行。
+- Drive の `provenance.jsonl` 53 件の対象ファイルを**再度すべて SHA-256 再計算**（読み取りのみ）。
+- 既存コードは変更していない。`validate_databank.py` 自体は実行していない（レポートをリポジトリに書き出すため。コード読解で判定）。
+
+## A.2 F1〜F9 の現状
+
+| # | 当時の指摘 | 現状 | 根拠 |
+|---|---|---|---|
+| F1 | Shapefile を `cp932` 優先で読み文字化け | **未修正** | `validate_databank.py:139` が `["cp932", "utf-8"]` のまま（差分は引用符の統一のみ）。当時の再現手順は同一コードに対し有効。CSV は `utf-8` 優先（従来どおり） |
+| F2 | 整合性検査がヘッダのみ（切断ファイルが Valid） | **未修正** | `fetch_sources.py` 無変更。`validate_databank.py` の `.osm`/`.pbf`/`.jpg` 判定も従来と同等 |
+| F3 | provenance のハッシュを再計算せず信用 | **一部修正** | `--mode fast|full` を導入。`full` は SHA-256 を再計算し台帳と照合（不一致を `MISMATCH` 表示）。`fast` は「未再計算 (台帳参照)」と明示し、誤認は防止。**残り**: (a) 既定が `fast`、(b) `full` でも 100MB 超の PBF は既定で再計算を省略（`--check-all-hashes` で有効）、(c) 不一致でも終了コードは 0（`main()` は戻り値なし）、(d) 形式検査は F2 のまま |
+| F4 | 実体と provenance の不一致（SHA 1 件・未記録 17 件） | **修正済み（SHA）/ 一部修正（未記録）** | 再計算で **53/53 件一致、不一致 0**（航空写真カタログは新ハッシュ `20532524…`・59,394 B に更新、旧値は `audit_history` に保持）。未記録ファイルは 17 件のまま（変化なし）だが、`audit_databank.py` が「重複 4・メタデータ 7・台帳自身 1（＋`backups/` 5）」として**分類・文書化**した。分類はコードに固定された許可リスト（`KNOWN_LEGACY_DUPLICATES` ほか）に依存 |
+| F5 | `already_present` が provenance 未記録 / `expected_sha256` 未設定 / 非原子的追記 | **未修正** | `fetch_sources.py` 無変更。`sources.toml` も無変更（`expected_sha256` は 0 件） |
+| F6 | スキーマ混在 / ローカル 42 行 vs Drive 53 行 / 3 重配置 | **一部修正** | Drive 側は `migrate_provenance_schema.py` で**統一キー**へ移行（53 件とも同一キー構成。うち 1 件のみ `audit_history` 付き）。**残り**: (a) 旧キーを別名として併記（`bytes`/`size_bytes`、`download_url`/`source_url` 等）しており冗長、(b) ローカル `data/provenance.jsonl` は 42 行のまま未移行で Drive と乖離（gitignore のためコミット対象外）、(c) 同一内容 3 重配置は「後方互換のため保持」として温存、(d) 移行スクリプトは航空写真カタログのハッシュを**リテラルで埋め込む**特例を持つ |
+| F7 | レポートの日時・結論がハードコード | **一部修正** | 日時は実行時刻（UTC）に、モード表示も動的化。**残り**: 第 3 節の結論文は固定出力。特に `fast` モードでも「全登録ファイルの…SHA-256 の整合性を実測確認完了」「すべて…欠損なく正常にロード・ヘッダー検証可能」と出力される（`fast` はハッシュ未再計算）。これは再計算していない事項を確認済みと書く不整合 |
+| F8 | PROJ パスのハードコード | **一部修正** | `validate_databank.py` からは削除。`verify_adjacency.py:24-27` は `/home/blabo/miniconda3/envs/kanagawa-ruins/share/proj` を（存在時のみ）設定する従来のまま |
+| F9 | テスト網羅性 | **一部修正** | `tests/test_phase0_4_1.py`（11 件、pytest 形式）を追加し、`pytest` で 11 件 pass を確認。**残り**: (a) pytest 形式のため **`make test` / `unittest discover` では収集されない**（実行件数は 17 のまま。実測）、(b) 内容は書誌・Drive 実体・航空写真メタデータの検査で、件数が固定（53 / 65 / 12）のため**データ追加のたびに壊れる**、(c) Drive 未マウント時は skip でなく fixture エラー、(d) `download()`・`resolve_download_url`・`RedirectGuard`・`audit_databank`・`validate_databank`・`verify_adjacency` の単体テストは依然なし |
+
+集計: 修正済み 0 / 一部修正 6（F3, F4, F6, F7, F8, F9）/ 未修正 3（F1, F2, F5）/ 未確認 0。F4 の SHA 不一致という中核の事実誤りは解消されたが、F4 全体は未記録ファイルが残るため「一部修正」とした。
+
+## A.3 Gemini の 0.4.1 報告に対する検証
+
+- 「台帳 53 件・ハッシュ一致率 100%・不一致 0」: **再現できた**（私の独立した再計算と一致）。
+- 「総実ファイル 65 件」: 私の列挙では `backups/` を含め 70 ファイル、`backups/` を除くと 65 で一致。
+- 「完全整合（PASS）」という総合判定: PBF 2 本の構造的完全性（F2）と文字コード（F1）は検証範囲外で、判定は**ハッシュ・サイズ・存在**に限られる。
+
+## A.4 今後の優先順位（提案）
+
+1. F5（`already_present` の記録、`expected_sha256` 固定）と F2（形式別の完全検査）。取得・検証の信頼性に直結。
+2. F1（`.cpg` 優先の文字コード処理）。属性値を使う Phase 1 以降で静かに壊れる。
+3. F3(c) と F7: 不一致時に非ゼロ終了、結論文をモードと結果から生成。
+4. F9(a): テストを `unittest` 形式へ揃えるか `Makefile` を `pytest` に変更。
+5. F6(b): ローカル `data/provenance.jsonl` の扱い（廃止 or Drive からの派生物）を決める。
+
+---
+
+# 追補 B: ローカルキャッシュ方針の整合性
+
+GIS 設計案（`docs/gis_architecture_proposal.md` 当初版）の「ローカルキャッシュ 10〜20GB」は、`README.md` の「ローカルは原則 1GB 以内・中間生成物は Drive」および `agent/rules/10-source-legality.md` 8「処理後に不要ファイルを残さない」と**矛盾する**ことを確認した。数値自体も未測定の推定だった。設計案側を改訂済み（同文書 §8）。要点: 恒久キャッシュは設けず、大判ラスタ/Parquet は Drive から直接部分読み（rclone は既に `--vfs-cache-mode full --vfs-cache-max-size 10G` で動作）、一時物はジョブ単位で 1GB 以内・終了時削除、派生物は Drive `processed/`、永続 `.duckdb` を FUSE 上に置かない。1GB を超えるジョブはユーザー承認つきの例外とする。FUSE 越しの部分読み性能は**未測定**で、採用前に実測が必要。
