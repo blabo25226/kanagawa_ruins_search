@@ -1,0 +1,105 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.15, pytest-9.1.1, pluggy-1.6.0 -- /home/blabo/miniconda3/envs/kanagawa-ruins/bin/python
+cachedir: .pytest_cache
+rootdir: /home/blabo/kanagawa_ruins_search
+configfile: pyproject.toml
+plugins: anyio-4.15.1, platformdirs-4.12.4
+collecting ... collected 85 items
+
+tests/test_phase0.py::Phase0ConfigTests::test_automatic_source_allowlist PASSED [  1%]
+tests/test_phase0.py::Phase0ConfigTests::test_gitignore_raw PASSED       [  2%]
+tests/test_phase0.py::Phase0ConfigTests::test_rejects_unsafe_urls
+tests/test_phase0.py::Phase0ConfigTests::test_rejects_unsafe_urls PASSED [  3%]
+tests/test_phase0.py::Phase0ConfigTests::test_required_entrypoints_present
+tests/test_phase0.py::Phase0ConfigTests::test_required_entrypoints_present PASSED [  4%]
+tests/test_phase0.py::Phase0ConfigTests::test_simple_format_check PASSED [  5%]
+tests/test_phase0.py::StorageSecurityTests::test_fetch_sources_stops_when_not_mounted PASSED [  7%]
+tests/test_phase0.py::StorageSecurityTests::test_get_verified_data_root_fails_when_unmounted PASSED [  8%]
+tests/test_phase0.py::StorageSecurityTests::test_is_rclone_mounted_rejects_string_prefix_spoof
+tests/test_phase0.py::StorageSecurityTests::test_is_rclone_mounted_rejects_string_prefix_spoof PASSED [  9%]
+tests/test_phase0.py::StorageSecurityTests::test_is_rclone_mounted_rejects_unmounted_path PASSED [ 10%]
+tests/test_phase0.py::StorageSecurityTests::test_is_rclone_mounted_valid_hierarchy PASSED [ 11%]
+tests/test_phase0.py::StorageSecurityTests::test_safe_probe_write_exclusive PASSED [ 12%]
+tests/test_phase0.py::DownloadSecurityTests::test_databank_osm_pbf_live_header PASSED [ 14%]
+tests/test_phase0.py::DownloadSecurityTests::test_osm_pbf_structure_and_header_reading PASSED [ 15%]
+tests/test_phase0.py::DownloadSecurityTests::test_safe_extract_zip_symlink_rejection PASSED [ 16%]
+tests/test_phase0.py::DownloadSecurityTests::test_safe_extract_zip_zip_bomb_rejection PASSED [ 17%]
+tests/test_phase0.py::DownloadSecurityTests::test_safe_extract_zip_zip_slip_rejection PASSED [ 18%]
+tests/test_phase0.py::DownloadSecurityTests::test_validate_file_integrity PASSED [ 20%]
+tests/test_phase0_4_1.py::test_references_json_exists_and_valid PASSED   [ 21%]
+tests/test_phase0_4_1.py::test_references_unique_ids PASSED              [ 22%]
+tests/test_phase0_4_1.py::test_p01_tabayashi_attributes PASSED           [ 23%]
+tests/test_phase0_4_1.py::test_p06_doi_and_authors PASSED                [ 24%]
+tests/test_phase0_4_1.py::test_p07_title_and_journal PASSED              [ 25%]
+tests/test_phase0_4_1.py::test_p09_unified_year_and_doi PASSED           [ 27%]
+tests/test_phase0_4_1.py::test_p12_excluded PASSED                       [ 28%]
+tests/test_phase0_4_1.py::test_acquired_papers_exist_and_valid_pdf PASSED [ 29%]
+tests/test_phase0_4_1.py::test_provenance_jsonl_integrity PASSED         [ 30%]
+tests/test_phase0_4_1.py::test_databank_actual_files_classification PASSED [ 31%]
+tests/test_phase0_4_1.py::test_aerial_catalog_normalization PASSED       [ 32%]
+tests/test_phase0_4_2.py::TestShapefileEncodingAndMojibake::test_check_mojibake_strings PASSED [ 34%]
+tests/test_phase0_4_2.py::TestShapefileEncodingAndMojibake::test_live_boundaries_if_mounted PASSED [ 35%]
+tests/test_phase0_4_2.py::TestShapefileEncodingAndMojibake::test_shapefile_cpg_utf8_reading PASSED [ 36%]
+tests/test_phase0_4_2.py::TestFormatIntegrityVerification::test_csv_integrity PASSED [ 37%]
+tests/test_phase0_4_2.py::TestFormatIntegrityVerification::test_jpeg_integrity PASSED [ 38%]
+tests/test_phase0_4_2.py::TestFormatIntegrityVerification::test_osm_pbf_full_scan_valid_and_truncated PASSED [ 40%]
+tests/test_phase0_4_2.py::TestFormatIntegrityVerification::test_osm_pbf_integrity PASSED [ 41%]
+tests/test_phase0_4_2.py::TestFormatIntegrityVerification::test_osm_xml_integrity PASSED [ 42%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_already_present_idempotence PASSED [ 43%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_load_provenance_records_strict_corrupted_line_protection PASSED [ 44%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_provenance_lock_force_local_lock PASSED [ 45%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_provenance_lock_fuse_unsupported_fallback PASSED [ 47%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_provenance_lock_live_gdrive_fuse_sandbox PASSED [ 48%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_provenance_lock_mutual_exclusion PASSED [ 49%]
+tests/test_phase0_4_2.py::TestProvenanceManagement::test_untracked_existing_file_records_mtime PASSED [ 50%]
+tests/test_phase0_4_2.py::TestDynamicConfigurationAndCodeHygiene::test_no_hardcoded_conda_paths_in_scripts PASSED [ 51%]
+tests/test_phase0_4_2.py::TestSourcesCatalogIntegrity::test_sources_catalog_structure PASSED [ 52%]
+tests/test_phase0_4_2.py::TestTruthfulHashReportingAndAudit::test_audit_verdict_fast_pass_and_no_hash_claims PASSED [ 54%]
+tests/test_phase0_4_2.py::TestTruthfulHashReportingAndAudit::test_audit_verdict_full_pass_only_when_all_recalculated PASSED [ 55%]
+tests/test_phase0_4_2.py::TestTruthfulHashReportingAndAudit::test_audit_verdict_partial_pass_when_pbf_omitted PASSED [ 56%]
+tests/test_phase1a.py::CRSTests::test_bbox PASSED                        [ 57%]
+tests/test_phase1a.py::CRSTests::test_datum_families PASSED              [ 58%]
+tests/test_phase1a.py::CRSTests::test_empty_rejected PASSED              [ 60%]
+tests/test_phase1a.py::CRSTests::test_invalid_geometry_rejected_without_repair PASSED [ 61%]
+tests/test_phase1a.py::CRSTests::test_missing_crs PASSED                 [ 62%]
+tests/test_phase1a.py::CRSTests::test_nonfinite PASSED                   [ 63%]
+tests/test_phase1a.py::CRSTests::test_projection_matches_independent_pyproj_and_preserves_input PASSED [ 64%]
+tests/test_phase1a.py::CRSTests::test_swapped_axes PASSED                [ 65%]
+tests/test_phase1a.py::CRSTests::test_vertical_rejected PASSED           [ 67%]
+tests/test_phase1a.py::PipelineTests::test_catalog_traversal_refused PASSED [ 68%]
+tests/test_phase1a.py::PipelineTests::test_drive_unmounted_stops_before_write PASSED [ 69%]
+tests/test_phase1a.py::PipelineTests::test_idempotence_byte_reproducibility PASSED [ 70%]
+tests/test_phase1a.py::PipelineTests::test_input_hash_mismatch_refused PASSED [ 71%]
+tests/test_phase1a.py::PipelineTests::test_landuse_internal_year_mismatch_rejected PASSED [ 72%]
+tests/test_phase1a.py::PipelineTests::test_landuse_year_and_unknown_codes PASSED [ 74%]
+tests/test_phase1a.py::PipelineTests::test_layer_names_unique_and_valid PASSED [ 75%]
+tests/test_phase1a.py::PipelineTests::test_listing_does_not_read_geodata PASSED [ 76%]
+tests/test_phase1a.py::PipelineTests::test_malformed_xml_refused_without_publication PASSED [ 77%]
+tests/test_phase1a.py::PipelineTests::test_metadata_crs_explicit_and_undefined PASSED [ 78%]
+tests/test_phase1a.py::PipelineTests::test_mounted_root_but_unmounted_output_stops PASSED [ 80%]
+tests/test_phase1a.py::PipelineTests::test_n03_geoparquet_roundtrip_and_japanese PASSED [ 81%]
+tests/test_phase1a.py::PipelineTests::test_osm_pbf_streaming_and_cross_extract_dedup PASSED [ 82%]
+tests/test_phase1a.py::PipelineTests::test_osm_xml_node_way_and_explicit_omissions PASSED [ 83%]
+tests/test_phase1a.py::PipelineTests::test_output_failure_protects_raw_and_ledger_and_cleans_partial PASSED [ 84%]
+tests/test_phase1a.py::PipelineTests::test_output_symlink_escape PASSED  [ 85%]
+tests/test_phase1a.py::PipelineTests::test_scratch_budget_and_cleanup PASSED [ 87%]
+tests/test_phase1a.py::PipelineTests::test_source_ids_unique PASSED      [ 88%]
+tests/test_phase1a.py::PipelineTests::test_sql_bbox_matches_shapely PASSED [ 89%]
+tests/test_phase1a.py::PipelineTests::test_zip_traversal_refused PASSED  [ 90%]
+tests/test_phase1a.py::LanduseSchemaTests::test_1976_has_distinct_official_codes PASSED [ 91%]
+tests/test_phase1a.py::LanduseSchemaTests::test_2014_japanese_field_preserved_and_official_label PASSED [ 92%]
+tests/test_phase1a.py::GMLIntegrationTests::test_gml_vector_loader PASSED [ 94%]
+tests/test_phase1a.py::GMLIntegrationTests::test_standalone_gml_driver_sidecars_cannot_touch_source PASSED [ 95%]
+tests/test_phase1a.py::DuckDBCRSTests::test_duckdb_always_xy_matches_pyproj PASSED [ 96%]
+tests/test_phase1a_live.py::test_real_n03_attributes_match_raw PASSED    [ 97%]
+tests/test_phase1a_live.py::test_real_osm_sql_range_matches_shapely PASSED [ 98%]
+tests/test_phase1a_live.py::test_real_six_landuse_vintages_are_distinct PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_phase1a.py::GMLIntegrationTests::test_gml_vector_loader
+tests/test_phase1a.py::GMLIntegrationTests::test_standalone_gml_driver_sidecars_cannot_touch_source
+  /home/blabo/miniconda3/envs/kanagawa-ruins/lib/python3.12/site-packages/pyogrio/raw.py:733: RuntimeWarning: Layer name 'N02-synthetic' adjusted to 'N02_synthetic' for XML validity.
+    ogr_write(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============= 85 passed, 2 warnings, 17 subtests passed in 17.61s ==============

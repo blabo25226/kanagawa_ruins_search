@@ -1,0 +1,545 @@
+{
+  "status": "PASS",
+  "layers": [
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__historic__2026_10_tsukui_geofabrik_chubu",
+      "source_id": "geofabrik_chubu",
+      "original_path": "raw/osm/chubu-latest.osm.pbf",
+      "source_sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T16:08:32.557187+00:00",
+      "created_at": "2026-10-10T11:48:44.681635+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-261008.osm.pbf",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "output_sha256": "c1d6bcf451d952572606aaaa76cc07922123cc5ccd1cc3d2758ce85462b9b972",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "key_filtered_nodes": 253204,
+        "key_filtered_ways": 3087835,
+        "key_filtered_relations": 3803,
+        "selected_objects": 3109912,
+        "unsupported_relations": 3247,
+        "missing_way_refs": 0,
+        "outside_bbox": 3106038,
+        "duplicates_removed": 0,
+        "emitted_objects": 627,
+        "emitted_domain_counts": {
+          "roads": 457,
+          "worship": 5,
+          "historic": 12,
+          "waterways": 72,
+          "landuse": 81
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 1040406789,
+      "rclone_vfs_bytes_observed": 2461913088,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 12,
+      "bbox": [
+        -63499.39270524111,
+        -43980.592606445265,
+        -63127.44382614613,
+        -42336.36281033245
+      ],
+      "geometry_type": [
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 12124,
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_tsukui_geofabrik_chubu.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_tsukui_geofabrik_chubu",
+      "source_id": "geofabrik_chubu",
+      "original_path": "raw/osm/chubu-latest.osm.pbf",
+      "source_sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T16:08:32.557187+00:00",
+      "created_at": "2026-10-10T11:48:47.504251+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-261008.osm.pbf",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "output_sha256": "85ed41dc38522902159df3990e306d9626c226bb660e7c406d39d7d8d89b99bf",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "key_filtered_nodes": 253204,
+        "key_filtered_ways": 3087835,
+        "key_filtered_relations": 3803,
+        "selected_objects": 3109912,
+        "unsupported_relations": 3247,
+        "missing_way_refs": 0,
+        "outside_bbox": 3106038,
+        "duplicates_removed": 0,
+        "emitted_objects": 627,
+        "emitted_domain_counts": {
+          "roads": 457,
+          "worship": 5,
+          "historic": 12,
+          "waterways": 72,
+          "landuse": 81
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 1040406789,
+      "rclone_vfs_bytes_observed": 2461913088,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 81,
+      "bbox": [
+        -64504.81245466551,
+        -51011.27041004855,
+        -63276.82027970742,
+        -43013.00801242139
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 20674,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_tsukui_geofabrik_chubu.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_tsukui_geofabrik_chubu",
+      "source_id": "geofabrik_chubu",
+      "original_path": "raw/osm/chubu-latest.osm.pbf",
+      "source_sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T16:08:32.557187+00:00",
+      "created_at": "2026-10-10T11:48:47.715723+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-261008.osm.pbf",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "output_sha256": "b943b8c97b62094fccea4ebeeb8f4c8f1662a47a2f612877f415ff7e3773d467",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "key_filtered_nodes": 253204,
+        "key_filtered_ways": 3087835,
+        "key_filtered_relations": 3803,
+        "selected_objects": 3109912,
+        "unsupported_relations": 3247,
+        "missing_way_refs": 0,
+        "outside_bbox": 3106038,
+        "duplicates_removed": 0,
+        "emitted_objects": 627,
+        "emitted_domain_counts": {
+          "roads": 457,
+          "worship": 5,
+          "historic": 12,
+          "waterways": 72,
+          "landuse": 81
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 1040406789,
+      "rclone_vfs_bytes_observed": 2461913088,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 457,
+      "bbox": [
+        -65742.67277050031,
+        -51770.69041076587,
+        -62001.104634151576,
+        -41773.49389013019
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 137055,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_tsukui_geofabrik_chubu.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_tsukui_geofabrik_chubu",
+      "source_id": "geofabrik_chubu",
+      "original_path": "raw/osm/chubu-latest.osm.pbf",
+      "source_sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T16:08:32.557187+00:00",
+      "created_at": "2026-10-10T11:48:47.937736+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-261008.osm.pbf",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "output_sha256": "01da2995575137db253be11ca2424f76631cbb3e40d2b3ee15c5e2ab4359d504",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "key_filtered_nodes": 253204,
+        "key_filtered_ways": 3087835,
+        "key_filtered_relations": 3803,
+        "selected_objects": 3109912,
+        "unsupported_relations": 3247,
+        "missing_way_refs": 0,
+        "outside_bbox": 3106038,
+        "duplicates_removed": 0,
+        "emitted_objects": 627,
+        "emitted_domain_counts": {
+          "roads": 457,
+          "worship": 5,
+          "historic": 12,
+          "waterways": 72,
+          "landuse": 81
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 1040406789,
+      "rclone_vfs_bytes_observed": 2461913088,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 72,
+      "bbox": [
+        -66660.82873566817,
+        -53142.16038063996,
+        -56703.80177321559,
+        -40063.10603404212
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 63425,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_tsukui_geofabrik_chubu.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_tsukui_geofabrik_chubu",
+      "source_id": "geofabrik_chubu",
+      "original_path": "raw/osm/chubu-latest.osm.pbf",
+      "source_sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T16:08:32.557187+00:00",
+      "created_at": "2026-10-10T11:48:48.144659+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-261008.osm.pbf",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "output_sha256": "d3bca147c2d7d4215d7e7f4b08b6c9c1c5a540ec516d88dc2e48ea49c4fd294d",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "key_filtered_nodes": 253204,
+        "key_filtered_ways": 3087835,
+        "key_filtered_relations": 3803,
+        "selected_objects": 3109912,
+        "unsupported_relations": 3247,
+        "missing_way_refs": 0,
+        "outside_bbox": 3106038,
+        "duplicates_removed": 0,
+        "emitted_objects": 627,
+        "emitted_domain_counts": {
+          "roads": 457,
+          "worship": 5,
+          "historic": 12,
+          "waterways": 72,
+          "landuse": 81
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 1040406789,
+      "rclone_vfs_bytes_observed": 2461913088,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 5,
+      "bbox": [
+        -64062.16465272274,
+        -43937.08080294194,
+        -62984.378068593054,
+        -42038.68503760217
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 13100,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_tsukui_geofabrik_chubu.parquet",
+      "status": "created"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,8 @@
+.................................                                        [100%]
+=============================== warnings summary ===============================
+tests/test_phase1a.py::GMLIntegrationTests::test_gml_vector_loader
+  /home/blabo/miniconda3/envs/kanagawa-ruins/lib/python3.12/site-packages/pyogrio/raw.py:733: RuntimeWarning: Layer name 'N02-synthetic' adjusted to 'N02_synthetic' for XML validity.
+    ogr_write(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+33 passed, 1 warning in 2.51s

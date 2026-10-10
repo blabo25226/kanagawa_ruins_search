@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "command": [
+    "rclone",
+    "check",
+    "/home/blabo/gdrive/kanagawa_ruins_search_databank/data/processed/phase1a",
+    "gdrive:kanagawa_ruins_search_databank/data/processed/phase1a",
+    "--checkers",
+    "4",
+    "--tpslimit",
+    "8"
+  ],
+  "comparison": "size and MD5, bidirectional, no changes"
+}

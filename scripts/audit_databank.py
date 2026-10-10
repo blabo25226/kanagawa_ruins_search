@@ -216,6 +216,10 @@ def audit_databank(
 
         results.append(item_result)
 
+    # Phase 1-A derivatives have their own manifests; preserve the acquisition ledger contract.
+    from kanagawa_ruins.qa.derived import registered_derived_files
+    derived_rel_set = registered_derived_files(target_root, actual_files)
+
     # 4. Categorize files
     prov_rel_set = set(r["relative_path"] for r in results if r["relative_path"])
     disk_rel_set = set(actual_files.keys())
@@ -224,10 +228,13 @@ def audit_databank(
     metadata_files = []
     duplicate_files = []
     ledger_files = []
+    derived_files = []
 
     for rel in disk_rel_set:
         if rel in prov_rel_set:
             continue
+        elif rel in derived_rel_set:
+            derived_files.append(rel)
         elif rel == "provenance.jsonl":
             ledger_files.append(rel)
         elif rel in METADATA_PATHS:
@@ -273,6 +280,8 @@ def audit_databank(
         "metadata_files_count": len(metadata_files),
         "ledger_files_count": len(ledger_files),
         "unregistered_files_count": len(unregistered_files),
+        "phase1a_derived_files_count": len(derived_files),
+        "phase1a_derived_files": sorted(derived_files),
         "total_data_bytes": total_bytes,
         "total_data_mb": round(total_bytes / 1_000_000, 3),
         "total_data_mib": round(total_bytes / (1024 * 1024), 3),

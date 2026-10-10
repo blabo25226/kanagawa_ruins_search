@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "acquisition_records": 53,
+  "original_hashes_unchanged": true,
+  "original_files": 65,
+  "registered_derived_files": 214,
+  "unregistered_files": 0,
+  "sampled_peak_combined_scratch_vfs_bytes": 6657602909,
+  "minimum_observed_tmp_free_bytes": 27836370944,
+  "remaining_job_directories": {},
+  "remaining_vfs_bytes": 2463363072
+}

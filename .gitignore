@@ -28,3 +28,12 @@ secrets/
 scratch/
 .backups_phase0_4_pre_fix/
 
+
+# Derived GIS stays on Drive, never in Git
+*.parquet
+*.duckdb
+*.duckdb.wal
+*.pbf
+*.partial
+/build/
+/dist/

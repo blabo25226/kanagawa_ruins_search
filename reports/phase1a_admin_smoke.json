@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "layers": [
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__n03__2026_kanagawa",
+      "source_id": "mlit_n03_2026_kanagawa",
+      "original_path": "raw/administrative/N03-20260101_14_GML.zip",
+      "source_sha256": "27ab5aa2982fc6fe81e9c0b08ca75d18177e8228527b2e602ce803e681e7e561",
+      "temporal_coverage": "2026",
+      "acquired_at": "2026-10-09T14:16:51.433981+00:00",
+      "created_at": "2026-10-10T11:08:53.583474+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_14_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "output_sha256": "63cfa1caa0be4258c9bc186f79c0ddaec003a25080153f35ff4311ce1658dfff",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-20260101_14.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2011\",DATUM[\"D_JGD_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 19861295,
+      "original_crs": "EPSG:6668",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:6668",
+        "datum": "Japanese Geodetic Datum 2024",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+      },
+      "feature_count": 1247,
+      "bbox": [
+        -83341.60985313107,
+        -96666.29629764319,
+        227.56439177745622,
+        -36064.827498422914
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 2778611,
+      "processed_path": "processed/phase1a/vectors/admin__n03__2026_kanagawa.parquet",
+      "status": "created"
+    }
+  ],
+  "errors": []
+}
