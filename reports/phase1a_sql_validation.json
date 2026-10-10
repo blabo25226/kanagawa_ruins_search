@@ -1,0 +1,375 @@
+{
+  "implementation_sha256": "038c498abbdd0ce381fccce657f7d75028b86e2af4442c9bddf0c2bf89302ac6",
+  "versions": {
+    "kanagawa-ruins": "0.1.0",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "pyogrio": "0.13.0",
+    "pyarrow": "23.0.1",
+    "duckdb": "1.4.3",
+    "osmium": "4.2.0"
+  },
+  "spatial_extension": [
+    {
+      "extension_name": "spatial",
+      "extension_version": "2f2668d",
+      "installed_from": "core"
+    }
+  ],
+  "osm_duplicates": [
+    {
+      "domain": "roads",
+      "input_layers": 7,
+      "duplicate_ids": 2781,
+      "duplicate_rows": 3515,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 3679
+    },
+    {
+      "domain": "waterways",
+      "input_layers": 7,
+      "duplicate_ids": 327,
+      "duplicate_rows": 478,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 392
+    },
+    {
+      "domain": "worship",
+      "input_layers": 7,
+      "duplicate_ids": 17,
+      "duplicate_rows": 18,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 21
+    },
+    {
+      "domain": "historic",
+      "input_layers": 6,
+      "duplicate_ids": 34,
+      "duplicate_rows": 35,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 39
+    },
+    {
+      "domain": "landuse",
+      "input_layers": 7,
+      "duplicate_ids": 197,
+      "duplicate_rows": 278,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 219
+    }
+  ],
+  "bbox_query": {
+    "sql_count": 76,
+    "shapely_count": 76,
+    "match": true
+  },
+  "admin_query": {
+    "sql_count": 358,
+    "shapely_count": 358,
+    "match": true
+  },
+  "landuse_counts": [
+    {
+      "source_year": "1976",
+      "landuse_code": "1",
+      "landuse_label": "田",
+      "feature_count": 69375
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "2",
+      "landuse_label": "畑",
+      "feature_count": 66237
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "3",
+      "landuse_label": "果樹園",
+      "feature_count": 13995
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "4",
+      "landuse_label": "その他の樹木畑",
+      "feature_count": 26513
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "5",
+      "landuse_label": "森林",
+      "feature_count": 707899
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "6",
+      "landuse_label": "荒地",
+      "feature_count": 42570
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "7",
+      "landuse_label": "建物用地A",
+      "feature_count": 45229
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "8",
+      "landuse_label": "建物用地B",
+      "feature_count": 124394
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "9",
+      "landuse_label": "幹線交通用地",
+      "feature_count": 9529
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "A",
+      "landuse_label": "その他の用地",
+      "feature_count": 63414
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "B",
+      "landuse_label": "湖沼",
+      "feature_count": 1024
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "C",
+      "landuse_label": "河川地A",
+      "feature_count": 29930
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "D",
+      "landuse_label": "河川地B",
+      "feature_count": 6379
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "E",
+      "landuse_label": "海浜",
+      "feature_count": 21
+    },
+    {
+      "source_year": "1976",
+      "landuse_code": "F",
+      "landuse_label": "海水域",
+      "feature_count": 63491
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0100",
+      "landuse_label": "田",
+      "feature_count": 45872
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0200",
+      "landuse_label": "その他の農用地",
+      "feature_count": 73601
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0500",
+      "landuse_label": "森林",
+      "feature_count": 703133
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0600",
+      "landuse_label": "荒地",
+      "feature_count": 19650
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0700",
+      "landuse_label": "建物用地",
+      "feature_count": 271260
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0901",
+      "landuse_label": "道路",
+      "feature_count": 11714
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "0902",
+      "landuse_label": "鉄道",
+      "feature_count": 6311
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "1000",
+      "landuse_label": "その他の用地",
+      "feature_count": 39089
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "1100",
+      "landuse_label": "河川地及び湖沼",
+      "feature_count": 30887
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "1400",
+      "landuse_label": "海浜",
+      "feature_count": 56
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "1500",
+      "landuse_label": "海水域",
+      "feature_count": 60062
+    },
+    {
+      "source_year": "2014",
+      "landuse_code": "1600",
+      "landuse_label": "ゴルフ場",
+      "feature_count": 8365
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0100",
+      "landuse_label": "田",
+      "feature_count": 42505
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0200",
+      "landuse_label": "その他の農用地",
+      "feature_count": 67475
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0500",
+      "landuse_label": "森林",
+      "feature_count": 704968
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0600",
+      "landuse_label": "荒地",
+      "feature_count": 15302
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0700",
+      "landuse_label": "建物用地",
+      "feature_count": 279488
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0901",
+      "landuse_label": "道路",
+      "feature_count": 12250
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "0902",
+      "landuse_label": "鉄道",
+      "feature_count": 5998
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "1000",
+      "landuse_label": "その他の用地",
+      "feature_count": 42379
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "1100",
+      "landuse_label": "河川地及び湖沼",
+      "feature_count": 31321
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "1400",
+      "landuse_label": "海浜",
+      "feature_count": 40
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "1500",
+      "landuse_label": "海水域",
+      "feature_count": 60027
+    },
+    {
+      "source_year": "2021",
+      "landuse_code": "1600",
+      "landuse_label": "ゴルフ場",
+      "feature_count": 8247
+    }
+  ],
+  "year_counts": [
+    {
+      "source_year": "1976",
+      "feature_count": 1270000
+    },
+    {
+      "source_year": "2014",
+      "feature_count": 1270000
+    },
+    {
+      "source_year": "2021",
+      "feature_count": 1270000
+    }
+  ],
+  "year_counts_match_catalog": true,
+  "p32_nationwide_pref_codes": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "45",
+    "46",
+    "47"
+  ],
+  "status": "PASS"
+}

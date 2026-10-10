@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "layers": [
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "landuse__l03b__2014_5339",
+      "source_id": "mlit_landuse_2021_5339",
+      "original_path": "raw/landuse/L03-b-14_5339-jgd_GML.zip",
+      "source_sha256": "b72e1446cb2ab067f28f7196099b09f473ed1650bdfa1b41f44b0d6bc44b1c44",
+      "temporal_coverage": "2014",
+      "acquired_at": "2026-10-09T14:17:48.536911+00:00",
+      "created_at": "2026-10-10T11:16:07.752109+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-14/L03-b-14_5339-jgd_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b-2021.html",
+      "output_sha256": "1a7ec92800589ec0d9ceebb672760ebaa223f44ce2d49b7ad2a05d0d1bb6e229",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "7dce528f2a686af9be46c29c4d8a569a91c61a5ccbced676834ab676dde07cac",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "vintage_evidence": [
+          {
+            "metadata_file": "KS-META-L03-b-14_5339.xml",
+            "titles": [
+              "土地利用細分メッシュ（L03-b-14_5339）",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書"
+            ],
+            "dates": [
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31"
+            ]
+          }
+        ],
+        "crs_evidence": {
+          "L03-b-14_5339.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2000\",DATUM[\"D_JGD_2000\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]\n"
+          }
+        }
+      },
+      "notes": [
+        "Source ID vintage disagrees with ZIP/internal metadata; output uses verified 2014"
+      ],
+      "ingest_statistics": {
+        "input_feature_counts": {
+          "L03-b-14_5339.shp/L03-b-14_5339": 630000
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 118993194,
+      "original_crs": "EPSG:4612",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4612",
+        "datum": "Japanese Geodetic Datum 2000",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2000\",DATUM[\"Japanese Geodetic Datum 2000\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",4612],REMARK[\"Replaces Tokyo (CRS code 4301) from April 2002. From 21st October 2011 replaced by JGD2011 (CRS code 6668).\"]]"
+      },
+      "feature_count": 630000,
+      "bbox": [
+        -75757.00108741024,
+        -73961.16153522424,
+        15151.228922387001,
+        321.15479362838397
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "メッシュ",
+        "土地利用種",
+        "geometry",
+        "landuse_code",
+        "landuse_label",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 15626501,
+      "processed_path": "processed/phase1a/vectors/landuse__l03b__2014_5339.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "landuse__l03b__2014_5338",
+      "source_id": "mlit_l03_b_2014_5338",
+      "original_path": "raw/landuse/L03-b-14_5338-jgd_GML.zip",
+      "source_sha256": "09e03256f41a9ac60d86b5f3888dbbb0048acae34cccfa034a8fbe2953a9211e",
+      "temporal_coverage": "2014",
+      "acquired_at": "2026-10-09T18:00:38.444515+00:00",
+      "created_at": "2026-10-10T11:16:19.014928+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/L03-b/L03-b-14/L03-b-14_5338-jgd_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-L03-b-2021.html",
+      "output_sha256": "4f94e4260d73c11ca01f7d8c7c0922ff3a6f698152ec992bbe2c2d281a27593b",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "7dce528f2a686af9be46c29c4d8a569a91c61a5ccbced676834ab676dde07cac",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "vintage_evidence": [
+          {
+            "metadata_file": "KS-META-L03-b-14_5338.xml",
+            "titles": [
+              "土地利用細分メッシュ（L03-b-14_5338）",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書",
+              "国土数値情報（土地利用細分メッシュ（平成26年））製品仕様書"
+            ],
+            "dates": [
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31",
+              "2016-08-31"
+            ]
+          }
+        ],
+        "crs_evidence": {
+          "L03-b-14_5338.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2000\",DATUM[\"D_JGD_2000\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]\n"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {
+        "input_feature_counts": {
+          "L03-b-14_5338.shp/L03-b-14_5338": 640000
+        }
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 120615078,
+      "original_crs": "EPSG:4612",
+      "processed_crs": "EPSG:6677",
+      "analysis_ready": true,
+      "source_crs_info": {
+        "authority": "EPSG:4612",
+        "datum": "Japanese Geodetic Datum 2000",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2000\",DATUM[\"Japanese Geodetic Datum 2000\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",4612],REMARK[\"Replaces Tokyo (CRS code 4301) from April 2002. From 21st October 2011 replaced by JGD2011 (CRS code 6668).\"]]"
+      },
+      "feature_count": 640000,
+      "bbox": [
+        -166672.93741722673,
+        -73642.53328801358,
+        -75129.71899538182,
+        1554.6999689903334
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "メッシュ",
+        "土地利用種",
+        "geometry",
+        "landuse_code",
+        "landuse_label",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 15658284,
+      "processed_path": "processed/phase1a/vectors/landuse__l03b__2014_5338.parquet",
+      "status": "created"
+    }
+  ],
+  "errors": []
+}

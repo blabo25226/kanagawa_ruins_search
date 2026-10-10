@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "layers": [],
+  "errors": [
+    {
+      "source_id": "mlit_landuse_2021_5339",
+      "error": "ValueError: L03-b classification field missing or ambiguous"
+    },
+    {
+      "source_id": "mlit_l03_b_2014_5338",
+      "error": "ValueError: L03-b classification field missing or ambiguous"
+    }
+  ]
+}

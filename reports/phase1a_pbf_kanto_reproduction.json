@@ -1,0 +1,552 @@
+{
+  "status": "PASS",
+  "layers": [
+    {
+      "acquired_at": "2026-10-09T16:07:13.188255+00:00",
+      "analysis_ready": true,
+      "bbox": [
+        -63897.66919190674,
+        -50675.25160734036,
+        -53172.59875294279,
+        -42103.18102905614
+      ],
+      "bytes": 14307,
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:48:44.654234+00:00",
+      "event": "derived",
+      "feature_count": 39,
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "duplicates_removed": 0,
+        "emitted_domain_counts": {
+          "historic": 39,
+          "landuse": 219,
+          "roads": 3609,
+          "waterways": 380,
+          "worship": 21
+        },
+        "emitted_objects": 4268,
+        "key_filtered_nodes": 670422,
+        "key_filtered_relations": 10556,
+        "key_filtered_ways": 3016843,
+        "missing_way_refs": 0,
+        "outside_bbox": 3247297,
+        "selected_objects": 3257803,
+        "unsupported_relations": 6238
+      },
+      "input_metadata": {},
+      "layer_id": "osm__historic__2026_10_tsukui_geofabrik_kanto",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "original_crs": "EPSG:4326",
+      "original_path": "raw/osm/kanto-latest.osm.pbf",
+      "output_sha256": "daecc859e9e78fa434145fe2caa8b2e1fe61d36b45be43627d77a7fc5e904f48",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_tsukui_geofabrik_kanto.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "rclone_vfs_bytes_observed": 2461913088,
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 1057999455,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "source_id": "geofabrik_kanto",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "source_sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad",
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-261008.osm.pbf",
+      "temporal_coverage": "2026-10",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced",
+      "reproduced_by_implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be"
+    },
+    {
+      "acquired_at": "2026-10-09T16:07:13.188255+00:00",
+      "analysis_ready": true,
+      "bbox": [
+        -64504.81245466551,
+        -51115.84613398408,
+        -52632.45569886506,
+        -41943.598385532336
+      ],
+      "bytes": 44609,
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:48:47.404019+00:00",
+      "event": "derived",
+      "feature_count": 219,
+      "geometry_type": [
+        "Polygon"
+      ],
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "duplicates_removed": 0,
+        "emitted_domain_counts": {
+          "historic": 39,
+          "landuse": 219,
+          "roads": 3609,
+          "waterways": 380,
+          "worship": 21
+        },
+        "emitted_objects": 4268,
+        "key_filtered_nodes": 670422,
+        "key_filtered_relations": 10556,
+        "key_filtered_ways": 3016843,
+        "missing_way_refs": 0,
+        "outside_bbox": 3247297,
+        "selected_objects": 3257803,
+        "unsupported_relations": 6238
+      },
+      "input_metadata": {},
+      "layer_id": "osm__landuse__2026_10_tsukui_geofabrik_kanto",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "original_crs": "EPSG:4326",
+      "original_path": "raw/osm/kanto-latest.osm.pbf",
+      "output_sha256": "3e9f1769c5282726ef0d47b49021f5b76b3d23802ceeac891c3348b8a0738188",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_tsukui_geofabrik_kanto.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "rclone_vfs_bytes_observed": 2461913088,
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 1057999455,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "source_id": "geofabrik_kanto",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "source_sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad",
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-261008.osm.pbf",
+      "temporal_coverage": "2026-10",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced",
+      "reproduced_by_implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be"
+    },
+    {
+      "acquired_at": "2026-10-09T16:07:13.188255+00:00",
+      "analysis_ready": true,
+      "bbox": [
+        -65742.67277050031,
+        -55508.59239926273,
+        -52118.694389027725,
+        -40806.04564474981
+      ],
+      "bytes": 779609,
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:48:47.605556+00:00",
+      "event": "derived",
+      "feature_count": 3609,
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "duplicates_removed": 0,
+        "emitted_domain_counts": {
+          "historic": 39,
+          "landuse": 219,
+          "roads": 3609,
+          "waterways": 380,
+          "worship": 21
+        },
+        "emitted_objects": 4268,
+        "key_filtered_nodes": 670422,
+        "key_filtered_relations": 10556,
+        "key_filtered_ways": 3016843,
+        "missing_way_refs": 0,
+        "outside_bbox": 3247297,
+        "selected_objects": 3257803,
+        "unsupported_relations": 6238
+      },
+      "input_metadata": {},
+      "layer_id": "osm__roads__2026_10_tsukui_geofabrik_kanto",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "original_crs": "EPSG:4326",
+      "original_path": "raw/osm/kanto-latest.osm.pbf",
+      "output_sha256": "23cc85de5ab32db00568349831e9969a1b84b55ee84f1992bcec30bc14ca3ee9",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_tsukui_geofabrik_kanto.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "rclone_vfs_bytes_observed": 2461913088,
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 1057999455,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "source_id": "geofabrik_kanto",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "source_sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad",
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-261008.osm.pbf",
+      "temporal_coverage": "2026-10",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced",
+      "reproduced_by_implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be"
+    },
+    {
+      "acquired_at": "2026-10-09T16:07:13.188255+00:00",
+      "analysis_ready": true,
+      "bbox": [
+        -66660.82873566817,
+        -55397.52889415411,
+        -48932.39083567307,
+        -40063.10603404212
+      ],
+      "bytes": 207184,
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:48:47.827884+00:00",
+      "event": "derived",
+      "feature_count": 380,
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "duplicates_removed": 0,
+        "emitted_domain_counts": {
+          "historic": 39,
+          "landuse": 219,
+          "roads": 3609,
+          "waterways": 380,
+          "worship": 21
+        },
+        "emitted_objects": 4268,
+        "key_filtered_nodes": 670422,
+        "key_filtered_relations": 10556,
+        "key_filtered_ways": 3016843,
+        "missing_way_refs": 0,
+        "outside_bbox": 3247297,
+        "selected_objects": 3257803,
+        "unsupported_relations": 6238
+      },
+      "input_metadata": {},
+      "layer_id": "osm__waterways__2026_10_tsukui_geofabrik_kanto",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "original_crs": "EPSG:4326",
+      "original_path": "raw/osm/kanto-latest.osm.pbf",
+      "output_sha256": "4d561e28f67b65ada7f56bd9757d881a5b0f12d3686a93b0f3e65e8569a5481a",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_tsukui_geofabrik_kanto.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "rclone_vfs_bytes_observed": 2461913088,
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 1057999455,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "source_id": "geofabrik_kanto",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "source_sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad",
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-261008.osm.pbf",
+      "temporal_coverage": "2026-10",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced",
+      "reproduced_by_implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be"
+    },
+    {
+      "acquired_at": "2026-10-09T16:07:13.188255+00:00",
+      "analysis_ready": true,
+      "bbox": [
+        -64062.16465272274,
+        -52461.46121563919,
+        -52898.00055556799,
+        -41991.99799075533
+      ],
+      "bytes": 14998,
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:48:48.042811+00:00",
+      "event": "derived",
+      "feature_count": 21,
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be",
+      "ingest_statistics": {
+        "count_scope": "Objects passing native key prefilter; complete-file object totals are not measured",
+        "duplicates_removed": 0,
+        "emitted_domain_counts": {
+          "historic": 39,
+          "landuse": 219,
+          "roads": 3609,
+          "waterways": 380,
+          "worship": 21
+        },
+        "emitted_objects": 4268,
+        "key_filtered_nodes": 670422,
+        "key_filtered_relations": 10556,
+        "key_filtered_ways": 3016843,
+        "missing_way_refs": 0,
+        "outside_bbox": 3247297,
+        "selected_objects": 3257803,
+        "unsupported_relations": 6238
+      },
+      "input_metadata": {},
+      "layer_id": "osm__worship__2026_10_tsukui_geofabrik_kanto",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）; 出典明記要",
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "original_crs": "EPSG:4326",
+      "original_path": "raw/osm/kanto-latest.osm.pbf",
+      "output_sha256": "94d6e2de9c9da478ad2e145ba7d7c1bd2df9be919a2d7b88aec2972d5a55aac3",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": [
+          139.12,
+          35.51,
+          139.25,
+          35.62
+        ]
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_tsukui_geofabrik_kanto.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "rclone_vfs_bytes_observed": 2461913088,
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 1057999455,
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "source_id": "geofabrik_kanto",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "source_sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad",
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-261008.osm.pbf",
+      "temporal_coverage": "2026-10",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced",
+      "reproduced_by_implementation_sha256": "d042f7d39a99589fe1654d361d641046fd2198ac2191b143808eec8470a4a9be"
+    }
+  ],
+  "errors": []
+}

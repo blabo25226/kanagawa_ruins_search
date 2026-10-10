@@ -1,0 +1,56 @@
+test_databank_osm_pbf_live_header (test_phase0.DownloadSecurityTests.test_databank_osm_pbf_live_header)
+Verify actual databank PBF header structure without full-file read latency. ... ok
+test_osm_pbf_structure_and_header_reading (test_phase0.DownloadSecurityTests.test_osm_pbf_structure_and_header_reading)
+Test low-overhead OSM PBF header validation and binary block parsing. ... ok
+test_safe_extract_zip_symlink_rejection (test_phase0.DownloadSecurityTests.test_safe_extract_zip_symlink_rejection) ... ok
+test_safe_extract_zip_zip_bomb_rejection (test_phase0.DownloadSecurityTests.test_safe_extract_zip_zip_bomb_rejection) ... ok
+test_safe_extract_zip_zip_slip_rejection (test_phase0.DownloadSecurityTests.test_safe_extract_zip_zip_slip_rejection) ... ok
+test_validate_file_integrity (test_phase0.DownloadSecurityTests.test_validate_file_integrity) ... ok
+test_automatic_source_allowlist (test_phase0.Phase0ConfigTests.test_automatic_source_allowlist) ... ok
+test_gitignore_raw (test_phase0.Phase0ConfigTests.test_gitignore_raw) ... ok
+test_rejects_unsafe_urls (test_phase0.Phase0ConfigTests.test_rejects_unsafe_urls) ... ok
+test_required_entrypoints_present (test_phase0.Phase0ConfigTests.test_required_entrypoints_present) ... ok
+test_simple_format_check (test_phase0.Phase0ConfigTests.test_simple_format_check) ... ok
+test_fetch_sources_stops_when_not_mounted (test_phase0.StorageSecurityTests.test_fetch_sources_stops_when_not_mounted)
+Ensure fetch_sources.get_data_root raises DownloadError on unmounted storage. ... ok
+test_get_verified_data_root_fails_when_unmounted (test_phase0.StorageSecurityTests.test_get_verified_data_root_fails_when_unmounted)
+Ensure get_verified_data_root raises StorageError when path is not an rclone mount. ... ok
+test_is_rclone_mounted_rejects_string_prefix_spoof (test_phase0.StorageSecurityTests.test_is_rclone_mounted_rejects_string_prefix_spoof)
+Ensure /mock/gdrive_local or /mock/gdrive_fake does NOT match /mock/gdrive. ... ok
+test_is_rclone_mounted_rejects_unmounted_path (test_phase0.StorageSecurityTests.test_is_rclone_mounted_rejects_unmounted_path) ... ok
+test_is_rclone_mounted_valid_hierarchy (test_phase0.StorageSecurityTests.test_is_rclone_mounted_valid_hierarchy) ... ok
+test_safe_probe_write_exclusive (test_phase0.StorageSecurityTests.test_safe_probe_write_exclusive) ... ok
+test_no_hardcoded_conda_paths_in_scripts (test_phase0_4_2.TestDynamicConfigurationAndCodeHygiene.test_no_hardcoded_conda_paths_in_scripts) ... ok
+test_csv_integrity (test_phase0_4_2.TestFormatIntegrityVerification.test_csv_integrity) ... ok
+test_jpeg_integrity (test_phase0_4_2.TestFormatIntegrityVerification.test_jpeg_integrity) ... ok
+test_osm_pbf_full_scan_valid_and_truncated (test_phase0_4_2.TestFormatIntegrityVerification.test_osm_pbf_full_scan_valid_and_truncated)
+Verify full scan detects mid-stream truncation while header-only misses it. ... ok
+test_osm_pbf_integrity (test_phase0_4_2.TestFormatIntegrityVerification.test_osm_pbf_integrity) ... ok
+test_osm_xml_integrity (test_phase0_4_2.TestFormatIntegrityVerification.test_osm_xml_integrity) ... ok
+test_already_present_idempotence (test_phase0_4_2.TestProvenanceManagement.test_already_present_idempotence) ... ok
+test_load_provenance_records_strict_corrupted_line_protection (test_phase0_4_2.TestProvenanceManagement.test_load_provenance_records_strict_corrupted_line_protection)
+Verify strict load raises ProvenanceCorruptedError on invalid JSON lines without dropping history. ... ok
+test_provenance_lock_force_local_lock (test_phase0_4_2.TestProvenanceManagement.test_provenance_lock_force_local_lock)
+Verify ProvenanceLock functions cleanly on local filesystem when force_local_lock is True. ... ok
+test_provenance_lock_fuse_unsupported_fallback (test_phase0_4_2.TestProvenanceManagement.test_provenance_lock_fuse_unsupported_fallback)
+Verify ProvenanceLock seamlessly falls back to local lock if FUSE raises ENOSYS or EOPNOTSUPP. ... ok
+test_provenance_lock_live_gdrive_fuse_sandbox (test_phase0_4_2.TestProvenanceManagement.test_provenance_lock_live_gdrive_fuse_sandbox)
+Verify ProvenanceLock on actual live rclone FUSE mount in an isolated sandbox directory. ... ok
+test_provenance_lock_mutual_exclusion (test_phase0_4_2.TestProvenanceManagement.test_provenance_lock_mutual_exclusion)
+Verify ProvenanceLock provides mutual exclusion against concurrent contention. ... ok
+test_untracked_existing_file_records_mtime (test_phase0_4_2.TestProvenanceManagement.test_untracked_existing_file_records_mtime) ... ok
+test_check_mojibake_strings (test_phase0_4_2.TestShapefileEncodingAndMojibake.test_check_mojibake_strings) ... ok
+test_live_boundaries_if_mounted (test_phase0_4_2.TestShapefileEncodingAndMojibake.test_live_boundaries_if_mounted) ... ok
+test_shapefile_cpg_utf8_reading (test_phase0_4_2.TestShapefileEncodingAndMojibake.test_shapefile_cpg_utf8_reading) ... ok
+test_sources_catalog_structure (test_phase0_4_2.TestSourcesCatalogIntegrity.test_sources_catalog_structure) ... ok
+test_audit_verdict_fast_pass_and_no_hash_claims (test_phase0_4_2.TestTruthfulHashReportingAndAudit.test_audit_verdict_fast_pass_and_no_hash_claims)
+In Fast mode, audit report must NEVER claim that hashes were recalculated. ... ok
+test_audit_verdict_full_pass_only_when_all_recalculated (test_phase0_4_2.TestTruthfulHashReportingAndAudit.test_audit_verdict_full_pass_only_when_all_recalculated)
+In Full mode with check-all-hashes, audit report reports FULL PASS. ... ok
+test_audit_verdict_partial_pass_when_pbf_omitted (test_phase0_4_2.TestTruthfulHashReportingAndAudit.test_audit_verdict_partial_pass_when_pbf_omitted)
+In Full mode with PBF omitted, audit report must report PARTIAL PASS. ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 11.113s
+
+OK

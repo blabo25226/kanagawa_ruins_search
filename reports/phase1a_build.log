@@ -1,0 +1,9 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: kanagawa-ruins
+  Building wheel for kanagawa-ruins (pyproject.toml): started
+  Building wheel for kanagawa-ruins (pyproject.toml): finished with status 'done'
+  Created wheel for kanagawa-ruins: filename=kanagawa_ruins-0.1.0-py3-none-any.whl size=34209 sha256=0f2b6c972e24a2c5153de0163c4553f0407efb0cac0846da7335145d192ba1b4
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bar56ff0/wheels/e7/3a/87/316584b4f58f8199b3b90438ec8d0d5a6b3f90eade5e5612c1
+Successfully built kanagawa-ruins

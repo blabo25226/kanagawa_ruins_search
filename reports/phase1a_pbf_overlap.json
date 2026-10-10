@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "adoption_order": "catalog layer_id order; first wins, no filling",
+  "domains": [
+    {
+      "domain": "roads",
+      "input_layers": [
+        "osm__roads__2026_10_tsukui_geofabrik_chubu",
+        "osm__roads__2026_10_tsukui_geofabrik_kanto"
+      ],
+      "duplicate_ids": 406,
+      "duplicate_rows": 406,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 3660
+    },
+    {
+      "domain": "waterways",
+      "input_layers": [
+        "osm__waterways__2026_10_tsukui_geofabrik_chubu",
+        "osm__waterways__2026_10_tsukui_geofabrik_kanto"
+      ],
+      "duplicate_ids": 61,
+      "duplicate_rows": 61,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 391
+    },
+    {
+      "domain": "worship",
+      "input_layers": [
+        "osm__worship__2026_10_tsukui_geofabrik_chubu",
+        "osm__worship__2026_10_tsukui_geofabrik_kanto"
+      ],
+      "duplicate_ids": 5,
+      "duplicate_rows": 5,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 21
+    },
+    {
+      "domain": "historic",
+      "input_layers": [
+        "osm__historic__2026_10_tsukui_geofabrik_chubu",
+        "osm__historic__2026_10_tsukui_geofabrik_kanto"
+      ],
+      "duplicate_ids": 12,
+      "duplicate_rows": 12,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 39
+    },
+    {
+      "domain": "landuse",
+      "input_layers": [
+        "osm__landuse__2026_10_tsukui_geofabrik_chubu",
+        "osm__landuse__2026_10_tsukui_geofabrik_kanto"
+      ],
+      "duplicate_ids": 81,
+      "duplicate_rows": 81,
+      "conflicting_tags": 0,
+      "conflicting_geometry": 0,
+      "unique_rows": 219
+    }
+  ]
+}

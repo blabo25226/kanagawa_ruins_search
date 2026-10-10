@@ -1,0 +1,18 @@
+INGEST geofabrik_kanto
+{"source_id": "geofabrik_kanto", "error": "OSError: Manifest readback mismatch"}
+INGEST geofabrik_chubu
+Traceback (most recent call last):
+  File "/home/blabo/kanagawa_ruins_search/scripts/phase1a_ingest.py", line 11, in <module>
+    raise SystemExit(ingest_main())
+                     ^^^^^^^^^^^^^
+  File "/home/blabo/kanagawa_ruins_search/src/kanagawa_ruins/cli.py", line 56, in ingest_main
+    layers = ingest_source(s, settings=settings, area=args.area)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blabo/kanagawa_ruins_search/src/kanagawa_ruins/pipeline.py", line 261, in ingest_source
+    vintage,
+
+  File "/home/blabo/kanagawa_ruins_search/src/kanagawa_ruins/ingest/osm.py", line 88, in osm_chunks
+    tags = dict(obj.tags)
+           ^^^^^^^^^^^^^^
+KeyboardInterrupt
+ERROR conda.cli.main_run:execute(148): `conda run python scripts/phase1a_ingest.py --execute --layers osm --include-pbf --source-id geofabrik_kanto --source-id geofabrik_chubu --report reports/phase1a_pbf.json` failed. (See above for error)

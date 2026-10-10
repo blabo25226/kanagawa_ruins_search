@@ -1,0 +1,3119 @@
+{
+  "status": "PASS",
+  "layers": [
+    {
+      "acquired_at": "2026-10-09T14:16:51.433981+00:00",
+      "bbox": [
+        -83341.60985313107,
+        -96666.29629764319,
+        227.56439177745622,
+        -36064.827498422914
+      ],
+      "bytes": 2778611,
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "created_at": "2026-10-10T11:08:53.583474+00:00",
+      "event": "derived",
+      "feature_count": 1247,
+      "geometry_type": [
+        "Polygon"
+      ],
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "ingest_statistics": {},
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-20260101_14.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2011\",DATUM[\"D_JGD_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "layer_id": "admin__n03__2026_kanagawa",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "notes": [],
+      "original_crs": "EPSG:6668",
+      "original_path": "raw/administrative/N03-20260101_14_GML.zip",
+      "output_sha256": "63cfa1caa0be4258c9bc186f79c0ddaec003a25080153f35ff4311ce1658dfff",
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "processed_crs": "EPSG:6677",
+      "processed_path": "processed/phase1a/vectors/admin__n03__2026_kanagawa.parquet",
+      "processing_version": "phase1a-0.1.0",
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "schema_version": 1,
+      "scratch_peak_bytes": 19861295,
+      "source_crs_info": {
+        "authority": "EPSG:6668",
+        "axes": [
+          "north",
+          "east"
+        ],
+        "datum": "Japanese Geodetic Datum 2024",
+        "geographic": true,
+        "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+      },
+      "source_id": "mlit_n03_2026_kanagawa",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "source_sha256": "27ab5aa2982fc6fe81e9c0b08ca75d18177e8228527b2e602ce803e681e7e561",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_14_GML.zip",
+      "temporal_coverage": "2026",
+      "versions": {
+        "duckdb": "1.4.3",
+        "geopandas": "1.2.0",
+        "kanagawa-ruins": "0.1.0",
+        "osmium": "4.2.0",
+        "pyarrow": "23.0.1",
+        "pyogrio": "0.13.0",
+        "pyproj": "3.8.0",
+        "shapely": "2.2.0"
+      },
+      "status": "already_present_reproduced"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__n03__2014_kanagawa",
+      "source_id": "mlit_n03_2014_kanagawa",
+      "original_path": "raw/historical_boundaries/N03-140401_14_GML.zip",
+      "source_sha256": "b9f236d3512a9b96ed6525c4e7b1f898874fc7a45595a66cd2f150549d9daeca",
+      "temporal_coverage": "2014",
+      "acquired_at": "2026-10-09T14:17:41.893622+00:00",
+      "created_at": "2026-10-10T11:09:55.536619+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2014/N03-140401_14_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2014.html",
+      "output_sha256": "f232789d256132957fcab14b34318c1dfac484e7308088585d9185a413502328",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-14_14_140401.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2000\",DATUM[\"D_JGD_2000\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 8209702,
+      "original_crs": "EPSG:4612",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4612",
+        "datum": "Japanese Geodetic Datum 2000",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2000\",DATUM[\"Japanese Geodetic Datum 2000\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",4612],REMARK[\"Replaces Tokyo (CRS code 4301) from April 2002. From 21st October 2011 replaced by JGD2011 (CRS code 6668).\"]]"
+      },
+      "feature_count": 606,
+      "bbox": [
+        -83341.69297878272,
+        -96665.89748451424,
+        227.33947069361312,
+        -36064.774106793055
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 1838694,
+      "processed_path": "processed/phase1a/vectors/admin__n03__2014_kanagawa.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__codh_tsukui_1955__1955_10_01",
+      "source_id": "codh_tsukui_1955",
+      "original_path": "raw/historical_boundaries/codh_tsukui_19551001.geojson",
+      "source_sha256": "d2105725065d8b2f9cb04bb28829ddd651500a4566ac73d70f09e3a10fc389cf",
+      "temporal_coverage": "1955-10-01",
+      "acquired_at": "2026-10-09T14:17:42.041379+00:00",
+      "created_at": "2026-10-10T11:09:56.616472+00:00",
+      "license": "CODH 歴史的行政区域データセット（CC BY 4.0）",
+      "source_url": "https://geoshape.ex.nii.ac.jp/city/geojson/19551001/14/14422A1968.geojson",
+      "source_page": "https://geoshape.ex.nii.ac.jp/city/",
+      "output_sha256": "c5ce05e5f4e7300ae7119de661cdae8820d6d286ecb841ad9356c0292ac98fb0",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "type": [
+          "行政区境界"
+        ],
+        "dc:title": "神奈川県津久井郡津久井町:フル解像度GeoJSON",
+        "dc:source": "N03-551001_14-g_AdministrativeBoundary.shp",
+        "dc:issued": "1955-10-01",
+        "dc:subject": [
+          "N03",
+          "行政区域",
+          "政策区域",
+          "行政区境界"
+        ],
+        "cc:license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "cc:useGuidelines": "http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03.html",
+        "cc:attributionText": "国土交通省「国土数値情報（行政区域データ）」をもとにNIIが加工",
+        "cc:attributionURL": "http://nlftp.mlit.go.jp/ksj/",
+        "crs_evidence": {
+          "codh_tsukui_19551001.geojson": null
+        }
+      },
+      "notes": [
+        "Municipal boundary, not an oaza boundary; source GeoJSON CRS convention is recorded by GDAL.",
+        "Embedded CODH license: http://creativecommons.org/licenses/by-sa/4.0/; acquisition ledger license retained separately."
+      ],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 76717,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -69601.94005436645,
+        -58088.51501790085,
+        -48713.91539207758,
+        -43073.36083847284
+      ],
+      "geometry_type": [
+        "MultiPolygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_006",
+        "N03_007",
+        "id",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 85969,
+      "processed_path": "processed/phase1a/vectors/admin__codh_tsukui_1955__1955_10_01.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__codh_tsukui_2005__2005_01_01",
+      "source_id": "codh_tsukui_2005",
+      "original_path": "raw/historical_boundaries/codh_tsukui_20050101.geojson",
+      "source_sha256": "85b4f3ef11efd93602a40e930b441453112e183993b08f0ee303f3934c2b9ce6",
+      "temporal_coverage": "2005-01-01",
+      "acquired_at": "2026-10-09T14:17:42.375567+00:00",
+      "created_at": "2026-10-10T11:09:56.793941+00:00",
+      "license": "CODH 歴史的行政区域データセット（CC BY 4.0）",
+      "source_url": "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14422A1968.geojson",
+      "source_page": "https://geoshape.ex.nii.ac.jp/city/",
+      "output_sha256": "a6b013e5604bb9be106331bb6a4783b0f0dc3d2838c3788d5ed4b023d0737d60",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "type": [
+          "行政区境界"
+        ],
+        "dc:title": "神奈川県津久井郡津久井町:フル解像度GeoJSON",
+        "dc:source": "N03-05_14-g_AdministrativeBoundary.shp",
+        "dc:issued": "2005-01-01",
+        "dc:subject": [
+          "N03",
+          "行政区域",
+          "政策区域",
+          "行政区境界"
+        ],
+        "cc:license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "cc:useGuidelines": "http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03.html",
+        "cc:attributionText": "国土交通省「国土数値情報（行政区域データ）」をもとに NII が加工",
+        "cc:attributionURL": "http://nlftp.mlit.go.jp/ksj/",
+        "crs_evidence": {
+          "codh_tsukui_20050101.geojson": null
+        }
+      },
+      "notes": [
+        "Municipal boundary, not an oaza boundary; source GeoJSON CRS convention is recorded by GDAL.",
+        "Embedded CODH license: http://creativecommons.org/licenses/by-sa/4.0/; acquisition ledger license retained separately."
+      ],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 76552,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -69601.93497408547,
+        -58088.486339734045,
+        -48713.92266884507,
+        -43073.40703292839
+      ],
+      "geometry_type": [
+        "MultiPolygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_006",
+        "N03_007",
+        "id",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 85817,
+      "processed_path": "processed/phase1a/vectors/admin__codh_tsukui_2005__2005_01_01.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__historic__2026_10_osm_tsukui_core",
+      "source_id": "osm_tsukui_core",
+      "original_path": "raw/osm/tsukui_core_osm.osm",
+      "source_sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:17:47.761226+00:00",
+      "created_at": "2026-10-10T11:10:00.312657+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "f338b2ecbf2ea4b465c63e8f135eac3c411e814d3eb88a5713cb14d3b6502d6c",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 25052,
+        "total_ways": 3212,
+        "total_relations": 37,
+        "selected_objects": 457,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16948420,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -56908.0340003993,
+        -44255.79793387873,
+        -56908.0340003993,
+        -44255.79793387873
+      ],
+      "geometry_type": [
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 11347,
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_core.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_osm_tsukui_core",
+      "source_id": "osm_tsukui_core",
+      "original_path": "raw/osm/tsukui_core_osm.osm",
+      "source_sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:17:47.761226+00:00",
+      "created_at": "2026-10-10T11:10:00.420037+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "25881c28d2d7bfa0cb1c2082abef6bd2934e4414c881fb54d3babf6719625c7a",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 25052,
+        "total_ways": 3212,
+        "total_relations": 37,
+        "selected_objects": 457,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16948420,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 2,
+      "bbox": [
+        -58446.38705527145,
+        -48123.69261591633,
+        -56821.90705926033,
+        -46955.94114218359
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 15088,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_core.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_osm_tsukui_core",
+      "source_id": "osm_tsukui_core",
+      "original_path": "raw/osm/tsukui_core_osm.osm",
+      "source_sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:17:47.761226+00:00",
+      "created_at": "2026-10-10T11:10:00.534800+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "3a4776a8d2819b63575e8e0010dd7f13846f5509b545ae36bce50b64e83bae66",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 25052,
+        "total_ways": 3212,
+        "total_relations": 37,
+        "selected_objects": 457,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16948420,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 358,
+      "bbox": [
+        -60183.643877084614,
+        -49740.883543703414,
+        -55178.24435012339,
+        -43986.28647074042
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 117768,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_core.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_osm_tsukui_core",
+      "source_id": "osm_tsukui_core",
+      "original_path": "raw/osm/tsukui_core_osm.osm",
+      "source_sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:17:47.761226+00:00",
+      "created_at": "2026-10-10T11:10:00.645054+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "35be1c81c297851ab6e0d158b8a523c660f6b3ccd848bb703d63fede3f390d3b",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 25052,
+        "total_ways": 3212,
+        "total_relations": 37,
+        "selected_objects": 457,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16948420,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 75,
+      "bbox": [
+        -59974.94384076191,
+        -49090.37123787306,
+        -55007.92830462143,
+        -43556.2187146144
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 46560,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_core.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_osm_tsukui_core",
+      "source_id": "osm_tsukui_core",
+      "original_path": "raw/osm/tsukui_core_osm.osm",
+      "source_sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:17:47.761226+00:00",
+      "created_at": "2026-10-10T11:10:00.753288+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.56,139.22,35.60",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "e70ac1e5e31b844ec36f408d50a016b2b84e877ca633ad8b41667545eb28a878",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 25052,
+        "total_ways": 3212,
+        "total_relations": 37,
+        "selected_objects": 457,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16948420,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -57341.308296698975,
+        -45098.14223681411,
+        -57324.361960222464,
+        -45070.43933436533
+      ],
+      "geometry_type": [
+        "LineString"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 12076,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_core.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__codh_sagamiko_2005__2005_01_01",
+      "source_id": "codh_sagamiko_2005",
+      "original_path": "raw/historical_boundaries/codh_sagamiko_20050101.geojson",
+      "source_sha256": "8bf187d34be07ee3ac632f59a924d93b0cf11a15caa75d920b56c175432566c6",
+      "temporal_coverage": "2005-01-01",
+      "acquired_at": "2026-10-09T14:42:50.871534+00:00",
+      "created_at": "2026-10-10T11:10:00.933705+00:00",
+      "license": "CODH 歴史的行政区域データセット（CC BY 4.0）",
+      "source_url": "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14424A1968.geojson",
+      "source_page": "https://geoshape.ex.nii.ac.jp/city/",
+      "output_sha256": "f5c4b04f68bc84eff4b37df4dfa0a1067affa0fbb6103898a9526e92c03a1aef",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "type": [
+          "行政区境界"
+        ],
+        "dc:title": "神奈川県津久井郡藤野町:フル解像度GeoJSON",
+        "dc:source": "N03-05_14-g_AdministrativeBoundary.shp",
+        "dc:issued": "2005-01-01",
+        "dc:subject": [
+          "N03",
+          "行政区域",
+          "政策区域",
+          "行政区境界"
+        ],
+        "cc:license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "cc:useGuidelines": "http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03.html",
+        "cc:attributionText": "国土交通省「国土数値情報（行政区域データ）」をもとに NII が加工",
+        "cc:attributionURL": "http://nlftp.mlit.go.jp/ksj/",
+        "crs_evidence": {
+          "codh_sagamiko_20050101.geojson": null
+        }
+      },
+      "notes": [
+        "Municipal boundary, not an oaza boundary; source GeoJSON CRS convention is recorded by GDAL.",
+        "Embedded CODH license: http://creativecommons.org/licenses/by-sa/4.0/; acquisition ledger license retained separately."
+      ],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 54112,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -65434.57317933209,
+        -50682.14737749666,
+        -57178.70757177686,
+        -36064.77429380068
+      ],
+      "geometry_type": [
+        "MultiPolygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_006",
+        "N03_007",
+        "id",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 63372,
+      "processed_path": "processed/phase1a/vectors/admin__codh_sagamiko_2005__2005_01_01.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__codh_shiroyama_2005__2005_01_01",
+      "source_id": "codh_shiroyama_2005",
+      "original_path": "raw/historical_boundaries/codh_shiroyama_20050101.geojson",
+      "source_sha256": "077da437650f0442740c7873bbc5d4fee43fa109c9f907c1a6f8a56e27ab1aa1",
+      "temporal_coverage": "2005-01-01",
+      "acquired_at": "2026-10-09T14:42:51.185810+00:00",
+      "created_at": "2026-10-10T11:10:01.109808+00:00",
+      "license": "CODH 歴史的行政区域データセット（CC BY 4.0）",
+      "source_url": "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14421A1968.geojson",
+      "source_page": "https://geoshape.ex.nii.ac.jp/city/",
+      "output_sha256": "3f4aa4dfe589f461773eff197e0871e6cac10a1e3b0c4b57784fc00ce20f2366",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "type": [
+          "行政区境界"
+        ],
+        "dc:title": "神奈川県津久井郡城山町:フル解像度GeoJSON",
+        "dc:source": "N03-05_14-g_AdministrativeBoundary.shp",
+        "dc:issued": "2005-01-01",
+        "dc:subject": [
+          "N03",
+          "行政区域",
+          "政策区域",
+          "行政区境界"
+        ],
+        "cc:license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "cc:useGuidelines": "http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03.html",
+        "cc:attributionText": "国土交通省「国土数値情報（行政区域データ）」をもとに NII が加工",
+        "cc:attributionURL": "http://nlftp.mlit.go.jp/ksj/",
+        "crs_evidence": {
+          "codh_shiroyama_20050101.geojson": null
+        }
+      },
+      "notes": [
+        "Municipal boundary, not an oaza boundary; source GeoJSON CRS convention is recorded by GDAL.",
+        "Embedded CODH license: http://creativecommons.org/licenses/by-sa/4.0/; acquisition ledger license retained separately."
+      ],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 29000,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -51514.77367638367,
+        -51116.29637339394,
+        -45970.88770488738,
+        -42778.53428126531
+      ],
+      "geometry_type": [
+        "MultiPolygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_006",
+        "N03_007",
+        "id",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 38264,
+      "processed_path": "processed/phase1a/vectors/admin__codh_shiroyama_2005__2005_01_01.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__codh_fujino_2005__2005_01_01",
+      "source_id": "codh_fujino_2005",
+      "original_path": "raw/historical_boundaries/codh_fujino_20050101.geojson",
+      "source_sha256": "027f60212dd1465a3b278dae98dc6171578319049e434cf5f82febe21630a31e",
+      "temporal_coverage": "2005-01-01",
+      "acquired_at": "2026-10-09T14:42:51.293777+00:00",
+      "created_at": "2026-10-10T11:10:01.277762+00:00",
+      "license": "CODH 歴史的行政区域データセット（CC BY 4.0）",
+      "source_url": "https://geoshape.ex.nii.ac.jp/city/geojson/20050101/14/14423A1968.geojson",
+      "source_page": "https://geoshape.ex.nii.ac.jp/city/",
+      "output_sha256": "0eec01653d5ef468f03f460d7210ddd88886412debf058d32e9da2aeaa447849",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "type": [
+          "行政区境界"
+        ],
+        "dc:title": "神奈川県津久井郡相模湖町:フル解像度GeoJSON",
+        "dc:source": "N03-05_14-g_AdministrativeBoundary.shp",
+        "dc:issued": "2005-01-01",
+        "dc:subject": [
+          "N03",
+          "行政区域",
+          "政策区域",
+          "行政区境界"
+        ],
+        "cc:license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "cc:useGuidelines": "http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03.html",
+        "cc:attributionText": "国土交通省「国土数値情報（行政区域データ）」をもとに NII が加工",
+        "cc:attributionURL": "http://nlftp.mlit.go.jp/ksj/",
+        "crs_evidence": {
+          "codh_fujino_20050101.geojson": null
+        }
+      },
+      "notes": [
+        "Municipal boundary, not an oaza boundary; source GeoJSON CRS convention is recorded by GDAL.",
+        "Embedded CODH license: http://creativecommons.org/licenses/by-sa/4.0/; acquisition ledger license retained separately."
+      ],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 29871,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -60152.45439697478,
+        -47992.97614001398,
+        -54112.73589088675,
+        -38310.15894227874
+      ],
+      "geometry_type": [
+        "MultiPolygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_006",
+        "N03_007",
+        "id",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 39123,
+      "processed_path": "processed/phase1a/vectors/admin__codh_fujino_2005__2005_01_01.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__historic__2026_10_osm_tsukui_toya",
+      "source_id": "osm_tsukui_toya",
+      "original_path": "raw/osm/tsukui_toya_osm.osm",
+      "source_sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:00.024279+00:00",
+      "created_at": "2026-10-10T11:10:04.969749+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "dc89efdef3270261b707266e8861cc4d882ba883977d9f599066299369025dae",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 27354,
+        "total_ways": 2583,
+        "total_relations": 47,
+        "selected_objects": 655,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16990090,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -55877.19972348694,
+        -50675.25160734036,
+        -55877.19972348694,
+        -50675.25160734036
+      ],
+      "geometry_type": [
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 11417,
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_toya.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_osm_tsukui_toya",
+      "source_id": "osm_tsukui_toya",
+      "original_path": "raw/osm/tsukui_toya_osm.osm",
+      "source_sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:00.024279+00:00",
+      "created_at": "2026-10-10T11:10:05.076255+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "47851fc9a3e5aa1a5aa956ac9dd54520e0b0550fdbcf7eda3c92409e2c16bd8f",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 27354,
+        "total_ways": 2583,
+        "total_relations": 47,
+        "selected_objects": 655,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16990090,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 3,
+      "bbox": [
+        -56631.66538668731,
+        -50828.2012878072,
+        -55432.11124461983,
+        -49113.21255902839
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 14645,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_toya.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_osm_tsukui_toya",
+      "source_id": "osm_tsukui_toya",
+      "original_path": "raw/osm/tsukui_toya_osm.osm",
+      "source_sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:00.024279+00:00",
+      "created_at": "2026-10-10T11:10:05.183094+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "7fcead7fa3ff765df60d72e03b34f2f39b51bf9b317ab5e200f70399aa1b1721",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 27354,
+        "total_ways": 2583,
+        "total_relations": 47,
+        "selected_objects": 655,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16990090,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 553,
+      "bbox": [
+        -61976.92028092488,
+        -54588.34612853163,
+        -52243.69689189988,
+        -48330.49584436484
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 140728,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_toya.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_osm_tsukui_toya",
+      "source_id": "osm_tsukui_toya",
+      "original_path": "raw/osm/tsukui_toya_osm.osm",
+      "source_sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:00.024279+00:00",
+      "created_at": "2026-10-10T11:10:05.293097+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "b77a0a88135b222d8563c76fb85fab6c8ad792d18ab2ea50d739ea42045413d0",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 27354,
+        "total_ways": 2583,
+        "total_relations": 47,
+        "selected_objects": 655,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16990090,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 77,
+      "bbox": [
+        -63765.4153783849,
+        -55397.52889415411,
+        -52456.13419729858,
+        -46341.230988636504
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 64117,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_toya.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_osm_tsukui_toya",
+      "source_id": "osm_tsukui_toya",
+      "original_path": "raw/osm/tsukui_toya_osm.osm",
+      "source_sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:00.024279+00:00",
+      "created_at": "2026-10-10T11:10:05.404874+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.51,139.25,35.56",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "bc4d139bcf837c09da3f51ca06adf9ab1dd2d2a38400c56860f0813586d90bf3",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 27354,
+        "total_ways": 2583,
+        "total_relations": 47,
+        "selected_objects": 655,
+        "unsupported_relations": 20,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 16990090,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -55308.77693981145,
+        -52461.46121563919,
+        -55308.77693981145,
+        -52461.46121563919
+      ],
+      "geometry_type": [
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 11319,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_toya.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__historic__2026_10_osm_tsukui_aonohara",
+      "source_id": "osm_tsukui_aonohara",
+      "original_path": "raw/osm/tsukui_aonohara_osm.osm",
+      "source_sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:57.382716+00:00",
+      "created_at": "2026-10-10T11:10:09.428998+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "1d0e6e715b2b0eda66024fbf65be43acd349873519953f458440a7da59bc2d38",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 29698,
+        "total_ways": 2887,
+        "total_relations": 76,
+        "selected_objects": 856,
+        "unsupported_relations": 48,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17045944,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 3,
+      "bbox": [
+        -63897.66919190674,
+        -50605.445547476374,
+        -63702.690497242074,
+        -50442.86853935424
+      ],
+      "geometry_type": [
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 11401,
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_aonohara.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_osm_tsukui_aonohara",
+      "source_id": "osm_tsukui_aonohara",
+      "original_path": "raw/osm/tsukui_aonohara_osm.osm",
+      "source_sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:57.382716+00:00",
+      "created_at": "2026-10-10T11:10:09.537842+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "d39ecb066388bee1327d4b5554dc135438efe5b333189d6ead941e84dfbf3962",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 29698,
+        "total_ways": 2887,
+        "total_relations": 76,
+        "selected_objects": 856,
+        "unsupported_relations": 48,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17045944,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 161,
+      "bbox": [
+        -64504.81245466551,
+        -51115.84613398408,
+        -58309.77169253542,
+        -47993.18246779699
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 30453,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_aonohara.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_osm_tsukui_aonohara",
+      "source_id": "osm_tsukui_aonohara",
+      "original_path": "raw/osm/tsukui_aonohara_osm.osm",
+      "source_sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:57.382716+00:00",
+      "created_at": "2026-10-10T11:10:09.647592+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "be3172c959a9f33079a3436667e9a8c94c03d4b6cc4d7e69cea7c6ee050e00ee",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 29698,
+        "total_ways": 2887,
+        "total_relations": 76,
+        "selected_objects": 856,
+        "unsupported_relations": 48,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17045944,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 526,
+      "bbox": [
+        -65302.49650308217,
+        -53996.31101649985,
+        -57978.1265769015,
+        -46414.02554394122
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 166830,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_aonohara.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_osm_tsukui_aonohara",
+      "source_id": "osm_tsukui_aonohara",
+      "original_path": "raw/osm/tsukui_aonohara_osm.osm",
+      "source_sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:57.382716+00:00",
+      "created_at": "2026-10-10T11:10:09.752742+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "40d065f717cf0bfce95ffe056adb46f310f7a584fd3f6655189e9eee51399dc5",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 29698,
+        "total_ways": 2887,
+        "total_relations": 76,
+        "selected_objects": 856,
+        "unsupported_relations": 48,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17045944,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 112,
+      "bbox": [
+        -65863.8457939862,
+        -53521.766306642356,
+        -56703.80177321559,
+        -46294.95100247315
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 75338,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_aonohara.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_osm_tsukui_aonohara",
+      "source_id": "osm_tsukui_aonohara",
+      "original_path": "raw/osm/tsukui_aonohara_osm.osm",
+      "source_sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:43:57.382716+00:00",
+      "created_at": "2026-10-10T11:10:09.863568+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.12,35.52,139.19,35.57",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "4cd56129ac6b3719a8ae100a0db9f81e5aaaea1eeadb13545d9c1b84df52aea1",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 29698,
+        "total_ways": 2887,
+        "total_relations": 76,
+        "selected_objects": 856,
+        "unsupported_relations": 48,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17045944,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 6,
+      "bbox": [
+        -63920.90108097566,
+        -50448.86506250014,
+        -63897.49665977657,
+        -50427.65214687947
+      ],
+      "geometry_type": [
+        "LineString"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 12410,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_aonohara.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__historic__2026_10_osm_tsukui_suarashi",
+      "source_id": "osm_tsukui_suarashi",
+      "original_path": "raw/osm/tsukui_suarashi_osm.osm",
+      "source_sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:47.332182+00:00",
+      "created_at": "2026-10-10T11:10:16.528063+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "16e9961ad2aa225a9b078ae2cab23663d238730fc16c894b257d0be1c6887747",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 48512,
+        "total_ways": 6899,
+        "total_relations": 93,
+        "selected_objects": 1095,
+        "unsupported_relations": 19,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17038031,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 18,
+      "bbox": [
+        -59658.955803355406,
+        -45935.075034940586,
+        -54903.50966649521,
+        -42103.18102905614
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 13453,
+      "processed_path": "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_suarashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_osm_tsukui_suarashi",
+      "source_id": "osm_tsukui_suarashi",
+      "original_path": "raw/osm/tsukui_suarashi_osm.osm",
+      "source_sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:47.332182+00:00",
+      "created_at": "2026-10-10T11:10:16.643057+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "b9f2a00455694f449b9df40b9152c6467f4d1a6010d685454ca9bbe4b2840a83",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 48512,
+        "total_ways": 6899,
+        "total_relations": 93,
+        "selected_objects": 1095,
+        "unsupported_relations": 19,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17038031,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 24,
+      "bbox": [
+        -58863.037199215665,
+        -45474.87059015523,
+        -54396.54806269842,
+        -41943.598385532336
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 17224,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_suarashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_osm_tsukui_suarashi",
+      "source_id": "osm_tsukui_suarashi",
+      "original_path": "raw/osm/tsukui_suarashi_osm.osm",
+      "source_sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:47.332182+00:00",
+      "created_at": "2026-10-10T11:10:16.749729+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "2a013a85302208a100dcbf66b96fa8cdc881fd84c49bdd3497c3ac6c6b2a4fcf",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 48512,
+        "total_ways": 6899,
+        "total_relations": 93,
+        "selected_objects": 1095,
+        "unsupported_relations": 19,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17038031,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 968,
+      "bbox": [
+        -60485.26103983079,
+        -47377.5366560731,
+        -52991.61764397551,
+        -41542.101902233175
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 202766,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_suarashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_osm_tsukui_suarashi",
+      "source_id": "osm_tsukui_suarashi",
+      "original_path": "raw/osm/tsukui_suarashi_osm.osm",
+      "source_sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:47.332182+00:00",
+      "created_at": "2026-10-10T11:10:16.859806+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "7f1993bc2d0cf0e9e4c475172f33f46f8e17d63c1f96b9bd204b350e5059b9f2",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 48512,
+        "total_ways": 6899,
+        "total_relations": 93,
+        "selected_objects": 1095,
+        "unsupported_relations": 19,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17038031,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 62,
+      "bbox": [
+        -60457.98017033863,
+        -51024.372767486544,
+        -49951.38940915681,
+        -41060.41972400212
+      ],
+      "geometry_type": [
+        "LineString"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 42922,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_suarashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_osm_tsukui_suarashi",
+      "source_id": "osm_tsukui_suarashi",
+      "original_path": "raw/osm/tsukui_suarashi_osm.osm",
+      "source_sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:47.332182+00:00",
+      "created_at": "2026-10-10T11:10:16.966913+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.17,35.58,139.23,35.62",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "17cdf606c7fd8f043cb3a28b95f19b64bbacf3dafe077b57425c98ef9e514116",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 48512,
+        "total_ways": 6899,
+        "total_relations": 93,
+        "selected_objects": 1095,
+        "unsupported_relations": 19,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17038031,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 4,
+      "bbox": [
+        -58833.57545446086,
+        -45098.14223681411,
+        -56915.7124452094,
+        -41991.99799075533
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 12886,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_suarashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__landuse__2026_10_osm_tsukui_aoyama",
+      "source_id": "osm_tsukui_aoyama",
+      "original_path": "raw/osm/tsukui_aoyama_osm.osm",
+      "source_sha256": "2cee8ec50206676edf15b7f67bc6344e39d8c7aecd90a16bbb91e0097515c5c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:51.526768+00:00",
+      "created_at": "2026-10-10T11:10:23.199259+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.55,139.25,35.59",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "d73b157af5a10159b88731277ba0f5b1ee0e6dcef0ab85eda30b51cac4c0f67f",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 47098,
+        "total_ways": 6514,
+        "total_relations": 56,
+        "selected_objects": 844,
+        "unsupported_relations": 21,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17010962,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 7,
+      "bbox": [
+        -58446.38705527145,
+        -50828.2012878072,
+        -53839.65722962066,
+        -45234.387219775526
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 17335,
+      "processed_path": "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_aoyama.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__roads__2026_10_osm_tsukui_aoyama",
+      "source_id": "osm_tsukui_aoyama",
+      "original_path": "raw/osm/tsukui_aoyama_osm.osm",
+      "source_sha256": "2cee8ec50206676edf15b7f67bc6344e39d8c7aecd90a16bbb91e0097515c5c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:51.526768+00:00",
+      "created_at": "2026-10-10T11:10:23.307330+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.55,139.25,35.59",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "718cbbd6374efc6f90d84e8efc5cb408102ce84e833960ad7cfb2c369f9fb138",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 47098,
+        "total_ways": 6514,
+        "total_relations": 56,
+        "selected_objects": 844,
+        "unsupported_relations": 21,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17010962,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 723,
+      "bbox": [
+        -60183.643877084614,
+        -50353.83783042265,
+        -52118.694389027725,
+        -44726.32584390108
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point",
+        "Polygon"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 162159,
+      "processed_path": "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_aoyama.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__waterways__2026_10_osm_tsukui_aoyama",
+      "source_id": "osm_tsukui_aoyama",
+      "original_path": "raw/osm/tsukui_aoyama_osm.osm",
+      "source_sha256": "2cee8ec50206676edf15b7f67bc6344e39d8c7aecd90a16bbb91e0097515c5c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:51.526768+00:00",
+      "created_at": "2026-10-10T11:10:23.414880+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.55,139.25,35.59",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "11da54fc5dc19d94b76106ce0ec4a73d37bf8ff7d4bc073f05fd1b71f2720504",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 47098,
+        "total_ways": 6514,
+        "total_relations": 56,
+        "selected_objects": 844,
+        "unsupported_relations": 21,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17010962,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 92,
+      "bbox": [
+        -59974.94384076191,
+        -51024.372767486544,
+        -49951.38940915681,
+        -44178.958775454375
+      ],
+      "geometry_type": [
+        "LineString",
+        "Point"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 61418,
+      "processed_path": "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_aoyama.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "osm__worship__2026_10_osm_tsukui_aoyama",
+      "source_id": "osm_tsukui_aoyama",
+      "original_path": "raw/osm/tsukui_aoyama_osm.osm",
+      "source_sha256": "2cee8ec50206676edf15b7f67bc6344e39d8c7aecd90a16bbb91e0097515c5c1",
+      "temporal_coverage": "2026-10",
+      "acquired_at": "2026-10-09T14:47:51.526768+00:00",
+      "created_at": "2026-10-10T11:10:23.521096+00:00",
+      "license": "OpenStreetMap 貢献者（ODbL 1.0）",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.18,35.55,139.25,35.59",
+      "source_page": "https://www.openstreetmap.org/export",
+      "output_sha256": "ad842db63371c65881e2ae8ee9b9f6354466e601e0f876f1fbe387cb7c5637b5",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {},
+      "notes": [
+        "Relations unsupported; no geometry synthesized. Closed ways become areas only for area=yes or landuse without area=no."
+      ],
+      "ingest_statistics": {
+        "total_nodes": 47098,
+        "total_ways": 6514,
+        "total_relations": 56,
+        "selected_objects": 844,
+        "unsupported_relations": 21,
+        "missing_way_refs": 0,
+        "outside_bbox": 0,
+        "duplicates_removed": 0
+      },
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 17010962,
+      "original_crs": "EPSG:4326",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:4326",
+        "datum": "World Geodetic System 1984 ensemble",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]"
+      },
+      "feature_count": 1,
+      "bbox": [
+        -54558.309166683495,
+        -46561.84023285166,
+        -54544.87996997142,
+        -46550.253996415406
+      ],
+      "geometry_type": [
+        "LineString"
+      ],
+      "columns": [
+        "osm_type",
+        "osm_id",
+        "osm_version",
+        "tags_json",
+        "geometry",
+        "name",
+        "amenity",
+        "religion",
+        "denomination",
+        "historic",
+        "highway",
+        "waterway",
+        "landuse",
+        "area",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 12302,
+      "processed_path": "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_aoyama.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__n03__2026_tokyo",
+      "source_id": "mlit_n03_2026_tokyo",
+      "original_path": "raw/administrative/N03-20260101_13_GML.zip",
+      "source_sha256": "94f10b26256566db970dd74b09d614f059c1e8a432f9244ac9c4add76c32ff16",
+      "temporal_coverage": "2026",
+      "acquired_at": "2026-10-09T16:04:50.919678+00:00",
+      "created_at": "2026-10-10T11:10:24.768919+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_13_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "output_sha256": "2fb976f22978599b884389c73919ed8362bc3ba8ad16592b49160b822cf9c1a5",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-20260101_13.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2011\",DATUM[\"D_JGD_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 55328970,
+      "original_crs": "EPSG:6668",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:6668",
+        "datum": "Japanese Geodetic Datum 2024",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+      },
+      "feature_count": 6904,
+      "bbox": [
+        -392979.45381064276,
+        -1721704.6449017795,
+        1446594.46730812,
+        -10962.777232888222
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 7064758,
+      "processed_path": "processed/phase1a/vectors/admin__n03__2026_tokyo.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__n03__2026_yamanashi",
+      "source_id": "mlit_n03_2026_yamanashi",
+      "original_path": "raw/administrative/N03-20260101_19_GML.zip",
+      "source_sha256": "ecb815857ced4ef4c74795c46baa73c400208b7fa549e9583d564e7394e12ae9",
+      "temporal_coverage": "2026",
+      "acquired_at": "2026-10-09T16:04:51.406404+00:00",
+      "created_at": "2026-10-10T11:10:25.268557+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_19_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "output_sha256": "ac693e7e36fb9121f87f1c8c0f439ef3d1d0ef6876d2b483e002d61dfaca110b",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-20260101_19.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2011\",DATUM[\"D_JGD_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 12138545,
+      "original_crs": "EPSG:6668",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:6668",
+        "datum": "Japanese Geodetic Datum 2024",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+      },
+      "feature_count": 36,
+      "bbox": [
+        -149590.284401128,
+        -91435.10371010033,
+        -63315.0332839384,
+        -2152.6639250398985
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 1891684,
+      "processed_path": "processed/phase1a/vectors/admin__n03__2026_yamanashi.parquet",
+      "status": "created"
+    },
+    {
+      "schema_version": 1,
+      "event": "derived",
+      "layer_id": "admin__n03__2026_shizuoka",
+      "source_id": "mlit_n03_2026_shizuoka",
+      "original_path": "raw/administrative/N03-20260101_22_GML.zip",
+      "source_sha256": "a10ed331f67a75f275c3e3a9ccc9c716a0d6249609b8cf218d7e4254a5a11a0d",
+      "temporal_coverage": "2026",
+      "acquired_at": "2026-10-09T16:04:53.423057+00:00",
+      "created_at": "2026-10-10T11:10:26.460240+00:00",
+      "license": "国土数値情報利用規約（CC BY 4.0互換）; 出典明記要",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_22_GML.zip",
+      "source_page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "output_sha256": "278ca200389aa8fa41e983ad625379c68f68c34c99dca947ce0dc410e794436b",
+      "processing_version": "phase1a-0.1.0",
+      "implementation_sha256": "9b50a2de81fbe37d853d700af1e4b0423a5b28f8e42367083fcaaef9f1503cb5",
+      "versions": {
+        "kanagawa-ruins": "0.1.0",
+        "geopandas": "1.2.0",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "pyarrow": "23.0.1",
+        "duckdb": "1.4.3",
+        "osmium": "4.2.0"
+      },
+      "parameters": {
+        "area": "tsukui",
+        "pbf_bbox": null
+      },
+      "input_metadata": {
+        "crs_evidence": {
+          "N03-20260101_22.shp": {
+            "prj_wkt": "GEOGCS[\"GCS_JGD_2011\",DATUM[\"D_JGD_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"
+          }
+        }
+      },
+      "notes": [],
+      "ingest_statistics": {},
+      "record_count_policy": "No geometry repair or vector row exclusion; OSM tag/area selection, missing references and dedup counts are explicit.",
+      "scratch_peak_bytes": 50738950,
+      "original_crs": "EPSG:6668",
+      "processed_crs": "EPSG:6677",
+      "source_crs_info": {
+        "authority": "EPSG:6668",
+        "datum": "Japanese Geodetic Datum 2024",
+        "geographic": true,
+        "axes": [
+          "north",
+          "east"
+        ],
+        "wkt": "GEOGCRS[\"JGD2024\",DATUM[\"Japanese Geodetic Datum 2024\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"Japan - onshore and offshore.\"],BBOX[17.09,122.38,46.05,157.65]],ID[\"EPSG\",6668],REMARK[\"Replaces JGD2000 (CRS code 4612) with effect from 21st October 2011. On adoption of JGD2024 (vertical) with effect from 1st April 2025, the name of this geodetic CRS was changed from JGD2011 to JGD2024; there is no change of definition or of coordinate values.\"]]"
+      },
+      "feature_count": 1820,
+      "bbox": [
+        -216022.55193170407,
+        -158040.1346918228,
+        -59921.30165326478,
+        -38092.68637750031
+      ],
+      "geometry_type": [
+        "Polygon"
+      ],
+      "columns": [
+        "N03_001",
+        "N03_002",
+        "N03_003",
+        "N03_004",
+        "N03_005",
+        "N03_007",
+        "geometry",
+        "pref",
+        "muni",
+        "muni_code",
+        "source_id",
+        "source_vintage",
+        "original_crs"
+      ],
+      "bytes": 7431009,
+      "processed_path": "processed/phase1a/vectors/admin__n03__2026_shizuoka.parquet",
+      "status": "created"
+    }
+  ],
+  "errors": []
+}
