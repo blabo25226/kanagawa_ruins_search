@@ -1,0 +1,1118 @@
+{
+  "literature/bibliography/literature_review.md": {
+    "size_bytes": 10145,
+    "sha256": "6f0a36083d3ffd53508b77dee3b07ae7c011405d9c6059a030b61c439e276724"
+  },
+  "literature/bibliography/references.bib": {
+    "size_bytes": 5283,
+    "sha256": "7e75e9484ad5697775a20849058c90c7031eb3262eb076cbd1188be19915aabc"
+  },
+  "literature/bibliography/references.json": {
+    "size_bytes": 17838,
+    "sha256": "27571f9a1c373e9819e172f3e41ca95266870d0336559df645d0f306289d72ba"
+  },
+  "literature/catalogs/pdflist_wakayanagi.pdf": {
+    "size_bytes": 53950,
+    "sha256": "e57f983037ed234623030ebf0548b0e2185b1cf67cac0730c4e012b8036d4672"
+  },
+  "literature/catalogs/rekishishiryoushozaimokuroku14-4-1.pdf": {
+    "size_bytes": 8153399,
+    "sha256": "6c8f05077508427d1f2d574e325c95119aa141a0a6b91aa1525b933814916b78"
+  },
+  "literature/historical_documents/README.md": {
+    "size_bytes": 479,
+    "sha256": "9044b15cb004f2e8d80fd4c3d67820582e48606958e216a1526e2c31c520e7ef"
+  },
+  "literature/historical_documents/Shinpen_Sagami_Fudokiko_Vol5_IIIF_manifest.json": {
+    "size_bytes": 190030,
+    "sha256": "1ecfb5457453b4cac4f272353f0e3ec3af8a131209433e9137e8fdf37717ce93"
+  },
+  "literature/papers/Berganzo2023_ArchaeologicalMounds.pdf": {
+    "size_bytes": 3943985,
+    "sha256": "e64eca11c9c77e0746464fcafe11e9618148707a093a9e37e1c36d1b480a5cbc"
+  },
+  "literature/papers/Fujita2007_ShrineLocationGIS.pdf": {
+    "size_bytes": 2908569,
+    "sha256": "c2593cb87354b4a8c90a007f56677bfe1b89ab8639e8964d2b71162e0b74c5be"
+  },
+  "literature/papers/Kanaki2003_AbandonedSettlements.pdf": {
+    "size_bytes": 1606333,
+    "sha256": "a5bde654b76c2d1b79abfb05855d80fa3d64441850f1efd4088fb3ee3e5c8f4f"
+  },
+  "literature/papers/Luft2021_HistoricalMapGeoreferencing.pdf": {
+    "size_bytes": 1361395,
+    "sha256": "facca1e1394c0d0ec502898f5dbd9b6041d0ab081c1801bdee3d1b1c3f4eb06d"
+  },
+  "literature/papers/Oda2015_ShrineMerger.pdf": {
+    "size_bytes": 176791,
+    "sha256": "cef264d5e4df26c1d3b5631c4e845be027492dfd4ef11065f4192283b107e646"
+  },
+  "literature/papers/Tabayashi2026_OldMapGeoreferencingAI.pdf": {
+    "size_bytes": 1083965,
+    "sha256": "e0cb29ac4caea02f2ef49b6b84d89d30bf831058977f28f4d3201846ca2265af"
+  },
+  "literature/papers/Tani2017_KonjakuMap.pdf": {
+    "size_bytes": 4689607,
+    "sha256": "64a1c2988d0140242a9c97a1948008118af6a82ec9b118b7311e224bc5182e11"
+  },
+  "literature/papers/Wood2024_MapReader.pdf": {
+    "size_bytes": 447699,
+    "sha256": "e6ecce73e73152fa4651fb7a55a0309b7182d9752ee33963bce5f930673fd92d"
+  },
+  "processed/README.md": {
+    "size_bytes": 390,
+    "sha256": "aebc704e5e25d0d1725a158772127a3ddc4283066e06adf9d45c2b4732b785e1"
+  },
+  "processed/phase1a/manifests/admin__codh_fujino_2005__2005_01_01.json": {
+    "size_bytes": 4084,
+    "sha256": "b364acdfa9b31ffdceca1f35d071e78197841a801a14d095b0dedf0362f7c84c"
+  },
+  "processed/phase1a/manifests/admin__codh_sagamiko_2005__2005_01_01.json": {
+    "size_bytes": 4091,
+    "sha256": "b9450476dec121e8788683f757fa81d1684edbc8b3df07ae0a426ff9b09ea1a8"
+  },
+  "processed/phase1a/manifests/admin__codh_shiroyama_2005__2005_01_01.json": {
+    "size_bytes": 4096,
+    "sha256": "94f8179f386e564ac08bd89c0eb87c74647718447a6a4cf223fb92229a48c8b3"
+  },
+  "processed/phase1a/manifests/admin__codh_tsukui_1955__1955_10_01.json": {
+    "size_bytes": 4086,
+    "sha256": "bab2b4c6867f1e153d912b916022214499699a3265f470c0cb265fa361eef89d"
+  },
+  "processed/phase1a/manifests/admin__codh_tsukui_2005__2005_01_01.json": {
+    "size_bytes": 4085,
+    "sha256": "b63973cda7ad62c890300ffbc06bb140376dafe9278428b8bce40bb86493ecea"
+  },
+  "processed/phase1a/manifests/admin__n03__2014_kanagawa.json": {
+    "size_bytes": 3088,
+    "sha256": "f49a61758e26495b46c887026916d582bdbdfa410e7fdf637dc26c1904680876"
+  },
+  "processed/phase1a/manifests/admin__n03__2026_kanagawa.json": {
+    "size_bytes": 3254,
+    "sha256": "b32564fb60798693e9bd63de80c9b3d06958aba2e2ba9a4b6a2c1275cf000716"
+  },
+  "processed/phase1a/manifests/admin__n03__2026_shizuoka.json": {
+    "size_bytes": 3254,
+    "sha256": "811384343d4dce713504c132a6033d8402df72e14f61e27fdb9b8d186ed1a0aa"
+  },
+  "processed/phase1a/manifests/admin__n03__2026_tokyo.json": {
+    "size_bytes": 3245,
+    "sha256": "93b95fd0add7ea2619f4086c40cd41b6c63ac909d512a9601ad985f3149fb8db"
+  },
+  "processed/phase1a/manifests/admin__n03__2026_yamanashi.json": {
+    "size_bytes": 3253,
+    "sha256": "630b9dbd4a6c261924671543ac852f068a16baa831db597d5d28bd9c0e952f84"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_kanagawa__2014.json": {
+    "size_bytes": 3140,
+    "sha256": "10519b2f260efaf5c157c8cc5f32ab8a0871031ae3791f5e8ded9082bf11a41c"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_01.json": {
+    "size_bytes": 12126,
+    "sha256": "f0c933e7c7cab3872e30ed3e318dc9d79b791fe6d345fe6b98713d8bb2c95f83"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_02.json": {
+    "size_bytes": 12125,
+    "sha256": "02988368b5d824eccae636e9e217750919932752de52cf0881d477e099cf40e4"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_03.json": {
+    "size_bytes": 12123,
+    "sha256": "5b6c22334f814cd6d242cf950664d606c88487a34c940fd4c7ad0f283edbc0e7"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_04.json": {
+    "size_bytes": 12126,
+    "sha256": "8dd574cdd8fb78e030821b609567e00339fe9c6ee1ff4bb4439c345f0a6d95b1"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_05.json": {
+    "size_bytes": 12125,
+    "sha256": "31c4ba9607e26961a756cc9d99a9d99905f034daf7ab938122920f5a74c081e2"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_06.json": {
+    "size_bytes": 12127,
+    "sha256": "2516fa9c2b076ac8ceef7dac88c6fa0731091d8ead7abb1be575e964cf9e8d16"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_07.json": {
+    "size_bytes": 12127,
+    "sha256": "76ee86a9c8d057a54b33fff09d4e7676c7a58479f16f778909edec5650cdf5e5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_08.json": {
+    "size_bytes": 12124,
+    "sha256": "78f2295f9a93f57e5b2acd62068e5d9c0d6f13961377191529ba802383bf82aa"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_09.json": {
+    "size_bytes": 12126,
+    "sha256": "5401d463cba2ecfdfb34067710d9cf7cb37940f41dc5207934b7a9a7325449b7"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_10.json": {
+    "size_bytes": 12126,
+    "sha256": "2c23cf8637a0f1f16aa0851d1d3d1cabc6a9e89bc0dd940dad703ba644f951a5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_11.json": {
+    "size_bytes": 12124,
+    "sha256": "9af35eb2b6584aa423d3ef8064c95ac434d5da0a5fc38e32d41b33137ce00c1b"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_12.json": {
+    "size_bytes": 12126,
+    "sha256": "f402d3c79ef170012c5d7ae8ef8ab7fef77436f57ada5e9169d1e12532785eb5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_14.json": {
+    "size_bytes": 12126,
+    "sha256": "3a9fcca9434d421908cc2a007a2e5e7ed0776f8358e555663364d78f01b91b3f"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_15.json": {
+    "size_bytes": 12126,
+    "sha256": "024f9c34378fa81929e58388c783daf8d9c26f0bf97e970b83b552089cd452fd"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_16.json": {
+    "size_bytes": 12127,
+    "sha256": "0ec2567eae74bdf5de9e4c3def43ebabb8f9e1c8e2379a44aed6f609d0e86ca4"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_17.json": {
+    "size_bytes": 12129,
+    "sha256": "4c79749be262d4d8724db788df79d860df92b2a0b5eaa0d62f5ddd0d34a44c73"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_18.json": {
+    "size_bytes": 12126,
+    "sha256": "f725453515a19c7cd4869fc42fe6e2858a2109dc89761ac9018062107941909b"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_19.json": {
+    "size_bytes": 12129,
+    "sha256": "d99cd076dc1774261cb0d939022b79a1e2580dd763150696032e0e9f6bf1e658"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_20.json": {
+    "size_bytes": 12129,
+    "sha256": "b1ab3caf48e44978c14e9add575dabe62e1d473bd6de32d72b10bbad605dc082"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_21.json": {
+    "size_bytes": 12129,
+    "sha256": "58eb3ae6acccb2550e7eee0617eb57abe7a6daf43807f46e4c062b63d656fa6c"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_22.json": {
+    "size_bytes": 12128,
+    "sha256": "ab9781886dc4405d53bc8396e9fc21a7121d8731b04e12f464fa3e525bd3bd9d"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_23.json": {
+    "size_bytes": 12129,
+    "sha256": "8a2242347cd44fa6e5cea74b81924c5d58b5055de6ab44e68f0c8a83ebdcac54"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_24.json": {
+    "size_bytes": 12128,
+    "sha256": "cbbf41a0659c2b6d5c73f509b54f11375decea619be49c6bbe6770522b9bfb3b"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_25.json": {
+    "size_bytes": 12128,
+    "sha256": "dc845ee05e8977ff69ae09be4a18c59e3858dc00bce64e398488e291797ddf09"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_26.json": {
+    "size_bytes": 12129,
+    "sha256": "de28890d3961fc42d9c4724bce9f5fae030c12c0bf1188bca67c6b2080117ee5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_27.json": {
+    "size_bytes": 12129,
+    "sha256": "dba6187813114620a87cbddfe13976860602caa920ff441d26327477d4c1513b"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_28.json": {
+    "size_bytes": 12129,
+    "sha256": "b3b5fcc2f5803f76f8885575c1b5e532ba4b9d6624bc9683a303f0b8df388f75"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_30.json": {
+    "size_bytes": 12127,
+    "sha256": "2a161a3774133b32f3db5f708cae9459c036acbb7cfd41559d04b0be67ee5a42"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_31.json": {
+    "size_bytes": 12129,
+    "sha256": "07096ca69e8544e19dcb8d2710482c3f3da68defcd7b7276770989d32f2e0ae0"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_32.json": {
+    "size_bytes": 12128,
+    "sha256": "6ad8e74471da7d47a18bd4d3ae6d7f6ddbddb687c5e2fb6ee4318f28c03e4a79"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_33.json": {
+    "size_bytes": 12127,
+    "sha256": "ce8e31f874d95955d7be3f5e0796dc9ee2bd19086d7c35914a62d1522988a6f5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_34.json": {
+    "size_bytes": 12128,
+    "sha256": "6d32fa56285a77e598768080b876f5e2f6fe183d4b61f231872aa43bd59a5ff5"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_35.json": {
+    "size_bytes": 12126,
+    "sha256": "be831a73befbaf4067b3bb4fe0cec0402f58092054b16f6f212771af6e359d22"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_36.json": {
+    "size_bytes": 12127,
+    "sha256": "01172331203000330a90bcee34c05faee282664a6f3a640387346c2c5ef3a7e1"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_37.json": {
+    "size_bytes": 12128,
+    "sha256": "5938b7b7be7aa0d4993716c30b6846e86fbaf8f77de27a137a6b214cd4014c34"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_38.json": {
+    "size_bytes": 12125,
+    "sha256": "1c48d2380b17aac9e3a71accf56721831b572f7cf204dcf5d518d20a4a7bccb7"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_39.json": {
+    "size_bytes": 12129,
+    "sha256": "800364fb8b875dde0dbe1ea83f755f4fc538e34568a33fda67c7f466365a9718"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_40.json": {
+    "size_bytes": 12129,
+    "sha256": "76645ae974d16ee3d3843fef07ee8cf4a3a0865bcf60d01e42db50a93065c874"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_41.json": {
+    "size_bytes": 12129,
+    "sha256": "e3091500c3c9e24fa5c27d6a75559b1cde2b1ab175bdc01352aeb7840c3ff2a3"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_42.json": {
+    "size_bytes": 12128,
+    "sha256": "6aa091c3c29e53aaa0a106c96511e508f08e6c76252be948bcefc5e67259cda4"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_43.json": {
+    "size_bytes": 12129,
+    "sha256": "c3683f08e89c8d472990dc12f329188f9e7cda8c7f54e533b7d4ebae8a41270e"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_45.json": {
+    "size_bytes": 12128,
+    "sha256": "a4ffcf1aece244d2c511295327aef20c69c9fcd928bd513a4cabaace2cc759ef"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_46.json": {
+    "size_bytes": 12128,
+    "sha256": "117bdc380412bf971e680531fab6fa82f302bae3311cd5d04382a10ce98314e2"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_nationwide__2014_p32_14_47.json": {
+    "size_bytes": 12128,
+    "sha256": "ff9db262f5753bb8e2fdeb0c09d9987daa7cae508e2df621afcda687a4a3f753"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_shizuoka__2014.json": {
+    "size_bytes": 3142,
+    "sha256": "6b488c27be67c566a5e0ab77ba38a18415bac8cc700c8bed736dc013c729f2bb"
+  },
+  "processed/phase1a/manifests/cultural__mlit_cultural_properties_yamanashi__2014.json": {
+    "size_bytes": 3150,
+    "sha256": "df43545b528e3b8e69033bb0e035fc178f98788ed5043237f730afe7b3c62bdd"
+  },
+  "processed/phase1a/manifests/landuse__l03b__1976_5338.json": {
+    "size_bytes": 4091,
+    "sha256": "7f083be61446d6e1ebaff7b2e10bee2214fece175b49da130c8b7d56e2293cfb"
+  },
+  "processed/phase1a/manifests/landuse__l03b__1976_5339.json": {
+    "size_bytes": 4091,
+    "sha256": "d8bc8cbcc2fed09e9220a7fe155553bf1dc18120a7dfede7e10c8bcee43c4e2c"
+  },
+  "processed/phase1a/manifests/landuse__l03b__2014_5338.json": {
+    "size_bytes": 4160,
+    "sha256": "49a27d372294a26ada68fefa6333d920b6588f39e5828869d71de2c1f500ba43"
+  },
+  "processed/phase1a/manifests/landuse__l03b__2014_5339.json": {
+    "size_bytes": 4252,
+    "sha256": "ea47109dd659ecad249028394733c9305fb2a41b408e487140a9f1c521186c88"
+  },
+  "processed/phase1a/manifests/landuse__l03b__2021_5338.json": {
+    "size_bytes": 4231,
+    "sha256": "f9f2ee95e60a01b7a7e40d6f76170806547c17755b763b2547b7f1f9ac38bb9e"
+  },
+  "processed/phase1a/manifests/landuse__l03b__2021_5339.json": {
+    "size_bytes": 4230,
+    "sha256": "30e1d13950ab27691a4da394fd3ed3d01888e3f6bb22fd7367d0bd4d3dd6f1e7"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_osm_tsukui_aonohara.json": {
+    "size_bytes": 3489,
+    "sha256": "d6bd2887d93980cdb569ce23cc57b470fb4ce95884f519a0d98865c92f80faf0"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_osm_tsukui_core.json": {
+    "size_bytes": 3469,
+    "sha256": "adf937751aa24bb1d7b21732b6979de37703e947a4862c8ded7a45e3f7c26c44"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_osm_tsukui_suarashi.json": {
+    "size_bytes": 3509,
+    "sha256": "c861240dab09d92f49b1372201e451e19f928ee54b47b2b42d3da41bb4e43ddc"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_osm_tsukui_toya.json": {
+    "size_bytes": 3471,
+    "sha256": "26cbe6a5030524b5e8e5e9aaef060039d3a0a12224459d801d67928c3a27801c"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_tsukui_geofabrik_chubu.json": {
+    "size_bytes": 3951,
+    "sha256": "66dd85e7a528a023b7cdc63f1e4b0ae99f67c427cc2ff1eeb67894e176daad6f"
+  },
+  "processed/phase1a/manifests/osm__historic__2026_10_tsukui_geofabrik_kanto.json": {
+    "size_bytes": 3974,
+    "sha256": "ef5a9cf0c9040c575370ff6d48991dd5dfdd905d64b744670d0600e615642303"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_osm_tsukui_aonohara.json": {
+    "size_bytes": 3489,
+    "sha256": "5a0e545beb6714b4e89006f16d73164b74d253fe20556e97724dd6473b7c6030"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_osm_tsukui_aoyama.json": {
+    "size_bytes": 3479,
+    "sha256": "b3ba7320e0014d2fad1526f9ffc0b188ca5ab199cf9d990c35657d0855730448"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_osm_tsukui_core.json": {
+    "size_bytes": 3471,
+    "sha256": "d7d6a382f4474e07a9f02121183e5b7e7dbe16d529a580827fb49f85f2e1a826"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_osm_tsukui_suarashi.json": {
+    "size_bytes": 3491,
+    "sha256": "af8e0bc5e0bd4b31adf7d12d83f249c18ccd93a837c31f6d870bb6d4cf72694b"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_osm_tsukui_toya.json": {
+    "size_bytes": 3470,
+    "sha256": "eb6b8a3bc0f2d35e13405513cb0622ea31c1f437998f756ede1946c2c4a40e65"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_tsukui_geofabrik_chubu.json": {
+    "size_bytes": 3950,
+    "sha256": "cafd01d4378128fc0a5843950f858912da6f1af8027c1797e9047df7efb38691"
+  },
+  "processed/phase1a/manifests/osm__landuse__2026_10_tsukui_geofabrik_kanto.json": {
+    "size_bytes": 3958,
+    "sha256": "245fa5fce10070f8e05582fb2d0fcbac3ea412d4aeebe04f32aa8082884b27cd"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_osm_tsukui_aonohara.json": {
+    "size_bytes": 3501,
+    "sha256": "dcedba3d383a4acb555ef1417d17ed0afda873ad0861f710846a6fcba85396eb"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_osm_tsukui_aoyama.json": {
+    "size_bytes": 3511,
+    "sha256": "30f1f725bcfaf2145f7e7ec3e83a8d2ce0cc73dba59d9daa069e6aa794959cd9"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_osm_tsukui_core.json": {
+    "size_bytes": 3488,
+    "sha256": "e79f8f71a3840824cf36eb5613f378ce15f028fb4055cffe3f9900bb343681dc"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_osm_tsukui_suarashi.json": {
+    "size_bytes": 3518,
+    "sha256": "615f0b4525441a52117c38a9454d4cdac36c84d80b50aeee2c2d03b4c87d498f"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_osm_tsukui_toya.json": {
+    "size_bytes": 3501,
+    "sha256": "28fb98244bcf0b3130dc9fbc4e90d76903610f5bdf12dc9986d485c49e881a4d"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_tsukui_geofabrik_chubu.json": {
+    "size_bytes": 3980,
+    "sha256": "d13a6cf2079afa1e2cfdb4889f10ed5abe503ea9ac82d1d9779030a9efd0e003"
+  },
+  "processed/phase1a/manifests/osm__roads__2026_10_tsukui_geofabrik_kanto.json": {
+    "size_bytes": 3987,
+    "sha256": "099eae8f8c45f837b330efa22ae4f771415d932e9eff2d70f8d4a49b28cd41da"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_osm_tsukui_aonohara.json": {
+    "size_bytes": 3524,
+    "sha256": "2142104ac59e5d2bb5db9084a32d477b0254d1790ca9500fe9313ff683d18cc2"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_osm_tsukui_aoyama.json": {
+    "size_bytes": 3502,
+    "sha256": "48cc8dce45aed184ec91f670038ae4165ad83882d1ffea2845814479b3730137"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_osm_tsukui_core.json": {
+    "size_bytes": 3491,
+    "sha256": "fac269923c07dfb6f65cebaef35e6c21221febd0fd91d38cd993a28d1a023d48"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_osm_tsukui_suarashi.json": {
+    "size_bytes": 3497,
+    "sha256": "0ee85b439563be0d672e80d234d30bf97496e9761258d1066eca54ac8cfc666d"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_osm_tsukui_toya.json": {
+    "size_bytes": 3492,
+    "sha256": "18c2e5247814c1d35bc75bbd5be595005692584877a40dbea8bd0010bbb503fd"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_tsukui_geofabrik_chubu.json": {
+    "size_bytes": 3970,
+    "sha256": "bb966d51ddb8bd447480814a4ac9926852187077cded3cfe28802652d406b175"
+  },
+  "processed/phase1a/manifests/osm__waterways__2026_10_tsukui_geofabrik_kanto.json": {
+    "size_bytes": 3993,
+    "sha256": "ccd5babfe08a8631755edb914ce662d311fdc787bd6882f206ae5ad051dab1e7"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_osm_tsukui_aonohara.json": {
+    "size_bytes": 3490,
+    "sha256": "c005da0a708d63c3af515daa1c74012aa33514b0c88b044e424d1a5ee12227de"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_osm_tsukui_aoyama.json": {
+    "size_bytes": 3484,
+    "sha256": "2c0789f29cf870ce4862ae995b374ef2e0555fd013aba87ebac2736dc4c32ecb"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_osm_tsukui_core.json": {
+    "size_bytes": 3476,
+    "sha256": "edae5794660a81966ebde19922d1a5293e5e337fb263516e8a9d22d61f77848f"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_osm_tsukui_suarashi.json": {
+    "size_bytes": 3503,
+    "sha256": "d07fcf50f7d6932407149ec88884f327633eee30d0237083af224d50b80816e7"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_osm_tsukui_toya.json": {
+    "size_bytes": 3469,
+    "sha256": "8062424b5d290c78e6ec60d82bb3f0aed4dfa9b0f4640aa6be197617cc3a5311"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_tsukui_geofabrik_chubu.json": {
+    "size_bytes": 3966,
+    "sha256": "c9c07a320ee58ee0fd7c02df4ceb9d3ebdd3fc52886ae23e3dcac8a50c86d4ca"
+  },
+  "processed/phase1a/manifests/osm__worship__2026_10_tsukui_geofabrik_kanto.json": {
+    "size_bytes": 3972,
+    "sha256": "13d84b49cf886fb816cd8367f32fcc387bdfdd89a1c23e3b0eb83cee479d26f4"
+  },
+  "processed/phase1a/manifests/railways__mlit_railways_2023__2023_n02_23_railroadsection.json": {
+    "size_bytes": 3470,
+    "sha256": "3f8c883e2e448c75c9ce227f2ef2d75371c033cb7ceec0b566c7d5b41a0687f5"
+  },
+  "processed/phase1a/manifests/railways__mlit_railways_2023__2023_n02_23_station.json": {
+    "size_bytes": 3499,
+    "sha256": "5d040a37b1718c0de51a717ffb0b7f1b9cf82981b5508885ce68af553ac8ac4f"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_kanagawa__2008_w05_08_14_g_rivernode.json": {
+    "size_bytes": 3174,
+    "sha256": "62269edee388969c0dd47cda3cf654498477cac4a663e4514a776939863f9563"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_kanagawa__2008_w05_08_14_g_stream.json": {
+    "size_bytes": 3280,
+    "sha256": "93bdb221eea4e46fca6359538db025d3e88a7d6f69fd33bbf9c6894973ae2977"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_shizuoka__2008_w05_08_22_g_rivernode.json": {
+    "size_bytes": 3178,
+    "sha256": "58c74a796086d6bf20e10b14a12916d7c81eb07dab83ef323e8e9378594e54f9"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_shizuoka__2008_w05_08_22_g_stream.json": {
+    "size_bytes": 3283,
+    "sha256": "f24c9aebc67a9c8e14b5995c2212043f1a3870a48c5be2f11a11907e98a65e8a"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_tokyo__2008_w05_08_13_g_rivernode.json": {
+    "size_bytes": 3167,
+    "sha256": "5487c5ed505a097560deceea58a8921bf30a8662014d2665fe2af76e07eafe2e"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_tokyo__2008_w05_08_13_g_stream.json": {
+    "size_bytes": 3273,
+    "sha256": "f9941af83b4dc8fc5cc4cc73c651e95dc8a103923f1b2bb4930948de7d5b6240"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_yamanashi__2008_w05_08_19_g_rivernode.json": {
+    "size_bytes": 3179,
+    "sha256": "2f338b5a073b14fd0a36493ec8b57557ea618b5e7a10dfbb23d767431a8f8547"
+  },
+  "processed/phase1a/manifests/rivers__mlit_rivers_yamanashi__2008_w05_08_19_g_stream.json": {
+    "size_bytes": 3285,
+    "sha256": "b1218d07ed78fbc3e853b10284f8fbccfdbb39420c0ab1290d1eb93eca7012ff"
+  },
+  "processed/phase1a/vectors/admin__codh_fujino_2005__2005_01_01.parquet": {
+    "size_bytes": 39123,
+    "sha256": "0eec01653d5ef468f03f460d7210ddd88886412debf058d32e9da2aeaa447849"
+  },
+  "processed/phase1a/vectors/admin__codh_sagamiko_2005__2005_01_01.parquet": {
+    "size_bytes": 63372,
+    "sha256": "f5c4b04f68bc84eff4b37df4dfa0a1067affa0fbb6103898a9526e92c03a1aef"
+  },
+  "processed/phase1a/vectors/admin__codh_shiroyama_2005__2005_01_01.parquet": {
+    "size_bytes": 38264,
+    "sha256": "3f4aa4dfe589f461773eff197e0871e6cac10a1e3b0c4b57784fc00ce20f2366"
+  },
+  "processed/phase1a/vectors/admin__codh_tsukui_1955__1955_10_01.parquet": {
+    "size_bytes": 85969,
+    "sha256": "c5ce05e5f4e7300ae7119de661cdae8820d6d286ecb841ad9356c0292ac98fb0"
+  },
+  "processed/phase1a/vectors/admin__codh_tsukui_2005__2005_01_01.parquet": {
+    "size_bytes": 85817,
+    "sha256": "a6b013e5604bb9be106331bb6a4783b0f0dc3d2838c3788d5ed4b023d0737d60"
+  },
+  "processed/phase1a/vectors/admin__n03__2014_kanagawa.parquet": {
+    "size_bytes": 1838694,
+    "sha256": "f232789d256132957fcab14b34318c1dfac484e7308088585d9185a413502328"
+  },
+  "processed/phase1a/vectors/admin__n03__2026_kanagawa.parquet": {
+    "size_bytes": 2778611,
+    "sha256": "63cfa1caa0be4258c9bc186f79c0ddaec003a25080153f35ff4311ce1658dfff"
+  },
+  "processed/phase1a/vectors/admin__n03__2026_shizuoka.parquet": {
+    "size_bytes": 7431009,
+    "sha256": "278ca200389aa8fa41e983ad625379c68f68c34c99dca947ce0dc410e794436b"
+  },
+  "processed/phase1a/vectors/admin__n03__2026_tokyo.parquet": {
+    "size_bytes": 7064758,
+    "sha256": "2fb976f22978599b884389c73919ed8362bc3ba8ad16592b49160b822cf9c1a5"
+  },
+  "processed/phase1a/vectors/admin__n03__2026_yamanashi.parquet": {
+    "size_bytes": 1891684,
+    "sha256": "ac693e7e36fb9121f87f1c8c0f439ef3d1d0ef6876d2b483e002d61dfaca110b"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_kanagawa__2014.parquet": {
+    "size_bytes": 25414,
+    "sha256": "6870c1a2b800544b7c858241c9e8f0be4b109a34bc74060de9a97f015fd42717"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_01.parquet": {
+    "size_bytes": 20214,
+    "sha256": "2dba793649a2f769ba6757ab903a8268b608b53be30ec42e9434e12a4f5be5a8"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_02.parquet": {
+    "size_bytes": 22817,
+    "sha256": "788cd51f938f722e2820356e5f545188f3668d492fda6501ea24dc318ebdb31f"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_03.parquet": {
+    "size_bytes": 27537,
+    "sha256": "de1ab38e87bacc4c7af567119b17d2263f2aa76fa8b6ce2a8c8abb93d3b03061"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_04.parquet": {
+    "size_bytes": 20683,
+    "sha256": "497daafa22bf4e38c48c46b6079b9e0a4965b5f561483a4c5d595950fbd8731a"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_05.parquet": {
+    "size_bytes": 29110,
+    "sha256": "18b0118d3616d2f5c47a68102885042d6b69c6f58fa92c07fa109d10aed033b5"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_06.parquet": {
+    "size_bytes": 33449,
+    "sha256": "1af41091d68fd2e9392bcbab17408a0494f1ac0cdb135f2f4aa385647e30eb38"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_07.parquet": {
+    "size_bytes": 33847,
+    "sha256": "5fa5a641902f73837318d21dae9d3eb58afa8f1ac25a49e85afb26ab7e1ed723"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_08.parquet": {
+    "size_bytes": 36891,
+    "sha256": "1d5dbbf8b8b41ec55e5975f10357e8c5beec6d48add581c16a4609807df9ce49"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_09.parquet": {
+    "size_bytes": 36697,
+    "sha256": "e92b752831edbc9bc04444ab859918036bcb2a3e2ef6b259665ed7f37372a162"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_10.parquet": {
+    "size_bytes": 29244,
+    "sha256": "7d214b4bd49d5d986849510e7627b7c6a5bf870950db33686fc4ee5bbad06482"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_11.parquet": {
+    "size_bytes": 39122,
+    "sha256": "26b3ecb2fa792c142d11038683b7ad3b13deacea17301dd88661e4d4561b1071"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_12.parquet": {
+    "size_bytes": 36918,
+    "sha256": "11b7c7a70210d786abaf2b65f376825dbb9b24378a7b16a3b8d6abf8d7a75a46"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_14.parquet": {
+    "size_bytes": 25458,
+    "sha256": "c0df0abf9a2ea96ec0d990bb3f890da06ab2600ba09a4b1a79c60cfb55527d65"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_15.parquet": {
+    "size_bytes": 26217,
+    "sha256": "fa1ad5c1f04300dd01942755663c4867e603e9bcd673b005ada02ead00416a3b"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_16.parquet": {
+    "size_bytes": 20669,
+    "sha256": "9efaece038ba21bb06e1d607db11561ad4361c5875491182a63356a8cba3bdba"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_17.parquet": {
+    "size_bytes": 26595,
+    "sha256": "e1d1edac5079eb7f9d2849f73e1d5f14b1bfb5c9f84909cae976392c91f54871"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_18.parquet": {
+    "size_bytes": 25062,
+    "sha256": "499374893412d52402146cea8cce765912778fabb459a5fa1a8036df80968bf5"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_19.parquet": {
+    "size_bytes": 32645,
+    "sha256": "690138f6ed2e36b40e967706d69d8728604c5e53d1b98a6eb594796b104e7055"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_20.parquet": {
+    "size_bytes": 32040,
+    "sha256": "f23622764f2f7a65a32b55bd2218929f6a9e17297a6e5080fb7ce9e354b61905"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_21.parquet": {
+    "size_bytes": 42341,
+    "sha256": "fc4c3c3c86947f326daa083b22d5ef99f9ac8308a78613f28ff9f5374322bb8b"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_22.parquet": {
+    "size_bytes": 29741,
+    "sha256": "d6ab0ca988086daedc9669947432475b9a85bc4722593637e307b7c214facf5f"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_23.parquet": {
+    "size_bytes": 31856,
+    "sha256": "b2cf397442fbe0b3972a7e6cb6ac750fdfaa26e8e8290eb5df302c8d1720f4cd"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_24.parquet": {
+    "size_bytes": 35745,
+    "sha256": "36bd98a07cec78529c5418f021a28500a1ae0db5f15cf1278d19e215cfa2ffab"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_25.parquet": {
+    "size_bytes": 26224,
+    "sha256": "0d9040ee041436302e816b5aaa69d7f6211bf0f8a904db78cad1fac4f1a94d70"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_26.parquet": {
+    "size_bytes": 27602,
+    "sha256": "a3790f3327603a9c35e06f609b3e648638b2e219ae8c0252c004883835a17a8a"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_27.parquet": {
+    "size_bytes": 29861,
+    "sha256": "a04396297b7dbe862f7f7996563a38751e41bff8acef13de189c16ce15856fc6"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_28.parquet": {
+    "size_bytes": 47039,
+    "sha256": "6094a86d1e99f0f6ad332df6e6d767728a768c44fe763ace4715dae5ca0c2945"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_30.parquet": {
+    "size_bytes": 33989,
+    "sha256": "cbf6aa28e5645400f6da784ed7a6017829cc7edf41e3507326473bd992ff9e72"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_31.parquet": {
+    "size_bytes": 21185,
+    "sha256": "b7a7f15bf9da39618ac3841060fb16bd2edbfdb6635c978475e63dfb0f6e8446"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_32.parquet": {
+    "size_bytes": 23865,
+    "sha256": "b0972fcca6d40c5a6f39985aa66b92ffdf61c1a4d1b02e5e7fdd9da45d1335de"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_33.parquet": {
+    "size_bytes": 26776,
+    "sha256": "7fe8d8f953c0b0ed6d0baf092ad6245097130a0fa12a61d71d6d9f69e10eaa06"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_34.parquet": {
+    "size_bytes": 38364,
+    "sha256": "98f1844888d1f14cbf0f00e4ac7bd3d1827ce1d931c24d59a1178f4ba718580a"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_35.parquet": {
+    "size_bytes": 25512,
+    "sha256": "a39cac2deb14095efcbe1827c15073498848854a1a93f2a149752203825d622e"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_36.parquet": {
+    "size_bytes": 27150,
+    "sha256": "92f16cf4fe6fa6d1070bb89f5ca968c9051b96f8ff40fc5a1204e50337622ba0"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_37.parquet": {
+    "size_bytes": 20214,
+    "sha256": "d3183ecd4bfaf3d18b08013856d4faaa0bb85b89437c750943a58a0102236734"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_38.parquet": {
+    "size_bytes": 23266,
+    "sha256": "26732f33065a659be228b5be8dfde444596c31899d5dcefe9f902f395035c729"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_39.parquet": {
+    "size_bytes": 20946,
+    "sha256": "c1cf8050d81bb793109529c7ac8c1ddad4932ddb461bdef76b666c5769e84b02"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_40.parquet": {
+    "size_bytes": 35896,
+    "sha256": "f3f0899a17f9a737adbbc5927b111221c397e2ee1a5ecdce6e36b6cdff2ba189"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_41.parquet": {
+    "size_bytes": 20088,
+    "sha256": "9e95920f525ed279787844970c9c992c2f030fd0561dd3d7cf73584203e8ca8b"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_42.parquet": {
+    "size_bytes": 29650,
+    "sha256": "7eca1510181ed947a5720dc84accffe832c8626d57fa872d8033c841a95c4dab"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_43.parquet": {
+    "size_bytes": 24848,
+    "sha256": "62b43643e8a20430243ad52d38e972ac3d1e96177523fd7851ebb79282ad69fd"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_45.parquet": {
+    "size_bytes": 21493,
+    "sha256": "f6269467a00c80952e2216eac93fa00bb8dc6c65862ee7f753065ec901600c9d"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_46.parquet": {
+    "size_bytes": 25134,
+    "sha256": "1c53bce422d0c01cbd2899238653cedb8a0ab5930267cc571892d0768a6515c0"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_nationwide__2014_p32_14_47.parquet": {
+    "size_bytes": 21952,
+    "sha256": "cad0d5c63383c34a48b5b24b306e34a15f051255d9ad57395a8046f5205d58b1"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_shizuoka__2014.parquet": {
+    "size_bytes": 29709,
+    "sha256": "e8418fd32cb426ff21453b2068a85fd84f8930a9c24ead35d3b0931b1153d241"
+  },
+  "processed/phase1a/vectors/cultural__mlit_cultural_properties_yamanashi__2014.parquet": {
+    "size_bytes": 32620,
+    "sha256": "638a907b56e03af2257c82c3de7db7480442c6ca8881057dab47eaa5e16ddefe"
+  },
+  "processed/phase1a/vectors/landuse__l03b__1976_5338.parquet": {
+    "size_bytes": 7836628,
+    "sha256": "542e64e98d77f776dff9fda69ed33ce6b371921678c04e0dcad7c08ef824dd8b"
+  },
+  "processed/phase1a/vectors/landuse__l03b__1976_5339.parquet": {
+    "size_bytes": 7908212,
+    "sha256": "eb854c72286d21286ef4670d5091fb225b6712d4634126eef490986a8ab49c73"
+  },
+  "processed/phase1a/vectors/landuse__l03b__2014_5338.parquet": {
+    "size_bytes": 15658284,
+    "sha256": "4f94e4260d73c11ca01f7d8c7c0922ff3a6f698152ec992bbe2c2d281a27593b"
+  },
+  "processed/phase1a/vectors/landuse__l03b__2014_5339.parquet": {
+    "size_bytes": 15626501,
+    "sha256": "1a7ec92800589ec0d9ceebb672760ebaa223f44ce2d49b7ad2a05d0d1bb6e229"
+  },
+  "processed/phase1a/vectors/landuse__l03b__2021_5338.parquet": {
+    "size_bytes": 15129876,
+    "sha256": "7ab5cea56abd7346db80200724109b663c03fbb2c2198cf0dec03b26520c8679"
+  },
+  "processed/phase1a/vectors/landuse__l03b__2021_5339.parquet": {
+    "size_bytes": 15083975,
+    "sha256": "c6d160f2a908bc50787ff2613e400880c823b0737107e1319835dbd0003deefa"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_aonohara.parquet": {
+    "size_bytes": 11401,
+    "sha256": "1d0e6e715b2b0eda66024fbf65be43acd349873519953f458440a7da59bc2d38"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_core.parquet": {
+    "size_bytes": 11347,
+    "sha256": "f338b2ecbf2ea4b465c63e8f135eac3c411e814d3eb88a5713cb14d3b6502d6c"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_suarashi.parquet": {
+    "size_bytes": 13453,
+    "sha256": "16e9961ad2aa225a9b078ae2cab23663d238730fc16c894b257d0be1c6887747"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_osm_tsukui_toya.parquet": {
+    "size_bytes": 11417,
+    "sha256": "dc89efdef3270261b707266e8861cc4d882ba883977d9f599066299369025dae"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_tsukui_geofabrik_chubu.parquet": {
+    "size_bytes": 12124,
+    "sha256": "c1d6bcf451d952572606aaaa76cc07922123cc5ccd1cc3d2758ce85462b9b972"
+  },
+  "processed/phase1a/vectors/osm__historic__2026_10_tsukui_geofabrik_kanto.parquet": {
+    "size_bytes": 14307,
+    "sha256": "daecc859e9e78fa434145fe2caa8b2e1fe61d36b45be43627d77a7fc5e904f48"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_aonohara.parquet": {
+    "size_bytes": 30453,
+    "sha256": "d39ecb066388bee1327d4b5554dc135438efe5b333189d6ead941e84dfbf3962"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_aoyama.parquet": {
+    "size_bytes": 17335,
+    "sha256": "d73b157af5a10159b88731277ba0f5b1ee0e6dcef0ab85eda30b51cac4c0f67f"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_core.parquet": {
+    "size_bytes": 15088,
+    "sha256": "25881c28d2d7bfa0cb1c2082abef6bd2934e4414c881fb54d3babf6719625c7a"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_suarashi.parquet": {
+    "size_bytes": 17224,
+    "sha256": "b9f2a00455694f449b9df40b9152c6467f4d1a6010d685454ca9bbe4b2840a83"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_osm_tsukui_toya.parquet": {
+    "size_bytes": 14645,
+    "sha256": "47851fc9a3e5aa1a5aa956ac9dd54520e0b0550fdbcf7eda3c92409e2c16bd8f"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_tsukui_geofabrik_chubu.parquet": {
+    "size_bytes": 20674,
+    "sha256": "85ed41dc38522902159df3990e306d9626c226bb660e7c406d39d7d8d89b99bf"
+  },
+  "processed/phase1a/vectors/osm__landuse__2026_10_tsukui_geofabrik_kanto.parquet": {
+    "size_bytes": 44609,
+    "sha256": "3e9f1769c5282726ef0d47b49021f5b76b3d23802ceeac891c3348b8a0738188"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_aonohara.parquet": {
+    "size_bytes": 166830,
+    "sha256": "be3172c959a9f33079a3436667e9a8c94c03d4b6cc4d7e69cea7c6ee050e00ee"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_aoyama.parquet": {
+    "size_bytes": 162159,
+    "sha256": "718cbbd6374efc6f90d84e8efc5cb408102ce84e833960ad7cfb2c369f9fb138"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_core.parquet": {
+    "size_bytes": 117768,
+    "sha256": "3a4776a8d2819b63575e8e0010dd7f13846f5509b545ae36bce50b64e83bae66"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_suarashi.parquet": {
+    "size_bytes": 202766,
+    "sha256": "2a013a85302208a100dcbf66b96fa8cdc881fd84c49bdd3497c3ac6c6b2a4fcf"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_osm_tsukui_toya.parquet": {
+    "size_bytes": 140728,
+    "sha256": "7fcead7fa3ff765df60d72e03b34f2f39b51bf9b317ab5e200f70399aa1b1721"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_tsukui_geofabrik_chubu.parquet": {
+    "size_bytes": 137055,
+    "sha256": "b943b8c97b62094fccea4ebeeb8f4c8f1662a47a2f612877f415ff7e3773d467"
+  },
+  "processed/phase1a/vectors/osm__roads__2026_10_tsukui_geofabrik_kanto.parquet": {
+    "size_bytes": 779609,
+    "sha256": "23cc85de5ab32db00568349831e9969a1b84b55ee84f1992bcec30bc14ca3ee9"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_aonohara.parquet": {
+    "size_bytes": 75338,
+    "sha256": "40d065f717cf0bfce95ffe056adb46f310f7a584fd3f6655189e9eee51399dc5"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_aoyama.parquet": {
+    "size_bytes": 61418,
+    "sha256": "11da54fc5dc19d94b76106ce0ec4a73d37bf8ff7d4bc073f05fd1b71f2720504"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_core.parquet": {
+    "size_bytes": 46560,
+    "sha256": "35be1c81c297851ab6e0d158b8a523c660f6b3ccd848bb703d63fede3f390d3b"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_suarashi.parquet": {
+    "size_bytes": 42922,
+    "sha256": "7f1993bc2d0cf0e9e4c475172f33f46f8e17d63c1f96b9bd204b350e5059b9f2"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_osm_tsukui_toya.parquet": {
+    "size_bytes": 64117,
+    "sha256": "b77a0a88135b222d8563c76fb85fab6c8ad792d18ab2ea50d739ea42045413d0"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_tsukui_geofabrik_chubu.parquet": {
+    "size_bytes": 63425,
+    "sha256": "01da2995575137db253be11ca2424f76631cbb3e40d2b3ee15c5e2ab4359d504"
+  },
+  "processed/phase1a/vectors/osm__waterways__2026_10_tsukui_geofabrik_kanto.parquet": {
+    "size_bytes": 207184,
+    "sha256": "4d561e28f67b65ada7f56bd9757d881a5b0f12d3686a93b0f3e65e8569a5481a"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_aonohara.parquet": {
+    "size_bytes": 12410,
+    "sha256": "4cd56129ac6b3719a8ae100a0db9f81e5aaaea1eeadb13545d9c1b84df52aea1"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_aoyama.parquet": {
+    "size_bytes": 12302,
+    "sha256": "ad842db63371c65881e2ae8ee9b9f6354466e601e0f876f1fbe387cb7c5637b5"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_core.parquet": {
+    "size_bytes": 12076,
+    "sha256": "e70ac1e5e31b844ec36f408d50a016b2b84e877ca633ad8b41667545eb28a878"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_suarashi.parquet": {
+    "size_bytes": 12886,
+    "sha256": "17cdf606c7fd8f043cb3a28b95f19b64bbacf3dafe077b57425c98ef9e514116"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_osm_tsukui_toya.parquet": {
+    "size_bytes": 11319,
+    "sha256": "bc4d139bcf837c09da3f51ca06adf9ab1dd2d2a38400c56860f0813586d90bf3"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_tsukui_geofabrik_chubu.parquet": {
+    "size_bytes": 13100,
+    "sha256": "d3bca147c2d7d4215d7e7f4b08b6c9c1c5a540ec516d88dc2e48ea49c4fd294d"
+  },
+  "processed/phase1a/vectors/osm__worship__2026_10_tsukui_geofabrik_kanto.parquet": {
+    "size_bytes": 14998,
+    "sha256": "94d6e2de9c9da478ad2e145ba7d7c1bd2df9be919a2d7b88aec2972d5a55aac3"
+  },
+  "processed/phase1a/vectors/railways__mlit_railways_2023__2023_n02_23_railroadsection.parquet": {
+    "size_bytes": 6042239,
+    "sha256": "be210c6731a93e26182f6bca72e3ee750a6b57b94d3758a69ea0e26aac466f41"
+  },
+  "processed/phase1a/vectors/railways__mlit_railways_2023__2023_n02_23_station.parquet": {
+    "size_bytes": 561310,
+    "sha256": "37de7952bfcac4a608e59ad870d93cb31fc8f21ba2dcf1d38ddb04bca4d084e0"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_kanagawa__2008_w05_08_14_g_rivernode.parquet": {
+    "size_bytes": 57878,
+    "sha256": "c82afe7937f98ca04837e8fbbcbfa759ea989db4e7d7e26fdfe2c0e7cee2b613"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_kanagawa__2008_w05_08_14_g_stream.parquet": {
+    "size_bytes": 1475219,
+    "sha256": "970a9e1391576f4dce4d082ac5405b2bc7436157f856424025d49ace183a309d"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_shizuoka__2008_w05_08_22_g_rivernode.parquet": {
+    "size_bytes": 167150,
+    "sha256": "29bbc547127060801031b24b96637bafb7c8728f4dc6bdc246bfb6ba7eee9ab1"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_shizuoka__2008_w05_08_22_g_stream.parquet": {
+    "size_bytes": 5347588,
+    "sha256": "b7255a8c1d1e49650bb1103047157e3dbe7182fcce386c3998e5d780791e05c5"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_tokyo__2008_w05_08_13_g_rivernode.parquet": {
+    "size_bytes": 39537,
+    "sha256": "88cc375a5cb67ce8085e479e46d70ad3852659e80bd81a3918befbc22e0a7696"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_tokyo__2008_w05_08_13_g_stream.parquet": {
+    "size_bytes": 1041018,
+    "sha256": "4ccef97d63c947ac5e4e72146a55a064568adbb901c30335ecdfb511c868cabd"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_yamanashi__2008_w05_08_19_g_rivernode.parquet": {
+    "size_bytes": 85829,
+    "sha256": "d35c59fc9d48853bbdb6ce45c2e4b19c93f4f82eec345472b8d3ff0b9a48b66d"
+  },
+  "processed/phase1a/vectors/rivers__mlit_rivers_yamanashi__2008_w05_08_19_g_stream.parquet": {
+    "size_bytes": 2858132,
+    "sha256": "d7406b1d951419a60a5eb98477ab4fbf1e587b34d49f6e2943d928cd08242f2e"
+  },
+  "provenance.jsonl": {
+    "size_bytes": 42547,
+    "sha256": "10668128cf2333acbc35e2478b662a33eba57eb78f56769e1330ab0483ba1e25"
+  },
+  "raw/administrative/14151.zip": {
+    "size_bytes": 1672520,
+    "sha256": "a72352712494a1c598745fe87ee4a4c4f555849a86a2478725913964ebda531d"
+  },
+  "raw/administrative/N03-20260101_13_GML.zip": {
+    "size_bytes": 13153227,
+    "sha256": "94f10b26256566db970dd74b09d614f059c1e8a432f9244ac9c4add76c32ff16"
+  },
+  "raw/administrative/N03-20260101_14_GML.zip": {
+    "size_bytes": 5370610,
+    "sha256": "27ab5aa2982fc6fe81e9c0b08ca75d18177e8228527b2e602ce803e681e7e561"
+  },
+  "raw/administrative/N03-20260101_19_GML.zip": {
+    "size_bytes": 3642283,
+    "sha256": "ecb815857ced4ef4c74795c46baa73c400208b7fa549e9583d564e7394e12ae9"
+  },
+  "raw/administrative/N03-20260101_22_GML.zip": {
+    "size_bytes": 13592970,
+    "sha256": "a10ed331f67a75f275c3e3a9ccc9c716a0d6249609b8cf218d7e4254a5a11a0d"
+  },
+  "raw/administrative/gsi_jusho_midori/14151.zip": {
+    "size_bytes": 1672520,
+    "sha256": "a72352712494a1c598745fe87ee4a4c4f555849a86a2478725913964ebda531d"
+  },
+  "raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json": {
+    "size_bytes": 59394,
+    "sha256": "205325245d13387c31ec29eb47bb3e2240f010dfd0064de276ab872fc6163327"
+  },
+  "raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg": {
+    "size_bytes": 20452,
+    "sha256": "5c8b6e2b80081aa6b33553842d040ad30d6d26b6f389fe94086a0831128c2b30"
+  },
+  "raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg": {
+    "size_bytes": 18502,
+    "sha256": "025d60d1e3d600a968626c424ec4c32f9a2353b9650647b2af05a6cd31bf80ef"
+  },
+  "raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg": {
+    "size_bytes": 17121,
+    "sha256": "6ae487f3296568a605a63c9565c31aded5326462e383b836b28f865e36cb93cb"
+  },
+  "raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg": {
+    "size_bytes": 22088,
+    "sha256": "b347e2a9705f5bbf6de5f109631912d1f4fa0ca6b043a73b2aed312f1f70aa72"
+  },
+  "raw/cultural_properties/130001culturalproperty.csv": {
+    "size_bytes": 9696,
+    "sha256": "be7d9aa6950801dde3cd7448a81052ed839f32bafd408c64b88126b095b9ac83"
+  },
+  "raw/cultural_properties/P32-14_00_GML.zip": {
+    "size_bytes": 2032153,
+    "sha256": "debc5f00123ab6080a2bce307d14b31f3b4fc1123beb1f231a68a11c259b16d7"
+  },
+  "raw/cultural_properties/P32-14_14_GML.zip": {
+    "size_bytes": 37598,
+    "sha256": "032139919ca1fe523f8e93997dddffba902e94797b29b7de7c899d8f1c7cf016"
+  },
+  "raw/cultural_properties/P32-14_19_GML.zip": {
+    "size_bytes": 56165,
+    "sha256": "64a2859c35f61091d7d872a749e4549b5de76f4388b4b2a78167e350b0fc731b"
+  },
+  "raw/cultural_properties/P32-14_22_GML.zip": {
+    "size_bytes": 44694,
+    "sha256": "7a3c26fe954a46a1968f7a8d034d691353e0a3c253701c6548ef1e5015cbd70b"
+  },
+  "raw/cultural_properties/bunkazai.csv": {
+    "size_bytes": 210799,
+    "sha256": "dec1117a21869988457f1d06a578e6b891e85700b7efee4b52521b16e79b08b7"
+  },
+  "raw/cultural_properties/kanagawa_bunkazai_mokuroku_r07.pdf": {
+    "size_bytes": 5545067,
+    "sha256": "b7c5294ec088af0497d7ee4c8861225eba3bcd242fc0d3e3bceec0159eb86071"
+  },
+  "raw/cultural_properties/sagamihara_buried_cultural_properties_20260212.pdf": {
+    "size_bytes": 110726,
+    "sha256": "de14000fe289fe573f9bf427f4cdc0fb5e325eaddfc4cd8b5a1b14ef05952b76"
+  },
+  "raw/cultural_properties/sagamihara_cultural_assets/bunkazai.csv": {
+    "size_bytes": 210799,
+    "sha256": "dec1117a21869988457f1d06a578e6b891e85700b7efee4b52521b16e79b08b7"
+  },
+  "raw/gsi_jusho_midori/14151.zip": {
+    "size_bytes": 1672520,
+    "sha256": "a72352712494a1c598745fe87ee4a4c4f555849a86a2478725913964ebda531d"
+  },
+  "raw/historical_boundaries/N03-140401_14_GML.zip": {
+    "size_bytes": 1860243,
+    "sha256": "b9f236d3512a9b96ed6525c4e7b1f898874fc7a45595a66cd2f150549d9daeca"
+  },
+  "raw/historical_boundaries/codh_fujino_20050101.geojson": {
+    "size_bytes": 52534,
+    "sha256": "027f60212dd1465a3b278dae98dc6171578319049e434cf5f82febe21630a31e"
+  },
+  "raw/historical_boundaries/codh_sagamiko_20050101.geojson": {
+    "size_bytes": 96324,
+    "sha256": "8bf187d34be07ee3ac632f59a924d93b0cf11a15caa75d920b56c175432566c6"
+  },
+  "raw/historical_boundaries/codh_shiroyama_20050101.geojson": {
+    "size_bytes": 51611,
+    "sha256": "077da437650f0442740c7873bbc5d4fee43fa109c9f907c1a6f8a56e27ab1aa1"
+  },
+  "raw/historical_boundaries/codh_tsukui_19551001.geojson": {
+    "size_bytes": 137132,
+    "sha256": "d2105725065d8b2f9cb04bb28829ddd651500a4566ac73d70f09e3a10fc389cf"
+  },
+  "raw/historical_boundaries/codh_tsukui_20050101.geojson": {
+    "size_bytes": 136875,
+    "sha256": "85b4f3ef11efd93602a40e930b441453112e183993b08f0ee303f3934c2b9ce6"
+  },
+  "raw/historical_maps/README.md": {
+    "size_bytes": 774,
+    "sha256": "46ea40fdccb689d0723346706446940974c3b7b35967aa55bc71db1e3dab9670"
+  },
+  "raw/landuse/L03-b-14_5338-jgd_GML.zip": {
+    "size_bytes": 13398459,
+    "sha256": "09e03256f41a9ac60d86b5f3888dbbb0048acae34cccfa034a8fbe2953a9211e"
+  },
+  "raw/landuse/L03-b-14_5339-jgd_GML.zip": {
+    "size_bytes": 13314929,
+    "sha256": "b72e1446cb2ab067f28f7196099b09f473ed1650bdfa1b41f44b0d6bc44b1c44"
+  },
+  "raw/landuse/L03-b-21_5338-jgd2011_GML.zip": {
+    "size_bytes": 22476659,
+    "sha256": "3f9d82c098eb4693c1afe8681a84eec7b269682180007185d97f77c4b083d1ed"
+  },
+  "raw/landuse/L03-b-21_5339-jgd2011_GML.zip": {
+    "size_bytes": 22386507,
+    "sha256": "f6bbebb3fa80cf5f62fa9b2dc3291522b1aecca3a0e0c3bf047906afaa66c88b"
+  },
+  "raw/landuse/L03-b-76_5338_GML.zip": {
+    "size_bytes": 14630483,
+    "sha256": "1071994099b4d79e4b6ef01e0c48dab312cc32f539020e1b132cb78ebf88485c"
+  },
+  "raw/landuse/L03-b-76_5339_GML.zip": {
+    "size_bytes": 14450493,
+    "sha256": "b2e5a7210f516b9e2162aed0c7428df3ec33dc1b0eb771cb6929d7dccbf5f1ae"
+  },
+  "raw/osm/chubu-latest.osm.pbf": {
+    "size_bytes": 511655965,
+    "sha256": "14056311e5086850abe09284b00feec25586222453a94b92c55808677acbe4cd"
+  },
+  "raw/osm/kanto-latest.osm.pbf": {
+    "size_bytes": 517645146,
+    "sha256": "d128943f6cebc6bc20c95a62d89ad9dbcde20c9b17747b1d46d338587ba01fad"
+  },
+  "raw/osm/tsukui_4districts_metadata.json": {
+    "size_bytes": 3075,
+    "sha256": "b5cd347a34cf67f0330e08288501a7544fa258625ab552da84f024a24037f893"
+  },
+  "raw/osm/tsukui_aonohara_osm.osm": {
+    "size_bytes": 6828635,
+    "sha256": "ed6961c5a73313d5e7dfcb2c565d2d371c0906a0a4413bf1f8b49838362a64c1"
+  },
+  "raw/osm/tsukui_aoyama_osm.osm": {
+    "size_bytes": 10936667,
+    "sha256": "2cee8ec50206676edf15b7f67bc6344e39d8c7aecd90a16bbb91e0097515c5c1"
+  },
+  "raw/osm/tsukui_core_osm.osm": {
+    "size_bytes": 5834482,
+    "sha256": "8bea6721aefe13b3e850c8d1a224e7433b1721135aff7d16d0a8a01a8e4bb671"
+  },
+  "raw/osm/tsukui_suarashi_osm.osm": {
+    "size_bytes": 11774956,
+    "sha256": "753f3a4afea6312a3f3c014498293378d2879cf36896bfa694ee7168683a5178"
+  },
+  "raw/osm/tsukui_toya_osm.osm": {
+    "size_bytes": 6241979,
+    "sha256": "b380bc65f6d8a2c81b057d292223cfc8883016d4001ec53ce0a6907e0f217c1d"
+  },
+  "raw/railways/N02-23_GML.zip": {
+    "size_bytes": 17518918,
+    "sha256": "e91ecdee90966877c6119ab94dc92ee6562eb9d89194f8a0a91f71b179c82a40"
+  },
+  "raw/rivers/W05-08_13_GML.zip": {
+    "size_bytes": 1406220,
+    "sha256": "7e1d7907855e4560e72c45cf80469802084272da47b0e980139aa6c3da5c09ff"
+  },
+  "raw/rivers/W05-08_14_GML.zip": {
+    "size_bytes": 1908537,
+    "sha256": "8a553d8c3aa3a43d5a4c8bc9067a971eb57967eb435168dfca823192b7ed431d"
+  },
+  "raw/rivers/W05-08_19_GML.zip": {
+    "size_bytes": 3911147,
+    "sha256": "d73f3fcf9e47dbc526420400a6fd272e25c462cf23e96ac9c3a28c0b78fdc29f"
+  },
+  "raw/rivers/W05-08_22_GML.zip": {
+    "size_bytes": 6786401,
+    "sha256": "c293f5ff4f183f13e5310fcc9d6beed7625f9c6c581944ab8119adba3710fa73"
+  },
+  "raw/sagamihara_cultural_assets/bunkazai.csv": {
+    "size_bytes": 210799,
+    "sha256": "dec1117a21869988457f1d06a578e6b891e85700b7efee4b52521b16e79b08b7"
+  }
+}

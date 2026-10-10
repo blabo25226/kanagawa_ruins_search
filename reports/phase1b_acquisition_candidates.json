@@ -1,0 +1,380 @@
+{
+  "status": "manual_action_required",
+  "catalog_count": 42,
+  "decade_counts": {
+    "1960s": 4,
+    "1940s": 16,
+    "unknown": 6,
+    "1950s": 9,
+    "1970s": 7
+  },
+  "recommended_photos": [
+    {
+      "specId": "460515",
+      "reference_number": "C49",
+      "course_number": "C3",
+      "photo_number": 118,
+      "capture_date": "1940-02-16",
+      "decade": "1940s",
+      "organization": "陸軍",
+      "center_pos": [
+        139.17544,
+        35.571786
+      ],
+      "footprint_corners": [
+        [
+          139.145097688,
+          35.595663779
+        ],
+        [
+          139.204679918,
+          35.596566391
+        ],
+        [
+          139.205765711,
+          35.547900778
+        ],
+        [
+          139.146219466,
+          35.546999775
+        ]
+      ],
+      "footprint_state": "footprint_approximate",
+      "scale": 30000,
+      "altitude": null,
+      "color": "モノクロ",
+      "coordinate_crs": null,
+      "image_acquisition_state": "not_acquired",
+      "license_verification_state": "unknown",
+      "original": {
+        "specification_id": 460515,
+        "reference_number": "C49",
+        "course_number": "C3",
+        "photo_number": 118,
+        "date": "1940-02-16",
+        "raw_search_date": "1940-02-16",
+        "search_date_text": "1940/02/16（昭15）",
+        "date_status": "exact",
+        "decade": "1940s",
+        "planning_organization": "陸軍",
+        "scale": 30000,
+        "color_type_name": "モノクロ",
+        "center_pos": [
+          139.17544,
+          35.571786
+        ],
+        "footprint_status": "valid",
+        "is_point_only": false,
+        "footprint_bounds": [
+          139.145098,
+          35.547,
+          139.205766,
+          35.596566
+        ],
+        "geom_image_left_top_pos": [
+          139.145097688,
+          35.595663779
+        ],
+        "geom_image_left_bottom_pos": [
+          139.146219466,
+          35.546999775
+        ],
+        "geom_image_right_top_pos": [
+          139.204679918,
+          35.596566391
+        ],
+        "geom_image_right_bottom_pos": [
+          139.205765711,
+          35.547900778
+        ],
+        "geom_center_pos": [
+          139.175439777,
+          35.571786487
+        ],
+        "url_image_thumb": "aerialphotograph/空中写真/C49/thumb/C3/C49-C3-118.jpg",
+        "url_image_simple": "aerialphotograph/空中写真/C49/simple/C3/C49-C3-118.jpg",
+        "url_image_standard": "aerialphotograph/空中写真/C49/standard/C3/C49-C3-118.jpg",
+        "verification_status": "verified",
+        "audit_note": "撮影日確認済み; 撮影範囲ポリゴン確認済み"
+      },
+      "selection_rule": "earliest dated approximate footprint per decade; acquisition planning only"
+    },
+    {
+      "specId": "459214",
+      "reference_number": "USA",
+      "course_number": "M1664",
+      "photo_number": 11,
+      "capture_date": "1953-10-07",
+      "decade": "1950s",
+      "organization": "米軍",
+      "center_pos": [
+        139.18194,
+        35.55215
+      ],
+      "footprint_corners": [
+        [
+          139.130901042,
+          35.59231702
+        ],
+        [
+          139.231131842,
+          35.593830263
+        ],
+        [
+          139.232929898,
+          35.511959406
+        ],
+        [
+          139.132800843,
+          35.5104507
+        ]
+      ],
+      "footprint_state": "footprint_approximate",
+      "scale": 39739,
+      "altitude": null,
+      "color": "モノクロ",
+      "coordinate_crs": null,
+      "image_acquisition_state": "not_acquired",
+      "license_verification_state": "unknown",
+      "original": {
+        "specification_id": 459214,
+        "reference_number": "USA",
+        "course_number": "M1664",
+        "photo_number": 11,
+        "date": "1953-10-07",
+        "raw_search_date": "1953-10-07",
+        "search_date_text": "1953/10/07（昭28）",
+        "date_status": "exact",
+        "decade": "1950s",
+        "planning_organization": "米軍",
+        "scale": 39739,
+        "color_type_name": "モノクロ",
+        "center_pos": [
+          139.18194,
+          35.55215
+        ],
+        "footprint_status": "valid",
+        "is_point_only": false,
+        "footprint_bounds": [
+          139.130901,
+          35.510451,
+          139.23293,
+          35.59383
+        ],
+        "geom_image_left_top_pos": [
+          139.130901042,
+          35.59231702
+        ],
+        "geom_image_left_bottom_pos": [
+          139.132800843,
+          35.5104507
+        ],
+        "geom_image_right_top_pos": [
+          139.231131842,
+          35.593830263
+        ],
+        "geom_image_right_bottom_pos": [
+          139.232929898,
+          35.511959406
+        ],
+        "geom_center_pos": [
+          139.181939996,
+          35.552149971
+        ],
+        "url_image_thumb": "aerialphotograph/空中写真/USA/thumb/M1664/USA-M1664-11.jpg",
+        "url_image_simple": "aerialphotograph/空中写真/USA/simple/M1664/USA-M1664-11.jpg",
+        "url_image_standard": "aerialphotograph/空中写真/USA/standard/M1664/USA-M1664-11.jpg",
+        "verification_status": "verified",
+        "audit_note": "撮影日確認済み; 撮影範囲ポリゴン確認済み"
+      },
+      "selection_rule": "earliest dated approximate footprint per decade; acquisition planning only"
+    },
+    {
+      "specId": "459997",
+      "reference_number": "MKT684X",
+      "course_number": "C11",
+      "photo_number": 1,
+      "capture_date": "1968-05-09",
+      "decade": "1960s",
+      "organization": "国土地理院",
+      "center_pos": [
+        139.206854,
+        35.556983
+      ],
+      "footprint_corners": [
+        [
+          139.186638393,
+          35.572908116
+        ],
+        [
+          139.22634926,
+          35.573499113
+        ],
+        [
+          139.227064066,
+          35.54105491
+        ],
+        [
+          139.187369182,
+          35.540464616
+        ]
+      ],
+      "footprint_state": "footprint_approximate",
+      "scale": 20000,
+      "altitude": null,
+      "color": "モノクロ",
+      "coordinate_crs": null,
+      "image_acquisition_state": "not_acquired",
+      "license_verification_state": "unknown",
+      "original": {
+        "specification_id": 459997,
+        "reference_number": "MKT684X",
+        "course_number": "C11",
+        "photo_number": 1,
+        "date": "1968-05-09",
+        "raw_search_date": "1968-05-09",
+        "search_date_text": "1968/05/09（昭43）",
+        "date_status": "exact",
+        "decade": "1960s",
+        "planning_organization": "国土地理院",
+        "scale": 20000,
+        "color_type_name": "モノクロ",
+        "center_pos": [
+          139.206854,
+          35.556983
+        ],
+        "footprint_status": "valid",
+        "is_point_only": false,
+        "footprint_bounds": [
+          139.186638,
+          35.540465,
+          139.227064,
+          35.573499
+        ],
+        "geom_image_left_top_pos": [
+          139.186638393,
+          35.572908116
+        ],
+        "geom_image_left_bottom_pos": [
+          139.187369182,
+          35.540464616
+        ],
+        "geom_image_right_top_pos": [
+          139.22634926,
+          35.573499113
+        ],
+        "geom_image_right_bottom_pos": [
+          139.227064066,
+          35.54105491
+        ],
+        "geom_center_pos": [
+          139.20685435,
+          35.556983422
+        ],
+        "url_image_thumb": "aerialphotograph/空中写真/MKT684X/thumb/C11/MKT684X-C11-1.jpg",
+        "url_image_simple": "aerialphotograph/空中写真/MKT684X/simple/C11/MKT684X-C11-1.jpg",
+        "url_image_standard": "aerialphotograph/空中写真/MKT684X/standard/C11/MKT684X-C11-1.jpg",
+        "verification_status": "verified",
+        "audit_note": "撮影日確認済み; 撮影範囲ポリゴン確認済み"
+      },
+      "selection_rule": "earliest dated approximate footprint per decade; acquisition planning only"
+    },
+    {
+      "specId": "460873",
+      "reference_number": "CKT7417",
+      "course_number": "C28",
+      "photo_number": 17,
+      "capture_date": "1974-12-20",
+      "decade": "1970s",
+      "organization": "国土地理院",
+      "center_pos": [
+        139.180328,
+        35.576175
+      ],
+      "footprint_corners": [
+        [
+          139.160945052,
+          35.591431646
+        ],
+        [
+          139.199009503,
+          35.592006647
+        ],
+        [
+          139.199705579,
+          35.560914849
+        ],
+        [
+          139.161655819,
+          35.560340504
+        ]
+      ],
+      "footprint_state": "footprint_approximate",
+      "scale": 15000,
+      "altitude": null,
+      "color": "カラー",
+      "coordinate_crs": null,
+      "image_acquisition_state": "not_acquired",
+      "license_verification_state": "unknown",
+      "original": {
+        "specification_id": 460873,
+        "reference_number": "CKT7417",
+        "course_number": "C28",
+        "photo_number": 17,
+        "date": "1974-12-20",
+        "raw_search_date": "1974-12-20",
+        "search_date_text": "1974/12/20（昭49）",
+        "date_status": "exact",
+        "decade": "1970s",
+        "planning_organization": "国土地理院",
+        "scale": 15000,
+        "color_type_name": "カラー",
+        "center_pos": [
+          139.180328,
+          35.576175
+        ],
+        "footprint_status": "valid",
+        "is_point_only": false,
+        "footprint_bounds": [
+          139.160945,
+          35.560341,
+          139.199706,
+          35.592007
+        ],
+        "geom_image_left_top_pos": [
+          139.160945052,
+          35.591431646
+        ],
+        "geom_image_left_bottom_pos": [
+          139.161655819,
+          35.560340504
+        ],
+        "geom_image_right_top_pos": [
+          139.199009503,
+          35.592006647
+        ],
+        "geom_image_right_bottom_pos": [
+          139.199705579,
+          35.560914849
+        ],
+        "geom_center_pos": [
+          139.180328077,
+          35.576175011
+        ],
+        "url_image_thumb": "aerialphotograph/空中写真/CKT7417/thumb/C28/CKT7417-C28-17.jpg",
+        "url_image_simple": "aerialphotograph/空中写真/CKT7417/simple/C28/CKT7417-C28-17.jpg",
+        "url_image_standard": "aerialphotograph/空中写真/CKT7417/standard/C28/CKT7417-C28-17.jpg",
+        "verification_status": "verified",
+        "audit_note": "撮影日確認済み; 撮影範囲ポリゴン確認済み"
+      },
+      "selection_rule": "earliest dated approximate footprint per decade; acquisition planning only"
+    }
+  ],
+  "dem_secondary_meshes": [
+    "533921",
+    "533931"
+  ],
+  "dem_mesh_reason": "Contains the four existing XYZ tile envelopes; confirm exact desired study coverage and 5A/5B/5C coverage manually",
+  "actual_dem_downloaded": false,
+  "actual_photos_downloaded": false
+}

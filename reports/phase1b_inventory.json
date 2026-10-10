@@ -1,0 +1,260 @@
+{
+  "generated_at": "2026-10-10T15:04:51.867460+00:00",
+  "assets": [
+    {
+      "relative_path": "raw/aerial_photos/metadata/tsukui_aerial_photos_catalog.json",
+      "format": "json",
+      "size_bytes": 59394,
+      "sha256": "205325245d13387c31ec29eb47bb3e2240f010dfd0064de276ab872fc6163327",
+      "source_id": "gsi_aerial_photo_catalog_tsukui",
+      "source": "https://service.gsi.go.jp/map-photos/app/api/photo/",
+      "license": "国土地理院コンテンツ利用規約; 測量法第27条に基づく測量成果閲覧APIより抽出",
+      "ledger_sha256_match": true,
+      "acquisition_date": "2026-10-09T18:06:49.881784+00:00",
+      "temporal_coverage": "1940-1978",
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": null,
+      "height": null,
+      "missing_metadata": [],
+      "processable": false,
+      "status": "metadata_only"
+    },
+    {
+      "relative_path": "raw/aerial_photos/sample_ortho_1974/aonohara_1974_z15_29054_12916.jpg",
+      "format": "jpg",
+      "size_bytes": 20452,
+      "sha256": "5c8b6e2b80081aa6b33553842d040ad30d6d26b6f389fe94086a0831128c2b30",
+      "source_id": "gsi_aerial_tile_1974_aonohara_1974",
+      "source": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29054/12916.jpg",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "ledger_sha256_match": true,
+      "acquisition_date": "2026-10-09T18:06:50.317467+00:00",
+      "temporal_coverage": "1974-1978",
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": 256,
+      "height": 256,
+      "missing_metadata": [
+        "crs",
+        "affine_transform",
+        "capture_date",
+        "geometric_accuracy"
+      ],
+      "processable": true,
+      "status": "xyz_georeference_available",
+      "bands": 3,
+      "xyz": {
+        "z": 15,
+        "x": 29054,
+        "y": 12916
+      },
+      "xyz_bbox_wgs84": [
+        139.19677734375,
+        35.55904339525895,
+        139.207763671875,
+        35.56798045801208
+      ]
+    },
+    {
+      "relative_path": "raw/aerial_photos/sample_ortho_1974/aoyama_1974_z15_29058_12912.jpg",
+      "format": "jpg",
+      "size_bytes": 18502,
+      "sha256": "025d60d1e3d600a968626c424ec4c32f9a2353b9650647b2af05a6cd31bf80ef",
+      "source_id": "gsi_aerial_tile_1974_aoyama_1974",
+      "source": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29058/12912.jpg",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "ledger_sha256_match": true,
+      "acquisition_date": "2026-10-09T18:06:50.406066+00:00",
+      "temporal_coverage": "1974-1978",
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": 256,
+      "height": 256,
+      "missing_metadata": [
+        "crs",
+        "affine_transform",
+        "capture_date",
+        "geometric_accuracy"
+      ],
+      "processable": true,
+      "status": "xyz_georeference_available",
+      "bands": 3,
+      "xyz": {
+        "z": 15,
+        "x": 29058,
+        "y": 12912
+      },
+      "xyz_bbox_wgs84": [
+        139.24072265625003,
+        35.59478566548724,
+        139.25170898437503,
+        35.6037187406973
+      ]
+    },
+    {
+      "relative_path": "raw/aerial_photos/sample_ortho_1974/suarashi_1974_z15_29054_12906.jpg",
+      "format": "jpg",
+      "size_bytes": 17121,
+      "sha256": "6ae487f3296568a605a63c9565c31aded5326462e383b836b28f865e36cb93cb",
+      "source_id": "gsi_aerial_tile_1974_suarashi_1974",
+      "source": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29054/12906.jpg",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "ledger_sha256_match": true,
+      "acquisition_date": "2026-10-09T18:06:50.571168+00:00",
+      "temporal_coverage": "1974-1978",
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": 256,
+      "height": 256,
+      "missing_metadata": [
+        "crs",
+        "affine_transform",
+        "capture_date",
+        "geometric_accuracy"
+      ],
+      "processable": true,
+      "status": "xyz_georeference_available",
+      "bands": 3,
+      "xyz": {
+        "z": 15,
+        "x": 29054,
+        "y": 12906
+      },
+      "xyz_bbox_wgs84": [
+        139.19677734375,
+        35.648369157374255,
+        139.207763671875,
+        35.65729624809627
+      ]
+    },
+    {
+      "relative_path": "raw/aerial_photos/sample_ortho_1974/toya_1974_z15_29055_12920.jpg",
+      "format": "jpg",
+      "size_bytes": 22088,
+      "sha256": "b347e2a9705f5bbf6de5f109631912d1f4fa0ca6b043a73b2aed312f1f70aa72",
+      "source_id": "gsi_aerial_tile_1974_toya_1974",
+      "source": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29055/12920.jpg",
+      "license": "国土地理院コンテンツ利用規約（CC BY 4.0互換）; 出典明記要",
+      "ledger_sha256_match": true,
+      "acquisition_date": "2026-10-09T18:06:50.486192+00:00",
+      "temporal_coverage": "1974-1978",
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": 256,
+      "height": 256,
+      "missing_metadata": [
+        "crs",
+        "affine_transform",
+        "capture_date",
+        "geometric_accuracy"
+      ],
+      "processable": true,
+      "status": "xyz_georeference_available",
+      "bands": 3,
+      "xyz": {
+        "z": 15,
+        "x": 29055,
+        "y": 12920
+      },
+      "xyz_bbox_wgs84": [
+        139.20776367187497,
+        35.52328517910781,
+        139.21874999999997,
+        35.532226227703376
+      ]
+    },
+    {
+      "relative_path": "raw/historical_maps/README.md",
+      "format": "md",
+      "size_bytes": 774,
+      "sha256": "46ea40fdccb689d0723346706446940974c3b7b35967aa55bc71db1e3dab9670",
+      "source_id": null,
+      "source": null,
+      "license": null,
+      "ledger_sha256_match": null,
+      "acquisition_date": null,
+      "temporal_coverage": null,
+      "capture_date": null,
+      "creation_date": null,
+      "crs": null,
+      "georeferenced": false,
+      "bbox": null,
+      "resolution": null,
+      "width": null,
+      "height": null,
+      "missing_metadata": [
+        "acquisition_provenance",
+        "license"
+      ],
+      "processable": false,
+      "status": "metadata_only"
+    }
+  ],
+  "aerial_catalog": {
+    "count": 42,
+    "actual_keys": [
+      "audit_note",
+      "center_pos",
+      "color_type_name",
+      "course_number",
+      "date",
+      "date_status",
+      "decade",
+      "footprint_bounds",
+      "footprint_status",
+      "geom_center_pos",
+      "geom_image_left_bottom_pos",
+      "geom_image_left_top_pos",
+      "geom_image_right_bottom_pos",
+      "geom_image_right_top_pos",
+      "is_point_only",
+      "photo_number",
+      "planning_organization",
+      "raw_search_date",
+      "reference_number",
+      "scale",
+      "search_date_text",
+      "specification_id",
+      "url_image_simple",
+      "url_image_standard",
+      "url_image_thumb",
+      "verification_status"
+    ],
+    "date_unknown": 6,
+    "footprint_states": {
+      "footprint_approximate": 34,
+      "center_only": 8
+    },
+    "coordinate_crs": null,
+    "missing_metadata": [
+      "coordinate_crs",
+      "altitude",
+      "image_acquisition_evidence",
+      "per_photo_license_verification"
+    ]
+  },
+  "phase1a_layer_count": 107,
+  "historical_map_image_count": 0,
+  "dem_input_count": 0
+}

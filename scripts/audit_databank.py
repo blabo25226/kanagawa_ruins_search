@@ -249,6 +249,7 @@ def audit_databank(
         or len(size_mismatches) > 0
         or len(hash_mismatches) > 0
         or len(prov_errors) > 0
+        or len(unregistered_files) > 0
     )
 
     if has_errors:
@@ -280,8 +281,10 @@ def audit_databank(
         "metadata_files_count": len(metadata_files),
         "ledger_files_count": len(ledger_files),
         "unregistered_files_count": len(unregistered_files),
-        "phase1a_derived_files_count": len(derived_files),
-        "phase1a_derived_files": sorted(derived_files),
+        "phase1a_derived_files_count": sum(p.startswith("processed/phase1a/") for p in derived_files),
+        "phase1a_derived_files": sorted(p for p in derived_files if p.startswith("processed/phase1a/")),
+        "phase1b_derived_files_count": sum(p.startswith("processed/phase1b/") for p in derived_files),
+        "phase1b_derived_files": sorted(p for p in derived_files if p.startswith("processed/phase1b/")),
         "total_data_bytes": total_bytes,
         "total_data_mb": round(total_bytes / 1_000_000, 3),
         "total_data_mib": round(total_bytes / (1024 * 1024), 3),
@@ -701,6 +704,7 @@ def main():
         or summary["size_mismatches_count"] > 0
         or summary["hash_mismatches_count"] > 0
         or len(summary["provenance_parse_errors"]) > 0
+        or summary["unregistered_files_count"] > 0
     )
     if has_errors:
         print("Validation errors detected during audit.")

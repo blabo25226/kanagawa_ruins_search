@@ -1,0 +1,9 @@
+{
+  "status": "PLANNED",
+  "action": "dry-run",
+  "command": "dem",
+  "sources": [],
+  "manual_action_required": true,
+  "required_metadata": "reviewed CRS, horizontal datum, vertical datum, metre unit and evidence JSON",
+  "writes": false
+}
