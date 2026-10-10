@@ -22,6 +22,16 @@ from pathlib import Path
 import geopandas as gpd
 import pandas as pd
 
+# Configure PROJ paths dynamically without hardcoded machine paths
+try:
+    import pyproj
+    from osgeo import osr
+    proj_dir = pyproj.datadir.get_data_dir()
+    if proj_dir and Path(proj_dir).is_dir():
+        osr.SetPROJSearchPaths([proj_dir])
+except Exception:
+    pass
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
@@ -35,6 +45,67 @@ def calculate_sha256(path: Path, chunk_size: int = 1048576) -> str:
         while chunk := f.read(chunk_size):
             h.update(chunk)
     return h.hexdigest()
+
+
+def check_mojibake(text: str) -> bool:
+    """Check if a string exhibits encoding corruption (replacement char or known UTF-8/CP932 mojibake artifacts)."""
+    if not text:
+        return False
+    if "\ufffd" in text:
+        return True
+    mojibake_indicators = ("逾槫･亥ｷ晉恁", "逾槫･", "譚ｱ莠ｬ", "ｷ", "逾")
+    for indicator in mojibake_indicators:
+        if indicator in text:
+            return True
+    return False
+
+
+def validate_shapefile_encoding(shp_path: Path) -> gpd.GeoDataFrame:
+    """Read a Shapefile prioritizing .cpg declaration, verifying against mojibake."""
+    cpg_path = shp_path.with_suffix(".cpg")
+    if not cpg_path.is_file():
+        for sibling in shp_path.parent.iterdir():
+            if sibling.stem == shp_path.stem and sibling.suffix.lower() == ".cpg":
+                cpg_path = sibling
+                break
+
+    detected_enc = None
+    if cpg_path.is_file():
+        raw_cpg = cpg_path.read_text(encoding="ascii", errors="ignore").strip().lower()
+        if "utf" in raw_cpg:
+            detected_enc = "utf-8"
+        elif "932" in raw_cpg or "sjis" in raw_cpg or "shift" in raw_cpg:
+            detected_enc = "cp932"
+        elif raw_cpg:
+            detected_enc = raw_cpg
+
+    candidate_encs = [detected_enc, None, "utf-8", "cp932"] if detected_enc else [None, "utf-8", "cp932"]
+    seen_encs = []
+    for ce in candidate_encs:
+        if ce not in seen_encs:
+            seen_encs.append(ce)
+
+    gdf = None
+    used_enc = None
+    for enc in seen_encs:
+        try:
+            candidate_gdf = gpd.read_file(shp_path, encoding=enc) if enc else gpd.read_file(shp_path)
+            is_clean = True
+            for col in candidate_gdf.select_dtypes(include=["object", "string"]).columns:
+                sample_texts = candidate_gdf[col].dropna().head(10).astype(str).tolist()
+                if any(check_mojibake(text) for text in sample_texts):
+                    is_clean = False
+                    break
+            if is_clean:
+                gdf = candidate_gdf
+                used_enc = enc or (detected_enc or "auto")
+                break
+        except Exception:
+            continue
+
+    if gdf is None:
+        raise ValueError(f"Could not load Shapefile {shp_path} with clean encoding")
+    return gdf, used_enc
 
 
 def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
@@ -74,6 +145,9 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
         report_lines.append("|:---|:---|---:|:---|:---:|:---|:---|---:|")
 
     validation_details = []
+    total_files = 0
+    total_errors = 0
+    total_hash_mismatches = 0
 
     for path in sorted(data_root.rglob("*")):
         if not path.is_file() or path.name.endswith(".partial") or "interrupted" in path.name:
@@ -82,6 +156,7 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
         if "backups" in path.parts:
             continue
 
+        total_files += 1
         rel = str(path.relative_to(data_root))
         size = path.stat().st_size
 
@@ -135,13 +210,13 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
                     shp_files = [f for f in extracted if f.suffix.lower() == ".shp"]
                     if shp_files:
                         target_shp = shp_files[0]
-                        gdf = None
-                        for enc in ["cp932", "utf-8"]:
-                            try:
-                                gdf = gpd.read_file(target_shp, encoding=enc)
-                                break
-                            except Exception:
-                                continue
+                        try:
+                            gdf, used_enc = validate_shapefile_encoding(target_shp)
+                        except Exception as e:
+                            gdf = None
+                            used_enc = "error"
+                            status = f"ERROR: Shapefile encoding/read error: {e}"
+                            error_count += 1
                         if gdf is not None:
                             crs_info = str(gdf.crs) if gdf.crs else "None"
                             records = str(len(gdf))
@@ -149,6 +224,7 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
                                 "rel": rel,
                                 "type": "ZIP-Spatial",
                                 "layer": target_shp.name,
+                                "encoding": used_enc,
                                 "crs": crs_info,
                                 "records": len(gdf),
                                 "bounds": [round(b, 5) for b in gdf.total_bounds],
@@ -156,19 +232,34 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
                                 "null_geom_count": int(gdf.geometry.isna().sum())
                             }
                         else:
-                            crs_info = "Read error (encoding/format)"
+                            status = "ERROR: Shapefile encoding/format read error"
+                            crs_info = "Read error"
                     else:
                         details = {"rel": rel, "type": "ZIP-Archive", "members_count": len(extracted)}
 
             elif path.suffix == ".csv":
-                for enc in ["utf-8", "cp932"]:
+                import csv
+                csv_parsed = False
+                csv_enc = None
+                for enc in ["utf-8-sig", "utf-8", "cp932"]:
                     try:
-                        df = pd.read_csv(path, encoding=enc, nrows=5)
-                        records = "CSV parsed"
-                        details = {"rel": rel, "type": "CSV", "encoding": enc, "columns": list(df.columns)}
+                        with path.open("r", encoding=enc) as f:
+                            reader = csv.reader(f)
+                            header_row = next(reader, None)
+                            if not header_row:
+                                continue
+                            row_count = 0
+                            for _ in reader:
+                                row_count += 1
+                        csv_parsed = True
+                        csv_enc = enc
+                        records = f"Rows: {row_count:,}"
+                        details = {"rel": rel, "type": "CSV", "encoding": csv_enc, "columns": header_row}
                         break
                     except Exception:
                         continue
+                if not csv_parsed:
+                    status = "ERROR: Corrupt or unreadable CSV"
 
             elif path.suffix == ".pdf":
                 with path.open("rb") as f:
@@ -178,47 +269,78 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
                     if head.startswith(b"%PDF-") and b"%%EOF" in tail:
                         status = "Valid PDF"
                     else:
-                        status = "PDF marker issue"
+                        status = "ERROR: PDF marker issue"
                 details = {"rel": rel, "type": "PDF", "status": status}
 
             elif path.suffix == ".osm":
                 import xml.etree.ElementTree as ET
-                tree = ET.parse(path)
-                root = tree.getroot()
-                nodes = len(root.findall("node"))
-                ways = len(root.findall("way"))
-                records = f"Nodes:{nodes}, Ways:{ways}"
-                crs_info = "EPSG:4326 (WGS84)"
-                details = {"rel": rel, "type": "OSM-XML", "nodes": nodes, "ways": ways}
+                try:
+                    # Stream through all elements to ensure file is complete to EOF
+                    node_count = 0
+                    way_count = 0
+                    for event, elem in ET.iterparse(path, events=('end',)):
+                        if elem.tag == "node":
+                            node_count += 1
+                        elif elem.tag == "way":
+                            way_count += 1
+                        elem.clear()
+                    records = f"Nodes: {node_count:,}, Ways: {way_count:,}"
+                    crs_info = "EPSG:4326 (WGS84)"
+                    details = {"rel": rel, "type": "OSM-XML", "nodes": node_count, "ways": way_count}
+                except Exception as e:
+                    status = f"ERROR: Truncated OSM XML ({type(e).__name__})"
 
             elif path.suffix == ".pbf":
                 with path.open("rb") as f:
-                    header = f.read(2048)
-                    if b"OSMHeader" in header:
-                        status = "Valid OSM PBF (Header verified)"
-                        records = "PBF Binary Stream"
-                        crs_info = "EPSG:4326 (WGS84)"
-                        details = {"rel": rel, "type": "OSM-PBF", "status": status}
+                    len_bytes = f.read(4)
+                    if len(len_bytes) < 4:
+                        status = "ERROR: Truncated PBF block length"
                     else:
-                        status = "Corrupt OSM PBF (missing OSMHeader)"
+                        hlen = int.from_bytes(len_bytes, "big")
+                        if hlen <= 0 or hlen > 64 * 1024:
+                            status = f"ERROR: Invalid PBF header length {hlen}"
+                        else:
+                            hdr = f.read(hlen)
+                            if b"OSMHeader" in hdr:
+                                status = "Valid OSM PBF (Header verified)"
+                                records = "PBF Binary Stream"
+                                crs_info = "EPSG:4326 (WGS84)"
+                                details = {"rel": rel, "type": "OSM-PBF", "status": status}
+                            else:
+                                status = "ERROR: Corrupt OSM PBF (missing OSMHeader)"
 
             elif path.suffix.lower() in [".jpg", ".jpeg"]:
                 with path.open("rb") as f:
                     head = f.read(3)
-                    if head == b"\xff\xd8\xff":
+                    f.seek(max(0, size - 2))
+                    tail = f.read(2)
+                if head != b"\xff\xd8\xff" or tail != b"\xff\xd9":
+                    status = "ERROR: Truncated JPEG (missing SOI/EOI)"
+                else:
+                    try:
+                        from PIL import Image
+                        with Image.open(path) as im:
+                            im.verify()
+                        with Image.open(path) as im:
+                            im.load()
                         status = "Valid JPEG"
-                    else:
-                        status = "JPEG header issue"
+                    except Exception as e:
+                        status = f"ERROR: JPEG decode failed ({e})"
                 details = {"rel": rel, "type": "JPEG", "status": status}
 
             elif path.suffix == ".json":
                 with path.open("r", encoding="utf-8") as f:
                     jdata = json.load(f)
-                    records = f"Keys:{len(jdata)}" if isinstance(jdata, dict) else f"Items:{len(jdata)}"
+                    records = f"Keys: {len(jdata)}" if isinstance(jdata, dict) else f"Items: {len(jdata)}"
                 details = {"rel": rel, "type": "JSON", "records": records}
 
         except Exception as e:
             status = f"ERROR: {type(e).__name__}"
+
+        if status.startswith("ERROR"):
+            total_errors += 1
+        if "MISMATCH" in hash_match_status:
+            total_hash_mismatches += 1
 
         report_lines.append(
             f"| `{rel}` | {path.suffix.upper()} | {size:,} | `{sha[:12]}` | {hash_match_status} | {status} | {crs_info} | {records} |"
@@ -235,6 +357,8 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
         if "bounds" in det:
             report_lines.append(f"### `{det['rel']}`")
             report_lines.append(f"- **種別**: {det['type']}")
+            if "encoding" in det:
+                report_lines.append(f"- **文字コード**: `{det['encoding']}`")
             report_lines.append(f"- **CRS（測地系）**: `{det['crs']}`")
             report_lines.append(f"- **レコード件数**: {det['records']:,}")
             report_lines.append(f"- **外接矩形 (Bounds)**: `Lon: [{det['bounds'][0]}, {det['bounds'][2]}], Lat: [{det['bounds'][1]}, {det['bounds'][3]}]`")
@@ -243,15 +367,31 @@ def validate_databank(mode: str = "fast", skip_large_pbf: bool = True):
             report_lines.append("")
 
     report_lines.append("---\n")
-    report_lines.append("## 3. 品質評価サマリーとPhase 1への申し送り事項\n")
-    report_lines.append("1. **実ファイル整合性の完全確認**: 全登録ファイルの存在、実ファイルサイズ、およびSHA-256ハッシュの整合性を実測確認完了。")
-    report_lines.append("2. **空間データの完全性**: すべてのGeoJSON、Shapefile、OSM XML、OSM PBFが欠損なく正常にロード・ヘッダー検証可能であることを確認。")
-    report_lines.append("3. **CRS統一の必要性**: 行政区域データ（JGD2011/EPSG:6668）、住居表示（JGD2000/JGD2011）、CODH・OSM（WGS84/EPSG:4326）の測地系が混在しているため、Phase 1の実解析前に**平面直角座標系 第IX系（JGD2011 / EPSG:6677）**へ統一変換するパイプラインを必須とする。")
+    report_lines.append("## 3. 品質評価サマリーと動的判定\n")
+    report_lines.append(f"- **検証実施モード**: `{mode.upper()}`")
+    report_lines.append(f"- **総検証ファイル数**: **{total_files} 件**")
+    report_lines.append(f"- **フォーマット・ロード異常件数**: **{total_errors} 件**")
+    report_lines.append(f"- **SHA-256不一致件数**: **{total_hash_mismatches} 件**")
+    report_lines.append("")
+
+    if mode == "fast":
+        report_lines.append("1. **実ファイル基本検証（FASTモード）**: 全登録ファイルの存在、ファイルサイズ、およびファイル形式構文を検証完了。ハッシュ照合は台帳記録値との参照のみで、ディスクからの全件再計算は省略。")
+    else:
+        report_lines.append("1. **実ファイル完全整合性検証（FULLモード）**: 全登録ファイルの存在、実ファイルサイズ、および全件SHA-256ハッシュの再計算による台帳照合を実施。")
+
+    if total_errors == 0 and total_hash_mismatches == 0:
+        report_lines.append("2. **総合判定: 合格（PASS）**: 全ての検証対象ファイルについて、フォーマット破壊・文字化け・切り詰め欠損・ハッシュ不一致は検出されませんでした。")
+    else:
+        report_lines.append(f"2. **総合判定: 要対応（FAIL）**: 異常が検出されました（エラー {total_errors} 件、ハッシュ不一致 {total_hash_mismatches} 件）。")
+
+    report_lines.append("3. **CRS統一の留意事項**: 行政区域データ（JGD2011/EPSG:6668）、住居表示（JGD2000/JGD2011）、CODH・OSM（WGS84/EPSG:4326）の測地系が混在しているため、Phase 1の実解析前に**平面直角座標系 第IX系（JGD2011 / EPSG:6677）**へ統一変換するパイプラインを必須とする。")
     report_lines.append("4. **大字・地番境界の補完**: 住居表示未実施地域（旧津久井郡山間部）は大字レベルの行政界（CODHおよびN03）を参照することを確認。")
 
     out_file = ROOT / "reports/data_validation_report.md"
     out_file.write_text("\n".join(report_lines) + "\n", encoding="utf-8")
-    print("Successfully generated data_validation_report.md")
+    print(f"Successfully generated data_validation_report.md (Errors: {total_errors}, Hash mismatches: {total_hash_mismatches})")
+
+    return (total_errors == 0 and total_hash_mismatches == 0)
 
 
 def main():
@@ -260,7 +400,9 @@ def main():
     parser.add_argument("--check-all-hashes", action="store_true", help="Calculate SHA256 even for giant PBFs")
     args = parser.parse_args()
 
-    validate_databank(mode=args.mode, skip_large_pbf=not args.check_all_hashes)
+    success = validate_databank(mode=args.mode, skip_large_pbf=not args.check_all_hashes)
+    if not success:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

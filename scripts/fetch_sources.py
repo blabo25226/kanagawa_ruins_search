@@ -7,11 +7,13 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import sys
 import tomllib
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, HTTPRedirectHandler, build_opener, HTTPCookieProcessor
+import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -139,9 +141,15 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
 
         elif fmt_lower == 'pbf':
             with file_path.open('rb') as f:
-                header = f.read(2048)
-                if b'OSMHeader' not in header:
-                    return False, "Missing OSMHeader marker in PBF file"
+                len_bytes = f.read(4)
+                if len(len_bytes) < 4:
+                    return False, "Missing PBF 4-byte block header length"
+                hlen = int.from_bytes(len_bytes, 'big')
+                if hlen <= 0 or hlen > 64 * 1024:
+                    return False, f"Missing OSMHeader / invalid PBF block header length: {hlen}"
+                header = f.read(hlen)
+                if len(header) < hlen or b'OSMHeader' not in header:
+                    return False, "Missing or truncated OSMHeader block in PBF file"
             return True, "Valid OSM PBF format confirmed"
 
         elif fmt_lower in ('json', 'geojson'):
@@ -151,18 +159,35 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
 
         elif fmt_lower in ('xml', 'osm'):
             import xml.etree.ElementTree as ET
-            # Parse head/elements
             with file_path.open('rb') as f:
                 head = f.read(2048).lstrip()
                 if not head.startswith((b'<?xml', b'<osm', b'<gml')):
                     return False, "Invalid XML/OSM header"
+            # Iterparse through all elements to verify document is fully closed and not truncated
+            for event, elem in ET.iterparse(file_path, events=('end',)):
+                elem.clear()
             return True, "Valid XML/OSM format confirmed"
 
         elif fmt_lower == 'csv':
-            with file_path.open('rb') as f:
-                head = f.read(2048)
-                if not looks_like_format(head, 'csv'):
-                    return False, "Invalid CSV header"
+            import csv
+            parsed = False
+            err_msg = ""
+            for enc in ('utf-8-sig', 'utf-8', 'cp932'):
+                try:
+                    with file_path.open('r', encoding=enc) as f:
+                        reader = csv.reader(f)
+                        header_row = next(reader, None)
+                        if not header_row or len(header_row) == 0:
+                            return False, "CSV is empty or missing header row"
+                        for _ in reader:
+                            pass
+                    parsed = True
+                    break
+                except (UnicodeDecodeError, csv.Error) as e:
+                    err_msg = str(e)
+                    continue
+            if not parsed:
+                return False, f"Invalid CSV format or corrupted encoding: {err_msg}"
             return True, "Valid CSV format confirmed"
 
         elif fmt_lower in ('jpg', 'jpeg'):
@@ -170,6 +195,20 @@ def validate_file_integrity(file_path: Path, fmt: str, min_bytes: int = 10) -> t
                 head = f.read(3)
                 if head != b'\xff\xd8\xff':
                     return False, "Missing JPEG SOI marker"
+                f.seek(max(0, size - 2))
+                tail = f.read(2)
+                if tail != b'\xff\xd9':
+                    return False, "Missing JPEG EOI marker (\xff\xd9)"
+            try:
+                from PIL import Image
+                with Image.open(file_path) as im:
+                    im.verify()
+                with Image.open(file_path) as im:
+                    im.load()
+            except ImportError:
+                pass
+            except Exception as e:
+                return False, f"JPEG image decode verification failed: {e}"
             return True, "Valid JPEG format confirmed"
 
     except Exception as e:
@@ -213,6 +252,94 @@ def safe_extract_zip(zip_path: Path, dest_dir: Path, max_bytes: int = 200_000_00
     return extracted_files
 
 
+def load_provenance_records(data_root: Path) -> list[dict]:
+    """Load all records from canonical provenance.jsonl on Google Drive."""
+    prov_file = data_root / 'provenance.jsonl'
+    if not prov_file.is_file():
+        return []
+    records = []
+    for line in prov_file.read_text(encoding='utf-8').splitlines():
+        line = line.strip()
+        if line:
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                pass
+    return records
+
+
+def append_provenance_record(data_root: Path, record: dict) -> bool:
+    """Safely append or verify a record in canonical provenance.jsonl on Google Drive.
+    Ensures:
+    1. Single source of truth: Google Drive provenance.jsonl.
+    2. No duplicate lines for the same relative_path and sha256.
+    3. Atomic rewrite via temporary file to guard against FUSE write disruptions.
+    4. Synchronization to local project mirror (if data/ dir exists) as a read-only cache.
+    """
+    prov_file = data_root / 'provenance.jsonl'
+    existing = load_provenance_records(data_root)
+
+    target_rel = record.get('relative_path')
+    target_sha = record.get('sha256')
+
+    # Check for existing match
+    for ex in existing:
+        if ex.get('relative_path') == target_rel and ex.get('sha256') == target_sha:
+            return False  # Already registered
+
+    # Normalize record schema
+    norm_record = {
+        'source_id': record.get('source_id', ''),
+        'relative_path': target_rel,
+        'source_url': record.get('source_url') or record.get('download_url', ''),
+        'source_page': record.get('source_page', ''),
+        'acquired_at': record.get('acquired_at') or record.get('downloaded_at_utc', datetime.now(timezone.utc).isoformat()),
+        'size_bytes': record.get('size_bytes') or record.get('bytes', 0),
+        'sha256': target_sha,
+        'license': record.get('license', record.get('license_note', '')),
+        'data_type': record.get('data_type') or record.get('format', ''),
+        'coverage': record.get('coverage', ''),
+        'temporal_coverage': record.get('temporal_coverage', ''),
+        # Legacy aliases
+        'bytes': record.get('size_bytes') or record.get('bytes', 0),
+        'download_url': record.get('source_url') or record.get('download_url', ''),
+        'downloaded_at_utc': record.get('acquired_at') or record.get('downloaded_at_utc', datetime.now(timezone.utc).isoformat()),
+        'format': record.get('data_type') or record.get('format', ''),
+        'status': record.get('status', 'downloaded'),
+    }
+    if 'verified_at_utc' in record:
+        norm_record['verified_at_utc'] = record['verified_at_utc']
+
+    existing.append(norm_record)
+
+    # Safe atomic update with temporary file
+    tmp_path = data_root / f'.provenance_{uuid.uuid4().hex}.tmp'
+    try:
+        content = "\n".join(json.dumps(r, ensure_ascii=False) for r in existing) + "\n"
+        tmp_path.write_text(content, encoding='utf-8')
+        # Validate readability before replacing
+        check_lines = [json.loads(l) for l in tmp_path.read_text(encoding='utf-8').splitlines() if l.strip()]
+        if len(check_lines) != len(existing):
+            raise OSError("Verification failed: temporary provenance line count mismatch")
+        tmp_path.replace(prov_file)
+    finally:
+        if tmp_path.exists():
+            try:
+                tmp_path.unlink()
+            except OSError:
+                pass
+
+    # Update local read-only mirror if directory exists
+    local_mirror = ROOT / 'data/provenance.jsonl'
+    if local_mirror.parent.is_dir():
+        try:
+            shutil.copyfile(prov_file, local_mirror)
+        except OSError:
+            pass
+
+    return True
+
+
 def download(src, url, data_root: Path | None = None):
     limit = int(src['max_bytes'])
     if not 0 < limit <= 700000000:
@@ -242,14 +369,40 @@ def download(src, url, data_root: Path | None = None):
             raise DownloadError(f"Existing file SHA256 mismatch for {src['id']}: expected {src['expected_sha256']}, got {calculated_sha}")
 
         rel_path = str(target.relative_to(target_root))
-        record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),
-                  'download_url': url, 'license_url': src.get('license_url', ''),
-                  'license_note': src.get('license_note', ''), 'phase': 0,
-                  'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
-                  'relative_path': rel_path,
-                  'bytes': file_size, 'sha256': calculated_sha, 'format': src['expected_format'],
-                  'status': 'already_present'}
-        return record
+
+        # Check existing provenance ledger
+        existing_records = load_provenance_records(target_root)
+        matching_prov = next((r for r in existing_records if r.get('relative_path') == rel_path and r.get('sha256') == calculated_sha), None)
+
+        if matching_prov:
+            rec = dict(matching_prov)
+            rec['status'] = 'already_present'
+            return rec
+        else:
+            # File exists on disk but was untracked in provenance.
+            # Record it now using file's real mtime (no forged download timestamp)
+            mtime_iso = datetime.fromtimestamp(target.stat().st_mtime, timezone.utc).isoformat()
+            record = {
+                'source_id': src['id'],
+                'relative_path': rel_path,
+                'source_url': url,
+                'source_page': src.get('source_page', ''),
+                'acquired_at': mtime_iso,
+                'verified_at_utc': datetime.now(timezone.utc).isoformat(),
+                'size_bytes': file_size,
+                'sha256': calculated_sha,
+                'license': src.get('license_note', ''),
+                'data_type': src['expected_format'],
+                'coverage': src.get('coverage', ''),
+                'temporal_coverage': src.get('temporal_coverage', ''),
+                'bytes': file_size,
+                'download_url': url,
+                'downloaded_at_utc': mtime_iso,
+                'format': src['expected_format'],
+                'status': 'already_present_verified'
+            }
+            append_provenance_record(target_root, record)
+            return record
 
     if partial.exists():
         # Safely preserve partial download for investigation instead of unconditionally deleting
@@ -302,25 +455,26 @@ def download(src, url, data_root: Path | None = None):
                 pass
 
     rel_path = str(target.relative_to(target_root))
-    record = {'source_id': src['id'], 'source_page': src.get('source_page', ''),
-              'download_url': final_url, 'license_url': src.get('license_url', ''),
-              'license_note': src.get('license_note', ''), 'phase': 0,
-              'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
-              'relative_path': rel_path,
-              'bytes': size, 'sha256': digest.hexdigest(), 'format': src['expected_format'],
-              'status': 'downloaded'}
+    record = {
+        'source_id': src['id'],
+        'relative_path': rel_path,
+        'source_url': final_url,
+        'source_page': src.get('source_page', ''),
+        'acquired_at': datetime.now(timezone.utc).isoformat(),
+        'size_bytes': size,
+        'sha256': digest.hexdigest(),
+        'license': src.get('license_note', ''),
+        'data_type': src['expected_format'],
+        'coverage': src.get('coverage', ''),
+        'temporal_coverage': src.get('temporal_coverage', ''),
+        'bytes': size,
+        'download_url': final_url,
+        'downloaded_at_utc': datetime.now(timezone.utc).isoformat(),
+        'format': src['expected_format'],
+        'status': 'downloaded'
+    }
 
-    # Record provenance to Google Drive storage root if not already present
-    prov_gdrive = target_root / 'provenance.jsonl'
-    with prov_gdrive.open('a', encoding='utf-8') as f:
-        f.write(json.dumps(record, ensure_ascii=False) + '\n')
-
-    # Also record to local project (gitignored) for convenient local inspection
-    prov_local = ROOT / 'data/provenance.jsonl'
-    prov_local.parent.mkdir(parents=True, exist_ok=True)
-    with prov_local.open('a', encoding='utf-8') as f:
-        f.write(json.dumps(record, ensure_ascii=False) + '\n')
-
+    append_provenance_record(target_root, record)
     return record
 
 

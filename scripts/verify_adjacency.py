@@ -20,11 +20,17 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from storage_utils import get_verified_data_root  # noqa: E402
 from fetch_sources import safe_extract_zip  # noqa: E402
 
-# Ensure PROJ paths are configured cleanly
-proj_dir = '/home/blabo/miniconda3/envs/kanagawa-ruins/share/proj'
-if os.path.isdir(proj_dir):
-    os.environ['PROJ_DATA'] = proj_dir
-    os.environ['PROJ_LIB'] = proj_dir
+# Configure PROJ paths dynamically without hardcoded machine paths
+try:
+    import pyproj
+    from osgeo import osr
+    proj_dir = pyproj.datadir.get_data_dir()
+    if proj_dir and Path(proj_dir).is_dir():
+        osr.SetPROJSearchPaths([proj_dir])
+        os.environ['PROJ_DATA'] = proj_dir
+        os.environ['PROJ_LIB'] = proj_dir
+except Exception:
+    pass
 
 TARGET_18 = [
     {"pref": "東京都", "name": "八王子市"},
