@@ -73,7 +73,14 @@ def git_state(repo):
     def run(*args):
         return subprocess.run(["git", *args], cwd=repo, capture_output=True, text=True, timeout=30).stdout.strip()
 
-    return dict(commit=run("rev-parse", "HEAD"), branch=run("rev-parse", "--abbrev-ref", "HEAD"), dirty=bool(run("status", "--porcelain")))
+    tracked = [l for l in run("status", "--porcelain", "--untracked-files=no").splitlines() if l.strip()]
+    return dict(
+        commit=run("rev-parse", "HEAD"),
+        branch=run("rev-parse", "--abbrev-ref", "HEAD"),
+        dirty=bool(tracked),
+        modified_tracked_paths=tracked,
+        analysis_code_clean=not any("landuse_change" in l or "phase1c2" in l for l in tracked),
+    )
 
 
 def versions():
