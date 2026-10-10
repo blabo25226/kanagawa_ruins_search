@@ -1,0 +1,1143 @@
+{
+  "status": "PARTIAL_REAL_DATA_PILOT_DRIVE_BLOCKED",
+  "run_id": "pilot_r3_20261011",
+  "meshes": [
+    "523867",
+    "533935"
+  ],
+  "results": [
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 1,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 321,
+        "missing_in_newer_dataset": 59,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 8,
+        "possible_split": 2,
+        "ambiguous_many_to_many": 2
+      },
+      "new_status": {
+        "matched": 321,
+        "only_in_newer_dataset": 31,
+        "large_shape_or_position_change": 9,
+        "possible_split": 4,
+        "possible_merge": 3,
+        "ambiguous_many_to_many": 3,
+        "indeterminate_partition_boundary": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 5,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 308,
+        "missing_in_newer_dataset": 57,
+        "ambiguous_many_to_many": 17,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 8,
+        "possible_split": 1,
+        "indeterminate_partition_boundary": 1
+      },
+      "new_status": {
+        "matched": 308,
+        "only_in_newer_dataset": 30,
+        "ambiguous_many_to_many": 19,
+        "large_shape_or_position_change": 9,
+        "possible_merge": 3,
+        "indeterminate_partition_boundary": 2,
+        "possible_split": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 10,
+      "old_records": 401,
+      "new_records": 373,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 293,
+        "missing_in_newer_dataset": 55,
+        "ambiguous_many_to_many": 30,
+        "possible_merge": 12,
+        "large_shape_or_position_change": 8,
+        "possible_split": 2,
+        "indeterminate_partition_boundary": 1
+      },
+      "new_status": {
+        "matched": 293,
+        "ambiguous_many_to_many": 32,
+        "only_in_newer_dataset": 29,
+        "large_shape_or_position_change": 8,
+        "possible_merge": 5,
+        "possible_split": 4,
+        "indeterminate_partition_boundary": 2
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 416,
+        "edge_geometry_disagreement": 202,
+        "indeterminate_partition_boundary": 76
+      },
+      "new_status": {
+        "spatially_agreeing": 678,
+        "edge_geometry_disagreement": 224,
+        "indeterminate_partition_boundary": 81
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 505,
+        "edge_geometry_disagreement": 108,
+        "indeterminate_partition_boundary": 81
+      },
+      "new_status": {
+        "spatially_agreeing": 819,
+        "indeterminate_partition_boundary": 90,
+        "edge_geometry_disagreement": 74
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "old_records": 694,
+      "new_records": 983,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 538,
+        "indeterminate_partition_boundary": 87,
+        "edge_geometry_disagreement": 69
+      },
+      "new_status": {
+        "spatially_agreeing": 843,
+        "indeterminate_partition_boundary": 98,
+        "edge_geometry_disagreement": 42
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "building",
+      "tolerance_m": 1,
+      "old_records": 13435,
+      "new_records": 14690,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 11280,
+        "indeterminate_geometry_quality": 1014,
+        "possible_merge": 414,
+        "large_shape_or_position_change": 356,
+        "possible_split": 296,
+        "ambiguous_many_to_many": 60,
+        "indeterminate_partition_boundary": 14,
+        "ambiguous_survey_scale": 1
+      },
+      "new_status": {
+        "matched": 11280,
+        "indeterminate_geometry_quality": 2091,
+        "possible_split": 707,
+        "large_shape_or_position_change": 356,
+        "possible_merge": 173,
+        "ambiguous_many_to_many": 49,
+        "indeterminate_partition_boundary": 33,
+        "ambiguous_survey_scale": 1
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "building",
+      "tolerance_m": 5,
+      "old_records": 13435,
+      "new_records": 14690,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 10880,
+        "indeterminate_geometry_quality": 967,
+        "ambiguous_many_to_many": 463,
+        "possible_merge": 446,
+        "large_shape_or_position_change": 342,
+        "possible_split": 319,
+        "indeterminate_partition_boundary": 17,
+        "ambiguous_survey_scale": 1
+      },
+      "new_status": {
+        "matched": 10880,
+        "indeterminate_geometry_quality": 2029,
+        "possible_split": 746,
+        "ambiguous_many_to_many": 460,
+        "large_shape_or_position_change": 342,
+        "possible_merge": 189,
+        "indeterminate_partition_boundary": 43,
+        "ambiguous_survey_scale": 1
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "building",
+      "tolerance_m": 10,
+      "old_records": 13435,
+      "new_records": 14690,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "ambiguous_many_to_many": 6157,
+        "matched": 5615,
+        "indeterminate_geometry_quality": 780,
+        "possible_merge": 399,
+        "possible_split": 249,
+        "large_shape_or_position_change": 223,
+        "indeterminate_partition_boundary": 11,
+        "ambiguous_survey_scale": 1
+      },
+      "new_status": {
+        "ambiguous_many_to_many": 6378,
+        "matched": 5615,
+        "indeterminate_geometry_quality": 1687,
+        "possible_split": 565,
+        "large_shape_or_position_change": 223,
+        "possible_merge": 173,
+        "indeterminate_partition_boundary": 48,
+        "ambiguous_survey_scale": 1
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "old_records": 4510,
+      "new_records": 2631,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 3619,
+        "indeterminate_partition_boundary": 458,
+        "edge_geometry_disagreement": 433
+      },
+      "new_status": {
+        "spatially_agreeing": 1349,
+        "edge_geometry_disagreement": 1093,
+        "indeterminate_partition_boundary": 189
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "old_records": 4510,
+      "new_records": 2631,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 3852,
+        "indeterminate_partition_boundary": 483,
+        "edge_geometry_disagreement": 175
+      },
+      "new_status": {
+        "spatially_agreeing": 1623,
+        "edge_geometry_disagreement": 808,
+        "indeterminate_partition_boundary": 200
+      }
+    },
+    {
+      "code": "533935",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "old_records": 4510,
+      "new_records": 2631,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 3897,
+        "indeterminate_partition_boundary": 503,
+        "edge_geometry_disagreement": 110
+      },
+      "new_status": {
+        "spatially_agreeing": 1767,
+        "edge_geometry_disagreement": 656,
+        "indeterminate_partition_boundary": 208
+      }
+    }
+  ],
+  "errors": [],
+  "artifacts": [
+    {
+      "kind": "matching_validation",
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/matching_validation.png",
+      "sha256": "db3477e7297b90710e2eef463b35236ee18cc9d75c4b3c1f16d5eb856fba66db",
+      "bytes": 37747
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "grid_support.parquet"
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/grid_statistics.csv",
+      "sha256": "a43372cdfbed40bee6b6b8bea2ad55ebb4ff12ff171d143234f6f3a2df0d613f",
+      "bytes": 122258
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/municipality_statistics.csv",
+      "sha256": "a0701413f76c71edac50baaa6f41a9c2a89646f10575d0ce7f3086592b79ca35",
+      "bytes": 17024
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/building_regional_map.png",
+      "sha256": "f7d097fa16f57f4f65b21300e12af31f2199465b0f93ca1a9cedbc5a37f5dcb7",
+      "bytes": 86862
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/road_edge_regional_map.png",
+      "sha256": "a36e41c9c01a00143d687a8aee15c4fbef3d4ad533016fd1db850c75c4a764f6",
+      "bytes": 85200
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/change_distribution.png",
+      "sha256": "c9a5054815b0d51c84f6ca4861ca3340cb2208bdcf047b2665d4c3f4786f1286",
+      "bytes": 20740
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "review_samples.parquet"
+    }
+  ],
+  "implementation_sha256": "57abf99fba2732c1b93015599179c14e4f29cf2cb77cb4df9a53b33eaddb7ee9",
+  "coverage_claim": "selected archives with observed features; feature completeness not established",
+  "spatial_allocation": "EPSG:6677 centroid allocation, whole area/length per record; boundary totals are not clipped area/length",
+  "comparison": "2014_2025",
+  "tolerances_m": [
+    1,
+    5,
+    10
+  ],
+  "input_report_sha256": "b91d5af792a9193471a2e09b3211621a9a4e1c1e43a861080346497e33d62e9d",
+  "admin_layer": "admin__n03__2026_kanagawa",
+  "landuse_proxy_status": "not_run_drive_quota_block",
+  "landuse_proxy_summary": [
+    {
+      "stratum": "unavailable_landuse_support",
+      "cells": 22,
+      "old_polygon_records": 5706,
+      "new_polygon_records": 6242,
+      "change_rate": 0.09393620750087626
+    }
+  ],
+  "landuse_proxy_inputs": [],
+  "grid_distribution": {
+    "occupied_grid_cells": 22,
+    "change_quantiles": {
+      "0.0": -31.0,
+      "0.1": -1.0,
+      "0.25": 0.0,
+      "0.5": 14.5,
+      "0.75": 60.0,
+      "0.9": 177.8,
+      "1.0": 284.0
+    }
+  },
+  "summary": [
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "ambiguous_many_to_many",
+      "record_count": 62,
+      "area_m2": 29924.057302077792,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 643.3205756779341,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 1014,
+      "area_m2": 72044.51601304588,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 14,
+      "area_m2": 740.2372022140933,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "large_shape_or_position_change",
+      "record_count": 365,
+      "area_m2": 50853.892186297504,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "matched",
+      "record_count": 11601,
+      "area_m2": 1303357.813900292,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "missing_in_newer_dataset",
+      "record_count": 59,
+      "area_m2": 8210.169454617526,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "possible_merge",
+      "record_count": 420,
+      "area_m2": 58799.95560676203,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "possible_split",
+      "record_count": 298,
+      "area_m2": 44534.5952696414,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "ambiguous_many_to_many",
+      "record_count": 480,
+      "area_m2": 42349.59356496822,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 643.3205756779341,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 967,
+      "area_m2": 70848.69363795387,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 18,
+      "area_m2": 929.7663508881211,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "large_shape_or_position_change",
+      "record_count": 351,
+      "area_m2": 50073.17253528859,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "matched",
+      "record_count": 11188,
+      "area_m2": 1292271.7024542126,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "missing_in_newer_dataset",
+      "record_count": 57,
+      "area_m2": 8191.335429502778,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "possible_merge",
+      "record_count": 452,
+      "area_m2": 59309.52096959388,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "possible_split",
+      "record_count": 320,
+      "area_m2": 44491.45199254006,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "ambiguous_many_to_many",
+      "record_count": 6187,
+      "area_m2": 372326.02961807244,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 643.3205756779341,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 780,
+      "area_m2": 62306.82828348746,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 12,
+      "area_m2": 749.7920244947226,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "large_shape_or_position_change",
+      "record_count": 231,
+      "area_m2": 42861.32403912555,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "matched",
+      "record_count": 5908,
+      "area_m2": 995863.131119979,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "missing_in_newer_dataset",
+      "record_count": 55,
+      "area_m2": 8081.410763316199,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "possible_merge",
+      "record_count": 409,
+      "area_m2": 53625.75492887398,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "possible_split",
+      "record_count": 251,
+      "area_m2": 32650.966157598956,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "edge_geometry_disagreement",
+      "record_count": 587,
+      "area_m2": 0.0,
+      "edge_length_m": 56654.88341528817,
+      "unmatched_length_m": 26039.592537875204
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 534,
+      "area_m2": 0.0,
+      "edge_length_m": 35170.70628806167,
+      "unmatched_length_m": 2454.6954671177136
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "spatially_agreeing",
+      "record_count": 4012,
+      "area_m2": 0.0,
+      "edge_length_m": 273204.02508536464,
+      "unmatched_length_m": 2155.145791575021
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "edge_geometry_disagreement",
+      "record_count": 250,
+      "area_m2": 0.0,
+      "edge_length_m": 26796.07644993123,
+      "unmatched_length_m": 9493.126640534512
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 564,
+      "area_m2": 0.0,
+      "edge_length_m": 38251.74576324464,
+      "unmatched_length_m": 1075.3469384548011
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "spatially_agreeing",
+      "record_count": 4319,
+      "area_m2": 0.0,
+      "edge_length_m": 299981.79257553857,
+      "unmatched_length_m": 708.1040873949797
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "edge_geometry_disagreement",
+      "record_count": 150,
+      "area_m2": 0.0,
+      "edge_length_m": 12084.411963836968,
+      "unmatched_length_m": 3562.6293622438825
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 590,
+      "area_m2": 0.0,
+      "edge_length_m": 40439.0847188928,
+      "unmatched_length_m": 1152.087518205854
+    },
+    {
+      "era": "2014",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "spatially_agreeing",
+      "record_count": 4393,
+      "area_m2": 0.0,
+      "edge_length_m": 312506.1181059847,
+      "unmatched_length_m": 763.284104574244
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "ambiguous_many_to_many",
+      "record_count": 52,
+      "area_m2": 38304.59613577032,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 3664.302609013261,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 2091,
+      "area_m2": 119450.03802205445,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 35,
+      "area_m2": 1368.7841626935244,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "large_shape_or_position_change",
+      "record_count": 365,
+      "area_m2": 41385.5987043877,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "matched",
+      "record_count": 11601,
+      "area_m2": 1303734.9825590255,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "only_in_newer_dataset",
+      "record_count": 31,
+      "area_m2": 4222.258159956835,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "possible_merge",
+      "record_count": 175,
+      "area_m2": 95636.45459230815,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 1,
+      "status": "possible_split",
+      "record_count": 711,
+      "area_m2": 34835.984546698965,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "ambiguous_many_to_many",
+      "record_count": 479,
+      "area_m2": 50113.16848753689,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 3664.302609013261,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 2029,
+      "area_m2": 117782.8271711566,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 45,
+      "area_m2": 1634.5622528214137,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "large_shape_or_position_change",
+      "record_count": 351,
+      "area_m2": 40885.85166593089,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "matched",
+      "record_count": 11188,
+      "area_m2": 1292803.2126691279,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "only_in_newer_dataset",
+      "record_count": 30,
+      "area_m2": 4214.942550995789,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "possible_merge",
+      "record_count": 191,
+      "area_m2": 95920.86085894975,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 5,
+      "status": "possible_split",
+      "record_count": 748,
+      "area_m2": 35583.271226376404,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "ambiguous_many_to_many",
+      "record_count": 6410,
+      "area_m2": 383455.14513155667,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "ambiguous_survey_scale",
+      "record_count": 1,
+      "area_m2": 3664.302609013261,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "indeterminate_geometry_quality",
+      "record_count": 1687,
+      "area_m2": 102509.89038591593,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 50,
+      "area_m2": 1828.1070019658387,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "large_shape_or_position_change",
+      "record_count": 231,
+      "area_m2": 34072.64357324851,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "matched",
+      "record_count": 5908,
+      "area_m2": 997002.532180943,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "only_in_newer_dataset",
+      "record_count": 29,
+      "area_m2": 3925.820445062677,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "possible_merge",
+      "record_count": 177,
+      "area_m2": 85444.18212162096,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "building",
+      "tolerance_m": 10,
+      "status": "possible_split",
+      "record_count": 569,
+      "area_m2": 30700.376042582026,
+      "edge_length_m": 0.0,
+      "unmatched_length_m": 0.0
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "edge_geometry_disagreement",
+      "record_count": 1292,
+      "area_m2": 0.0,
+      "edge_length_m": 87502.72854970174,
+      "unmatched_length_m": 74811.08229797841
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 270,
+      "area_m2": 0.0,
+      "edge_length_m": 37539.06895305663,
+      "unmatched_length_m": 5313.63747995855
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "status": "spatially_agreeing",
+      "record_count": 1989,
+      "area_m2": 0.0,
+      "edge_length_m": 287769.13535016857,
+      "unmatched_length_m": 161.71183568448535
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "edge_geometry_disagreement",
+      "record_count": 868,
+      "area_m2": 0.0,
+      "edge_length_m": 67304.3313016145,
+      "unmatched_length_m": 56137.84804181981
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 290,
+      "area_m2": 0.0,
+      "edge_length_m": 40547.696474626755,
+      "unmatched_length_m": 4185.72795963559
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "status": "spatially_agreeing",
+      "record_count": 2393,
+      "area_m2": 0.0,
+      "edge_length_m": 304958.90507668565,
+      "unmatched_length_m": 264.9986947769942
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "edge_geometry_disagreement",
+      "record_count": 687,
+      "area_m2": 0.0,
+      "edge_length_m": 57175.834046269294,
+      "unmatched_length_m": 44960.31165632154
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "indeterminate_partition_boundary",
+      "record_count": 306,
+      "area_m2": 0.0,
+      "edge_length_m": 43500.51946470945,
+      "unmatched_length_m": 4045.3574870029975
+    },
+    {
+      "era": "2025",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "status": "spatially_agreeing",
+      "record_count": 2558,
+      "area_m2": 0.0,
+      "edge_length_m": 312134.5793419482,
+      "unmatched_length_m": 151.34677117201431
+    }
+  ],
+  "scratch_peak_bytes": 113509391,
+  "not_implemented": [
+    "2008 common coverage mask and comparisons",
+    "DEM-defined urban versus mountain strata",
+    "spatial autocorrelation",
+    "labelled detection accuracy",
+    "road centreline connectivity"
+  ]
+}

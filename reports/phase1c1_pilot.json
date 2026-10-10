@@ -1,0 +1,2546 @@
+{
+  "stage": "pilot",
+  "status": "INTERRUPTED_FOR_CORRECTION",
+  "selected": [
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14101-ALL-20080331-Z101.zip",
+      "code": "14101",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10553347,
+      "crc": 4039418592,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523867-ALL-20141001.zip",
+      "code": "523867",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 13877123,
+      "crc": 658067039,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005917320_002",
+      "member": "FG-GML-533935-ALL-20141001.zip",
+      "code": "533935",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 72999208,
+      "crc": 2326604852,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533935-ALL-20250701.zip",
+      "code": "533935",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 71143676,
+      "crc": 130264941,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523867-ALL-20250701.zip",
+      "code": "523867",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 12785112,
+      "crc": 3301462436,
+      "acquisition_registered": false
+    }
+  ],
+  "inventory": [
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14101-ALL-20080331-Z101.zip",
+      "code": "14101",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10553347,
+      "crc": 4039418592,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14102-ALL-20080331-Z101.zip",
+      "code": "14102",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 11152341,
+      "crc": 2237749628,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14103-ALL-20080331-Z101.zip",
+      "code": "14103",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 4522704,
+      "crc": 3151287311,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14104-ALL-20080331-Z101.zip",
+      "code": "14104",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 7090792,
+      "crc": 3691300567,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14105-ALL-20080331-Z101.zip",
+      "code": "14105",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10334590,
+      "crc": 3833304014,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14106-ALL-20080331-Z101.zip",
+      "code": "14106",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 11400424,
+      "crc": 2353552004,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14107-ALL-20080331-Z101.zip",
+      "code": "14107",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 8532891,
+      "crc": 3342815647,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14108-ALL-20080331-Z101.zip",
+      "code": "14108",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 11350884,
+      "crc": 1784586832,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14109-ALL-20080331-Z101.zip",
+      "code": "14109",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10400067,
+      "crc": 2481784024,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14110-ALL-20080331-Z101.zip",
+      "code": "14110",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10543941,
+      "crc": 3795491030,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14111-ALL-20080331-Z101.zip",
+      "code": "14111",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10869734,
+      "crc": 2754644610,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14112-ALL-20080331-Z101.zip",
+      "code": "14112",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10786497,
+      "crc": 1157657029,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14113-ALL-20080331-Z101.zip",
+      "code": "14113",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 8597294,
+      "crc": 1892115548,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14114-ALL-20080331-Z101.zip",
+      "code": "14114",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 7574394,
+      "crc": 401909225,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14115-ALL-20080331-Z101.zip",
+      "code": "14115",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 7633214,
+      "crc": 958677129,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14116-ALL-20080331-Z101.zip",
+      "code": "14116",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 9686450,
+      "crc": 3984862506,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14117-ALL-20080331-Z101.zip",
+      "code": "14117",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 11611303,
+      "crc": 2845761169,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14118-ALL-20080331-Z101.zip",
+      "code": "14118",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 8368382,
+      "crc": 2734953155,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14131-ALL-20080331-Z101.zip",
+      "code": "14131",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 9431946,
+      "crc": 3884896605,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14132-ALL-20080331-Z101.zip",
+      "code": "14132",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 5434417,
+      "crc": 318881722,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14133-ALL-20080331-Z101.zip",
+      "code": "14133",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 7877147,
+      "crc": 2561308595,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14134-ALL-20080331-Z101.zip",
+      "code": "14134",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 7993674,
+      "crc": 2859043170,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14135-ALL-20080331-Z101.zip",
+      "code": "14135",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 9100380,
+      "crc": 4165551982,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14136-ALL-20080331-Z101.zip",
+      "code": "14136",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 8795490,
+      "crc": 2589605095,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14137-ALL-20080331-Z101.zip",
+      "code": "14137",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 9060197,
+      "crc": 3907040675,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14201-ALL-20080331-Z101.zip",
+      "code": "14201",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10651371,
+      "crc": 3860291975,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14204-ALL-20080331-Z101.zip",
+      "code": "14204",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10680916,
+      "crc": 72268104,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14205-ALL-20080331-Z101.zip",
+      "code": "14205",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 11496652,
+      "crc": 1361710673,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14207-ALL-20080331-Z101.zip",
+      "code": "14207",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10707372,
+      "crc": 2795410268,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14214-ALL-20080331-Z101.zip",
+      "code": "14214",
+      "file_date": "20080331",
+      "era": "2008",
+      "inner_bytes": 10243215,
+      "crc": 1588414603,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14206-ALL-20081127-Z101.zip",
+      "code": "14206",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 10542134,
+      "crc": 160470870,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14208-ALL-20081127-Z101.zip",
+      "code": "14208",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 6791210,
+      "crc": 4270772602,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14211-ALL-20081127-Z101.zip",
+      "code": "14211",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 11665532,
+      "crc": 1222894081,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14213-ALL-20081127-Z101.zip",
+      "code": "14213",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 10504059,
+      "crc": 610025215,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14215-ALL-20081127-Z101.zip",
+      "code": "14215",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 9993373,
+      "crc": 1380927849,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14217-ALL-20081127-Z101.zip",
+      "code": "14217",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 7463220,
+      "crc": 1515323285,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14218-ALL-20081127-Z101.zip",
+      "code": "14218",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 7579307,
+      "crc": 657599468,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14321-ALL-20081127-Z101.zip",
+      "code": "14321",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 4499525,
+      "crc": 895721558,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14341-ALL-20081127-Z101.zip",
+      "code": "14341",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 5228492,
+      "crc": 4291665482,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14342-ALL-20081127-Z101.zip",
+      "code": "14342",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 4247039,
+      "crc": 4131802578,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005322943_001",
+      "member": "FG-GML-14362-ALL-20081127-Z101.zip",
+      "code": "14362",
+      "file_date": "20081127",
+      "era": "2008",
+      "inner_bytes": 3207657,
+      "crc": 3516919223,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523867-ALL-20141001.zip",
+      "code": "523867",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 13877123,
+      "crc": 658067039,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523877-ALL-20141001.zip",
+      "code": "523877",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 18244901,
+      "crc": 1418247532,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523950-ALL-20141001.zip",
+      "code": "523950",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 12454998,
+      "crc": 1567317246,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523951-ALL-20141001.zip",
+      "code": "523951",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 2054479,
+      "crc": 4143523277,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523960-ALL-20141001.zip",
+      "code": "523960",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 7624729,
+      "crc": 4010422339,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523961-ALL-20141001.zip",
+      "code": "523961",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 4296443,
+      "crc": 2837359966,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523970-ALL-20141001.zip",
+      "code": "523970",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 11373001,
+      "crc": 47580283,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523971-ALL-20141001.zip",
+      "code": "523971",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 32937119,
+      "crc": 1046989505,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523972-ALL-20141001.zip",
+      "code": "523972",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 13133881,
+      "crc": 963208328,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533807-ALL-20141001.zip",
+      "code": "533807",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 9585106,
+      "crc": 1211675299,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533817-ALL-20140701.zip",
+      "code": "533817",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 5738972,
+      "crc": 2065993936,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533900-ALL-20141001.zip",
+      "code": "533900",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 8664851,
+      "crc": 1792995945,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533901-ALL-20141001.zip",
+      "code": "533901",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 24358976,
+      "crc": 4020225339,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533902-ALL-20141001.zip",
+      "code": "533902",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 31142977,
+      "crc": 2247810006,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533910-ALL-20140701.zip",
+      "code": "533910",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 6424938,
+      "crc": 3375126159,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533911-ALL-20141001.zip",
+      "code": "533911",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 7319033,
+      "crc": 2427904792,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533912-ALL-20141001.zip",
+      "code": "533912",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 33160719,
+      "crc": 260123516,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533920-ALL-20140701.zip",
+      "code": "533920",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 6416094,
+      "crc": 1399736260,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533921-ALL-20141001.zip",
+      "code": "533921",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 9197190,
+      "crc": 3166072619,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533922-ALL-20141001.zip",
+      "code": "533922",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 29681164,
+      "crc": 1635577071,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533930-ALL-20141001.zip",
+      "code": "533930",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 9908238,
+      "crc": 2666028729,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533931-ALL-20141001.zip",
+      "code": "533931",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 12677569,
+      "crc": 2935951969,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533932-ALL-20141001.zip",
+      "code": "533932",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 38805814,
+      "crc": 3037965458,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533941-ALL-20141001.zip",
+      "code": "533941",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 10913512,
+      "crc": 933282577,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523954-ALL-20140701.zip",
+      "code": "523954",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 1894659,
+      "crc": 521928665,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523955-ALL-20140701.zip",
+      "code": "523955",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 3517517,
+      "crc": 1837795107,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523964-ALL-20140701.zip",
+      "code": "523964",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 4894120,
+      "crc": 593828498,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523965-ALL-20140701.zip",
+      "code": "523965",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 21799836,
+      "crc": 4255705730,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523973-ALL-20141001.zip",
+      "code": "523973",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 17483790,
+      "crc": 4052872141,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523974-ALL-20141001.zip",
+      "code": "523974",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 28176233,
+      "crc": 2597076416,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523975-ALL-20141001.zip",
+      "code": "523975",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 21203551,
+      "crc": 1501589679,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533903-ALL-20141001.zip",
+      "code": "533903",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 45681140,
+      "crc": 1095519782,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533904-ALL-20140701.zip",
+      "code": "533904",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 48111810,
+      "crc": 556675453,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533905-ALL-20141001.zip",
+      "code": "533905",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 4300650,
+      "crc": 2711721275,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533913-ALL-20141001.zip",
+      "code": "533913",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 39913545,
+      "crc": 3350303644,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533914-ALL-20141001.zip",
+      "code": "533914",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 49802765,
+      "crc": 2036475268,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533915-ALL-20141001.zip",
+      "code": "533915",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 15944509,
+      "crc": 2954079891,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533916-ALL-20141001.zip",
+      "code": "533916",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 90423,
+      "crc": 3777711567,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533923-ALL-20141001.zip",
+      "code": "533923",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 49943988,
+      "crc": 4123310343,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533924-ALL-20141001.zip",
+      "code": "533924",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 39416476,
+      "crc": 1157786100,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533925-ALL-20141001.zip",
+      "code": "533925",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 56782453,
+      "crc": 1887698798,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533926-ALL-20140701.zip",
+      "code": "533926",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 2132740,
+      "crc": 4006152200,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533933-ALL-20141001.zip",
+      "code": "533933",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 41321335,
+      "crc": 419500568,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533934-ALL-20141001.zip",
+      "code": "533934",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 58121099,
+      "crc": 2799083888,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005917320_002",
+      "member": "FG-GML-533935-ALL-20141001.zip",
+      "code": "533935",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 72999208,
+      "crc": 2326604852,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523971-ALL-20250701.zip",
+      "code": "523971",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 33518324,
+      "crc": 3745596623,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523972-ALL-20250701.zip",
+      "code": "523972",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 13926765,
+      "crc": 683118112,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533901-ALL-20250701.zip",
+      "code": "533901",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 26806571,
+      "crc": 1508924561,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533902-ALL-20250701.zip",
+      "code": "533902",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 33570011,
+      "crc": 2397742111,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533911-ALL-20250701.zip",
+      "code": "533911",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 6284289,
+      "crc": 2313403726,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533912-ALL-20250701.zip",
+      "code": "533912",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 33690673,
+      "crc": 4139169888,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533922-ALL-20250701.zip",
+      "code": "533922",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 29597102,
+      "crc": 1140571444,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533930-ALL-20250701.zip",
+      "code": "533930",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 9543371,
+      "crc": 1254752641,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533931-ALL-20250701.zip",
+      "code": "533931",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 11594934,
+      "crc": 754398001,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533932-ALL-20251001.zip",
+      "code": "533932",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 38016297,
+      "crc": 3960282991,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533941-ALL-20250701.zip",
+      "code": "533941",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 10698672,
+      "crc": 1748390540,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523954-ALL-20250701.zip",
+      "code": "523954",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 1805509,
+      "crc": 1911838200,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523955-ALL-20250701.zip",
+      "code": "523955",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 3176129,
+      "crc": 4233902918,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523964-ALL-20250701.zip",
+      "code": "523964",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 4760162,
+      "crc": 3396567989,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523965-ALL-20250701.zip",
+      "code": "523965",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 21047583,
+      "crc": 2398941950,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523973-ALL-20250701.zip",
+      "code": "523973",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 17806196,
+      "crc": 1302368827,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523974-ALL-20251001.zip",
+      "code": "523974",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 28448141,
+      "crc": 2600592918,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523975-ALL-20250701.zip",
+      "code": "523975",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 20823438,
+      "crc": 777121485,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533904-ALL-20250701.zip",
+      "code": "533904",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 53051029,
+      "crc": 1412155743,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533913-ALL-20250701.zip",
+      "code": "533913",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 46169214,
+      "crc": 367223926,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533914-ALL-20250701.zip",
+      "code": "533914",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 55102347,
+      "crc": 2696841849,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533915-ALL-20250701.zip",
+      "code": "533915",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 17573904,
+      "crc": 2054650232,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533924-ALL-20251001.zip",
+      "code": "533924",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 43167240,
+      "crc": 2022482356,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533925-ALL-20251001.zip",
+      "code": "533925",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 59837756,
+      "crc": 3183897562,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533926-ALL-20250701.zip",
+      "code": "533926",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 2746750,
+      "crc": 563437259,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533933-ALL-20251001.zip",
+      "code": "533933",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 39079645,
+      "crc": 3534862219,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533934-ALL-20251001.zip",
+      "code": "533934",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 59969434,
+      "crc": 1388288234,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533935-ALL-20250701.zip",
+      "code": "533935",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 71143676,
+      "crc": 130264941,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523950-ALL-20250701.zip",
+      "code": "523950",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 12705527,
+      "crc": 3354043351,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523960-ALL-20250701.zip",
+      "code": "523960",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 8177647,
+      "crc": 3873776054,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533807-ALL-20250701.zip",
+      "code": "533807",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 10294370,
+      "crc": 3388755025,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533903-ALL-20250701.zip",
+      "code": "533903",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 49793595,
+      "crc": 4232785769,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533923-ALL-20251001.zip",
+      "code": "533923",
+      "file_date": "20251001",
+      "era": "2025",
+      "inner_bytes": 51111272,
+      "crc": 403070022,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523867-ALL-20250701.zip",
+      "code": "523867",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 12785112,
+      "crc": 3301462436,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523877-ALL-20250701.zip",
+      "code": "523877",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 18327261,
+      "crc": 1090514539,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523951-ALL-20250701.zip",
+      "code": "523951",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 2038262,
+      "crc": 2192159346,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523961-ALL-20250701.zip",
+      "code": "523961",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 4586909,
+      "crc": 3613949927,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523970-ALL-20250701.zip",
+      "code": "523970",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 11792668,
+      "crc": 300412918,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533817-ALL-20250701.zip",
+      "code": "533817",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 5473014,
+      "crc": 3099518646,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533900-ALL-20250701.zip",
+      "code": "533900",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 8613251,
+      "crc": 3312809288,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533910-ALL-20250701.zip",
+      "code": "533910",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 5382121,
+      "crc": 2105241238,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533920-ALL-20250701.zip",
+      "code": "533920",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 5987930,
+      "crc": 3628432813,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533921-ALL-20250701.zip",
+      "code": "533921",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 8324972,
+      "crc": 4050898645,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533905-ALL-20250701.zip",
+      "code": "533905",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 5439568,
+      "crc": 2996152172,
+      "acquisition_registered": false
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533916-ALL-20250701.zip",
+      "code": "533916",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 161431,
+      "crc": 3643600842,
+      "acquisition_registered": false
+    }
+  ],
+  "duplicate_archives": [
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523867-ALL-20140701.zip",
+      "code": "523867",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 14040637,
+      "crc": 3562427640,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523877-ALL-20140701.zip",
+      "code": "523877",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 17763561,
+      "crc": 29032416,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523950-ALL-20140701.zip",
+      "code": "523950",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 7865731,
+      "crc": 2572660288,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523951-ALL-20140701.zip",
+      "code": "523951",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 1588516,
+      "crc": 1625334361,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523960-ALL-20140701.zip",
+      "code": "523960",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 6943003,
+      "crc": 2458996800,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523961-ALL-20140701.zip",
+      "code": "523961",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 1792256,
+      "crc": 868071190,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523970-ALL-20140701.zip",
+      "code": "523970",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 10792388,
+      "crc": 1062532739,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523971-ALL-20140701.zip",
+      "code": "523971",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 15564207,
+      "crc": 1473168589,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523972-ALL-20140701.zip",
+      "code": "523972",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 8692346,
+      "crc": 3562819468,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533807-ALL-20140701.zip",
+      "code": "533807",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 5722957,
+      "crc": 306205173,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533900-ALL-20140701.zip",
+      "code": "533900",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 8270619,
+      "crc": 3099883140,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533901-ALL-20140701.zip",
+      "code": "533901",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 24334051,
+      "crc": 3527086204,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533902-ALL-20140701.zip",
+      "code": "533902",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 17717699,
+      "crc": 2761646088,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533911-ALL-20140701.zip",
+      "code": "533911",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 7341048,
+      "crc": 3405134428,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533912-ALL-20140701.zip",
+      "code": "533912",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 25767836,
+      "crc": 3158230014,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533921-ALL-20140701.zip",
+      "code": "533921",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 9215072,
+      "crc": 4071602795,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533922-ALL-20140701.zip",
+      "code": "533922",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 29786079,
+      "crc": 3560734293,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533930-ALL-20140701.zip",
+      "code": "533930",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 9950093,
+      "crc": 4163871800,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533931-ALL-20140701.zip",
+      "code": "533931",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 12776613,
+      "crc": 173513265,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533932-ALL-20140701.zip",
+      "code": "533932",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 38955026,
+      "crc": 2343871945,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-533941-ALL-20140701.zip",
+      "code": "533941",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 10940056,
+      "crc": 1346762334,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523973-ALL-20140701.zip",
+      "code": "523973",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 17570782,
+      "crc": 2241203661,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523974-ALL-20140701.zip",
+      "code": "523974",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 28312630,
+      "crc": 47535649,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-523975-ALL-20140701.zip",
+      "code": "523975",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 21292341,
+      "crc": 1518338175,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533903-ALL-20140701.zip",
+      "code": "533903",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 42761808,
+      "crc": 1939217706,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533905-ALL-20140701.zip",
+      "code": "533905",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 4312158,
+      "crc": 931877656,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533913-ALL-20140701.zip",
+      "code": "533913",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 35617881,
+      "crc": 1275884867,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533914-ALL-20140701.zip",
+      "code": "533914",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 49959508,
+      "crc": 3763063403,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533915-ALL-20140701.zip",
+      "code": "533915",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 15995827,
+      "crc": 3439162954,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533916-ALL-20140701.zip",
+      "code": "533916",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 90551,
+      "crc": 3652964040,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533923-ALL-20140701.zip",
+      "code": "533923",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 44367249,
+      "crc": 3011133127,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533924-ALL-20140701.zip",
+      "code": "533924",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 39574785,
+      "crc": 2064826731,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533925-ALL-20140701.zip",
+      "code": "533925",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 56871550,
+      "crc": 3153182609,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533933-ALL-20140701.zip",
+      "code": "533933",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 41483490,
+      "crc": 1595829911,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533934-ALL-20140701.zip",
+      "code": "533934",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 58365320,
+      "crc": 1768579849,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005809187_001",
+      "member": "FG-GML-533935-ALL-20140701.zip",
+      "code": "533935",
+      "file_date": "20140701",
+      "era": "2014",
+      "inner_bytes": 73256476,
+      "crc": 4222019035,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523971-ALL-20250101.zip",
+      "code": "523971",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 33520056,
+      "crc": 3776553889,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523972-ALL-20250101.zip",
+      "code": "523972",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 13927599,
+      "crc": 2809407571,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533901-ALL-20250101.zip",
+      "code": "533901",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 26808915,
+      "crc": 3146203915,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533902-ALL-20250101.zip",
+      "code": "533902",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 33569432,
+      "crc": 3129194799,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533922-ALL-20250101.zip",
+      "code": "533922",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 29599078,
+      "crc": 2539977893,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533930-ALL-20250101.zip",
+      "code": "533930",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 9869416,
+      "crc": 2424438960,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533931-ALL-20250101.zip",
+      "code": "533931",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 11596677,
+      "crc": 3053665216,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533932-ALL-20250101.zip",
+      "code": "533932",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 38015489,
+      "crc": 2728887330,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523965-ALL-20250101.zip",
+      "code": "523965",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 21048628,
+      "crc": 3359999910,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523974-ALL-20250101.zip",
+      "code": "523974",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 28449233,
+      "crc": 270320109,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523975-ALL-20250101.zip",
+      "code": "523975",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 20827928,
+      "crc": 2404312783,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533904-ALL-20250101.zip",
+      "code": "533904",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 53053019,
+      "crc": 2481221024,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533913-ALL-20250101.zip",
+      "code": "533913",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 46172243,
+      "crc": 946047373,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533914-ALL-20250101.zip",
+      "code": "533914",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 55105345,
+      "crc": 1321560408,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533915-ALL-20250101.zip",
+      "code": "533915",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 17576093,
+      "crc": 3170920447,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533924-ALL-20250101.zip",
+      "code": "533924",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 43168923,
+      "crc": 4040102299,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533933-ALL-20250101.zip",
+      "code": "533933",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 39079662,
+      "crc": 619465256,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533934-ALL-20250101.zip",
+      "code": "533934",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 59898422,
+      "crc": 2022427077,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533935-ALL-20250101.zip",
+      "code": "533935",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 71149547,
+      "crc": 458474144,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523950-ALL-20250331.zip",
+      "code": "523950",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 12705612,
+      "crc": 2972023907,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523960-ALL-20250331.zip",
+      "code": "523960",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 8177741,
+      "crc": 1243536904,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523971-ALL-20250331.zip",
+      "code": "523971",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 33518841,
+      "crc": 811631396,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-523972-ALL-20250331.zip",
+      "code": "523972",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 13927188,
+      "crc": 2216028249,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533807-ALL-20250331.zip",
+      "code": "533807",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 10294385,
+      "crc": 1662060969,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533901-ALL-20250331.zip",
+      "code": "533901",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 26808689,
+      "crc": 3542847956,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533902-ALL-20250331.zip",
+      "code": "533902",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 33571295,
+      "crc": 2871373474,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533911-ALL-20250101.zip",
+      "code": "533911",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 6284125,
+      "crc": 2442117434,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533912-ALL-20250101.zip",
+      "code": "533912",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 33692306,
+      "crc": 2961704285,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533922-ALL-20250331.zip",
+      "code": "533922",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 29597846,
+      "crc": 3646778443,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533930-ALL-20250331.zip",
+      "code": "533930",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 9543409,
+      "crc": 1907429288,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533931-ALL-20250331.zip",
+      "code": "533931",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 11596189,
+      "crc": 1017067735,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533932-ALL-20250331.zip",
+      "code": "533932",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 38015439,
+      "crc": 1499109914,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533941-ALL-20250101.zip",
+      "code": "533941",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 10698771,
+      "crc": 39542176,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523954-ALL-20250101.zip",
+      "code": "523954",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 1805438,
+      "crc": 3444143435,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523955-ALL-20250101.zip",
+      "code": "523955",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 3176222,
+      "crc": 3919506764,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523964-ALL-20250101.zip",
+      "code": "523964",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 4760253,
+      "crc": 956977345,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523965-ALL-20250331.zip",
+      "code": "523965",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 21048969,
+      "crc": 1952751537,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523973-ALL-20250101.zip",
+      "code": "523973",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 17806814,
+      "crc": 1912234645,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523974-ALL-20250331.zip",
+      "code": "523974",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 28448940,
+      "crc": 884945593,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523975-ALL-20250331.zip",
+      "code": "523975",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 20824241,
+      "crc": 2992044739,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533903-ALL-20250331.zip",
+      "code": "533903",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 49793557,
+      "crc": 3511338493,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533904-ALL-20250331.zip",
+      "code": "533904",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 53048856,
+      "crc": 3406651338,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533913-ALL-20250331.zip",
+      "code": "533913",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 46169999,
+      "crc": 3584602742,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533914-ALL-20250331.zip",
+      "code": "533914",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 55100432,
+      "crc": 901771218,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533915-ALL-20250331.zip",
+      "code": "533915",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 17575044,
+      "crc": 1431751633,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533923-ALL-20250331.zip",
+      "code": "533923",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 51111713,
+      "crc": 1393132989,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533924-ALL-20250331.zip",
+      "code": "533924",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 43165326,
+      "crc": 2206161222,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533925-ALL-20250101.zip",
+      "code": "533925",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 59843128,
+      "crc": 3178762562,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533926-ALL-20250101.zip",
+      "code": "533926",
+      "file_date": "20250101",
+      "era": "2025",
+      "inner_bytes": 2747123,
+      "crc": 1147388867,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533933-ALL-20250331.zip",
+      "code": "533933",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 39080134,
+      "crc": 1133809268,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533934-ALL-20250331.zip",
+      "code": "533934",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 59895383,
+      "crc": 413135782,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533935-ALL-20250331.zip",
+      "code": "533935",
+      "file_date": "20250331",
+      "era": "2025",
+      "inner_bytes": 71145673,
+      "crc": 1102349398,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005145933_001",
+      "member": "FG-GML-533932-ALL-20250701.zip",
+      "code": "533932",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 38015494,
+      "crc": 2367335800,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-523974-ALL-20250701.zip",
+      "code": "523974",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 28448230,
+      "crc": 455408278,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005833192_001",
+      "member": "FG-GML-533923-ALL-20250701.zip",
+      "code": "533923",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 51110351,
+      "crc": 3127664882,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533924-ALL-20250701.zip",
+      "code": "533924",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 43166576,
+      "crc": 1885076616,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533925-ALL-20250701.zip",
+      "code": "533925",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 59836622,
+      "crc": 1606517414,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533933-ALL-20250701.zip",
+      "code": "533933",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 39078759,
+      "crc": 1358498144,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    },
+    {
+      "source_id": "gsi_fgd_20261011005942447_002",
+      "member": "FG-GML-533934-ALL-20250701.zip",
+      "code": "533934",
+      "file_date": "20250701",
+      "era": "2025",
+      "inner_bytes": 59895781,
+      "crc": 2562151340,
+      "acquisition_registered": false,
+      "disposition": "older_file_edition_not_selected"
+    }
+  ],
+  "results": [
+    {
+      "source_id": "gsi_fgd_20261011005041318_001",
+      "member": "FG-GML-523867-ALL-20141001.zip",
+      "code": "523867",
+      "file_date": "20141001",
+      "era": "2014",
+      "inner_bytes": 13877123,
+      "crc": 658067039,
+      "acquisition_registered": false,
+      "members": [
+        {
+          "name": "FG-GML-523867-BldA-20141001-0001.xml",
+          "bytes": 32996418,
+          "crs": {
+            "fguuid:jgd2011.bl": 32254
+          },
+          "orgGILvl": {
+            "2500": 32252,
+            "25000": 2
+          },
+          "devDate": {
+            "2014-10-16": 32254
+          },
+          "orgMDId_missing": 32254,
+          "orgMDId": {
+            "unknown": 32254
+          },
+          "xml_mesh": {
+            "unknown": 32254
+          },
+          "count": 32254,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-523867-BldL-20141001-0001.xml",
+          "bytes": 25948608,
+          "crs": {
+            "fguuid:jgd2011.bl": 33841
+          },
+          "orgGILvl": {
+            "2500": 33839,
+            "25000": 2
+          },
+          "devDate": {
+            "2014-10-16": 33841
+          },
+          "orgMDId_missing": 33841,
+          "orgMDId": {
+            "unknown": 33841
+          },
+          "xml_mesh": {
+            "unknown": 33841
+          },
+          "count": 33841,
+          "encoding": "utf-8"
+        },
+        {
+          "name": "FG-GML-523867-RdEdg-20141001-0001.xml",
+          "bytes": 33867055,
+          "crs": {
+            "fguuid:jgd2011.bl": 39310
+          },
+          "orgGILvl": {
+            "2500": 38911,
+            "0": 62,
+            "25000": 337
+          },
+          "devDate": {
+            "2014-10-16": 39310
+          },
+          "orgMDId_missing": 39310,
+          "orgMDId": {
+            "unknown": 39310
+          },
+          "xml_mesh": {
+            "unknown": 39310
+          },
+          "count": 39310,
+          "encoding": "utf-8"
+        }
+      ],
+      "counts": {
+        "BldA": 32254,
+        "BldL": 33841,
+        "RdEdg": 39310
+      },
+      "excluded_invalid": {},
+      "duplicates": {},
+      "layers": [],
+      "source_sha256": "243e99cd83f2f3d5853d99aff273068392eca8523e0c43db062ba16d946658d4",
+      "xml_names": [
+        "FG-GML-523867-AdmArea-20141001-0001.xml",
+        "FG-GML-523867-AdmBdry-20141001-0001.xml",
+        "FG-GML-523867-AdmPt-20141001-0001.xml",
+        "FG-GML-523867-BldA-20141001-0001.xml",
+        "FG-GML-523867-BldL-20141001-0001.xml",
+        "FG-GML-523867-Cntr-20141001-0001.xml",
+        "FG-GML-523867-CommBdry-20141001-0001.xml",
+        "FG-GML-523867-CommPt-20141001-0001.xml",
+        "FG-GML-523867-ElevPt-20141001-0001.xml",
+        "FG-GML-523867-GCP-20141001-0001.xml",
+        "FG-GML-523867-RailCL-20141001-0001.xml",
+        "FG-GML-523867-RdCompt-20141001-0001.xml",
+        "FG-GML-523867-RdEdg-20141001-0001.xml",
+        "FG-GML-523867-WA-20141001-0001.xml",
+        "FG-GML-523867-WL-20141001-0001.xml",
+        "FG-GML-523867-WStrA-20141001-0001.xml",
+        "FG-GML-523867-WStrL-20141001-0001.xml",
+        "fmdid14-1001.xml"
+      ],
+      "scratch_peak_bytes": 26400331,
+      "vfs_bytes": 7343157248
+    }
+  ],
+  "errors": [
+    {
+      "item": {
+        "source_id": "gsi_fgd_20261011005322943_001",
+        "member": "FG-GML-14101-ALL-20080331-Z101.zip",
+        "code": "14101",
+        "file_date": "20080331",
+        "era": "2008",
+        "inner_bytes": 10553347,
+        "crc": 4039418592,
+        "acquisition_registered": false
+      },
+      "error": "ValueError('Disconnected ring/curve segments')"
+    }
+  ],
+  "interruption_reason": "Pilot revealed disconnected curve segments; subsequent CRS audit also blocks JGD2000 projection in Kanagawa. Scratch cleaned; no completed published result from this invocation."
+}

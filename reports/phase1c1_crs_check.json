@@ -1,0 +1,29 @@
+{
+  "4612": {
+    "name": "JGD2000",
+    "best_available": true,
+    "accuracy_m": 1.0,
+    "description": "JGD2000 to JGD2024 (2) + Japan Plane Rectangular CS zone IX (with axis order normalized for visualization)",
+    "definition": "proj=pipeline step proj=unitconvert xy_in=deg xy_out=rad step proj=tmerc lat_0=36 lon_0=139.833333333333 k=0.9999 x_0=0 y_0=0 ellps=GRS80",
+    "max_roundtrip_degree_error": 7.105427357601002e-15,
+    "unavailable_operations": [
+      "JGD2000 to JGD2024 (1) + Japan Plane Rectangular CS zone IX"
+    ],
+    "analysis_authorized": false,
+    "reason": "Available operation explicitly excludes earthquake-affected northern prefectures including Kanagawa; required correction operation unavailable. best_available alone is insufficient.",
+    "max_roundtrip_longitude_degree_error": 0.0,
+    "max_roundtrip_latitude_degree_error": 7.105427357601002e-15
+  },
+  "6668": {
+    "name": "JGD2024",
+    "best_available": true,
+    "accuracy_m": -1.0,
+    "description": "Japan Plane Rectangular CS zone IX (with axis order normalized for visualization)",
+    "definition": "proj=pipeline step proj=unitconvert xy_in=deg xy_out=rad step proj=tmerc lat_0=36 lon_0=139.833333333333 k=0.9999 x_0=0 y_0=0 ellps=GRS80",
+    "max_roundtrip_degree_error": 7.105427357601002e-15,
+    "unavailable_operations": [],
+    "max_roundtrip_longitude_degree_error": 0.0,
+    "max_roundtrip_latitude_degree_error": 7.105427357601002e-15,
+    "analysis_authorized": true
+  }
+}

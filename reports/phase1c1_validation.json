@@ -1,0 +1,209 @@
+{
+  "status": "PARTIAL_REAL_DATA_VALIDATED_NOT_PREFECTURE_COMPLETE",
+  "complete": false,
+  "tested_real_meshes": [
+    "523867",
+    "533935"
+  ],
+  "target_prefecture_meshes": 45,
+  "analyzed_mesh_count": 2,
+  "analysis_errors": [],
+  "raw_basic_packages_sha256_verified": 8,
+  "raw_package_hash_mismatches": 0,
+  "acquisition_ledger_unchanged": true,
+  "acquisition_records_appended": 0,
+  "acquisition_registration_approval": "pending_no_append",
+  "published_ingest_partitions": 5,
+  "published_ingest_layers": 9,
+  "remote_upload_completion_confirmed": false,
+  "temporal_derivative_geoparquet_published": false,
+  "default_scratch_limit_bytes": 1000000000,
+  "temporary_ingest_peak_bytes": 180878033,
+  "analysis_scratch_peak_bytes": 113509391,
+  "tests": {
+    "passed": 116,
+    "skipped": 8,
+    "subtests_passed": 35,
+    "new_tests": 10,
+    "excluded": "tests/test_phase0_4_1.py actual-Drive historical full audit"
+  },
+  "figures": [
+    {
+      "kind": "matching_validation",
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/matching_validation.png",
+      "sha256": "db3477e7297b90710e2eef463b35236ee18cc9d75c4b3c1f16d5eb856fba66db",
+      "bytes": 37747
+    },
+    {
+      "status": "local_aggregate_or_figure",
+      "path": "reports/phase1c1_figures_r3/change_distribution.png",
+      "sha256": "c9a5054815b0d51c84f6ca4861ca3340cb2208bdcf047b2665d4c3f4786f1286",
+      "bytes": 20740
+    },
+    {
+      "path": "reports/phase1c1_figures_r3/building_regional_map_reviewed.png",
+      "sha256": "f3b08f23bc88af12025360e022b26f03d15614bdc8964d2b842a6c3b5109d231",
+      "bytes": 113598
+    },
+    {
+      "path": "reports/phase1c1_figures_r3/road_edge_regional_map_reviewed.png",
+      "sha256": "0644f489e6b7ef76516913823ba707cdb4a373a47a650bae1d97a63bd0aeb7b0",
+      "bytes": 112056
+    }
+  ],
+  "building_sensitivity_headers": [
+    "tolerance_m",
+    "era",
+    "records",
+    "matched",
+    "matched_percent",
+    "one_edition_only",
+    "ambiguous",
+    "indeterminate"
+  ],
+  "building_sensitivity": [
+    [
+      1,
+      "2014",
+      13834,
+      11601,
+      83.85860922365187,
+      59,
+      63,
+      1028
+    ],
+    [
+      1,
+      "2025",
+      15062,
+      11601,
+      77.02164387199575,
+      31,
+      53,
+      2126
+    ],
+    [
+      5,
+      "2014",
+      13834,
+      11188,
+      80.87321092959375,
+      57,
+      481,
+      985
+    ],
+    [
+      5,
+      "2025",
+      15062,
+      11188,
+      74.27964413756473,
+      30,
+      480,
+      2074
+    ],
+    [
+      10,
+      "2014",
+      13834,
+      5908,
+      42.7063755963568,
+      55,
+      6188,
+      792
+    ],
+    [
+      10,
+      "2025",
+      15062,
+      5908,
+      39.22453857389457,
+      29,
+      6411,
+      1737
+    ]
+  ],
+  "road_sensitivity_headers": [
+    "tolerance_m",
+    "era",
+    "records",
+    "length_m",
+    "unmatched_length_m",
+    "length_agreement_percent"
+  ],
+  "road_sensitivity": [
+    [
+      1,
+      "2014",
+      5133,
+      365029.61478871445,
+      30649.433796567937,
+      91.60357610592544
+    ],
+    [
+      1,
+      "2025",
+      3551,
+      412810.93285292696,
+      80286.43161362145,
+      80.5512826274334
+    ],
+    [
+      5,
+      "2014",
+      5133,
+      365029.61478871445,
+      11276.577666384293,
+      96.91077731517444
+    ],
+    [
+      5,
+      "2025",
+      3551,
+      412810.9328529269,
+      60588.57469623239,
+      85.32292391640257
+    ],
+    [
+      10,
+      "2014",
+      5133,
+      365029.61478871445,
+      5478.00098502398,
+      98.49929957376342
+    ],
+    [
+      10,
+      "2025",
+      3551,
+      412810.93285292696,
+      49157.01591449655,
+      88.09212353588275
+    ]
+  ],
+  "scientific_claims": {
+    "construction_or_demolition_dates_inferred": false,
+    "abandonment_inferred": false,
+    "ground_truth_accuracy_measured": false,
+    "p_values_generated": false,
+    "source_feature_completeness_established": false
+  },
+  "not_completed": [
+    "prefecture-wide feature ingestion and temporal analysis",
+    "2008 common-coverage comparison and valid datum correction",
+    "urban versus mountain comparison",
+    "spatial autocorrelation",
+    "independent labelled sample validation",
+    "road centreline connectivity",
+    "temporal GeoParquet and review sample publication to Drive"
+  ],
+  "blockers": [
+    "Drive API HTTP 403 shared project quota exceeded",
+    "JGD2000 correction grid unavailable for Kanagawa"
+  ],
+  "stop_after_pr": true,
+  "merge_main": false,
+  "plot_visual_review": "PASS",
+  "selected_prefecture_land_fraction": 0.006444146256648987
+}

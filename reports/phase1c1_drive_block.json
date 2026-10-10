@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED",
+  "operation": "rclone lsjson existing processed directory --stat",
+  "observations": 3,
+  "error": "HTTP 403: Quota exceeded for Queries / Previous quota: Requests per minute; drive.googleapis.com; RATE_LIMIT_EXCEEDED",
+  "mount_changed": false,
+  "completed_ingest_partitions": 5,
+  "completed_layers": 9,
+  "retry_policy": "No further global ingestion while quota error persists; preserve completed pairs and run bounded real-data pilot using cached originals."
+}
