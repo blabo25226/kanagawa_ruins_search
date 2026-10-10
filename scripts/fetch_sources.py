@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
+import errno
 import fcntl
 import hashlib
 import json
@@ -10,6 +11,7 @@ import os
 from pathlib import Path
 import shutil
 import sys
+import tempfile
 import time
 import tomllib
 from urllib.error import HTTPError, URLError
@@ -362,13 +364,34 @@ class ProvenanceCorruptedError(ValueError):
     pass
 
 
-class ProvenanceLock:
-    """Mutual exclusion lock for safe concurrent operations on canonical provenance.jsonl."""
+def get_local_provenance_lock_path(data_root: Path) -> Path:
+    """Determine deterministic local lock path to guarantee multi-agent safety on same Ubuntu system."""
+    lock_dir = Path(tempfile.gettempdir()) / ".kanagawa_ruins_locks"
+    try:
+        lock_dir.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
+    path_hash = hashlib.sha256(str(data_root.resolve()).encode("utf-8")).hexdigest()[:16]
+    return lock_dir / f"provenance_{path_hash}.lock"
 
-    def __init__(self, data_root: Path, timeout: float = 30.0):
+
+class ProvenanceLock:
+    """Mutual exclusion lock for safe concurrent operations on canonical provenance.jsonl.
+
+    Guarantees safety across multiple agents running on the same host system.
+    Supports locking directly on data_root (such as rclone FUSE mount), and seamlessly falls back
+    to a deterministic local filesystem lock if the underlying storage does not support flock
+    (e.g., ENOSYS, EOPNOTSUPP, or remote mount limitations).
+    The canonical provenance.jsonl remains strictly on Google Drive.
+    """
+
+    def __init__(self, data_root: Path, timeout: float = 30.0, force_local_lock: bool = False):
         self.data_root = data_root
-        self.lock_file = data_root / '.provenance.lock'
         self.timeout = timeout
+        self.local_lock_file = get_local_provenance_lock_path(data_root)
+        self.fuse_lock_file = data_root / '.provenance.lock'
+        self.use_local_lock = force_local_lock
+        self.lock_file = self.local_lock_file if force_local_lock else self.fuse_lock_file
         self.lock_fd: int | None = None
 
     def __enter__(self):
@@ -382,13 +405,28 @@ class ProvenanceLock:
                 info = f"pid={os.getpid()},time={time.time()},host={os.uname().nodename}\n".encode()
                 os.write(self.lock_fd, info)
                 return self
-            except (BlockingIOError, OSError):
+            except OSError as e:
+                # If locking on FUSE fails because flock is not supported (ENOSYS, EOPNOTSUPP, etc.),
+                # seamlessly switch to local filesystem lock to guarantee multi-agent safety on this Ubuntu host.
+                if not self.use_local_lock and e.errno in (errno.ENOSYS, errno.EOPNOTSUPP, errno.ENOTSUP, errno.EINVAL, errno.EPERM, errno.EROFS):
+                    if self.lock_fd is not None:
+                        try:
+                            os.close(self.lock_fd)
+                        except OSError:
+                            pass
+                        self.lock_fd = None
+                    self.use_local_lock = True
+                    self.lock_file = self.local_lock_file
+                    continue
+
                 if self.lock_fd is not None:
                     try:
                         os.close(self.lock_fd)
                     except OSError:
                         pass
                     self.lock_fd = None
+
+                # Normal lock contention (EAGAIN / EWOULDBLOCK)
                 if time.time() - start_time > self.timeout:
                     raise TimeoutError(f"Failed to acquire provenance lock after {self.timeout}s: {self.lock_file}")
                 time.sleep(0.1)

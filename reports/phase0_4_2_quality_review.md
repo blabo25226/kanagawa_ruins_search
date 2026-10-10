@@ -194,9 +194,9 @@ Google Drive上の正規カタログファイル `raw/aerial_photos/metadata/tsu
    - `test_sources_catalog_structure`: `config/sources.toml` のID一意性および保存先ディレクトリ構造テスト
 
 ### 10.2 テスト実行結果
-- `python -m unittest discover -s tests -v`: **34 tests passed (OK)**
-- `pytest tests/ -v`: **45 passed, 17 subtests passed (100% PASS)**
-- `make test`: **34 tests passed (OK)**
+- `python -m unittest discover -s tests -v`: **37 tests passed (OK)**
+- `pytest tests/ -v`: **48 passed, 17 subtests passed (100% PASS)**
+- `make test`: **37 tests passed (OK)**
 
 ---
 
@@ -225,7 +225,9 @@ PR #2に対するレビューで指摘された以下の未解決3点につい�
 #### 3. `provenance.jsonl` の排他制御（Concurrency Lock）と破損行保護（ゼロデータロス）
 - **問題点**: 複数エージェント並行実行時の排他制御がなく、またJSONパースエラー行を無視（`pass`）して全体書き換えを行うことで過去の来歴履歴が不可逆的に喪失するリスクがあった。
 - **対応内容**:
-  - `scripts/fetch_sources.py` に `ProvenanceLock` コンテキストマネージャを実装。Google Drive（rcloneマウント）上でも有効な `fcntl.flock` によるアドバイザリ排他ロック、PID/ホスト名/タイムスタンプのメタデータ記録、およびタイムアウト機構（リトライループ）を導入。
+  - `scripts/fetch_sources.py` に `ProvenanceLock` コンテキストマネージャを実装。
+  - **rclone FUSEマウント検証**: 実際のGoogle Drive rcloneマウント上の隔離サンドボックスにおいて、`fcntl.flock` によるアドバイザリ排他ロックの取得、別サブプロセスからの競合待機（タイムアウト）、および親プロセス解放後の正常な再取得が完全に機能することを確認。
+  - **FUSE非サポート時のローカルフォールバック機構**: rclone FUSEマウント環境やカーネル設定によって `flock` がサポートされない場合（`ENOSYS`, `EOPNOTSUPP` 等）に備え、同一Ubuntuホスト上の複数エージェントを確実に保護できる決定論的ローカルロック（`/tmp/.kanagawa_ruins_locks/provenance_<hash>.lock`）への自動シームレス切替を実装。取得台帳の正本は常にGoogle Drive上の `provenance.jsonl` を維持。
   - `load_provenance_records(data_root, strict=True)` を刷新。壊れた行（不正JSON）が存在する場合は `ProvenanceCorruptedError` を発生させ、台帳の更新・書き換え処理を即時中断することで、壊れた行が上書きにより不可逆的に失われることを完全に防護。
   - 一時ファイル置換（`replace`）前後の行数検証を二重化し、アトミック性を保証。
 
@@ -234,13 +236,19 @@ PR #2に対するレビューで指摘された以下の未解決3点につい�
    - 複数ブロックを持つPBFストリームを作成し、途中切断時にヘッダー検証は通過するが全体走査（`full_scan=True`）では厳密に切断を検出して拒否することを確認。
 2. `test_provenance_lock_mutual_exclusion`:
    - ロック取得中に同一リソースへの並行ロック要求がタイムアウトで正しく拒絶される排他性を検証。
-3. `test_load_provenance_records_strict_corrupted_line_protection`:
+3. `test_provenance_lock_force_local_lock`:
+   - ローカルファイルシステム上の排他ロック取得、競合ブロック、および正常解放後の再取得を検証。
+4. `test_provenance_lock_fuse_unsupported_fallback`:
+   - FUSE側で `fcntl.flock` が `ENOSYS` を送出した場合、`ProvenanceLock` が即座にローカルロックへフォールバックして処理を継続することを検証。
+5. `test_provenance_lock_live_gdrive_fuse_sandbox`:
+   - 実際のGoogle Drive rclone FUSEマウント上の隔離サンドボックスで、親プロセスのロック取得、別サブプロセスの競合待機、親解放後の再取得が実環境で正常稼働することを検証（本物台帳への書き込みは一切行わず完全隔離）。
+6. `test_load_provenance_records_strict_corrupted_line_protection`:
    - 不正なJSONL行が含まれる台帳に対して、strict読み込みおよび追加書き込みが `ProvenanceCorruptedError` を送出し、既存履歴が1バイトも破損・喪失しないことを検証。
-4. `test_audit_verdict_fast_pass_and_no_hash_claims`:
+7. `test_audit_verdict_fast_pass_and_no_hash_claims`:
    - Fastモード実行時に `FAST_PASS` となり、ハッシュ再計算件数が0件と誠実に報告され、「完全整合」「全件完了」の文言が出力されないことを検証。
-5. `test_audit_verdict_partial_pass_when_pbf_omitted`:
+8. `test_audit_verdict_partial_pass_when_pbf_omitted`:
    - PBF省略時に `PARTIAL_PASS` となり、部分検証である旨が明記されることを検証。
-6. `test_audit_verdict_full_pass_only_when_all_recalculated`:
+9. `test_audit_verdict_full_pass_only_when_all_recalculated`:
    - 全件再計算時のみ `FULL_PASS` となり、完全整合が報告されることを検証。
 
 ## 11. Claude Codeの設計提案（PR #1）の評価とPhase 1への採用可否

@@ -14,14 +14,19 @@ Inherits from unittest.TestCase so it runs with both pytest and python -m unitte
 from __future__ import annotations
 
 import csv
+import errno
+import fcntl
 import io
 import json
 import os
 from pathlib import Path
 import shutil
+import subprocess
+import sys
 import tempfile
 import tomllib
 import unittest
+from unittest.mock import patch
 
 from PIL import Image
 import geopandas as gpd
@@ -371,6 +376,95 @@ class TestProvenanceManagement(unittest.TestCase):
             raw_lines = prov_file.read_text(encoding="utf-8").splitlines()
             self.assertEqual(len(raw_lines), 2)
             self.assertEqual(raw_lines[1], "{broken unparseable json line")
+
+    def test_provenance_lock_force_local_lock(self):
+        """Verify ProvenanceLock functions cleanly on local filesystem when force_local_lock is True."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            data_root = Path(tmp_dir) / "databank"
+            data_root.mkdir(parents=True)
+
+            with ProvenanceLock(data_root, timeout=1.0, force_local_lock=True) as lock:
+                self.assertTrue(lock.use_local_lock)
+                self.assertTrue(lock.lock_file.is_file())
+                # Contention with another local lock attempt
+                with self.assertRaises(TimeoutError):
+                    with ProvenanceLock(data_root, timeout=0.1, force_local_lock=True):
+                        pass
+
+            # Re-acquisition after release
+            with ProvenanceLock(data_root, timeout=1.0, force_local_lock=True) as lock2:
+                self.assertTrue(lock2.lock_file.is_file())
+
+    def test_provenance_lock_fuse_unsupported_fallback(self):
+        """Verify ProvenanceLock seamlessly falls back to local lock if FUSE raises ENOSYS or EOPNOTSUPP."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            data_root = Path(tmp_dir) / "databank"
+            data_root.mkdir(parents=True)
+
+            orig_flock = fcntl.flock
+            first_call = True
+
+            def mock_flock_enosys(fd, op):
+                nonlocal first_call
+                if first_call:
+                    first_call = False
+                    raise OSError(errno.ENOSYS, "Function not implemented on FUSE")
+                return orig_flock(fd, op)
+
+            with patch("fcntl.flock", side_effect=mock_flock_enosys):
+                with ProvenanceLock(data_root, timeout=1.0) as lock:
+                    self.assertTrue(lock.use_local_lock)
+                    self.assertEqual(lock.lock_file, lock.local_lock_file)
+                    self.assertTrue(lock.lock_file.is_file())
+
+    def test_provenance_lock_live_gdrive_fuse_sandbox(self):
+        """Verify ProvenanceLock on actual live rclone FUSE mount in an isolated sandbox directory."""
+        try:
+            data_root = get_verified_data_root()
+        except Exception:
+            self.skipTest("Google Drive databank not mounted")
+
+        sandbox_dir = data_root / ".test_provenance_lock_sandbox"
+        sandbox_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            # 1. Lock acquisition on live FUSE
+            with ProvenanceLock(sandbox_dir, timeout=5.0) as pl:
+                self.assertTrue(pl.lock_file.is_file())
+
+                # 2. Contention wait & timeout in separate subprocess
+                sub_code_block = f"""
+import sys
+from pathlib import Path
+from scripts.fetch_sources import ProvenanceLock
+try:
+    with ProvenanceLock(Path("{sandbox_dir}"), timeout=0.3):
+        print("FAIL: Acquired lock while parent held it")
+        sys.exit(1)
+except TimeoutError:
+    print("PASS: Contention timed out as expected")
+    sys.exit(0)
+"""
+                res = subprocess.run([sys.executable, "-c", sub_code_block], capture_output=True, text=True)
+                self.assertEqual(res.returncode, 0, f"Subprocess contention failed: {res.stdout} {res.stderr}")
+
+            # 3. Re-acquisition after release
+            sub_code_reacquire = f"""
+import sys
+from pathlib import Path
+from scripts.fetch_sources import ProvenanceLock
+try:
+    with ProvenanceLock(Path("{sandbox_dir}"), timeout=2.0):
+        print("PASS: Re-acquired lock cleanly")
+        sys.exit(0)
+except TimeoutError:
+    print("FAIL: Could not re-acquire released lock")
+    sys.exit(1)
+"""
+            res_reacquire = subprocess.run([sys.executable, "-c", sub_code_reacquire], capture_output=True, text=True)
+            self.assertEqual(res_reacquire.returncode, 0, f"Subprocess re-acquisition failed: {res_reacquire.stdout} {res_reacquire.stderr}")
+
+        finally:
+            shutil.rmtree(sandbox_dir, ignore_errors=True)
 
 
 class TestDynamicConfigurationAndCodeHygiene(unittest.TestCase):
