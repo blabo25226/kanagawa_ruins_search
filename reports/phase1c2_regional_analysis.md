@@ -1,6 +1,6 @@
 # Phase 1-C2 地域別分析・交通網・宗教施設・文化財
 
-集計値はすべて、土地利用細分メッシュの収録範囲内にある神奈川県の陸域についてのもの。率の定義は`src/kanagawa_ruins/landuse_change/aggregate.py`の冒頭に記載している。CSV（Drive上 `csv/`）: `agg_region.csv`、`agg_municipality.csv`、`agg_mesh1km.csv`、`agg_mesh500m.csv`、`agg_landscape.csv`、`agg_region_landscape.csv`、`distance_rates_*.csv`、`distance_composition_*.csv`、`moran_mesh1km.csv`、`p32_*`、`osm_worship_context.csv`。GeoParquet（`geoparquet/`）: セル、1 km、500 m、市区町村の4種類。
+集計値はすべて、土地利用細分メッシュの収録範囲内（県土の75.3%）にある神奈川県の陸域についてのもの。収録外の597.8 km²は推定も外挿もしていない。各市区町村・地域には網羅率区分を付けている: comparable（網羅率95%以上）、reference_partial（30〜95%。報告するが範囲内のみの参考値）、excluded（30%未満。透明性のため表には残すが、比較・図からは除外）。市区町村の内訳はcomparable 39、reference_partial 8、excluded 11。率の定義は`src/kanagawa_ruins/landuse_change/aggregate.py`の冒頭に記載している。CSV（Drive上 `csv/`）: `agg_region.csv`、`agg_municipality.csv`、`agg_mesh1km.csv`、`agg_mesh500m.csv`、`agg_landscape.csv`、`agg_region_landscape.csv`、`distance_rates_*.csv`、`distance_composition_*.csv`、`moran_mesh1km.csv`、`p32_*`、`osm_worship_context.csv`。GeoParquet（`geoparquet/`）: セル、1 km、500 m、市区町村の4種類。
 
 ## 1. 地域区分の定義
 
@@ -43,7 +43,9 @@
 | 建物用地→森林・荒地 | 0.28% | 0.28% | 0.32% | 0.23% | 1.78% | 2.29% |
 | 建物用地の純変化率 | +0.76% | +3.04% | +1.19% | −0.57% | +4.25% | −0.25% |
 | 分類が変化した陸域の割合 | 5.7% | 6.6% | 4.3% | 6.0% | 2.2% | 2.0% |
-| 変化のうち単独セルの割合 | 84% | 80% | 83% | 80% | 83% | 81% |
+| 変化のうち1セル成分の割合 | 59% | 56% | 55% | 52% | 59% | 59% |
+| 変化のうち1〜2セル成分の割合 | 79% | 75% | 77% | 71% | 78% | 75% |
+| 網羅率区分 | comparable | reference_partial | comparable | comparable | comparable | reference_partial |
 
 \* 収録範囲が一部のみ。
 
@@ -76,7 +78,7 @@
 
 ### 2.2 市区町村（網羅率95%以上）
 
-全市区町村の表は`agg_municipality.csv`にある（網羅率の列を含む）。目立った値:
+全市区町村の表は`agg_municipality.csv`にある（網羅率`coverage`と区分`scope`の列を含む）。目立った値:
 
 - 建物用地の総減少率が高いのは山北町9.9%（基数3.8 km²）、清川村9.4%（同0.9 km²）、寒川町6.7%、川崎市川崎区6.4%。山北町と清川村は基数が小さく、川崎区と寒川町は大規模なまとまり（その他の用地への転換）を含む。
 - 農地の純変化率がもっとも大きい減少は横浜市栄区−32%、川崎市宮前区−36%、川崎市多摩区−50%。いずれも農地の基数が1 km²未満である。
@@ -144,7 +146,7 @@ OSM道路を2014年の道路状況として扱っていない。2014〜2023年�
 
 - 全セルで見える「遠いほど建物用地の減少率が高い」傾向は、層別すると大幅に小さくなる。距離そのものの影響ではなく、遠方ほど森林卓越地の割合が高いという構成の違いで、大部分が説明されると考えられる。
 - 都市的メッシュでは、駅から2–4 kmまで緩やかな上昇（2.2→3.1%）が残る。区間が一部重なり、判読差の影響もあるため、意味のある勾配とは結論しない。
-- 森林卓越メッシュは率が高く、区間も広い。基数が1〜3 km²と小さく、境界の単独変化が多い（建物用地→森林の88%）。
+- 森林卓越メッシュは率が高く、区間も広い。基数が1〜3 km²と小さく、小さな成分の変化が多い（収録範囲全体の建物用地→森林は81%が1セル成分、89%が境界上の変化）。
 - 相関から因果は推論しない。道路距離と傾斜・標高は強く関係すると予想されるが、DEMがないため分離できていない。
 
 ## 5. 文化財（P32）周辺の土地利用

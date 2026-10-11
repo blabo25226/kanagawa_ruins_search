@@ -78,6 +78,15 @@ def test_published_tables_are_internally_consistent(run_dir):
     assert np.isclose(muni.land_km2.sum(), land)
     cc = json.loads((run_dir / "qa" / "crosscheck.json").read_text())
     assert cc["duckdb"]["passed"] is True
+    # Coverage scope: never extrapolated beyond the L03-b meshes.
+    cov = pd.read_csv(run_dir / "csv" / "municipality_coverage.csv", dtype={"muni_code": str})
+    assert land <= cov.covered_km2.sum() + 1e-6
+    assert 0.75 < cov.covered_km2.sum() / cov.area_km2.sum() < 0.76
+    assert reg.loc["R2_miura", "scope"] == "excluded"
+    assert reg.loc["R7_kensei", "scope"] == "reference_partial"
+    assert set(cov.loc[cov.coverage < 0.01, "muni_code"]) >= {"14201", "14206", "14208", "14210", "14301", "14382", "14383", "14384"}
+    sizes = pd.read_csv(run_dir / "csv" / "change_component_size_overall.csv", index_col=0)
+    assert np.isclose(sizes[["share_1", "share_2", "share_3-4", "share_>=5"]].sum(axis=1).iloc[0], 1.0)
 
 
 def test_codh_fujino_sagamiko_file_names_and_contents_are_swapped(root):

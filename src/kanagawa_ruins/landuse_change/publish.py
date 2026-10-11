@@ -79,7 +79,10 @@ def git_state(repo):
         branch=run("rev-parse", "--abbrev-ref", "HEAD"),
         dirty=bool(tracked),
         modified_tracked_paths=tracked,
-        analysis_code_clean=not any("landuse_change" in l or "phase1c2" in l for l in tracked),
+        # Code paths only; regenerated report figure copies are expected to differ during a run.
+        analysis_code_clean=not any(
+            l[3:].startswith(("src/kanagawa_ruins/landuse_change/", "scripts/phase1c2_", "config/phase1c2_")) for l in tracked
+        ),
     )
 
 
