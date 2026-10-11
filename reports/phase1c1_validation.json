@@ -12,7 +12,7 @@
   "raw_package_hash_mismatches": 0,
   "acquisition_ledger_unchanged": true,
   "acquisition_records_appended": 0,
-  "acquisition_registration_approval": "pending_no_append",
+  "acquisition_registration_approval": "approved_7_records_blocked_remote_quota_no_append",
   "published_ingest_partitions": 5,
   "published_ingest_layers": 9,
   "remote_upload_completion_confirmed": false,
@@ -205,5 +205,6 @@
   "stop_after_pr": true,
   "merge_main": false,
   "plot_visual_review": "PASS",
-  "selected_prefecture_land_fraction": 0.006444146256648987
+  "selected_prefecture_land_fraction": 0.006444146256648987,
+  "acquisition_registration_followup_report": "reports/phase1c1_registration_execution.json"
 }

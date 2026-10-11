@@ -2,7 +2,7 @@
 
 判定: **PARTIAL — 実データ部分解析済み、全域・Drive最終保存は未完了**。
 
-最新main `b24be1e`から開始。作業ブランチは`codex/phase1c1-building-road-analysis`。原本・取得台帳・旧派生物は変更していない。台帳追記の承認応答はまだなく、追記件数0。`acquisition_registered=false`を保持した。
+最新main `b24be1e`から開始。作業ブランチは`codex/phase1c1-building-road-analysis`。原本・取得台帳・旧派生物は変更していない。初回解析時は台帳追記の承認応答がなく、追記件数0。`acquisition_registered=false`を保持した。
 
 FGDのNested ZIP / UTF-8 / Shift_JIS / Surfaceの外周・内周 / Curveの非連続線分に対応。内部ZIP1件・地物単位の逐次処理、2,000件batch、scratch1GB上限。Phase 1-Aのwriter・CRS検査・排他公開・SHA readback、Phase 1-Bと共通のscratch管理を再利用した。BldAは面、BldLとRdEdgは線。中心線化は行わない。
 
@@ -17,3 +17,7 @@ FGDのNested ZIP / UTF-8 / Shift_JIS / Surfaceの外周・内周 / Curveの非�
 共有チェックアウトが別作業のPhase1C2ブランチへ変更されたため、独立worktreeへ移行した。監査の1行修正は共有側の`438da19`にも記録されており、他作業をresetせず指定ブランチへcherry-pickした。他作業ファイルは本PRに含めない。
 
 再開コマンド、台帳追記の承認後手順、処理条件は`docs/phase1c1_usage.md`。API回復後に保存済みペアと残留partialを検証し、`--resume-report`で残りを実行する。JGD2000補正グリッド・2008年の地物別共通範囲を確認するまで2008年比較を開始しない。PRはdraftとして作成し、mainへmergeせず停止する。
+
+## 2026-10-11 台帳追記承認後の確認
+
+ユーザーは登録案の7件追記を明示承認した。承認案SHAは`449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0`。排他制御下でマウント台帳の53件・承認案と同じSHAを確認したが、リモート台帳の事前読取は2回ともDrive API HTTP 403 `RATE_LIMIT_EXCEEDED`で失敗した。原本の再検査もFUSEメタデータ応答待ちとなり、読取専用プロセスを終了した。**実追記0件、台帳への書込み未実施**。原本・既存行・旧派生物を変更していない。詳細は`reports/phase1c1_registration_execution.json`。承認は取得済みとして保持し、Drive回復後に同じ7件について前提条件を再確認して実行する。県全域解析の未完了状態は変わらない。

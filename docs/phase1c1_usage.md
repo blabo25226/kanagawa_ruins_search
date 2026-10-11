@@ -43,7 +43,7 @@ python scripts/phase1c1_ingest.py --stage all --pilot-report reports/new_pilot.j
 
 `reports/phase1c1_registration_plan.json`の7レコードがレビュー対象。基本項目8原本のSHAとサイズを再確認済みで、完全重複1原本はそのまま保存する。取得日時・直接取得URLを推測で埋めない。提供元の配布ページと利用規約ページを記録し、個別成果の利用条件を別途保持する。
 
-**実際の追記にはユーザーの明示承認が必要**。承認後の手順は以下。今回の実行では追記していない。
+**実際の追記にはユーザーの明示承認が必要**。承認後の手順は以下。初回解析では追記していない。2026-10-11に7件の承認を取得したが、リモート事前読取のHTTP 403クォータ超過で追記前に停止した。実追記0件。実行記録は`reports/phase1c1_registration_execution.json`。
 
 1. 承認したplanのSHA、既存台帳のSHAを確定する。
 2. 既存`ProvenanceLock`で排他取得し、台帳がplanの`ledger_sha256_before`と一致することを確認する。不一致なら再レビューし、自動で追記しない。

@@ -1,0 +1,26 @@
+{
+  "executed_at_utc": "2026-10-11T04:18:19.782508+00:00",
+  "approval": "7件の追記を承認",
+  "approved_records": 7,
+  "plan_sha256": "449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0",
+  "status": "approved_blocked_remote_quota_no_append",
+  "appended_records": 0,
+  "remote_readback_verified": false,
+  "raw_checks": [
+    {
+      "relative_path": "raw/fgd/20261011005041318-001.zip",
+      "size_bytes": 638547984,
+      "sha256": "243e99cd83f2f3d5853d99aff273068392eca8523e0c43db062ba16d946658d4"
+    }
+  ],
+  "error": "remote ledger read failed: Failed to create file system for \"gdrive:kanagawa_ruins_search_databank/data/provenance.jsonl\": couldn't find root directory ID: googleapi: Error 403: Quota exceeded for quota metric 'Queries' and limit 'Previous quota: Requests per minute' of service 'drive.googleapis.com' for consumer 'project_number:202264815644'.\nDetails:\n[\n  {\n    \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n    \"domain\": \"googleapis.com\",\n    \"metadata\": {\n      \"consumer\": \"projects/202264815644\",\n      \"quota_limit\": \"defaultPerMinutePerProject\",\n      \"quota_limit_value\": \"840000\",\n      \"quota_location\": \"global\",\n      \"quota_metric\": \"drive.googleapis.com/default\",\n      \"quota_unit\": \"1/min/{project}\",\n      \"service\": \"drive.googleapis.com\"\n    },\n    \"reason\": \"RATE_LIMIT_EXCEEDED\"\n  },\n  {\n    \"@type\": \"type.googleapis.com/google.rpc.Help\",\n    \"links\": [\n      {\n        \"description\": \"Request a higher quota limit.\",\n        \"url\": \"https://cloud.google.com/docs/quotas/help/request_increase\"\n      }\n    ]\n  }\n]\n, rateLimitExceeded\n",
+  "ledger_sha256_before": "10668128cf2333acbc35e2478b662a33eba57eb78f56769e1330ab0483ba1e25",
+  "ledger_sha256_after": "10668128cf2333acbc35e2478b662a33eba57eb78f56769e1330ab0483ba1e25",
+  "ledger_hash_observation": "mounted bytes read before blocked raw recheck; no ledger writes attempted",
+  "records_before": 53,
+  "records_after": 53,
+  "existing_bytes_unchanged": true,
+  "remote_preflight_attempts": 2,
+  "raw_recheck_status": "incomplete; FUSE metadata request stalled; read-only worker terminated",
+  "resume": "Same 7-record approval remains valid. After remote reads recover, revalidate approved plan, current ledger and all raw SHA/size under ProvenanceLock before appending. No automatic rollback or truncation."
+}
