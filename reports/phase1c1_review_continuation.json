@@ -1,0 +1,135 @@
+{
+  "checked_at_utc": "2026-10-11T05:07:39.811148+00:00",
+  "status": "BLOCKED_DRIVE_PROJECT_QUOTA_PREFECTURE_ANALYSIS_INCOMPLETE",
+  "complete": false,
+  "probe_report": "reports/phase1c1_drive_resume_probe.json",
+  "new_remote_probe_invocations": 1,
+  "additional_drive_access_after_quota": 0,
+  "storage_configuration_changed": false,
+  "oauth_custom_client_id_configured": false,
+  "root_folder_id_configured": false,
+  "observed_mount_tpslimit": 8,
+  "probe_tpslimit": 0.5,
+  "prior_ingest_report_sha256": "266b4ef6efb93d26bfef9c26a2a066da03ef7f8743bd89c79b6a84bc6c26342a",
+  "expected_existing_layer_checks": [
+    {
+      "layer_id": "fgd__2008_14101__blda_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14101__blda_v1.parquet",
+      "expected_sha256": "95e4eb6502c4dbf21f222d225e21cdb4878c5122114973bbcf080f4db0b454d3",
+      "expected_bytes": 5659120,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14102__blda_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14102__blda_v1.parquet",
+      "expected_sha256": "0bf309cb6cfe12b5f28c2693baea8f4e0ead0048c4b3e7ccf7beb3cc4983cee0",
+      "expected_bytes": 5045155,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14102__blda_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14102__rdedg_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14102__rdedg_v1.parquet",
+      "expected_sha256": "91b850ece3099e44d2ac8e8c0d4bffde4e644b7e997206d03fc46439febdeee8",
+      "expected_bytes": 2289586,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14102__rdedg_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14103__blda_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14103__blda_v1.parquet",
+      "expected_sha256": "072a7e8e3d7c057059680b6e23480a54025c5a746ff71206ea3b699849ec99f4",
+      "expected_bytes": 2123354,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14103__blda_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14103__rdedg_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14103__rdedg_v1.parquet",
+      "expected_sha256": "c4354e705dc9d45c4e9c0ecfd3023cdc33d191eb9847f99d79893e6bce4da08d",
+      "expected_bytes": 716586,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14103__rdedg_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14104__blda_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14104__blda_v1.parquet",
+      "expected_sha256": "33ec9f99f13139e734c891926d981357ab373fd1242d62838355f05005e5b4c7",
+      "expected_bytes": 3271384,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14104__blda_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14104__rdedg_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14104__rdedg_v1.parquet",
+      "expected_sha256": "866323f5d6dddda1f137c2b2bf707ec086023ca45d12e576d1cf1e66c9ad21d4",
+      "expected_bytes": 1201452,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14104__rdedg_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14105__blda_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14105__blda_v1.parquet",
+      "expected_sha256": "2be483b58ad93d12b11c97b3939ee31cd3dc5fda4ea108bd86592a29708631cd",
+      "expected_bytes": 5023182,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14105__blda_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    },
+    {
+      "layer_id": "fgd__2008_14105__rdedg_v1",
+      "era": "2008",
+      "processed_path": "processed/phase1c/codex/vectors/fgd__2008_14105__rdedg_v1.parquet",
+      "expected_sha256": "feb306e6584451fd9746a9abf5d8d8893f9c1de854e0522fe92f04da8b0c94f3",
+      "expected_bytes": 1644269,
+      "manifest_path": "processed/phase1c/codex/manifests/fgd__2008_14105__rdedg_v1.json",
+      "prior_mounted_readback": "passed_in_original_run",
+      "current_remote_verification": "blocked_not_attempted"
+    }
+  ],
+  "remote_verified_layers_this_run": 0,
+  "existing_integrity": "not revalidated; remote gate failed; prior mounted readback retained as historical evidence only",
+  "acquisition_plan_sha256": "449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0",
+  "acquisition_append_approved": true,
+  "acquisition_records_appended_this_run": 0,
+  "ledger_writes_this_run": 0,
+  "raw_sha_recheck_this_run": "not started after quota gate failed",
+  "era_2014_selected_partitions": 45,
+  "era_2025_selected_partitions": 45,
+  "new_partitions_processed": 0,
+  "new_analysis_runs": 0,
+  "new_geoparquet_published": 0,
+  "new_csv_maps_generated": 0,
+  "era_2008": "deferred; validated applicable datum transformation unavailable",
+  "next_steps": [
+    "Recover remote API access without changing or dropping pending VFS writes.",
+    "Revalidate 9 existing vector/manifest pairs by remote streamed SHA and manifest identity; preserve all partial/unpaired objects.",
+    "Under ProvenanceLock recheck approved ledger SHA and all 7 original ZIP SHA/size; stop on any mismatch, append once, remote readback exact prefix plus payload.",
+    "Select only 2014/2025, 45 partitions each; verify coverage and completeness per feature class before county comparison.",
+    "Publish temporal GeoParquet/CSV/maps with immutable IDs and remote SHA readback, then update all six analysis reports."
+  ],
+  "stop_reason": "Single low-rate, nonrecursive remote directory listing returned HTTP 403 RATE_LIMIT_EXCEEDED for project quota. User instructed stopping if this persists.",
+  "offline_validation": {
+    "passed": 116,
+    "skipped": 8,
+    "subtests_passed": 35,
+    "excluded": "tests/test_phase0_4_1.py live historical Drive audit",
+    "git_diff_check": "passed"
+  }
+}
