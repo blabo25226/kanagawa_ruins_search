@@ -5,6 +5,33 @@ All area figures are sums of per-cell projected areas (m2), never cell counts.
 
 import numpy as np
 import pandas as pd
+from scipy import ndimage
+
+SIZE_CLASSES = ["1", "2", "3-4", ">=5"]
+EIGHT = np.ones((3, 3), dtype=bool)
+
+
+def size_class(sizes):
+    """Component size class labels; 0 (no change) maps to 'no_change'."""
+    s = np.asarray(sizes)
+    return np.select([s == 0, s == 1, s == 2, s <= 4], ["no_change", "1", "2", "3-4"], ">=5")
+
+
+def _component_sizes(mask_or_labels, by_value):
+    """Size of the 8-connected component each grid cell belongs to (0 outside).
+
+    by_value=True labels each distinct positive value separately (same-transition
+    components); otherwise all True cells form components together."""
+    out = np.zeros(mask_or_labels.shape, dtype=np.int32)
+    values = np.unique(mask_or_labels[mask_or_labels > 0]) if by_value else [True]
+    for v in values:
+        m = (mask_or_labels == v) if by_value else mask_or_labels.astype(bool)
+        lab, n = ndimage.label(m, structure=EIGHT)
+        if n:
+            sizes = np.bincount(lab.ravel())
+            sizes[0] = 0
+            out[m] = sizes[lab[m]]
+    return out
 
 
 def transition_matrix(frame, from_col, to_col, weight_col="area_m2", order=None):
@@ -83,6 +110,12 @@ def change_context(iy, ix, code_from, code_to):
       (a boundary shift / mixed-pixel reallocation is plausible)
     - context: 'no_change', 'isolated_boundary', 'isolated_interior', 'patch'
       ('patch' = at least 2 neighbours share the transition)
+    - component_size: cells in the 8-connected component of identical from->to transition
+    - component_class: '1', '2', '3-4', '>=5' (or 'no_change')
+    - any_change_component_size: component size when all changed cells connect regardless
+      of transition type (an upper bound on spatial coherence)
+    The neighbour rule ('context') is kept for comparison: a 2-cell component has one
+    matching neighbour per cell and is therefore 'isolated_*' under that rule.
     Missing neighbours (outside the data) count as not matching.
     """
     a = np.asarray(code_from).astype(str)
@@ -100,6 +133,8 @@ def change_context(iy, ix, code_from, code_to):
     border = np.zeros(ga.shape, dtype=bool)
     for n in _neighbours(ga, 0):
         border |= n == gb
+    comp = _component_sizes(np.where(trans >= 0, trans + 1, 0), by_value=True)
+    anyc = _component_sizes(trans >= 0, by_value=False)
     changed = ia != ib
     s = same[r, c]
     bd = border[r, c] & changed
@@ -113,5 +148,8 @@ def change_context(iy, ix, code_from, code_to):
             same_transition_neighbours=np.where(changed, s, 0).astype(np.int8),
             to_class_in_from_neighbourhood=bd,
             context=context,
+            component_size=np.where(changed, comp[r, c], 0).astype(np.int32),
+            component_class=size_class(np.where(changed, comp[r, c], 0)),
+            any_change_component_size=np.where(changed, anyc[r, c], 0).astype(np.int32),
         )
     )

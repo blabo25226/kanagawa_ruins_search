@@ -115,6 +115,35 @@ class TransitionTests(unittest.TestCase):
         self.assertEqual((c == "no_change").sum(), 49 - 11)
         self.assertEqual(ctx.same_transition_neighbours.to_numpy().reshape(7, 7)[3, 3], 8)
 
+    def test_component_sizes_fix_two_cell_runs(self):
+        g14 = np.full((8, 8), "forest", dtype=object)
+        g21 = g14.copy()
+        g21[0, 0:2] = "agri"  # 2-cell run: legacy rule calls these isolated
+        g21[3, 3] = "agri"
+        g21[4, 4] = "agri"  # diagonal pair -> one 8-connected component of 2
+        g21[6, 1:5] = "building"  # 4-cell run
+        g21[7, 5] = "building"  # diagonal extension -> component of 5
+        g21[2, 6] = "wasteland"
+        g21[2, 7] = "agri"  # different transitions adjacent: separate components
+        f = grid_frame(g14, g21)
+        ctx = transition.change_context(f.iy, f.ix, f.grp2014, f.grp2021)
+        size = ctx.component_size.to_numpy().reshape(8, 8)
+        cls = ctx.component_class.to_numpy().reshape(8, 8)
+        legacy = ctx.context.to_numpy().reshape(8, 8)
+        self.assertEqual(list(size[0, 0:2]), [2, 2])
+        self.assertTrue(all(v.startswith("isolated") for v in legacy[0, 0:2]))
+        self.assertEqual((size[3, 3], size[4, 4]), (2, 2))
+        self.assertTrue((size[6, 1:5] == 5).all() and size[7, 5] == 5)
+        self.assertEqual(cls[6, 1], ">=5")
+        self.assertEqual((size[2, 6], size[2, 7]), (1, 1))
+        anyc = ctx.any_change_component_size.to_numpy().reshape(8, 8)
+        self.assertEqual((anyc[2, 6], anyc[2, 7]), (2, 2))
+        self.assertEqual(size[5, 5], 0)
+        self.assertEqual(cls[5, 5], "no_change")
+
+    def test_size_class_labels(self):
+        self.assertEqual(list(transition.size_class([0, 1, 2, 3, 4, 5, 40])), ["no_change", "1", "2", "3-4", "3-4", ">=5", ">=5"])
+
     def test_cell_edge_lengths_ignore_rotation(self):
         from kanagawa_ruins.landuse_change.analysis import cell_edge_lengths
 
@@ -134,7 +163,9 @@ class AggregateTests(unittest.TestCase):
         g14 = np.array([["agri", "agri", "building", "sea"], ["forest", "forest", "building", "sea"]], dtype=object)
         g21 = np.array([["forest", "agri", "wasteland", "sea"], ["forest", "building", "building", "agri"]], dtype=object)
         f = grid_frame(g14, g21, area=1e6)
-        f["context"] = "patch"
+        ctx = transition.change_context(f.iy, f.ix, f.grp2014, f.grp2021)
+        f = pd.concat([f, ctx], axis=1)
+        f["to_class_in_2014_neighbourhood"] = ctx.to_class_in_from_neighbourhood
         self.f = aggregate.add_indicators(f)
 
     def test_rates(self):
@@ -150,6 +181,8 @@ class AggregateTests(unittest.TestCase):
         self.assertAlmostEqual(r.forestation_rate, 1 / 5)
         self.assertAlmostEqual(r.changed_share, 4 / 7)
         self.assertAlmostEqual(r.agri_net_change_rate, 0.0)
+        # changed cells: (0,0) agri->forest, (0,2) bld->waste, (1,1) forest->bld, (1,3) sea->agri; all singletons
+        self.assertAlmostEqual(r.singleton_change_share, 1.0)
 
     def test_zero_denominator_gives_nan(self):
         r = aggregate.aggregate(self.f[self.f.grp2014 == "forest"].assign(u="x"), "u").iloc[0]
@@ -262,6 +295,31 @@ class ProximityTests(unittest.TestCase):
         out = buffer_composition(np.array([[x0, y0]]), f, radii=(100, 150))
         self.assertEqual(out[100].land_m2.iloc[0], 5.0)
         self.assertEqual(out[150].land_m2.iloc[0], 9.0)
+
+
+class CodhIdentityTests(unittest.TestCase):
+    def test_swap_is_detected_and_url_consistency_reported(self):
+        from kanagawa_ruins.landuse_change.data import check_codh_identity
+
+        recs = check_codh_identity(
+            [
+                dict(name_token="fujino", attr_name="相模湖町", attr_code="14423", url_code="14423"),
+                dict(name_token="sagamiko", attr_name="藤野町", attr_code="14424", url_code="14424"),
+                dict(name_token="shiroyama", attr_name="城山町", attr_code="14421", url_code="14421"),
+                dict(name_token="tsukui", attr_name="津久井町", attr_code="14422"),
+            ]
+        )
+        flags = {r["name_token"]: r["name_matches_content"] for r in recs}
+        self.assertEqual(flags, {"fujino": False, "sagamiko": False, "shiroyama": True, "tsukui": True})
+        self.assertTrue(all(r["url_matches_content"] for r in recs if "url_matches_content" in r))
+        self.assertNotIn("url_matches_content", recs[3])
+        self.assertEqual(recs[0]["expected_code"], "14424")
+
+    def test_unknown_token_rejected(self):
+        from kanagawa_ruins.landuse_change.data import check_codh_identity
+
+        with self.assertRaises(KeyError):
+            check_codh_identity([dict(name_token="hakone", attr_name="箱根町", attr_code="14382")])
 
 
 class PublishTests(unittest.TestCase):

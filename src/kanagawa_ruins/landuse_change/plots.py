@@ -174,3 +174,33 @@ def distance_rates(table, rate, order, path, title, note, strata_labels, min_den
     fig.text(0.01, -0.12, note + f" 点＝推定値、縦線＝空間ブロック・ブートストラップ95%区間。基準面積{min_denom_km2} km²未満の距離帯は省略。", fontsize=7, color=TEXT2)
     fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
+
+
+ORDINAL_BLUE = ["#86b6ef", "#3987e5", "#256abf", "#104281"]
+
+
+def component_size_bars(ctx, path, note):
+    """Share of each transition's area by same-transition component size class (ordinal ramp)."""
+    from .transition import SIZE_CLASSES
+
+    t = ctx.copy()
+    labels = [f"{_short(a)}→{_short(b)}（{v:.2f} km²）" for (a, b), v in zip(t.index, t.total_km2)]
+    fig, ax = plt.subplots(figsize=(9.5, 0.36 * len(t) + 1.6))
+    y = np.arange(len(t))
+    left = np.zeros(len(t))
+    for c, color in zip(SIZE_CLASSES, ORDINAL_BLUE):
+        w = t[f"size_{c}_share"].to_numpy()
+        ax.barh(y, w, left=left, color=color, edgecolor=SURFACE, linewidth=2, height=0.75, label=f"{c}セル")
+        for yi, (l, wi) in enumerate(zip(left, w)):
+            if wi >= 0.08:
+                ax.text(l + wi / 2, yi, f"{wi:.0%}", ha="center", va="center", fontsize=7, color="white" if c != "1" else TEXT)
+        left += w
+    ax.set_yticks(y, labels, fontsize=8)
+    ax.invert_yaxis()
+    ax.set_xlim(0, 1)
+    ax.set_xlabel("遷移面積に占める割合")
+    ax.legend(title="同一遷移の連結成分の大きさ", ncol=4, loc="upper center", bbox_to_anchor=(0.5, -0.12), frameon=False, fontsize=8, title_fontsize=8)
+    ax.set_title("面積上位15遷移の連結成分サイズ構成（2014→2021）", loc="left", fontsize=11)
+    fig.text(0.01, -0.06, note, fontsize=7, color=TEXT2)
+    fig.savefig(path, bbox_inches="tight")
+    plt.close(fig)

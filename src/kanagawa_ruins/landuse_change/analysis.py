@@ -11,7 +11,7 @@ from .codes import FINE_ORDER_09, GROUP_ORDER, GROUPS_1976, validate_codes
 from .mesh import decode_100m
 from .proximity import bin_distance, grid_distance, nearest_distance
 from .stats import block_bootstrap_ratio, morans_i_test
-from .transition import change_context, gain_loss_swap, transition_matrix
+from .transition import SIZE_CLASSES, change_context, gain_loss_swap, transition_matrix
 
 FOCUS = [
     ("building", "forest"),
@@ -44,6 +44,10 @@ def add_context(cells):
     cells["same_transition_neighbours"] = ctx.same_transition_neighbours.values
     cells["to_class_in_2014_neighbourhood"] = ctx.to_class_in_from_neighbourhood.values
     cells["fine_context"] = fine.context.values
+    cells["component_size"] = ctx.component_size.values
+    cells["component_class"] = ctx.component_class.values
+    cells["any_change_component_size"] = ctx.any_change_component_size.values
+    cells["fine_component_size"] = fine.component_size.values
     return cells
 
 
@@ -66,10 +70,11 @@ def transitions(k, by_region=True):
     out["fine_area_km2"] = transition_matrix(land.assign(a=land.area_m2 / 1e6), "lu2014", "lu2021", "a", FINE_ORDER_09)
     out["fine_cells"] = transition_matrix(land.assign(a=1), "lu2014", "lu2021", "a", FINE_ORDER_09)
     out["group_area_km2"] = transition_matrix(land.assign(a=land.area_m2 / 1e6), "grp2014", "grp2021", "a", GROUP_ORDER)
-    out["group_patch_only_km2"] = transition_matrix(
-        land.assign(a=np.where((land.context == "patch") | (land.grp2014 == land.grp2021), land.area_m2 / 1e6, 0.0)),
-        "grp2014", "grp2021", "a", GROUP_ORDER,
-    )
+    for n in (2, 3, 5):
+        keep = (land.component_size >= n) | (land.grp2014 == land.grp2021)
+        out[f"group_component_ge{n}_km2"] = transition_matrix(
+            land.assign(a=np.where(keep, land.area_m2 / 1e6, 0.0)), "grp2014", "grp2021", "a", GROUP_ORDER
+        )
     out["group_gls"] = gain_loss_swap(out["group_area_km2"], unit="km2")
     out["fine_gls"] = gain_loss_swap(out["fine_area_km2"], unit="km2")
     if by_region:
@@ -81,14 +86,36 @@ def transitions(k, by_region=True):
 
 
 def context_breakdown(k):
+    """Changed area per group transition by same-transition component size class.
+
+    Also reports the legacy neighbour-rule shares and the boundary flag for comparison."""
     ch = k[(k.grp2014 != k.grp2021) & ~((k.grp2014 == "sea") & (k.grp2021 == "sea"))]
-    t = ch.groupby(["grp2014", "grp2021", "context"]).area_m2.sum().unstack(fill_value=0) / 1e6
-    t["total_km2"] = t.sum(axis=1)
-    for c in ["patch", "isolated_boundary", "isolated_interior"]:
+    t = ch.groupby(["grp2014", "grp2021", "component_class"]).area_m2.sum().unstack(fill_value=0) / 1e6
+    for c in SIZE_CLASSES:
         if c not in t:
             t[c] = 0.0
-        t[f"{c}_share"] = t[c] / t.total_km2
+    t = t[SIZE_CLASSES]
+    t["total_km2"] = t.sum(axis=1)
+    for c in SIZE_CLASSES:
+        t[f"size_{c}_share"] = t[c] / t.total_km2
+    g = ch.groupby(["grp2014", "grp2021"])
+    t["boundary_share"] = g.apply(lambda d: d.loc[d.to_class_in_2014_neighbourhood, "area_m2"].sum() / d.area_m2.sum())
+    t["legacy_patch_share"] = g.apply(lambda d: d.loc[d.context == "patch", "area_m2"].sum() / d.area_m2.sum())
+    t["max_component_cells"] = g.component_size.max()
     return t.sort_values("total_km2", ascending=False)
+
+
+def size_class_summary(k, by=None):
+    """Share of changed land area by component size class (optionally per group)."""
+    ch = k[k.changed_m2 > 0]
+    keys = ([by] if by else []) + ["component_class"]
+    t = ch.groupby(keys).area_m2.sum().unstack(fill_value=0) if by else ch.groupby("component_class").area_m2.sum().to_frame().T
+    t = t.reindex(columns=SIZE_CLASSES, fill_value=0.0)
+    total = t.sum(axis=1)
+    out = t.div(total, axis=0)
+    out.columns = [f"share_{c}" for c in SIZE_CLASSES]
+    out["changed_km2"] = total / 1e6
+    return out
 
 
 def focus_summary(k):
@@ -103,9 +130,10 @@ def focus_summary(k):
                 area_km2=sub.area_m2.sum() / 1e6,
                 cells=int(m.sum()),
                 rate_of_2014_class=sub.area_m2.sum() / base if base else np.nan,
-                patch_share=(sub.context == "patch").mean() if len(sub) else np.nan,
-                isolated_boundary_share=(sub.context == "isolated_boundary").mean() if len(sub) else np.nan,
-                isolated_interior_share=(sub.context == "isolated_interior").mean() if len(sub) else np.nan,
+                **{f"size_{c}_share": ((sub.component_class == c).mean() if len(sub) else np.nan) for c in SIZE_CLASSES},
+                boundary_share=sub.to_class_in_2014_neighbourhood.mean() if len(sub) else np.nan,
+                max_component_cells=int(sub.component_size.max()) if len(sub) else 0,
+                legacy_patch_share=(sub.context == "patch").mean() if len(sub) else np.nan,
                 reverse_area_km2=k.loc[(k.grp2014 == b) & (k.grp2021 == a), "area_m2"].sum() / 1e6,
             )
         )

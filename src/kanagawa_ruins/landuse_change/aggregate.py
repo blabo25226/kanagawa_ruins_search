@@ -11,7 +11,8 @@ Rates are NaN when the denominator area is zero. Definitions:
 - building_to_forest_or_wasteland_rate = area(building -> forest|wasteland) / building2014
 - building_net_change_rate    = (building2021 - building2014) / building2014
 - changed_share               = area(group changed) / land area
-- isolated_change_share       = share of changed area not in a 'patch' context
+- singleton_change_share      = share of changed area in 1-cell same-transition components
+- small_component_change_share = share of changed area in components of 1-2 cells
 """
 
 import tomllib
@@ -23,6 +24,15 @@ import pandas as pd
 from .codes import GROUP_ORDER
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+
+
+def coverage_class(coverage):
+    """Scope label for a unit's landuse coverage share (area within the L03-b meshes).
+
+    comparable >= 0.95; reference_partial 0.3-0.95 (reported, flagged, never extrapolated);
+    excluded < 0.3 (kept in tables for transparency, left out of comparisons and figures)."""
+    c = np.asarray(coverage, dtype=float)
+    return np.select([c >= 0.95, c >= 0.3], ["comparable", "reference_partial"], "excluded")
 
 
 def load_regions(path=None):
@@ -59,7 +69,13 @@ def add_indicators(cells):
         ind[f"{g}_2021_m2"] = a * (g1 == g)
     chg = (g0 != g1) & land
     ind["changed_m2"] = a * chg
-    ind["changed_isolated_m2"] = a * chg * (c["context"].to_numpy() != "patch") if "context" in c else np.nan
+    if "component_size" in c:
+        cs = c["component_size"].to_numpy()
+        ind["changed_singleton_m2"] = a * chg * (cs == 1)
+        ind["changed_small_m2"] = a * chg * (cs <= 2)
+    else:
+        ind["changed_singleton_m2"] = np.full(len(a), np.nan)
+        ind["changed_small_m2"] = np.full(len(a), np.nan)
     ind["agri_loss_m2"] = a * ((g0 == "agri") & (g1 != "agri"))
     ind["agri_to_forest_m2"] = a * ((g0 == "agri") & (g1 == "forest"))
     ind["agri_to_wasteland_m2"] = a * ((g0 == "agri") & (g1 == "wasteland"))
@@ -95,7 +111,8 @@ def _rates(s):
     out["building_to_forest_or_wasteland_rate"] = np.where(s2.building_2014_m2 > 0, s2.bfw / s2.building_2014_m2.where(s2.building_2014_m2 > 0), np.nan)
     out["building_net_change_rate"] = np.where(s.building_2014_m2 > 0, (s.building_2021_m2 - s.building_2014_m2) / s.building_2014_m2.where(s.building_2014_m2 > 0), np.nan)
     out["changed_share"] = r("changed_m2", "land_m2")
-    out["isolated_change_share"] = r("changed_isolated_m2", "changed_m2")
+    out["singleton_change_share"] = r("changed_singleton_m2", "changed_m2")
+    out["small_component_change_share"] = r("changed_small_m2", "changed_m2")
     for k in ["agri_loss_m2", "agri_to_forest_m2", "agri_to_wasteland_m2", "to_forest_m2", "building_loss_m2", "building_to_forest_m2", "building_to_wasteland_m2", "building_gain_m2", "changed_m2"]:
         out[k.replace("_m2", "_km2")] = s[k] / 1e6
     return out

@@ -78,3 +78,25 @@ def test_published_tables_are_internally_consistent(run_dir):
     assert np.isclose(muni.land_km2.sum(), land)
     cc = json.loads((run_dir / "qa" / "crosscheck.json").read_text())
     assert cc["duckdb"]["passed"] is True
+
+
+def test_codh_fujino_sagamiko_file_names_and_contents_are_swapped(root):
+    """Reproducible evidence for the Phase 0 naming error (originals are not modified).
+
+    The acquisition URLs point to 14423 (相模湖町) for 'fujino' and 14424 (藤野町) for
+    'sagamiko'; the downloaded contents match their URLs, so the error is the name<->code
+    mapping at acquisition time. Areas confirm the identity (藤野町 is about twice 相模湖町)."""
+    from kanagawa_ruins.landuse_change.data import codh_identity_records
+
+    recs = {r["name_token"]: r for r in codh_identity_records(root)}
+    assert set(recs) == {"fujino", "sagamiko", "shiroyama", "tsukui"}
+    for r in recs.values():
+        assert r["raw_sha256"] == r["ledger_sha256"]
+        assert r["url_matches_content"]
+        assert (r["layer_attr_name"], r["layer_attr_code"]) == (r["attr_name"], r["attr_code"])
+    assert not recs["fujino"]["name_matches_content"]
+    assert not recs["sagamiko"]["name_matches_content"]
+    assert (recs["fujino"]["attr_name"], recs["fujino"]["attr_code"]) == ("相模湖町", "14423")
+    assert (recs["sagamiko"]["attr_name"], recs["sagamiko"]["attr_code"]) == ("藤野町", "14424")
+    assert recs["shiroyama"]["name_matches_content"] and recs["tsukui"]["name_matches_content"]
+    assert 60 < recs["sagamiko"]["layer_area_km2"] < 70 and 28 < recs["fujino"]["layer_area_km2"] < 35

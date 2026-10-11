@@ -3,4 +3,4 @@
 No candidate inference, ranking or abandonment judgement is implemented here.
 """
 
-ANALYSIS_VERSION = "phase1c2-claude-0.1.0"
+ANALYSIS_VERSION = "phase1c2-claude-0.2.0"

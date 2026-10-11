@@ -25,10 +25,11 @@ import shapely
 from kanagawa_ruins.landuse_change import ANALYSIS_VERSION
 from kanagawa_ruins.landuse_change import analysis as A
 from kanagawa_ruins.landuse_change import plots as P
-from kanagawa_ruins.landuse_change.aggregate import add_indicators, aggregate, assign_regions, load_regions
+from kanagawa_ruins.landuse_change.aggregate import add_indicators, aggregate, assign_regions, coverage_class, load_regions
 from kanagawa_ruins.landuse_change.codes import GROUP_LABELS, GROUP_ORDER, GROUPS_09, GROUPS_1976, tables_identical
 from kanagawa_ruins.landuse_change.crosscheck import duckdb_crosscheck
-from kanagawa_ruins.landuse_change.data import LAYERS, InputRegistry, assign_admin, build_cells, coverage_polygon
+from kanagawa_ruins.landuse_change.data import LAYERS, InputRegistry, assign_admin, build_cells, codh_identity_records, coverage_polygon
+from kanagawa_ruins.landuse_change.transition import SIZE_CLASSES
 from kanagawa_ruins.landuse_change.proximity import osm_highway_lines, osm_union
 from kanagawa_ruins.landuse_change.publish import publish_file, write_run_manifest
 from kanagawa_ruins.storage.drive import get_verified_data_root
@@ -126,7 +127,19 @@ def main(argv=None):
         not_covered=cov_tab[cov_tab.coverage < 0.01].muni_name.tolist(),
         partial=cov_tab[(cov_tab.coverage >= 0.01) & (cov_tab.coverage < 0.99)][["muni_name", "coverage"]],
     )
+    cov_tab["scope"] = coverage_class(cov_tab.coverage)
+    rcov["scope"] = coverage_class(rcov.coverage)
+    R["analysis_scope"] = dict(
+        statement="All results describe only the part of Kanagawa inside L03-b 1st meshes 5338/5339; uncovered areas are not estimated or extrapolated.",
+        covered_share_of_prefecture=float(muni.covered_km2.sum() / muni.area_km2.sum()),
+        uncovered_km2=float(muni.area_km2.sum() - muni.covered_km2.sum()),
+        municipality_scope_counts=cov_tab.scope.value_counts(),
+    )
     cov_tab.to_csv(work / "csv" / "municipality_coverage.csv", index=False)
+
+    codh_id = codh_identity_records(data_root)
+    R["codh_identity"] = codh_id
+    (work / "qa" / "codh_identity.json").write_text(json.dumps(codh_id, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # 2. neighbourhood context on the full grid, then Kanagawa subset ----------------------
     cells = A.add_context(cells)
@@ -142,7 +155,7 @@ def main(argv=None):
 
     # 3. transitions --------------------------------------------------------------------
     T = A.transitions(k)
-    for name in ["fine_area_km2", "fine_cells", "group_area_km2", "group_patch_only_km2", "group_gls", "fine_gls"]:
+    for name in ["fine_area_km2", "fine_cells", "group_area_km2", "group_component_ge2_km2", "group_component_ge3_km2", "group_component_ge5_km2", "group_gls", "fine_gls"]:
         T[name].to_csv(work / "csv" / f"transition_{name}.csv")
     long = pd.concat({r: m.stack() for r, m in T["by_region"].items()}, names=["region", "grp2014", "grp2021"]).rename("area_km2").reset_index()
     long.to_csv(work / "csv" / "transition_group_by_region_long.csv", index=False)
@@ -157,11 +170,20 @@ def main(argv=None):
     clusters["size_bins"].to_csv(work / "csv" / "building_loss_cluster_sizes.csv")
     R["transitions"] = dict(
         group_area_km2=T["group_area_km2"], group_gls=T["group_gls"], fine_area_km2=T["fine_area_km2"], fine_gls=T["fine_gls"],
-        group_patch_only_km2=T["group_patch_only_km2"], context=ctx.head(25), focus=focus, focus_by_region=focus_reg,
+        group_component_ge3_km2=T["group_component_ge3_km2"], group_component_ge5_km2=T["group_component_ge5_km2"], context=ctx.head(25), focus=focus, focus_by_region=focus_reg,
         building_loss_clusters=dict(n=clusters["n_clusters"], size_bins=clusters["size_bins"]),
         changed_land_share=float(k.changed_m2.sum() / k.land_m2.sum()),
-        changed_context_share=k[k.changed_m2 > 0].groupby("context").area_m2.sum() / k.changed_m2.sum(),
+        legacy_neighbour_rule_share=k[k.changed_m2 > 0].groupby("context").area_m2.sum() / k.changed_m2.sum(),
+        component_class_share=A.size_class_summary(k),
+        component_class_share_by_region=A.size_class_summary(k, "region"),
+        component_class_share_by_landscape=None,
+        component_class_share_by_group_from=A.size_class_summary(k, "grp2014"),
+        any_change_component_share=(k[k.changed_m2 > 0].assign(c=lambda d: np.select([d.any_change_component_size == 1, d.any_change_component_size == 2, d.any_change_component_size <= 4], SIZE_CLASSES[:3], SIZE_CLASSES[3])).groupby("c").area_m2.sum() / k.changed_m2.sum()),
+        legacy_isolated_but_component_ge2_share=float(k.loc[(k.changed_m2 > 0) & (k.context != "patch") & (k.component_size >= 2), "area_m2"].sum() / k.changed_m2.sum()),
+        boundary_share=float(k.loc[(k.changed_m2 > 0) & k.to_class_in_2014_neighbourhood, "area_m2"].sum() / k.changed_m2.sum()),
     )
+    for nm, t in [("overall", R["transitions"]["component_class_share"]), ("by_region", R["transitions"]["component_class_share_by_region"]), ("by_group_from", R["transitions"]["component_class_share_by_group_from"])]:
+        t.to_csv(work / "csv" / f"change_component_size_{nm}.csv")
     fine_changed = k.lu2014 != k.lu2021
     R["transitions"]["fine_changed_land_share"] = float(k.loc[fine_changed, "area_m2"].sum() / k.land_m2.sum())
 
@@ -174,6 +196,10 @@ def main(argv=None):
     agg_reg["coverage"] = agg_reg.index.map(rcov.coverage)
     agg_reg.loc["R5_sagamihara", "coverage"] = 1.0
     agg_reg.loc["R6_tsukui", "coverage"] = 1.0
+    agg_reg["scope"] = coverage_class(agg_reg.coverage)
+    agg_muni["scope"] = coverage_class(agg_muni.coverage)
+    if agg_reg.land_km2.sum() > R["coverage"]["covered_km2"] + 1e-6:
+        raise AssertionError("Aggregated land exceeds the covered area")
     agg_all = aggregate(k.assign(all="kanagawa_covered"), "all")
     agg_land = aggregate(k, "landscape")
     agg_reg_land = aggregate(k, ["region", "landscape"])
@@ -184,6 +210,8 @@ def main(argv=None):
         t.to_csv(work / "csv" / f"agg_{n}.csv")
     R["aggregates"] = dict(all=agg_all, region=agg_reg, landscape=agg_land, region_landscape=agg_reg_land, municipality=agg_muni)
     R["landscape_mesh_counts"] = land_type.value_counts()
+    R["transitions"]["component_class_share_by_landscape"] = A.size_class_summary(k, "landscape")
+    R["transitions"]["component_class_share_by_landscape"].to_csv(work / "csv" / "change_component_size_by_landscape.csv")
 
     # 5. proximity ----------------------------------------------------------------------
     box = shapely.box(*k.total_bounds).buffer(20000) if len(k) else None
@@ -337,7 +365,8 @@ def main(argv=None):
 
     # 10. geoparquet outputs --------------------------------------------------------------
     keep = ["code", "mesh2", "mesh1km", "mesh500m", "lu2014", "lu2021", "grp2014", "grp2021", "area_m2", "muni_code", "muni_name", "region", "old_muni_2005",
-            "landscape", "context", "same_transition_neighbours", "to_class_in_2014_neighbourhood", "fine_context", "building_loss_cluster",
+            "landscape", "context", "same_transition_neighbours", "to_class_in_2014_neighbourhood", "fine_context", "component_size", "component_class",
+            "any_change_component_size", "fine_component_size", "building_loss_cluster",
             "dist_rail_m", "dist_station_m", "dist_road_cell_2014_m", "road_cell_censored", "in_osm_window", "dist_osm_motor_road_m", "dist_river_w05_m"]
     gk = gpd.GeoDataFrame(k[keep].copy(), geometry=k.geometry.values, crs="EPSG:6677")
     gk["changed"] = gk.grp2014 != gk.grp2021
@@ -352,9 +381,10 @@ def main(argv=None):
 
     # 11. figures --------------------------------------------------------------------------
     fig = work / "figures"
-    note = "出典: 国土数値情報 土地利用細分メッシュ L03-b（2014・2021年）。収録範囲（1次メッシュ5338・5339）内の神奈川県陸域のみ。面積はEPSG:6677投影面積。"
+    note = "出典: 国土数値情報 土地利用細分メッシュ L03-b（2014・2021年）。収録範囲（1次メッシュ5338・5339、県土の75.3%）内の神奈川県陸域のみ。面積はEPSG:6677投影面積。"
     P.heatmap(T["group_area_km2"], fig / "fig_transition_heatmap_group.png", "土地利用遷移行列 2014→2021（分析用グループ）", note + " 変化には判読手法差による見かけの変化を含む。")
-    P.heatmap(T["group_patch_only_km2"], fig / "fig_transition_heatmap_group_patch_only.png", "遷移行列（同一遷移が隣接2セル以上の『まとまった変化』のみ）", note)
+    P.heatmap(T["group_component_ge5_km2"], fig / "fig_transition_heatmap_group_component_ge5.png", "遷移行列（同一遷移の8近傍連結成分が5セル以上の変化のみ。対角は存続）", note)
+    P.component_size_bars(ctx.head(15), fig / "chart_transition_component_size.png", note + " 成分＝同一遷移の8近傍連結成分。")
     outline = gpd.GeoDataFrame(geometry=[g for g in gpd.GeoSeries(muni.geometry).groupby(muni.region.fillna("none")).apply(lambda s: s.union_all())], crs="EPSG:6677")
     rp = dict(muni.dissolve("region").geometry.items())
     tsukui_poly = shapely.intersection(codh.geometry.union_all(), muni.loc[muni.muni_code == "14151", "geometry"].union_all())
@@ -365,14 +395,14 @@ def main(argv=None):
     pref = muni.geometry.union_all()
     uncovered = gpd.GeoDataFrame(geometry=[pref.difference(cov)], crs="EPSG:6677")
     m1g = gpd.GeoDataFrame(m1, crs="EPSG:6677")
-    cnote = note + " 濃い灰色＝収録範囲外。"
+    cnote = note + " 濃い灰色＝収録範囲外（県土の24.7%、未解析）。"
     P.mesh_map(m1g.assign(v=m1g.building_gross_loss_rate.where(m1g.building_2014_share >= 0.05) * 100), "v", fig / "map_mesh1km_building_gross_loss_rate.png", "建物用地の総減少率（%、2014年建物用地≥5%の1kmメッシュ）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, uncovered=uncovered)
     P.mesh_map(m1g.assign(v=(m1g.agri_to_forest_km2 + m1g.agri_to_wasteland_km2) / (m1g.agri_2014_share * m1g.land_km2).where(m1g.agri_2014_share >= 0.05) * 100), "v", fig / "map_mesh1km_agri_to_forest_wasteland_rate.png", "農地→森林・荒地の転換率（%、2014年農地≥5%の1kmメッシュ）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, uncovered=uncovered)
     P.mesh_map(m1g.assign(v=m1g.building_net_change_km2 * 100), "v", fig / "map_mesh1km_building_net_change.png", "建物用地の純増減（ha、1kmメッシュ）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, diverging=True, uncovered=uncovered)
     P.mesh_map(m1g.assign(v=m1g.forest_net_change_km2 * 100), "v", fig / "map_mesh1km_forest_net_change.png", "森林の純増減（ha、1kmメッシュ）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, diverging=True, uncovered=uncovered)
     P.mesh_map(m1g.assign(v=m1g.changed_share * 100), "v", fig / "map_mesh1km_changed_share.png", "分類が変化した陸域面積の割合（%、1kmメッシュ）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, uncovered=uncovered)
     P.mesh_map(m1g.assign(v=m1g.landscape.map({"urban": 0, "agri_mixed": 1, "other_mixed": 2, "forest_dominant": 3})), "v", fig / "map_mesh1km_landscape_type.png", "2014年土地被覆類型（0都市的・1農地混在・2その他混在・3森林卓越）", cnote, outline=gpd.GeoDataFrame(geometry=reg_poly.geometry.values, crs="EPSG:6677"), labels=lab, uncovered=uncovered, vmax=3)
-    order_reg = [r for r in rlabels if r in agg_reg.index and agg_reg.loc[r, "coverage"] >= 0.3]
+    order_reg = [r for r in rlabels if r in agg_reg.index and agg_reg.loc[r, "scope"] != "excluded"]
     disp = {r: (f"{rlabels[r]}（収録{agg_reg.loc[r, 'coverage']:.0%}）" if agg_reg.loc[r, "coverage"] < 0.95 else rlabels[r]) for r in order_reg}
     P.region_composition(agg_reg.loc[order_reg], disp, fig / "chart_region_composition.png", note + " 三浦半島は収録7%のため除外。")
     for name, edges in [("rail", RAIL_EDGES), ("station", RAIL_EDGES), ("road_cell_2014", ROAD_EDGES)]:
@@ -388,7 +418,8 @@ def main(argv=None):
         (figs_out / p.name).write_bytes(p.read_bytes())
     params = dict(sample_mesh2=a.sample_mesh2, permutations=a.permutations, bootstrap=a.bootstrap, rail_edges=[str(e) for e in RAIL_EDGES], road_edges=[str(e) for e in ROAD_EDGES],
                   osm_edges=[str(e) for e in OSM_EDGES], osm_window_wgs84=OSM_WINDOW_WGS84, osm_inner_buffer_m=1000, p32_point_classes=[1, 2, 9], p32_edge_exclusion_m=500,
-                  landscape_rules="forest>=0.7; building+transport>=0.5; agri>=0.2; else other (2014 shares per 1km mesh)", context_rule="patch: >=2 of 8 neighbours share the group transition")
+                  landscape_rules="forest>=0.7; building+transport>=0.5; agri>=0.2; else other (2014 shares per 1km mesh)", context_rule="component_size: 8-connected component of identical group transition on the full 5338/5339 grid; classes 1, 2, 3-4, >=5. Legacy 'context' (patch = >=2 matching neighbours) kept for comparison.",
+                  scope_rule="coverage>=0.95 comparable; 0.3-0.95 reference_partial; <0.3 excluded")
     R["parameters"] = params
     R["inputs"] = list(reg.records.values())
     if a.execute:

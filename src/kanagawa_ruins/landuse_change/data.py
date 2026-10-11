@@ -203,3 +203,66 @@ def coverage_polygon(cells):
         ring = shapely.segmentize(ring, 0.001)
         polys.append(shapely.ops.transform(tr.transform, ring))
     return shapely.union_all(polys), present
+
+
+# Name tokens used in CODH source ids / file names and the municipality they should denote
+# (JIS X 0401/0402 codes of the former Tsukui-gun towns, valid until the 2006/2007 mergers).
+CODH_NAME_TOKENS = {
+    "shiroyama": ("城山町", "14421"),
+    "tsukui": ("津久井町", "14422"),
+    "sagamiko": ("相模湖町", "14423"),
+    "fujino": ("藤野町", "14424"),
+}
+
+
+def check_codh_identity(records):
+    """Compare the municipality implied by a CODH file/layer name with its content.
+
+    Each record needs: name_token, attr_name, attr_code and optionally url_code (the
+    code in the acquisition URL). Returns records with expected values and flags:
+    name_matches_content (file name vs attributes) and url_matches_content.
+    """
+    out = []
+    for r in records:
+        exp_name, exp_code = CODH_NAME_TOKENS[r["name_token"]]
+        rec = dict(r, expected_name=exp_name, expected_code=exp_code)
+        rec["name_matches_content"] = r["attr_name"] == exp_name and str(r["attr_code"]) == exp_code
+        if r.get("url_code") is not None:
+            rec["url_matches_content"] = str(r["url_code"]) == str(r["attr_code"])
+        out.append(rec)
+    return out
+
+
+def codh_identity_records(data_root):
+    """Read the CODH 2005 raw GeoJSON (read-only) plus ledger entries and Phase 1-A layers."""
+    import re
+
+    data_root = Path(data_root)
+    ledger = [json.loads(l) for l in (data_root / "provenance.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    recs = []
+    for entry in ledger:
+        m = re.fullmatch(r"codh_(\w+?)_2005", entry["source_id"])
+        if not m or m.group(1) not in CODH_NAME_TOKENS:
+            continue
+        raw = data_root / entry["relative_path"]
+        props = json.loads(raw.read_text(encoding="utf-8"))["features"][0]["properties"]
+        url_code = re.search(r"/(\d{5})A\d+\.geojson$", entry["source_url"]).group(1)
+        lid = f"admin__codh_{m.group(1)}_2005__2005_01_01"
+        layer = gpd.read_parquet(data_root / "processed" / "phase1a" / "vectors" / f"{lid}.parquet")
+        recs.append(
+            dict(
+                name_token=m.group(1),
+                source_id=entry["source_id"],
+                relative_path=entry["relative_path"],
+                ledger_sha256=entry["sha256"],
+                raw_sha256=sha256(raw),
+                url_code=url_code,
+                attr_name=props["N03_004"],
+                attr_code=props["N03_007"],
+                layer_id=lid,
+                layer_attr_name=str(layer.muni.iloc[0]),
+                layer_attr_code=str(layer.muni_code.iloc[0]),
+                layer_area_km2=float(layer.area.sum() / 1e6),
+            )
+        )
+    return check_codh_identity(recs)
