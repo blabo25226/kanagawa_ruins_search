@@ -79,3 +79,5 @@ git diff --check
 ```
 
 Conda環境のGDAL CLIをPATHで有効にする。合成試験は実地図精度を証明しない。正解ラベルがないため、p値や実測検出精度は生成しない。
+
+レビュー後のDrive制限調査と次回再開の前提条件は[phase1c1_drive_operations.md](phase1c1_drive_operations.md)を参照する。最新の確認では低頻度の単一プローブもHTTP 403となり、Driveへの追加アクセスを停止した。全域取り込みの再実行前に、2014/2025年限定選択と保存障害時の即時停止を整える必要がある。

@@ -21,3 +21,9 @@ FGDのNested ZIP / UTF-8 / Shift_JIS / Surfaceの外周・内周 / Curveの非�
 ## 2026-10-11 台帳追記承認後の確認
 
 ユーザーは登録案の7件追記を明示承認した。承認案SHAは`449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0`。排他制御下でマウント台帳の53件・承認案と同じSHAを確認したが、リモート台帳の事前読取は2回ともDrive API HTTP 403 `RATE_LIMIT_EXCEEDED`で失敗した。原本の再検査もFUSEメタデータ応答待ちとなり、読取専用プロセスを終了した。**実追記0件、台帳への書込み未実施**。原本・既存行・旧派生物を変更していない。詳細は`reports/phase1c1_registration_execution.json`。承認は取得済みとして保持し、Drive回復後に同じ7件について前提条件を再確認して実行する。県全域解析の未完了状態は変わらない。
+
+## PR #6 レビュー後の継続確認
+
+共有クライアント設定と公式資料を照合し、既知dataフォルダID・0.5 transaction/s・再試行なし・非再帰の読取プローブを1回実行した。HTTP 403のプロジェクト単位クォータ超過が継続しており、指示どおり追加のDriveアクセスを停止した。既存9レイヤーの検証リストを保存したが、今回のリモート整合性確認は0件。台帳の7件承認は維持し、実追記0件。新規全域変換・解析・GeoParquet/CSV/地図保存も0件。既存mount/config/cacheを変更していない。
+
+調査・負荷削減案・再開前提は`docs/phase1c1_drive_operations.md`、停止証跡は`reports/phase1c1_drive_resume_probe.json`、チェックリストと項目別進捗は`reports/phase1c1_review_continuation.json`。全域解析は未完了、PR #6はDraft維持。
