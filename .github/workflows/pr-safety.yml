@@ -41,7 +41,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_worker_cli.py' -v
 
   synthetic-tests:
-    name: C1/C2/ledger offline synthetic tests
+    name: C1/C2/ledger/agy offline synthetic tests
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
@@ -63,7 +63,7 @@ jobs:
         shell: bash
         run: |
           tests=()
-          for file in tests/test_phase1c1.py tests/test_phase1c2_synthetic.py tests/test_phase0_ledger_append.py; do
+          for file in tests/test_phase1c1.py tests/test_phase1c2_synthetic.py tests/test_phase0_ledger_append.py tests/test_agy_drive_trace.py; do
             if [[ -f "$file" ]]; then tests+=("$file"); fi
           done
           if (( ${#tests[@]} == 0 )); then
