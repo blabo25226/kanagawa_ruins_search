@@ -116,61 +116,75 @@ def test_acquired_papers_exist_and_valid_pdf(data_root: Path):
 # 2. Provenance & Databank Integrity Tests
 # ==============================================================================
 
+PHASE0_AUDIT = Path(__file__).resolve().parents[1] / "reports" / "databank_audit.json"
+PHASE1B5_INVENTORY = Path(__file__).resolve().parents[1] / "reports" / "phase1b5_inventory.json"
+
+
 def test_provenance_jsonl_integrity(data_root: Path):
-    prov_path = data_root / "provenance.jsonl"
-    assert prov_path.is_file()
+    """The ledger is append-only: the 53 Phase 0 records are unchanged and first, and any
+    appended record has a valid contained path, size and SHA-256 that match the file."""
+    from kanagawa_ruins.qa.ledger import load_phase0_snapshot, read_ledger, validate_ledger
 
-    records = []
-    with open(prov_path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
-
-    assert len(records) == 53, "provenance.jsonl must contain exactly 53 registered download records"
-
-    rel_paths = [r["relative_path"] for r in records]
-    assert len(rel_paths) == len(set(rel_paths)), "All relative paths must be unique in provenance.jsonl"
-
-    for r in records:
-        assert "relative_path" in r
-        assert "size_bytes" in r or "bytes" in r
-        assert "sha256" in r
-        assert "source_id" in r
-        # Verify file exists on disk
+    _, phase0, extras = load_phase0_snapshot(PHASE0_AUDIT)
+    assert len(phase0) == 53
+    ledger = read_ledger(data_root / "provenance.jsonl")
+    result = validate_ledger(ledger, phase0, data_root=data_root, verify_sha=True, reserved_paths=extras)
+    assert not result["errors"], result["errors"]
+    assert result["phase0"] == 53
+    for r in ledger[:53]:
         target = data_root / r["relative_path"]
         assert target.is_file(), f"Registered file missing on disk: {target}"
-        recorded_size = r.get("size_bytes") or r.get("bytes")
-        assert target.stat().st_size == recorded_size, f"Size mismatch for {r['relative_path']}"
+        assert target.stat().st_size == (r.get("size_bytes") or r.get("bytes")), f"Size mismatch for {r['relative_path']}"
 
 
 def test_databank_actual_files_classification(data_root: Path):
-    all_files = [
+    """Phase 0 snapshot stays intact; every later file is accounted for by its phase's record.
+
+    The data bank and the ledger are append-only across phases, so neither the file count
+    nor the ledger length is fixed. The test checks that all 65 Phase 0 files still exist
+    with their recorded sizes and fails on any file that no phase record explains:
+    appended ledger records, Phase 1-A/1-B registered derived pairs, the Phase 1-B.5
+    inventory, Phase 1-C manifests, or the operational ledger lock.
+    """
+    from kanagawa_ruins.qa.derived import registered_derived_files
+    from kanagawa_ruins.qa.ledger import (
+        load_phase0_snapshot, phase1c_manifest_files, read_ledger, unexplained_files, validate_ledger,
+    )
+
+    all_files = {
         p.relative_to(data_root).as_posix()
         for p in data_root.rglob("*")
         if p.is_file() and not any(part == "backups" for part in p.parts)
-    ]
+    }
+    audit, phase0, extras = load_phase0_snapshot(PHASE0_AUDIT)
+    assert audit["audit_verdict"] == "FULL_PASS" and audit["actual_files_count"] == 65
+    snapshot = {r["relative_path"] for r in phase0} | extras
+    assert len(snapshot) == 65
+    missing = sorted(snapshot - all_files)
+    assert not missing, f"Phase 0 snapshot files missing: {missing}"
+    for r in phase0:
+        assert (data_root / r["relative_path"]).stat().st_size == r["recorded_size"], f"Phase 0 size changed: {r['relative_path']}"
+    assert len(snapshot - {r["relative_path"] for r in phase0}) == 12  # 4 duplicates + 7 metadata + provenance.jsonl
 
-    # Phase 0's 65-file snapshot stays protected; only complete, registered Phase 1-A
-    # output/manifest pairs are accounted for separately (not a blanket path exclusion).
-    from kanagawa_ruins.qa.derived import registered_derived_files
-    derived = registered_derived_files(data_root, {r: data_root / r for r in all_files})
-    all_files = [r for r in all_files if r not in derived]
-    assert len(all_files) == 65, f"Expected 65 original Phase 0 files, found {len(all_files)}"
+    ledger = read_ledger(data_root / "provenance.jsonl")
+    # Content hashes of appended records are verified in test_provenance_jsonl_integrity.
+    check = validate_ledger(ledger, phase0, data_root=data_root, verify_sha=False, reserved_paths=extras)
+    assert not check["errors"], check["errors"]
+    appended_paths = {r["relative_path"] for r in ledger[53:]}
 
-    prov_path = data_root / "provenance.jsonl"
-    prov_records = [
-        json.loads(line)["relative_path"]
-        for line in prov_path.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
-
-    assert len(prov_records) == 53
-
-    remaining = set(all_files) - set(prov_records)
-    # Remaining must be exactly 12 files (4 duplicates + 7 metadata + 1 provenance.jsonl)
-    assert len(remaining) == 12
-    assert "provenance.jsonl" in remaining
+    later = all_files - snapshot
+    derived = registered_derived_files(data_root, {r: data_root / r for r in later})
+    inventory = json.loads(PHASE1B5_INVENTORY.read_text(encoding="utf-8"))["packages"]
+    fgd = {
+        p["relative_path"]
+        for p in inventory
+        if (data_root / p["relative_path"]).is_file() and (data_root / p["relative_path"]).stat().st_size == p["size_bytes"]
+    }
+    unexplained = unexplained_files(
+        all_files, snapshot, ledger_paths=appended_paths, derived=derived, inventory_paths=fgd,
+        phase1c=phase1c_manifest_files(data_root, later),
+    )
+    assert not unexplained, f"Files not explained by any phase record: {unexplained}"
 
 
 # ==============================================================================
