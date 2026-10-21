@@ -4,9 +4,11 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 
 MAX_TRACE_BYTES = 524288
 TARGET = '/home/blabo/gdrive/kanagawa_ruins_search_databank/data'
+MANIFEST = TARGET + '/processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json'
 SAFE_TOOLS = {'run_command', 'view_file', 'read_file', 'list_dir', 'list_directory'}
 
 
@@ -49,7 +51,7 @@ def summarize(raw, *, exit_code):
             steps[index if isinstance(index, int) else len(steps)] = {
                 'tool_name': name if name in SAFE_TOOLS else 'OTHER_TOOL',
                 'parameters_sha256': hashlib.sha256(encoded).hexdigest(),
-                'target_fuse_path_mentioned': isinstance(command, str) and TARGET in command,
+                'target_fuse_path_mentioned': TARGET in encoded.decode(),
                 'command_truncated_in_trace': isinstance(command, str) and '…' in command,
             }
         result = event.get('result', {})
@@ -79,6 +81,69 @@ def summarize(raw, *, exit_code):
                 file_content_verified=False, large_binary_transfer_verified=False,
                 can_resume_c1_full_run=False,
                 classifier_scope='Evidence-only: this summary never promotes unverified claims to A/B/C')
+
+
+def result_payload(response):
+    """Parse one final object; never treat model assertions as access evidence."""
+    if not isinstance(response, str):
+        return {}
+    try:
+        value = json.loads(response)
+    except ValueError:
+        blocks = re.findall(r'```json\s*(.*?)```', response, re.DOTALL)
+        if len(blocks) != 1:
+            return {}
+        try:
+            value = json.loads(blocks[0])
+        except ValueError:
+            return {}
+    return value if isinstance(value, dict) else {}
+
+
+def verify_manifest(raw, *, exit_code, expected_bytes, expected_sha256):
+    """Bind returned bytes to the actual native read and a trusted reference SHA.
+
+    This verifies only the known FUSE file, never independent remote upload.
+    The summary alone remains conservative; this explicit check may promote C.
+    """
+    evidence = summarize(raw, exit_code=exit_code)
+    native_read, native_size = False, None
+    payload = {}
+    for line in raw.splitlines():
+        try:
+            event = json.loads(line)
+        except ValueError:
+            continue
+        if not isinstance(event, dict):
+            continue
+        step = event.get('step_update', {})
+        if isinstance(step, dict) and step.get('state') == 'DONE' and step.get('tool_name') in {'read_file', 'view_file'}:
+            info = step.get('tool_info', {})
+            params = info.get('parameters', {}) if isinstance(info, dict) else {}
+            if isinstance(params, dict) and params.get('Path') == MANIFEST:
+                native_read = True
+                output = info.get('output')
+                match = re.fullmatch(r'\s*\d+\s+lines,?\s+(\d+)\s+bytes\.?\s*', output) if isinstance(output, str) else None
+                if match:
+                    native_size = int(match.group(1))
+        result = event.get('result', {})
+        if isinstance(result, dict) and result:
+            payload = result_payload(result.get('response'))
+    text = payload.get('manifest_text')
+    content = text.encode('utf-8') if isinstance(text, str) and len(text) <= 8192 else None
+    digest = hashlib.sha256(content).hexdigest() if content is not None else None
+    verified = (exit_code == 0 and evidence['runtime_result_status'] == 'SUCCESS'
+                and evidence['denied_action_count'] == 0 and native_read
+                and native_size == expected_bytes and content is not None
+                and len(content) == expected_bytes and digest == expected_sha256)
+    return dict(evidence, status='C_SAME_RCLONE_PATH_CONTENT_VERIFIED' if verified else 'D_FAILED_UNVERIFIED',
+                independent_drive_access=False if verified else None,
+                file_content_verified=verified, native_read_target_observed=native_read,
+                native_read_size_bytes=native_size,
+                returned_content_bytes=len(content) if content is not None else None,
+                returned_content_sha256=digest, reference_size_bytes=expected_bytes,
+                reference_sha256=expected_sha256,
+                classifier_scope='C requires native read evidence, no denial, exact byte count and trusted reference SHA; no A/B claims')
 
 
 def main(argv=None):

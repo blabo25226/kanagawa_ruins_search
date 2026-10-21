@@ -1,0 +1,77 @@
+{
+  "trial": 3,
+  "execution": {
+    "trial": 3,
+    "argv_without_prompt": [
+      "agy",
+      "--mode",
+      "plan",
+      "--sandbox",
+      "--output-format",
+      "stream-json",
+      "--print-timeout",
+      "60s",
+      "--add-dir",
+      "/home/blabo/gdrive/kanagawa_ruins_search_databank/data/raw/fgd",
+      "--print",
+      "<committed prompt>"
+    ],
+    "prompt_sha256": "1a4ba43208d9424692dffb51eb5f74b97bae7b7d632e21384f426d98a6f4ea21",
+    "execution_status": "EXITED",
+    "exit_code": 0,
+    "elapsed_seconds": 70.035,
+    "trace_sha256": "e48b3af9762956a10b6a16b2408665407ff458c1b9f5445e713abdf2539a5f17",
+    "trace_bytes": 9583,
+    "inference_invocations": 1,
+    "outer_timeout_seconds": 85,
+    "cli_timeout_seconds": 60,
+    "max_output_bytes": 524288
+  },
+  "evidence": {
+    "trace_sha256": "e48b3af9762956a10b6a16b2408665407ff458c1b9f5445e713abdf2539a5f17",
+    "trace_bytes": 9583,
+    "json_events": 38,
+    "non_json_lines": 0,
+    "exit_code": 0,
+    "runtime_result_status": "SUCCESS",
+    "num_turns": 1,
+    "runtime_permission_mode": "request-review",
+    "plan_mode_disabled_warning": false,
+    "requested_plan_mode_effective": null,
+    "headless_permission_auto_denied": false,
+    "filesystem_tools_exposed": [
+      "list_dir",
+      "run_command",
+      "view_file"
+    ],
+    "browser_tools_exposed": true,
+    "dedicated_drive_name_in_tool_inventory": false,
+    "tool_attempts": [],
+    "denied_action_count": 0,
+    "final_response_nonempty": true,
+    "status": "D_FAILED_UNVERIFIED",
+    "independent_drive_access": null,
+    "file_content_verified": false,
+    "large_binary_transfer_verified": false,
+    "can_resume_c1_full_run": false,
+    "classifier_scope": "Evidence-only: this summary never promotes unverified claims to A/B/C"
+  },
+  "changed_condition": "Add raw/fgd with per-invocation --add-dir; native list_dir only; metadata only",
+  "metadata_outcome": {
+    "zip_sizes_observed": false,
+    "tool_calls": 0,
+    "model_reported_list_dir_unavailable": true,
+    "runtime_init_list_dir_listed": true,
+    "status": "NOT_VERIFIED_NO_METADATA_TOOL_CALL",
+    "returned_name_candidates_only": [
+      {
+        "name": "20261011005041318-001.zip",
+        "size_bytes": null
+      },
+      {
+        "name": "20261011005145933-001.zip",
+        "size_bytes": null
+      }
+    ]
+  }
+}

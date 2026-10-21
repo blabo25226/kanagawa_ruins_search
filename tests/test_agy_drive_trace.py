@@ -69,5 +69,49 @@ class TraceTests(unittest.TestCase):
             summarize(b'x'*(MAX_TRACE_BYTES+1), exit_code=0)
 
 
+class ManifestVerificationTests(unittest.TestCase):
+    CONTENT = 'MOCK_PRIVATE_CONTENT\n'
+
+    def fixture(self, *, path=None, text=None, denied=False, tool=True, size=None):
+        from scripts.summarize_agy_drive_trace import MANIFEST
+        events = []
+        if tool:
+            events.append({'step_update': {'step_type': 'tool', 'state': 'DONE', 'tool_name': 'read_file',
+                'tool_info': {'parameters': {'Path': path or MANIFEST},
+                              'output': f'1 lines, {size if size is not None else len(self.CONTENT.encode())} bytes'}}})
+        events.append({'result': {'status': 'SUCCESS', 'response': json.dumps({'manifest_text': self.CONTENT if text is None else text}),
+                                  'denied_actions': [{'action': 'file'}] if denied else []}})
+        return trace(*events)
+
+    def verify(self, raw, exit_code=0):
+        import hashlib
+        from scripts.summarize_agy_drive_trace import verify_manifest
+        return verify_manifest(raw, exit_code=exit_code, expected_bytes=len(self.CONTENT.encode()),
+                               expected_sha256=hashlib.sha256(self.CONTENT.encode()).hexdigest())
+
+    def test_native_read_plus_exact_reference_promotes_only_c(self):
+        value = self.verify(self.fixture())
+        self.assertEqual(value['status'], 'C_SAME_RCLONE_PATH_CONTENT_VERIFIED')
+        self.assertTrue(value['file_content_verified'])
+        self.assertFalse(value['independent_drive_access'])
+        self.assertFalse(value['large_binary_transfer_verified'])
+        self.assertFalse(value['can_resume_c1_full_run'])
+        self.assertNotIn(self.CONTENT, json.dumps(value))
+
+    def test_matching_natural_language_content_without_tool_is_unverified(self):
+        self.assertFalse(self.verify(self.fixture(tool=False))['file_content_verified'])
+
+    def test_wrong_hash_or_native_byte_count_is_unverified(self):
+        self.assertFalse(self.verify(self.fixture(text='wrong'))['file_content_verified'])
+        self.assertFalse(self.verify(self.fixture(size=1))['file_content_verified'])
+
+    def test_wrong_path_is_unverified(self):
+        self.assertFalse(self.verify(self.fixture(path='/tmp/same-name-copy.json'))['file_content_verified'])
+
+    def test_denial_or_exit_failure_prevents_promotion(self):
+        self.assertFalse(self.verify(self.fixture(denied=True))['file_content_verified'])
+        self.assertFalse(self.verify(self.fixture(), exit_code=1)['file_content_verified'])
+
+
 if __name__ == '__main__':
     unittest.main()

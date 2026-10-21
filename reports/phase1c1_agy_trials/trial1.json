@@ -1,0 +1,65 @@
+{
+  "trial": 1,
+  "execution": {
+    "trial": 1,
+    "argv_without_prompt": [
+      "agy",
+      "--mode",
+      "plan",
+      "--sandbox",
+      "--output-format",
+      "stream-json",
+      "--print-timeout",
+      "60s",
+      "--print",
+      "<committed prompt>"
+    ],
+    "prompt_sha256": "ed8dba33822250c7339ee1a7d4ebc3b821221b6db6c875d4cfa272f03e97ed24",
+    "execution_status": "EXITED",
+    "exit_code": 0,
+    "elapsed_seconds": 16.559,
+    "trace_sha256": "88aa33fbc1e12a20230ce4ef597d057fadf06917c9ce1930de93057311427f51",
+    "trace_bytes": 3251,
+    "inference_invocations": 1,
+    "outer_timeout_seconds": 85,
+    "cli_timeout_seconds": 60,
+    "max_output_bytes": 524288
+  },
+  "evidence": {
+    "trace_sha256": "88aa33fbc1e12a20230ce4ef597d057fadf06917c9ce1930de93057311427f51",
+    "trace_bytes": 3251,
+    "json_events": 6,
+    "non_json_lines": 1,
+    "exit_code": 0,
+    "runtime_result_status": "SUCCESS",
+    "num_turns": 1,
+    "runtime_permission_mode": "request-review",
+    "plan_mode_disabled_warning": false,
+    "requested_plan_mode_effective": null,
+    "headless_permission_auto_denied": true,
+    "filesystem_tools_exposed": [
+      "list_dir",
+      "run_command",
+      "view_file"
+    ],
+    "browser_tools_exposed": true,
+    "dedicated_drive_name_in_tool_inventory": false,
+    "tool_attempts": [
+      {
+        "tool_name": "read_file",
+        "parameters_sha256": "d3374cd149e73caf65d9360f6e06463fcd1623ec0589ef14789499a47012d637",
+        "target_fuse_path_mentioned": true,
+        "command_truncated_in_trace": false
+      }
+    ],
+    "denied_action_count": 1,
+    "final_response_nonempty": false,
+    "status": "D_FAILED_UNVERIFIED",
+    "independent_drive_access": null,
+    "file_content_verified": false,
+    "large_binary_transfer_verified": false,
+    "can_resume_c1_full_run": false,
+    "classifier_scope": "Evidence-only: this summary never promotes unverified claims to A/B/C"
+  },
+  "changed_condition": "Remove --disable-slash-commands; native read_file only, no shell"
+}

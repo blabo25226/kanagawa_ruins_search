@@ -1,5 +1,51 @@
 # Issue #17: agy経由のDrive読取検証（2026-10-22）
 
+## 追加試行の結論（最新）
+
+**(C) 同じrclone/FUSE経路で、小さな既知manifestの実体読取を確認した。独立したDriveアクセスではない。**
+
+初回の失敗報告後、ユーザーから「なんかいか実行してしこうさくごしてください。」という追加指示を受け、条件を変えてCLIを3回呼び出した。自動再試行は0、初回を合わせたCLI呼出しは計4回。CLI内部のprovider API往復回数は計測していない。初回レコードは`phase1c1_agy_drive_probe_initial.json`へそのまま保存し、最新機械可読結果を`phase1c1_agy_drive_probe.json`に更新した。
+
+| 追試 | 変更した条件 | 実ツール呼出し | 結果 | 外側の所要時間 |
+| --- | --- | --- | --- | ---: |
+| 1 | `--disable-slash-commands`を外し、native `read_file`のみ | 1、拒否1 | D：読取拒否 | 16.559秒 |
+| 2 | 上記にmanifestディレクトリだけの`--add-dir`を追加 | `read_file` 1、拒否0 | **C：内容照合成功** | 38.864秒 |
+| 3 | raw/fgdディレクトリの`--add-dir`、native `list_dir`だけでZIPの名前/サイズを確認 | 0 | D：メタデータ未取得 | 70.035秒 |
+
+3回ともexit 0だったため、終了コードだけでは成功判定できないことも再確認した。各試行はCLI時間制限60秒、外側85秒、出力512KiB上限。CLIの時間制限を含めた起動/終了処理により、3回目の外側所要時間は60秒を超えた。
+
+### 成功した条件と検証
+
+2回目の実行argvは次のとおり（prompt全文は`phase1c1_agy_trials/trial2_prompt.txt`）。ログインや設定ファイルを編集せず、その呼出しの対象ディレクトリをCLI引数で明示した。
+
+```text
+agy --mode plan --sandbox --output-format stream-json --print-timeout 60s \
+  --add-dir /home/blabo/gdrive/kanagawa_ruins_search_databank/data/processed/phase1c/codex/manifests \
+  --print <trial2_prompt.txtの全文を1つの引数として渡す>
+```
+
+対象は`fgd__2008_14101__blda_v1.json`。runtimeに正しいPathのnative `read_file`がDONEと記録され、ツール自身の要約は84 lines / 2842 bytes、拒否記録0。モデルが返したUTF-8テキストは2842 bytesで、SHA-256が参照値と完全一致した:
+
+`7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9`
+
+参照値は旧ingestレポートと元publisherのシリアライズ形式から再構成したもので、モデルへ内容や期待SHAを渡していない。自然言語の「読めた」という主張だけでなく、nativeツールの対象/サイズ、拒否なし、返却内容のバイト数・SHAを合わせて判定した。`verify_manifest`を追加し、正しい返却内容でもツール実読取りがない場合、別パス、サイズ/ハッシュ違い、拒否、非ゼロ終了ならCへ昇格させない。
+
+`--add-dir`を付けたこの条件では読めたが、それが全CLI/全ツールでの唯一の原因や恒久解決とは断定しない。plan/sandboxで書込みが防止されるかは試験していない。
+
+### 確認できなかった範囲
+
+- 成功した読取先は`/home/blabo/gdrive`のFUSEパスであり、rcloneキャッシュから供給された可能性がある。独立Google Drive API接続でも、リモートupload完了の検証でもない。
+- 3回目はモデルが`list_dir`は当該モデルのツール宣言にないと応答し、呼出し0だった。runtime initには`list_dir`が列挙されており、この差の原因は未確定。未呼出しなので、ファイル名/サイズを実取得したとはしない。
+- Drive folder ID、2 ZIPの正確なサイズ、既存9レイヤー全体のリモートSHAは今回確認していない。
+- `independent_drive_access=false`は今回成功した経路が独立でないという意味で、他の全経路が不可能という主張ではない。
+- `file_content_verified=true`、`large_binary_transfer_verified=false`、`remote_upload_verified=false`、`can_resume_c1_full_run=false`。
+
+試行ごとのコマンド・所要時間・拒否件数・trace SHAは`phase1c1_agy_trials/trial1.json`〜`trial3.json`へ保存した。生traceは各SHAを再確認して削除し、manifest本文・座標・認証情報はGitへ入れていない。原本、台帳、旧派生物、OAuth/rclone/mount/VFS設定は編集せず、全域解析も再開していない。合成テストは12件成功（`phase1c1_agy_trials/tests.log`）、compileallとgit diff --checkも成功。
+
+## 初回調査の記録（追加指示前、commit 3e5c824）
+
+以下は最初の1回のD判定の履歴。最新結果は上記Cであり、初回の「再試行なし」はその時点の実施範囲を指す。
+
 **結論: (D) 失敗／未検証。独立したGoogle Driveアクセスも、実ファイルの読取りも確認できなかった。**
 
 既存agyによるモデル呼出しは1回のみ。CLI exit code 0、runtimeのresultはSUCCESSだったが、`denied_actions`に`RunCommand`が1件あり、最終応答は空だった。実行記録には「非対話モードではcommand権限を確認できず自動拒否した」とある。失敗後の再試行・設定変更は行わなかった。Phase 1-C1全域解析の解除条件は満たしていない。

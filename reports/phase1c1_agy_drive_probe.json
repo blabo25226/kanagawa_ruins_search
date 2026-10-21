@@ -1,90 +1,75 @@
 {
-  "trace_sha256": "8058d77d3044ef305ec7f6e440f518fb9e167bb8e200f3296dba18b3d47e098d",
-  "trace_bytes": 4097,
-  "json_events": 6,
-  "non_json_lines": 2,
-  "exit_code": 0,
-  "runtime_result_status": "SUCCESS",
-  "num_turns": 1,
-  "runtime_permission_mode": "request-review",
-  "plan_mode_disabled_warning": true,
-  "requested_plan_mode_effective": false,
-  "headless_permission_auto_denied": true,
-  "filesystem_tools_exposed": [
-    "list_dir",
-    "run_command",
-    "view_file"
-  ],
-  "browser_tools_exposed": true,
-  "dedicated_drive_name_in_tool_inventory": false,
-  "tool_attempts": [
-    {
-      "tool_name": "run_command",
-      "parameters_sha256": "9b6d7c316435e803864527f11d5506b4c947215267d1b71d6074e7be7a2d759a",
-      "target_fuse_path_mentioned": true,
-      "command_truncated_in_trace": true
-    }
-  ],
-  "denied_action_count": 1,
-  "final_response_nonempty": false,
-  "status": "D_FAILED_UNVERIFIED",
-  "independent_drive_access": null,
-  "file_content_verified": false,
+  "issue": 17,
+  "review_date_jst": "2026-10-22",
+  "recorded_at_utc": "2026-10-21T15:41:48.805856+00:00",
+  "status": "C_SAME_RCLONE_PATH_CONTENT_VERIFIED",
+  "classification": "C",
+  "independent_drive_access": false,
+  "file_content_verified": true,
   "large_binary_transfer_verified": false,
   "can_resume_c1_full_run": false,
-  "classifier_scope": "Evidence-only: this summary never promotes unverified claims to A/B/C",
-  "issue": 17,
-  "classification": "D",
-  "review_date_jst": "2026-10-22",
-  "recorded_at_utc": "2026-10-21T15:27:55.879637+00:00",
-  "branch": "codex/phase1c-agy-drive-probe",
-  "base_sha": "b24be1ee767b8668207e0187e03295878dc9a936",
-  "execution": {
-    "argv_without_prompt": [
-      "agy",
-      "--mode",
-      "plan",
-      "--sandbox",
-      "--disable-slash-commands",
-      "--output-format",
-      "stream-json",
-      "--print-timeout",
-      "75s",
-      "--print",
-      "<prompt in docs/report>"
-    ],
-    "prompt_sha256": "1c7bad13a33ae43463c03005de189d55e0dcdb546897dee4e7f8a54903c7744c",
-    "exit_code": 0,
-    "execution_status": "EXITED",
-    "elapsed_seconds": 16.885,
-    "captured_bytes": 4097,
-    "private_trace_sha256": "8058d77d3044ef305ec7f6e440f518fb9e167bb8e200f3296dba18b3d47e098d",
-    "inference_invocations": 1,
-    "retries": 0,
-    "outer_timeout_seconds": 100,
-    "cli_timeout": "75s",
-    "max_output_bytes": 524288
-  },
-  "mcp_metadata_probe": {
-    "command": [
-      "agy",
-      "mcp",
-      "list"
-    ],
-    "exit_code": 0,
-    "bytes": 27,
-    "output_sha256": "23fc9c2e3f83bfa734cf95d4e402fb0f060745a0515e1a6f0ef0ee126fdd67be",
-    "drive_name_mentioned": false,
-    "empty_list_indicated": true
-  },
-  "authentication": {
-    "model_turn_completed": true,
-    "cli_result_status": "SUCCESS",
-    "account_identity_verified": false,
-    "drive_oauth_scope_verified": false,
-    "login_commands_executed": 0,
-    "authentication_changes_requested": false,
-    "note": "Existing CLI defaults/session used; one model turn, but account/plan/scope not introspected. Runtime cache/token refresh was not audited."
+  "remote_upload_verified": false,
+  "user_authorized_followup": "なんかいか実行してしこうさくごしてください。",
+  "initial_probe_report": "reports/phase1c1_agy_drive_probe_initial.json",
+  "additional_cli_invocations": 3,
+  "total_cli_invocations_including_initial": 4,
+  "automatic_retries": 0,
+  "provider_api_round_trips": "not measured; invocation count refers to agy CLI calls",
+  "trial_reports": [
+    "reports/phase1c1_agy_trials/trial1.json",
+    "reports/phase1c1_agy_trials/trial2.json",
+    "reports/phase1c1_agy_trials/trial3.json"
+  ],
+  "trials_overview": [
+    {
+      "trial": 1,
+      "condition": "Remove --disable-slash-commands; native read_file only, no shell",
+      "exit_code": 0,
+      "elapsed_seconds": 16.559,
+      "denied_actions": 1,
+      "tool_attempts": 1,
+      "status": "D_FAILED_UNVERIFIED"
+    },
+    {
+      "trial": 2,
+      "condition": "Add exact manifest directory with per-invocation --add-dir; native read_file only",
+      "exit_code": 0,
+      "elapsed_seconds": 38.864,
+      "denied_actions": 0,
+      "tool_attempts": 1,
+      "status": "C_SAME_RCLONE_PATH_CONTENT_VERIFIED"
+    },
+    {
+      "trial": 3,
+      "condition": "Add raw/fgd with per-invocation --add-dir; native list_dir only; metadata only",
+      "exit_code": 0,
+      "elapsed_seconds": 70.035,
+      "denied_actions": 0,
+      "tool_attempts": 0,
+      "status": "D_FAILED_UNVERIFIED"
+    }
+  ],
+  "successful_trial": 2,
+  "route_observed": "local rclone/FUSE native read_file",
+  "successful_flags": [
+    "--mode",
+    "plan",
+    "--sandbox",
+    "--add-dir",
+    "/home/blabo/gdrive/kanagawa_ruins_search_databank/data/processed/phase1c/codex/manifests",
+    "--output-format",
+    "stream-json"
+  ],
+  "small_file": {
+    "relative_path": "processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json",
+    "read_cap_bytes": 8192,
+    "retrieved_bytes": 2842,
+    "retrieved_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
+    "reference_kind": "reconstructed from prior ingest report and original publisher serialization; NOT remotely observed",
+    "reference_bytes": 2842,
+    "reference_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
+    "reference_ingest_report_url": "https://github.com/blabo25226/kanagawa_ruins_search/blob/30b52345bf5924b656ab8bb4f4225896ce2576ca/reports/phase1c1_ingest_r2.json",
+    "exact_byte_comparison": "MATCH; native tool target and 2842-byte metadata plus returned UTF-8 text match trusted reconstructed reference"
   },
   "target": {
     "expected_data_folder_id": "1XqQEuapdFd5dms0xa3I8reLGyenzc8gf",
@@ -106,51 +91,23 @@
     "reference_plan_sha256": "449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0",
     "reference_plan_url": "https://github.com/blabo25226/kanagawa_ruins_search/blob/30b52345bf5924b656ab8bb4f4225896ce2576ca/reports/phase1c1_registration_plan.json"
   },
-  "route": {
-    "observed_attempt": "local_rclone_fuse",
-    "actual_file_access": "not confirmed; command permission auto-denied",
-    "local_mount_from_proc": {
-      "mount_point": "/home/blabo/gdrive",
-      "fstype": "fuse.rclone",
-      "device": "gdrive{_p9vl}:"
-    },
-    "browser_path_tested": false,
-    "direct_drive_tool_tested": false,
-    "evidence_scope": "No configured MCP servers indicated; no drive-named tool in runtime inventory. This is not proof that every possible independent route is unavailable."
-  },
-  "small_file": {
-    "relative_path": "processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json",
-    "read_cap_bytes": 8192,
-    "retrieved_bytes": null,
-    "retrieved_sha256": null,
-    "reference_kind": "reconstructed from prior ingest report and original publisher serialization; NOT remotely observed",
-    "reference_bytes": 2842,
-    "reference_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
-    "reference_ingest_report_url": "https://github.com/blabo25226/kanagawa_ruins_search/blob/30b52345bf5924b656ab8bb4f4225896ce2576ca/reports/phase1c1_ingest_r2.json",
-    "exact_byte_comparison": "NOT_PERFORMED"
-  },
-  "stop_reason": "HEADLESS_COMMAND_PERMISSION_AUTO_DENIED",
-  "retry_count": 0,
-  "configuration_mutation_commands_executed": false,
+  "limitations": [
+    "Only one small manifest was read; FUSE cache may supply it. This does not verify remote upload completion.",
+    "Drive folder ID and the two ZIP byte sizes were not observed in these trials.",
+    "Third model response claimed list_dir absent, while runtime init listed it; no metadata call happened, so tool availability is not inferred from this claim.",
+    "Plan/sandbox write prevention was not tested; no edit operation was requested."
+  ],
+  "configuration_file_edits_requested": false,
+  "authentication_changes_requested": false,
   "rclone_commands_executed": false,
-  "large_zip_contents_read": false,
   "ledger_appends": 0,
-  "new_derivatives": 0,
-  "raw_trace_committed": false,
-  "private_trace_cleanup": "SHA verified; raw trace and temporary reconstructed manifest deleted after deriving sanitized summary",
+  "new_gis_derivatives": 0,
+  "new_full_analysis_runs": 0,
+  "large_zip_contents_read": false,
+  "private_trace_cleanup": "All three trace SHA values checked against capture metadata; raw traces deleted; file contents not committed",
+  "summary_script_sha256": "65a39bfd082a3d74438a41fbeacb50d75df50ce41b2d94f4dbc3ffe0a6908f12",
   "offline_tests": {
-    "passed": 7,
+    "passed": 12,
     "command": "python -m unittest discover -s tests -p 'test_agy_drive_trace.py' -v"
-  },
-  "syntax_check": "PASS",
-  "diff_check": "PASS",
-  "summary_script_sha256": "7df85d801951ec66a0efbc97386bb715dc01ca0b502027547318e8d48d0b1dda",
-  "denied_actions_observed": [
-    {
-      "action": "command",
-      "display_name": "RunCommand",
-      "reason_code": "HEADLESS_CANNOT_PROMPT",
-      "reason_source": "CLI non-JSON diagnostic; result contains denied action identity only"
-    }
-  ]
+  }
 }

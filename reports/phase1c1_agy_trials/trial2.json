@@ -1,0 +1,73 @@
+{
+  "trial": 2,
+  "execution": {
+    "trial": 2,
+    "argv_without_prompt": [
+      "agy",
+      "--mode",
+      "plan",
+      "--sandbox",
+      "--output-format",
+      "stream-json",
+      "--print-timeout",
+      "60s",
+      "--add-dir",
+      "/home/blabo/gdrive/kanagawa_ruins_search_databank/data/processed/phase1c/codex/manifests",
+      "--print",
+      "<committed prompt>"
+    ],
+    "prompt_sha256": "f7cd4eb1be91f66e94853c1ffce97828ab288a29565389d76c4c0813dd0481d6",
+    "execution_status": "EXITED",
+    "exit_code": 0,
+    "elapsed_seconds": 38.864,
+    "trace_sha256": "533138fd67fc77c63fef5fee076b526bbaea85b8e401db9f61bf6d96a3092e44",
+    "trace_bytes": 37953,
+    "inference_invocations": 1,
+    "outer_timeout_seconds": 85,
+    "cli_timeout_seconds": 60,
+    "max_output_bytes": 524288
+  },
+  "evidence": {
+    "trace_sha256": "533138fd67fc77c63fef5fee076b526bbaea85b8e401db9f61bf6d96a3092e44",
+    "trace_bytes": 37953,
+    "json_events": 162,
+    "non_json_lines": 0,
+    "exit_code": 0,
+    "runtime_result_status": "SUCCESS",
+    "num_turns": 1,
+    "runtime_permission_mode": "request-review",
+    "plan_mode_disabled_warning": false,
+    "requested_plan_mode_effective": null,
+    "headless_permission_auto_denied": false,
+    "filesystem_tools_exposed": [
+      "list_dir",
+      "run_command",
+      "view_file"
+    ],
+    "browser_tools_exposed": true,
+    "dedicated_drive_name_in_tool_inventory": false,
+    "tool_attempts": [
+      {
+        "tool_name": "read_file",
+        "parameters_sha256": "d3374cd149e73caf65d9360f6e06463fcd1623ec0589ef14789499a47012d637",
+        "target_fuse_path_mentioned": true,
+        "command_truncated_in_trace": false
+      }
+    ],
+    "denied_action_count": 0,
+    "final_response_nonempty": true,
+    "status": "C_SAME_RCLONE_PATH_CONTENT_VERIFIED",
+    "independent_drive_access": false,
+    "file_content_verified": true,
+    "large_binary_transfer_verified": false,
+    "can_resume_c1_full_run": false,
+    "classifier_scope": "C requires native read evidence, no denial, exact byte count and trusted reference SHA; no A/B claims",
+    "native_read_target_observed": true,
+    "native_read_size_bytes": 2842,
+    "returned_content_bytes": 2842,
+    "returned_content_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
+    "reference_size_bytes": 2842,
+    "reference_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9"
+  },
+  "changed_condition": "Add exact manifest directory with per-invocation --add-dir; native read_file only"
+}
