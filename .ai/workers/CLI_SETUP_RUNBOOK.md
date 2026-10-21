@@ -230,6 +230,11 @@ python scripts/ci/check_worker_cli.py --plan-worker-ok agy
 そのため上の候補例は保持する。古い版にも使えるとは主張しない。公式codelabと実機helpが異なる場合は、
 版と観測結果を明記する。モード名の存在と、実際のread-only強制は別の検証項目である。
 
+2026-10-22（JST）の統合前再確認では、Codex 0.163.0、Claude 2.1.280、Cursor agent 2026.09.23、
+`agy 1.4.4`の固定9情報表示コマンドが成功した。`agy`の`--mode`とplan/accept-edits、`--sandbox`は
+新版helpにも存在する。結果は`reports/worker_cli_observed_20261022.json`に保持し、旧版の観測は変更しない。
+認証付き`WORKER_OK`と独立したDriveアクセスは未検証のまま。別PR #18のFUSE読取成功は独立API経路の証明ではない。
+
 診断は直列・再試行なし・直接起動最大9プロセス・1プロセス10秒・起動/読取予算45秒、出力128KiB上限。
 プロセス群の終了待ちは別枠で最大2秒/件。直接起動数の上限はCLI内部の補助プロセス数を保証するものではない。
 最初の失敗/timeout/出力超過で停止する。子プロセス群を終了し、生stdout/stderrや環境変数はログへ出さない。
