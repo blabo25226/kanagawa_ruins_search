@@ -1,0 +1,12 @@
+User-authorized Issue #17 read-only capability probe. Do NOT delegate to another agent, start another model, log in, change credentials/OAuth/MCP/plugins, install anything, edit/delete/create any Drive or repository files, run rclone, run recursive discovery, or read auth/config/env/credential files. Use only the current login. Stop on the first permission/auth/API error; no retries or permission bypass.
+
+Target is the EXISTING Google Drive folder kanagawa_ruins_search_databank/data/; previously observed folder ID is 1XqQEuapdFd5dms0xa3I8reLGyenzc8gf. Distinguish this exact folder from same-name copies. First say whether your CURRENT available tools include a direct Google Drive read connector/API independent of the local filesystem. Do not invent tools or infer direct access from model login. If a direct read-only Drive tool is available, use it for this folder's metadata and at most the two named ZIP metadata entries and the small manifest below (at most 4 Drive read operations). Report actual tool names, folder/file IDs, names and sizes. No large file contents.
+
+If no independent Drive tool is available, a SINGLE local read-only fallback is allowed to distinguish the FUSE route: /home/blabo/gdrive/kanagawa_ruins_search_databank/data/. Read only metadata (do not open ZIP contents) for:
+raw/fgd/20261011005041318-001.zip
+raw/fgd/20261011005145933-001.zip
+Read at most 8192 bytes of this ONE small text manifest, if tools allow:
+processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json
+Do NOT seek other files if any read fails. A read-only Python command may collect these three items in one execution, but no output file writes. Do not list the whole Drive. For local reads report the exact tool and path/command actually used; do NOT claim a Google Drive folder ID was verified by a local path.
+
+For the manifest return its exact original bytes as base64 (do not parse/reformat the file); never print plaintext geographical coordinates. If unavailable, return null. I will verify the bytes/hash independently outside this response. Do not fabricate a hash or echo a presumed result. Provide a compact final JSON with route (direct_drive / local_fuse / unavailable / unknown), available_drive_tools, actual_operations, folder_id_observed (null unless actually observed), zip_metadata [{name,size_bytes}], manifest_base64 (or null), errors. Identify observed permission denials even if the CLI exits 0. No further investigation or model calls.

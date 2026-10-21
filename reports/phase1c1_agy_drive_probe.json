@@ -1,0 +1,113 @@
+{
+  "issue": 17,
+  "review_date_jst": "2026-10-22",
+  "recorded_at_utc": "2026-10-21T15:41:48.805856+00:00",
+  "status": "C_SAME_RCLONE_PATH_CONTENT_VERIFIED",
+  "classification": "C",
+  "independent_drive_access": false,
+  "file_content_verified": true,
+  "large_binary_transfer_verified": false,
+  "can_resume_c1_full_run": false,
+  "remote_upload_verified": false,
+  "user_authorized_followup": "なんかいか実行してしこうさくごしてください。",
+  "initial_probe_report": "reports/phase1c1_agy_drive_probe_initial.json",
+  "additional_cli_invocations": 3,
+  "total_cli_invocations_including_initial": 4,
+  "automatic_retries": 0,
+  "provider_api_round_trips": "not measured; invocation count refers to agy CLI calls",
+  "trial_reports": [
+    "reports/phase1c1_agy_trials/trial1.json",
+    "reports/phase1c1_agy_trials/trial2.json",
+    "reports/phase1c1_agy_trials/trial3.json"
+  ],
+  "trials_overview": [
+    {
+      "trial": 1,
+      "condition": "Remove --disable-slash-commands; native read_file only, no shell",
+      "exit_code": 0,
+      "elapsed_seconds": 16.559,
+      "denied_actions": 1,
+      "tool_attempts": 1,
+      "status": "D_FAILED_UNVERIFIED"
+    },
+    {
+      "trial": 2,
+      "condition": "Add exact manifest directory with per-invocation --add-dir; native read_file only",
+      "exit_code": 0,
+      "elapsed_seconds": 38.864,
+      "denied_actions": 0,
+      "tool_attempts": 1,
+      "status": "C_SAME_RCLONE_PATH_CONTENT_VERIFIED"
+    },
+    {
+      "trial": 3,
+      "condition": "Add raw/fgd with per-invocation --add-dir; native list_dir only; metadata only",
+      "exit_code": 0,
+      "elapsed_seconds": 70.035,
+      "denied_actions": 0,
+      "tool_attempts": 0,
+      "status": "D_FAILED_UNVERIFIED"
+    }
+  ],
+  "successful_trial": 2,
+  "route_observed": "local rclone/FUSE native read_file",
+  "successful_flags": [
+    "--mode",
+    "plan",
+    "--sandbox",
+    "--add-dir",
+    "/home/blabo/gdrive/kanagawa_ruins_search_databank/data/processed/phase1c/codex/manifests",
+    "--output-format",
+    "stream-json"
+  ],
+  "small_file": {
+    "relative_path": "processed/phase1c/codex/manifests/fgd__2008_14101__blda_v1.json",
+    "read_cap_bytes": 8192,
+    "retrieved_bytes": 2842,
+    "retrieved_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
+    "reference_kind": "reconstructed from prior ingest report and original publisher serialization; NOT remotely observed",
+    "reference_bytes": 2842,
+    "reference_sha256": "7facaab9ef32f45916f782cd6024057d07b77168526e59f41638cda252c1e5d9",
+    "reference_ingest_report_url": "https://github.com/blabo25226/kanagawa_ruins_search/blob/30b52345bf5924b656ab8bb4f4225896ce2576ca/reports/phase1c1_ingest_r2.json",
+    "exact_byte_comparison": "MATCH; native tool target and 2842-byte metadata plus returned UTF-8 text match trusted reconstructed reference"
+  },
+  "target": {
+    "expected_data_folder_id": "1XqQEuapdFd5dms0xa3I8reLGyenzc8gf",
+    "expected_folder_path": "kanagawa_ruins_search_databank/data/",
+    "expected_local_path": "/home/blabo/gdrive/kanagawa_ruins_search_databank/data",
+    "folder_id_observed": null,
+    "folder_identity_verified": false,
+    "expected_zip_metadata": [
+      {
+        "relative_path": "raw/fgd/20261011005041318-001.zip",
+        "size_bytes": 638547984
+      },
+      {
+        "relative_path": "raw/fgd/20261011005145933-001.zip",
+        "size_bytes": 865319242
+      }
+    ],
+    "zip_metadata_observed": [],
+    "reference_plan_sha256": "449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0",
+    "reference_plan_url": "https://github.com/blabo25226/kanagawa_ruins_search/blob/30b52345bf5924b656ab8bb4f4225896ce2576ca/reports/phase1c1_registration_plan.json"
+  },
+  "limitations": [
+    "Only one small manifest was read; FUSE cache may supply it. This does not verify remote upload completion.",
+    "Drive folder ID and the two ZIP byte sizes were not observed in these trials.",
+    "Third model response claimed list_dir absent, while runtime init listed it; no metadata call happened, so tool availability is not inferred from this claim.",
+    "Plan/sandbox write prevention was not tested; no edit operation was requested."
+  ],
+  "configuration_file_edits_requested": false,
+  "authentication_changes_requested": false,
+  "rclone_commands_executed": false,
+  "ledger_appends": 0,
+  "new_gis_derivatives": 0,
+  "new_full_analysis_runs": 0,
+  "large_zip_contents_read": false,
+  "private_trace_cleanup": "All three trace SHA values checked against capture metadata; raw traces deleted; file contents not committed",
+  "summary_script_sha256": "65a39bfd082a3d74438a41fbeacb50d75df50ce41b2d94f4dbc3ffe0a6908f12",
+  "offline_tests": {
+    "passed": 12,
+    "command": "python -m unittest discover -s tests -p 'test_agy_drive_trace.py' -v"
+  }
+}

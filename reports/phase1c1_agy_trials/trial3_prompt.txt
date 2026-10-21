@@ -1,0 +1,6 @@
+User-authorized read-only metadata experiment for Issue #17. The CLI explicitly adds only /home/blabo/gdrive/kanagawa_ruins_search_databank/data/raw/fgd to this invocation's workspace. Do NOT change settings, permissions, credentials or files. Do NOT delegate, call another agent/model, use terminal/run_command, browse the web, log in, or retry a failed tool.
+Use ONLY the native list_dir tool to inspect that exact directory ONCE, non-recursively. Do not open any ZIP or other file, and do not recursively search. Return only the names and exact byte sizes (if the actual tool supplies exact byte sizes) of these two entries:
+20261011005041318-001.zip
+20261011005145933-001.zip
+The expected sizes are deliberately not given; do not infer, estimate or obtain them from repository reports. If exact sizes are not available, return null for size_bytes and explain the limitation. On denial/error stop immediately; do not ask for blanket permissions.
+Final JSON: {"route":"local_fuse" or "unverified", "tool_used":actual tool name, "zip_metadata":[{"name":...,"size_bytes":...}], "error":null or concise error}. This is a local rclone/FUSE route, NOT independent Google Drive API access. Do not claim to have observed a Drive folder ID from a local path.

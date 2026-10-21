@@ -1,0 +1,12 @@
+test_active_and_done_are_one_attempt_not_successful_read (test_agy_drive_trace.TraceTests.test_active_and_done_are_one_attempt_not_successful_read) ... ok
+test_exit_zero_and_success_do_not_override_denied_action (test_agy_drive_trace.TraceTests.test_exit_zero_and_success_do_not_override_denied_action) ... ok
+test_input_limit_prevents_unbounded_trace_expansion (test_agy_drive_trace.TraceTests.test_input_limit_prevents_unbounded_trace_expansion) ... ok
+test_known_runtime_warnings_are_recorded_without_suggesting_bypass (test_agy_drive_trace.TraceTests.test_known_runtime_warnings_are_recorded_without_suggesting_bypass) ... ok
+test_missing_or_malformed_trace_is_unverified (test_agy_drive_trace.TraceTests.test_missing_or_malformed_trace_is_unverified) ... ok
+test_natural_language_success_and_base64_are_not_evidence (test_agy_drive_trace.TraceTests.test_natural_language_success_and_base64_are_not_evidence) ... ok
+test_private_parameters_and_unknown_tools_are_not_logged (test_agy_drive_trace.TraceTests.test_private_parameters_and_unknown_tools_are_not_logged) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
