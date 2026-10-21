@@ -43,11 +43,14 @@ class TemporalSettings:
             raise OSError(info)
 
 
-def inventory(settings, plan):
+def inventory(settings, plan, *, years=None):
     """Inspect actual ZIP central directories, independently of B.5 claims."""
     registered = {s.relative_path: s for s in read_sources(settings.data_root)}
     items, sources = [], {}
     for r in plan["records"]:
+        # Filter before verify/open: a deferred year must not cause remote reads.
+        if years is not None and r["temporal_coverage"] not in years:
+            continue
         source = Source(r["source_id"], r["relative_path"], r["sha256"],
                         r["temporal_coverage"], r["acquired_at"], r["license"],
                         r["source_url"], r["source_page"])

@@ -1,0 +1,50 @@
+{
+  "checked_at_utc": "2026-10-21T12:48:28.144917+00:00",
+  "command": [
+    "rclone",
+    "lsjson",
+    "gdrive:",
+    "--drive-root-folder-id",
+    "1XqQEuapdFd5dms0xa3I8reLGyenzc8gf",
+    "--files-only",
+    "--max-depth",
+    "1",
+    "--tpslimit",
+    "0.5",
+    "--tpslimit-burst",
+    "1",
+    "--retries",
+    "1",
+    "--low-level-retries",
+    "1",
+    "--contimeout",
+    "5s",
+    "--timeout",
+    "10s"
+  ],
+  "attempts": 1,
+  "recursive": false,
+  "exit_code": 0,
+  "stderr": "",
+  "stdout": "[\n{\"Path\":\".provenance.lock\",\"Name\":\".provenance.lock\",\"Size\":54,\"MimeType\":\"application/octet-stream\",\"ModTime\":\"2026-10-11T04:18:19.830Z\",\"IsDir\":false,\"ID\":\"1g-OwayjYyor2Ul2Yc2CJ08NumaywM5ri\"},\n{\"Path\":\"provenance.jsonl\",\"Name\":\"provenance.jsonl\",\"Size\":42547,\"MimeType\":\"application/octet-stream\",\"ModTime\":\"2026-10-10T05:25:28.368Z\",\"IsDir\":false,\"ID\":\"1tYFeKgEH7VfAOSqUCiwn5SKPmOtQi5dC\"}\n]\n",
+  "entries": [
+    {
+      "Path": ".provenance.lock",
+      "Name": ".provenance.lock",
+      "Size": 54,
+      "MimeType": "application/octet-stream",
+      "ModTime": "2026-10-11T04:18:19.830Z",
+      "IsDir": false,
+      "ID": "1g-OwayjYyor2Ul2Yc2CJ08NumaywM5ri"
+    },
+    {
+      "Path": "provenance.jsonl",
+      "Name": "provenance.jsonl",
+      "Size": 42547,
+      "MimeType": "application/octet-stream",
+      "ModTime": "2026-10-10T05:25:28.368Z",
+      "IsDir": false,
+      "ID": "1tYFeKgEH7VfAOSqUCiwn5SKPmOtQi5dC"
+    }
+  ]
+}

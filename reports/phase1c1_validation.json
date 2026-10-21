@@ -217,5 +217,14 @@
     "newly_processed_partitions": 0,
     "new_analysis_runs": 0,
     "drive_configuration_changed": false
+  },
+  "latest_review_response": {
+    "date": "2026-10-21",
+    "report": "reports/phase1c1_review_20261021.json",
+    "remote_upload_verified": false,
+    "ledger_appended": false,
+    "analysis_scope_verified": false,
+    "geoparquet_published": false,
+    "overall_completion": false
   }
 }

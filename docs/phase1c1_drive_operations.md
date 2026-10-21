@@ -34,8 +34,22 @@ timeout 25 rclone lsjson gdrive: \
 2. 回復後、各vector/manifestを直列にリモート取得する。vectorは一時ファイルへ丸ごと保存せずSHA-256を逐次計算する。manifestのlayer_id、入力SHA、処理版、parameters、出力SHA、bytes、CRSを初回記録と照合する。9ペアの欠落・不一致は停止し、原物を保全する。残留partialや未対応vectorがあれば削除せず別に報告する。mount/cacheを介したreadbackだけでupload完了としない。
 3. 承認済み7件は`docs/phase1c1_usage.md`の台帳手順を使う。承認plan SHA、台帳の事前SHA、全原本SHA/sizeを再検査する。**不一致は停止**する。追記後のリモート全バイトが旧台帳＋7新規行に一致することを確認する。取得日時・直接URLはnullを保持する。重複原本1件は保持し追記しない。
 4. 既存派生物の`acquisition_registered=false`を後から書き換えない。登録後に作る派生物は登録済みとして新しいmanifestを作る。
-5. 次回の全域変換は2014/2025年だけを明示選択する。現行`phase1c1_ingest.py --stage all`は2008年も選ぶため、そのまま再実行しない。年代フィルタと保存失敗時の即時停止を実装・検証してから実行する。既存のcatch-and-continueで全区画への失敗アクセスを繰り返さない。
+5. 次回の全域変換は2014/2025年だけを明示選択する。2026-10-21の修正で`phase1c1_ingest.py --stage all`の既定は2014/2025に限定した。`--years 2014 2025`で明示でき、原本open前に除外する。最初の区画エラーで`STOPPED_ON_ERROR`を保存して終了する。オフライン検証済みだが、実データ全域実行は再開していない。
 6. 両年代45区画ずつを対象とするが、ZIPの存在と地物の完全性は別である。BldA/RdEdg別の収録状態・欠損・重複・県内共通範囲を確認し、県全域の照合・地域集計・感度分析へ進む。2008年は検証済み測地変換が得られるまで保留する。
 7. GeoParquet・CSV・地図と計算入力・manifestを新IDでDriveへ保存し、リモートSHAを確認する。全域完了を確認してから6報告とvalidationを更新する。PR #6はDraftを維持し、mainへmergeしない。
 
 現状は上記2以降を実行できていない。新しい解析・GeoParquet・CSV・地図の生成は0件で、全域解析は未完了。
+
+## 2026-10-21 PR #6 / Issue #12への対応
+
+単一低頻度プローブは成功したが、その後の最初の既存vector取得で再びHTTP 403となった。追加アクセスを停止し、検証完了0/9、台帳追記0件。`reports/phase1c1_review_20261021_probe.json`と`reports/phase1c1_review_20261021_remote.json`に実測を保持する。
+
+リモート検証を再現する読取専用スクリプト（回復確認後に限る）:
+
+```bash
+python scripts/phase1c1_verify_remote.py \
+  --root-id 1XqQEuapdFd5dms0xa3I8reLGyenzc8gf \
+  --report reports/new_remote_verification.json
+```
+
+9つの既存vectorを1MB単位でSHA計算し、manifestの出典・処理条件・CRS・サイズを元レポートと照合する。各リモート読取は低頻度・再試行なし・時間/容量上限付きで、最初のエラーまたは不一致で全体を停止する。vector全体をRAMやローカルディスクへ保持しない。報告先は既存ファイルやDrive上のパスを拒否する。

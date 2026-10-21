@@ -9,8 +9,8 @@
 ```bash
 conda activate kanagawa-ruins
 python scripts/check_environment.py --output reports/new_environment_check.json
-python scripts/phase1c1_ingest.py --stage pilot --report reports/new_pilot.json
-python scripts/phase1c1_ingest.py --stage all --pilot-report reports/new_pilot.json \
+python scripts/phase1c1_ingest.py --stage pilot --years 2014 2025 --report reports/new_pilot.json
+python scripts/phase1c1_ingest.py --stage all --years 2014 2025 --pilot-report reports/new_pilot.json \
   --report reports/new_ingest.json
 python scripts/phase1c1_analyze.py --ingest-report reports/new_ingest.json \
   --run-id unique_run_id --report reports/new_analysis.json
@@ -19,7 +19,7 @@ python scripts/phase1c1_analyze.py --ingest-report reports/new_ingest.json \
 既存レポート、原本、派生物は上書きしない。途中から取り込みを再開するときは、保存済み出力のSHAを照合したうえで新しいレポートを指定する。
 
 ```bash
-python scripts/phase1c1_ingest.py --stage all --pilot-report reports/new_pilot.json \
+python scripts/phase1c1_ingest.py --stage all --years 2014 2025 --pilot-report reports/new_pilot.json \
   --resume-report reports/phase1c1_ingest_r2.json --report reports/resumed_ingest.json
 ```
 
@@ -80,4 +80,6 @@ git diff --check
 
 Conda環境のGDAL CLIをPATHで有効にする。合成試験は実地図精度を証明しない。正解ラベルがないため、p値や実測検出精度は生成しない。
 
-レビュー後のDrive制限調査と次回再開の前提条件は[phase1c1_drive_operations.md](phase1c1_drive_operations.md)を参照する。最新の確認では低頻度の単一プローブもHTTP 403となり、Driveへの追加アクセスを停止した。全域取り込みの再実行前に、2014/2025年限定選択と保存障害時の即時停止を整える必要がある。
+レビュー後のDrive制限調査と次回再開の前提条件は[phase1c1_drive_operations.md](phase1c1_drive_operations.md)を参照する。最新の確認では低頻度の単一プローブもHTTP 403となり、Driveへの追加アクセスを停止した。2026-10-21に`--years`（既定2014/2025）と最初の区画エラーでの即時停止を実装した。年代選択は原本のSHA検査・ZIP openより前に適用し、resume時も対象外の旧出力を読まない。停止時は`STOPPED_ON_ERROR`・非ゼロ終了となり、それまでの正常結果を新レポートに保持する。
+
+`--years 2008`を明示した場合も元CRSでの取り込みに限り、測地変換・時系列比較の許可を追加しない。`--stage all`のPASSは選択した区画の取り込み処理がエラーなく終了した意味であり、地物完全性・全県分析・リモートupload完了を保証しない。

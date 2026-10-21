@@ -27,3 +27,9 @@ FGDのNested ZIP / UTF-8 / Shift_JIS / Surfaceの外周・内周 / Curveの非�
 共有クライアント設定と公式資料を照合し、既知dataフォルダID・0.5 transaction/s・再試行なし・非再帰の読取プローブを1回実行した。HTTP 403のプロジェクト単位クォータ超過が継続しており、指示どおり追加のDriveアクセスを停止した。既存9レイヤーの検証リストを保存したが、今回のリモート整合性確認は0件。台帳の7件承認は維持し、実追記0件。新規全域変換・解析・GeoParquet/CSV/地図保存も0件。既存mount/config/cacheを変更していない。
 
 調査・負荷削減案・再開前提は`docs/phase1c1_drive_operations.md`、停止証跡は`reports/phase1c1_drive_resume_probe.json`、チェックリストと項目別進捗は`reports/phase1c1_review_continuation.json`。全域解析は未完了、PR #6はDraft維持。
+
+## 2026-10-21 PR #6コメント / Issue #12対応
+
+`--years`の既定を2014/2025とし、原本検査前に年代を選別するよう修正した。resumeも選択範囲外の出力は検査・再利用しない。最初の区画エラーで未処理区画へ進まず、正常結果とエラーを保存して非ゼロ終了する。9ペアのリモート逐次SHA/manifest検証スクリプトを追加した。新規12テストを含むオフライン回帰は128 passed / 8 skipped / 35 subtests passed。環境doctorはGISモジュール・CLI・合成smokeが成功したが、独立worktreeにRUINS_DATA_ROOT/.envを設定していないためstorage FAIL。403後のDriveアクセスを避け、その状態を維持した。
+
+再開確認は単一プローブ成功後、最初の既存vectorのリモート読取でHTTP 403となり停止した。検証完了0/9、台帳追記0、新規全域変換・解析・成果物保存0。承認plan SHAは変更していない。2008年比較は保留。詳細と個別完了状態は`reports/phase1c1_review_20261021.json`。PR #6はDraft、Issue #12は未解決として保持する。

@@ -12,17 +12,22 @@ from kanagawa_ruins.qa.hashing import sha256
 from kanagawa_ruins.raster.io import local_output
 
 
-def main():
+def main(argv=None):
     p = argparse.ArgumentParser(__doc__)
     p.add_argument("--stage", choices=["pilot", "all"], default="pilot")
     p.add_argument("--plan", default="reports/phase1c1_registration_plan.json")
     p.add_argument("--report", required=True)
     p.add_argument("--pilot-report", default="reports/phase1c1_pilot_r2.json")
     p.add_argument("--resume-report")
-    args = p.parse_args()
+    p.add_argument("--years", nargs="+", choices=["2008", "2014", "2025"],
+                   default=["2014", "2025"],
+                   help="Edition years to inspect/ingest (default: 2014 2025). "
+                        "Explicit 2008 ingestion retains source CRS; no datum fallback.")
+    args = p.parse_args(argv)
     settings = TemporalSettings.from_env(); settings.check_mount()
     target = local_output(args.report)
-    items, duplicates, sources = inventory(settings, json.load(open(args.plan)))
+    items, duplicates, sources = inventory(settings, json.load(open(args.plan)),
+                                           years=set(args.years))
     if args.stage == "all":
         gate = json.load(open(args.pilot_report))
         if gate["status"] != "PASS" or gate["errors"]:
@@ -32,14 +37,22 @@ def main():
         selected = [x for x in items if (x["era"], x["code"]) in
                     {("2008", "14101"), ("2014", "523867"), ("2025", "523867"),
                      ("2014", "533935"), ("2025", "533935")}]
-    report = dict(stage=args.stage, status="RUNNING", selected=selected,
+    report = dict(stage=args.stage, years=sorted(set(args.years)), status="RUNNING", selected=selected,
                   inventory=items, duplicate_archives=duplicates, results=[], errors=[])
+    if not selected:
+        raise ValueError("No partitions selected for requested years/stage")
     mask = None
     if args.stage == "all":
         mask = load_layer("admin__n03__2026_kanagawa").geometry.union_all().buffer(20)
     if args.resume_report:
         previous = json.load(open(args.resume_report))
+        selected_keys = {(x["era"], x["code"]) for x in selected}
+        report["resume_ignored_partitions"] = []
         for result in previous["results"]:
+            if (result["era"], result["code"]) not in selected_keys:
+                report["resume_ignored_partitions"].append(
+                    dict(era=result["era"], code=result["code"]))
+                continue
             for layer in result["layers"]:
                 if sha256(settings.data_root/layer["processed_path"]) != layer["output_sha256"]:
                     raise ValueError("Cannot resume corrupt output")
@@ -57,8 +70,13 @@ def main():
         except Exception as e:
             report["errors"].append(dict(item=item, error=repr(e)))
             print("ERROR", repr(e), flush=True)
+            # Any failed partition stops the run. In particular, a quota/storage
+            # error must never cause requests for every remaining partition.
+            report["status"] = "STOPPED_ON_ERROR"
+            target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+            return 1
         target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
-    report["status"] = "PASS" if not report["errors"] else "PARTIAL_FAILURE"
+    report["status"] = "PASS"
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     return 1 if report["errors"] else 0
 
