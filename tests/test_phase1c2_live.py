@@ -55,6 +55,18 @@ def test_1976_remains_tokyo_datum_and_not_analysis_ready(root):
         assert m["analysis_ready"] is False
 
 
+# SHA-256 of the published phase1c2-claude-0.2.0 run_manifest.json, as recorded in PR #7 and in
+# reports/phase1c2_results.json. The manifest lists every output/input hash, so pinning its own hash
+# makes the whole published set tamper-evident. A new analysis version must get its own pin.
+PINNED_MANIFEST_SHA256 = {"phase1c2-claude-0.2.0": "e578f2331f7bacf93383dd213fc66d72b4ae35d49508e8cc663bd9f2a02d6a8e"}
+
+
+def test_published_manifest_hash_is_pinned(run_dir):
+    assert sha256(run_dir / "run_manifest.json") == PINNED_MANIFEST_SHA256[ANALYSIS_VERSION]
+    results = json.loads((Path(__file__).resolve().parents[1] / "reports" / "phase1c2_results.json").read_text(encoding="utf-8"))
+    assert results["published"]["manifest"]["sha256"] == PINNED_MANIFEST_SHA256[ANALYSIS_VERSION]
+
+
 def test_published_outputs_hashes_and_inputs_unchanged(root, run_dir):
     m = json.loads((run_dir / "run_manifest.json").read_text(encoding="utf-8"))
     assert m["phase"] == "phase1c2" and m["analysis_version"] == ANALYSIS_VERSION
@@ -64,6 +76,7 @@ def test_published_outputs_hashes_and_inputs_unchanged(root, run_dir):
         assert sha256(p) == o["sha256"]
     for i in m["inputs"]:
         assert sha256(root / i["path"]) == i["manifest_sha256"]
+        assert i["verified_sha256"] == i["manifest_sha256"]
     assert not list(run_dir.rglob("*.partial"))
 
 
