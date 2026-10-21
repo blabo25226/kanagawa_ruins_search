@@ -1,0 +1,193 @@
+{
+  "status": "RUNNING",
+  "run_id": "pilot_20261011",
+  "meshes": [
+    "523867",
+    "533935"
+  ],
+  "results": [
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 1,
+      "old_records": 32254,
+      "new_records": 31018,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 30239,
+        "missing_in_newer_dataset": 1566,
+        "possible_merge": 227,
+        "large_shape_or_position_change": 187,
+        "possible_split": 21,
+        "ambiguous_many_to_many": 7,
+        "indeterminate_partition_boundary": 6,
+        "ambiguous_survey_scale": 1
+      },
+      "new_status": {
+        "matched": 30239,
+        "only_in_newer_dataset": 426,
+        "large_shape_or_position_change": 187,
+        "possible_merge": 94,
+        "possible_split": 47,
+        "indeterminate_partition_boundary": 17,
+        "ambiguous_many_to_many": 7,
+        "ambiguous_survey_scale": 1
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 5,
+      "old_records": 32254,
+      "new_records": 31018,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 28848,
+        "missing_in_newer_dataset": 1557,
+        "ambiguous_many_to_many": 1406,
+        "possible_merge": 229,
+        "large_shape_or_position_change": 183,
+        "possible_split": 22,
+        "indeterminate_partition_boundary": 8,
+        "ambiguous_survey_scale": 1
+      },
+      "new_status": {
+        "matched": 28848,
+        "ambiguous_many_to_many": 1405,
+        "only_in_newer_dataset": 418,
+        "large_shape_or_position_change": 183,
+        "possible_merge": 95,
+        "possible_split": 49,
+        "indeterminate_partition_boundary": 19,
+        "ambiguous_survey_scale": 1
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "building",
+      "tolerance_m": 10,
+      "old_records": 32254,
+      "new_records": 31018,
+      "duplicates_removed": [
+        0,
+        0
+      ],
+      "old_status": {
+        "matched": 25134,
+        "ambiguous_many_to_many": 5128,
+        "missing_in_newer_dataset": 1477,
+        "possible_merge": 301,
+        "large_shape_or_position_change": 170,
+        "possible_split": 32,
+        "indeterminate_partition_boundary": 12
+      },
+      "new_status": {
+        "matched": 25134,
+        "ambiguous_many_to_many": 5094,
+        "only_in_newer_dataset": 397,
+        "large_shape_or_position_change": 170,
+        "possible_merge": 133,
+        "possible_split": 70,
+        "indeterminate_partition_boundary": 20
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 1,
+      "old_records": 39309,
+      "new_records": 11148,
+      "duplicates_removed": [
+        1,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 36269,
+        "edge_geometry_disagreement": 2480,
+        "indeterminate_partition_boundary": 560
+      },
+      "new_status": {
+        "spatially_agreeing": 8145,
+        "edge_geometry_disagreement": 2520,
+        "indeterminate_partition_boundary": 483
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 5,
+      "old_records": 39309,
+      "new_records": 11148,
+      "duplicates_removed": [
+        1,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 37622,
+        "edge_geometry_disagreement": 1057,
+        "indeterminate_partition_boundary": 630
+      },
+      "new_status": {
+        "spatially_agreeing": 9536,
+        "edge_geometry_disagreement": 1101,
+        "indeterminate_partition_boundary": 511
+      }
+    },
+    {
+      "code": "523867",
+      "domain": "road_edge",
+      "tolerance_m": 10,
+      "old_records": 39309,
+      "new_records": 11148,
+      "duplicates_removed": [
+        1,
+        0
+      ],
+      "old_status": {
+        "spatially_agreeing": 37912,
+        "indeterminate_partition_boundary": 710,
+        "edge_geometry_disagreement": 687
+      },
+      "new_status": {
+        "spatially_agreeing": 9952,
+        "edge_geometry_disagreement": 649,
+        "indeterminate_partition_boundary": 547
+      }
+    }
+  ],
+  "errors": [],
+  "artifacts": [
+    {
+      "kind": "matching_validation",
+      "status": "local_aggregate_or_figure",
+      "path": "/home/blabo/kanagawa_ruins_search/reports/phase1c1_figures/matching_validation.png",
+      "sha256": "d3b6ed56534347510e491b7ee26461c6459ca6873c6e6a0a5e887558b6253697",
+      "bytes": 47735
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    },
+    {
+      "status": "not_published_drive_quota_block",
+      "name": "matches.parquet"
+    }
+  ],
+  "implementation_sha256": "e08267b01c803577bd261bf738d0129719ea02eb5d1ae2eb53f854b6a507dd01",
+  "coverage_claim": "selected archives with observed features; feature completeness not established",
+  "spatial_allocation": "EPSG:6677 centroid allocation, whole area/length per record; boundary totals are not clipped area/length",
+  "comparison": "2014_2025",
+  "tolerances_m": [
+    1,
+    5,
+    10
+  ],
+  "input_report_sha256": "2dd6f4b95490ff904a2beace640289338f455ff5e1bc60343d71b60ac84b44f5",
+  "admin_layer": "admin__n03__2026_kanagawa"
+}
