@@ -49,8 +49,16 @@ def check_paths(paths: list[str]) -> list[str]:
 
 
 def changed_paths(base: str) -> list[str]:
-    if not base.startswith("origin/") or base.count("/") != 1:
-        raise ValueError("Expected a simple origin/<basebranch> ref")
+    if not base.startswith("origin/"):
+        raise ValueError("Expected origin/<basebranch> ref")
+    # Stacked PR bases legitimately contain slashes (chatgpt/..., codex/...).
+    # Validate a literal ref, never a revision expression or shell fragment.
+    validation = subprocess.run(
+        ["git", "check-ref-format", base], stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    if validation.returncode:
+        raise ValueError("Invalid base ref")
     result = subprocess.run(
         ["git", "diff", "--name-only", "-z", f"{base}...HEAD"],
         check=True,

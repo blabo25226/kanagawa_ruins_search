@@ -1,0 +1,36 @@
+test_nonzero_exit_is_not_success (test_worker_cli.CaptureTests.test_nonzero_exit_is_not_success) ... ok
+test_oversized_output_is_stopped (test_worker_cli.CaptureTests.test_oversized_output_is_stopped) ... ok
+test_successful_capture_has_bounded_metadata (test_worker_cli.CaptureTests.test_successful_capture_has_bounded_metadata) ... ok
+test_timeout_kills_inherited_pipe_child (test_worker_cli.CaptureTests.test_timeout_kills_inherited_pipe_child) ... ok
+test_arbitrary_worker_command_is_rejected (test_worker_cli.WorkerCliTests.test_arbitrary_worker_command_is_rejected) ... ok
+test_ci_discovery_does_not_require_credentials (test_worker_cli.WorkerCliTests.test_ci_discovery_does_not_require_credentials) ... ok
+test_default_does_not_launch_any_cli (test_worker_cli.WorkerCliTests.test_default_does_not_launch_any_cli) ... ok
+test_first_failed_probe_stops_without_fallback (test_worker_cli.WorkerCliTests.test_first_failed_probe_stops_without_fallback) ... ok
+test_missing_clis_are_not_installed_or_started (test_worker_cli.WorkerCliTests.test_missing_clis_are_not_installed_or_started) ... ok
+test_observed_options_use_exact_names (test_worker_cli.WorkerCliTests.test_observed_options_use_exact_names) ... ok
+test_output_cannot_escape_reports_or_overwrite_existing_file (test_worker_cli.WorkerCliTests.test_output_cannot_escape_reports_or_overwrite_existing_file) ... ok
+test_probe_only_uses_nine_allowlisted_information_commands (test_worker_cli.WorkerCliTests.test_probe_only_uses_nine_allowlisted_information_commands) ... ok
+test_recursion_is_blocked_before_discovery (test_worker_cli.WorkerCliTests.test_recursion_is_blocked_before_discovery) ... ok
+test_secret_output_and_environment_are_not_in_report (test_worker_cli.WorkerCliTests.test_secret_output_and_environment_are_not_in_report) ... ok
+test_total_budget_stops_before_launch (test_worker_cli.WorkerCliTests.test_total_budget_stops_before_launch) ... ok
+test_unknown_or_execution_flags_never_echo_secret_values (test_worker_cli.WorkerCliTests.test_unknown_or_execution_flags_never_echo_secret_values) ... ok
+test_unknown_version_or_help_is_not_verified (test_worker_cli.WorkerCliTests.test_unknown_version_or_help_is_not_verified) ... ok
+test_worker_ok_plan_never_executes_inference (test_worker_cli.WorkerCliTests.test_worker_ok_plan_never_executes_inference) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.246s
+
+OK
+test_allow_small_reports_and_gitkeep (test_pr_scope.PrScopeTests.test_allow_small_reports_and_gitkeep) ... ok
+test_claude_only (test_pr_scope.PrScopeTests.test_claude_only) ... ok
+test_codex_only (test_pr_scope.PrScopeTests.test_codex_only) ... ok
+test_foreign_commit_is_rejected (test_pr_scope.PrScopeTests.test_foreign_commit_is_rejected) ... ok
+test_non_remote_base_rejected (test_pr_scope.PrScopeTests.test_non_remote_base_rejected) ... ok
+test_prohibit_raw_and_gis_artifacts (test_pr_scope.PrScopeTests.test_prohibit_raw_and_gis_artifacts) ... ok
+test_revision_expression_rejected_before_diff (test_pr_scope.PrScopeTests.test_revision_expression_rejected_before_diff) ... ok
+test_stacked_base_ref_with_slashes (test_pr_scope.PrScopeTests.test_stacked_base_ref_with_slashes) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK

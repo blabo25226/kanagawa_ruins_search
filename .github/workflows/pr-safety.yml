@@ -35,6 +35,10 @@ jobs:
         run: python -m compileall -q src scripts tests
       - name: Verify PR guard tests
         run: python -m unittest discover -s tests -p 'test_pr_scope.py' -v
+      - name: Verify worker diagnostic without credentials or model execution
+        run: |
+          python scripts/ci/check_worker_cli.py
+          python -m unittest discover -s tests -p 'test_worker_cli.py' -v
 
   synthetic-tests:
     name: C1/C2/ledger offline synthetic tests
