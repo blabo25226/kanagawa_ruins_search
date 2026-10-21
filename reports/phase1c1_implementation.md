@@ -1,0 +1,35 @@
+# Phase 1-C1 実装・実行報告
+
+判定: **PARTIAL — 実データ部分解析済み、全域・Drive最終保存は未完了**。
+
+最新main `b24be1e`から開始。作業ブランチは`codex/phase1c1-building-road-analysis`。原本・取得台帳・旧派生物は変更していない。初回解析時は台帳追記の承認応答がなく、追記件数0。`acquisition_registered=false`を保持した。
+
+FGDのNested ZIP / UTF-8 / Shift_JIS / Surfaceの外周・内周 / Curveの非連続線分に対応。内部ZIP1件・地物単位の逐次処理、2,000件batch、scratch1GB上限。Phase 1-Aのwriter・CRS検査・排他公開・SHA readback、Phase 1-Bと共通のscratch管理を再利用した。BldAは面、BldLとRdEdgは線。中心線化は行わない。
+
+実データpilotは3年代・5内部ZIPの対象地物XMLを全件パースした。全県全XMLの検証ではない。全域取り込みはDrive APIの繰返しHTTP 403クォータ超過で中断。正常保存として記録できたのは2008年の5自治体区画・9レイヤーで、元CRS EPSG:4612を保持しanalysis_ready=false。マウントreadback一致とリモートupload完了は区別し、後者は未確認。
+
+部分解析: 523867 / 533935 の県内交差部分（候補探索は県域＋20m）。県全域ではない。県土面積に対する対象メッシュ交差面積の割合は0.644%（アーカイブの2/45を面積率としない）。 原本から4区画を一時GeoParquet化してハッシュ照合し、建物・道路縁を1/5/10mで比較した。一時GISは処理終了時に削除。入力原本・コード・実行条件・集計CSV・図は保持する。部分解析GeoParquetと検証サンプルGISのDrive保存は未完了。原本再処理で再現する。
+
+一時取り込みの観測ピークは180,878,033 bytes。解析ジョブの観測ピークは113,509,391 bytes。1GBを超えていない。メモリ量は一時ディスク容量と別で、都市区画の候補グラフではRAMが1GBを超える場合がある。
+
+検証: 新規10テストを含む回帰 **116 passed / 8 skipped / 35 subtests passed**。従来の実Drive全件監査`test_phase0_4_1.py`を除外し、意図的に非マウントrootを指定した。最初の全試験はDrive待ちで中断。CLIのPATH不足による再試行後、Phase1B.5に既存のユーザー固有PROJパスを検出し、`sys.prefix/share/proj`へ修正して通過した。環境doctor PASS。合成試験を実測精度とは扱わない。
+
+共有チェックアウトが別作業のPhase1C2ブランチへ変更されたため、独立worktreeへ移行した。監査の1行修正は共有側の`438da19`にも記録されており、他作業をresetせず指定ブランチへcherry-pickした。他作業ファイルは本PRに含めない。
+
+再開コマンド、台帳追記の承認後手順、処理条件は`docs/phase1c1_usage.md`。API回復後に保存済みペアと残留partialを検証し、`--resume-report`で残りを実行する。JGD2000補正グリッド・2008年の地物別共通範囲を確認するまで2008年比較を開始しない。PRはdraftとして作成し、mainへmergeせず停止する。
+
+## 2026-10-11 台帳追記承認後の確認
+
+ユーザーは登録案の7件追記を明示承認した。承認案SHAは`449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0`。排他制御下でマウント台帳の53件・承認案と同じSHAを確認したが、リモート台帳の事前読取は2回ともDrive API HTTP 403 `RATE_LIMIT_EXCEEDED`で失敗した。原本の再検査もFUSEメタデータ応答待ちとなり、読取専用プロセスを終了した。**実追記0件、台帳への書込み未実施**。原本・既存行・旧派生物を変更していない。詳細は`reports/phase1c1_registration_execution.json`。承認は取得済みとして保持し、Drive回復後に同じ7件について前提条件を再確認して実行する。県全域解析の未完了状態は変わらない。
+
+## PR #6 レビュー後の継続確認
+
+共有クライアント設定と公式資料を照合し、既知dataフォルダID・0.5 transaction/s・再試行なし・非再帰の読取プローブを1回実行した。HTTP 403のプロジェクト単位クォータ超過が継続しており、指示どおり追加のDriveアクセスを停止した。既存9レイヤーの検証リストを保存したが、今回のリモート整合性確認は0件。台帳の7件承認は維持し、実追記0件。新規全域変換・解析・GeoParquet/CSV/地図保存も0件。既存mount/config/cacheを変更していない。
+
+調査・負荷削減案・再開前提は`docs/phase1c1_drive_operations.md`、停止証跡は`reports/phase1c1_drive_resume_probe.json`、チェックリストと項目別進捗は`reports/phase1c1_review_continuation.json`。全域解析は未完了、PR #6はDraft維持。
+
+## 2026-10-21 PR #6コメント / Issue #12対応
+
+`--years`の既定を2014/2025とし、原本検査前に年代を選別するよう修正した。resumeも選択範囲外の出力は検査・再利用しない。最初の区画エラーで未処理区画へ進まず、正常結果とエラーを保存して非ゼロ終了する。9ペアのリモート逐次SHA/manifest検証スクリプトを追加した。新規12テストを含むオフライン回帰は128 passed / 8 skipped / 35 subtests passed。環境doctorはGISモジュール・CLI・合成smokeが成功したが、独立worktreeにRUINS_DATA_ROOT/.envを設定していないためstorage FAIL。403後のDriveアクセスを避け、その状態を維持した。
+
+再開確認は単一プローブ成功後、最初の既存vectorのリモート読取でHTTP 403となり停止した。検証完了0/9、台帳追記0、新規全域変換・解析・成果物保存0。承認plan SHAは変更していない。2008年比較は保留。詳細と個別完了状態は`reports/phase1c1_review_20261021.json`。PR #6はDraft、Issue #12は未解決として保持する。

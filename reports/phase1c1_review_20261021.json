@@ -1,0 +1,46 @@
+{
+  "review_date": "2026-10-21",
+  "pr": 6,
+  "issue": 12,
+  "review_comment_url": "https://github.com/blabo25226/kanagawa_ruins_search/pull/6#issuecomment-6316057316",
+  "status": "OFFLINE_FIXES_VALIDATED_REMOTE_BLOCKED",
+  "remote_upload_verified": false,
+  "remote_verified_pairs": 0,
+  "expected_pairs": 9,
+  "ledger_appended": false,
+  "ledger_appends_this_run": 0,
+  "approved_records": 7,
+  "approved_plan_sha256": "449b0419fdcf87d472be2c46953609ef213eff362261776f9ab69858653296d0",
+  "ledger_sha_and_raw_recheck_this_run": "not attempted after renewed 403",
+  "analysis_scope_verified": false,
+  "scope_note": "Full Kanagawa unverified; historical two-mesh pilot retained, not generalized.",
+  "geoparquet_published": false,
+  "publication_note": "No new derivatives or analysis outputs this run; historical 9 outputs not remotely verified.",
+  "overall_completion": false,
+  "single_probe_passed": true,
+  "remote_verification_status": "STOPPED_ON_ERROR",
+  "renewed_403": true,
+  "additional_drive_operations_after_failure": 0,
+  "config_mount_cache_credentials_modified": false,
+  "year_filter_implemented": true,
+  "default_years": [
+    "2014",
+    "2025"
+  ],
+  "fail_fast_implemented": true,
+  "new_offline_tests": 12,
+  "offline_tests": {
+    "passed": 128,
+    "skipped": 8,
+    "subtests_passed": 35,
+    "excluded": "tests/test_phase0_4_1.py (live historical Drive audit)",
+    "command": "RUINS_DATA_ROOT=/tmp/phase1c1_unmounted_test_root PYTHONPATH=src python -m pytest -q --ignore=tests/test_phase0_4_1.py"
+  },
+  "environment_check": {
+    "report": "reports/phase1c1_review_20261021_environment.json",
+    "overall": "FAIL",
+    "reason": "No RUINS_DATA_ROOT/.env in isolated worktree; storage check not run; no Drive writes attempted. GIS modules, CLI and synthetic smoke checks passed."
+  },
+  "main_merged": false,
+  "pr_draft": true
+}

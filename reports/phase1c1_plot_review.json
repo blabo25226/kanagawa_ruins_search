@@ -1,0 +1,25 @@
+{
+  "status": "VISUAL_REVIEW_PASS",
+  "input_summary_sha256": "a0701413f76c71edac50baaa6f41a9c2a89646f10575d0ce7f3086592b79ca35",
+  "support_meshes": [
+    "523867",
+    "533935"
+  ],
+  "color_scale": "symmetric about zero",
+  "artifacts": [
+    {
+      "path": "reports/phase1c1_figures_r3/building_regional_map_reviewed.png",
+      "sha256": "f3b08f23bc88af12025360e022b26f03d15614bdc8964d2b842a6c3b5109d231",
+      "bytes": 113598
+    },
+    {
+      "path": "reports/phase1c1_figures_r3/road_edge_regional_map_reviewed.png",
+      "sha256": "0644f489e6b7ef76516913823ba707cdb4a373a47a650bae1d97a63bd0aeb7b0",
+      "bytes": 112056
+    }
+  ],
+  "prefecture_area_m2": 2416210870.8241134,
+  "selected_prefecture_land_area_m2": 15570416.238495799,
+  "selected_prefecture_land_fraction": 0.006444146256648987,
+  "review_note": "Reviewed all four required figure types; reviewed maps shade selected mesh intersections only and use a zero-centred colour scale. Matching overlay is nearly identical and does not establish accuracy."
+}

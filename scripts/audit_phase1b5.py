@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT))
 from scripts.storage_utils import get_verified_data_root
 
 # Ensure PROJ data path is set for conda env
-conda_proj = Path("/home/blabo/miniconda3/envs/kanagawa-ruins/share/proj")
+conda_proj = Path(sys.prefix) / "share" / "proj"
 if conda_proj.exists():
     os.environ["PROJ_DATA"] = str(conda_proj)
 
