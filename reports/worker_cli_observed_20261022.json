@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-21T16:02:01.341492+00:00",
+  "mode": "HELP_VERSION_ONLY",
+  "inference_executed": false,
+  "authentication_checked": false,
+  "worker_ok": "NOT_RUN",
+  "subprocess_count": 9,
+  "clis": [
+    {
+      "cli": "codex",
+      "status": "HELP_VERSION_VERIFIED",
+      "checks": [
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 18,
+          "output_sha256": "15c9db57c80035537f94bea647d07608a1fab5148f5482c0a0d1d7422b7fb69e",
+          "argv": [
+            "codex",
+            "--version"
+          ],
+          "version": "0.163.0"
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 5769,
+          "output_sha256": "75c90681ba095160666d9884d1eccce391be95c80da27641a3c8e1481bb02fac",
+          "argv": [
+            "codex",
+            "--help"
+          ],
+          "observed_options": [
+            "--version",
+            "--help",
+            "--sandbox"
+          ],
+          "mode_values_mentioned": [
+            "ask"
+          ]
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 4331,
+          "output_sha256": "df0d864ca2076f7654288c6a1e3394e3eaa2ea8f15021df2524efdd90c70986c",
+          "argv": [
+            "codex",
+            "exec",
+            "--help"
+          ],
+          "observed_options": [
+            "--version",
+            "--help",
+            "--sandbox",
+            "--output-last-message"
+          ],
+          "mode_values_mentioned": []
+        }
+      ]
+    },
+    {
+      "cli": "claude",
+      "status": "HELP_VERSION_VERIFIED",
+      "checks": [
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 22,
+          "output_sha256": "df949515ffdb6d599aca902006cb97c3a11033d1d6e4824f07fdc7c1301d3ab4",
+          "argv": [
+            "claude",
+            "--version"
+          ],
+          "version": "2.1.280"
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 21644,
+          "output_sha256": "23937937c79878eb95be2a6676d46730328adc03413f4a50f1b6d1852e7d52f3",
+          "argv": [
+            "claude",
+            "--help"
+          ],
+          "observed_options": [
+            "--version",
+            "--help",
+            "--print",
+            "--permission-mode",
+            "--tools",
+            "--output-format"
+          ],
+          "mode_values_mentioned": [
+            "plan",
+            "acceptEdits"
+          ]
+        }
+      ]
+    },
+    {
+      "cli": "agent",
+      "status": "HELP_VERSION_VERIFIED",
+      "checks": [
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 19,
+          "output_sha256": "9301130bb6027cd05cca852b63216f7f7092e14b22d158b39f9c18f8fde9dd7c",
+          "argv": [
+            "agent",
+            "--version"
+          ],
+          "version": "2026.09.23"
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 5991,
+          "output_sha256": "c24026e17118188478fcb47ed8113fa842f93df2043da5116660a368d3dc64b0",
+          "argv": [
+            "agent",
+            "--help"
+          ],
+          "observed_options": [
+            "--version",
+            "--help",
+            "--print",
+            "--sandbox",
+            "--mode",
+            "--trust",
+            "--output-format"
+          ],
+          "mode_values_mentioned": [
+            "plan",
+            "ask"
+          ]
+        }
+      ]
+    },
+    {
+      "cli": "agy",
+      "status": "HELP_VERSION_VERIFIED",
+      "checks": [
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 6,
+          "output_sha256": "d03d8b268b4171328ac2458ce8ca82d69a1fde38469d4e4faae4f8fa8d8a5e35",
+          "argv": [
+            "agy",
+            "--version"
+          ],
+          "version": "1.4.4"
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "captured_bytes": 2907,
+          "output_sha256": "a12355e8fc064b330eeb25ba52de596406582752442e293083bcda6388a63b78",
+          "argv": [
+            "agy",
+            "--help"
+          ],
+          "observed_options": [
+            "--print",
+            "--sandbox",
+            "--mode",
+            "--output-format"
+          ],
+          "mode_values_mentioned": [
+            "plan",
+            "accept-edits"
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "max_processes": 9,
+    "concurrency": 1,
+    "retries": 0,
+    "per_process_seconds": 10,
+    "total_seconds": 45,
+    "max_output_bytes": 131072,
+    "cleanup_seconds_per_process": 2,
+    "max_delegation_depth": 1
+  },
+  "status": "PASS",
+  "diagnostic_sha256": "510f3a3964baeab5b19e082c09b46d84bf3207307b21d32688e7dc2cdbcdb24e"
+}

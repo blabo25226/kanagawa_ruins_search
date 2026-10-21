@@ -1,0 +1,13 @@
+test_allow_small_reports_and_gitkeep (test_pr_scope.PrScopeTests.test_allow_small_reports_and_gitkeep) ... ok
+test_claude_only (test_pr_scope.PrScopeTests.test_claude_only) ... ok
+test_codex_only (test_pr_scope.PrScopeTests.test_codex_only) ... ok
+test_foreign_commit_is_rejected (test_pr_scope.PrScopeTests.test_foreign_commit_is_rejected) ... ok
+test_non_remote_base_rejected (test_pr_scope.PrScopeTests.test_non_remote_base_rejected) ... ok
+test_prohibit_raw_and_gis_artifacts (test_pr_scope.PrScopeTests.test_prohibit_raw_and_gis_artifacts) ... ok
+test_revision_expression_rejected_before_diff (test_pr_scope.PrScopeTests.test_revision_expression_rejected_before_diff) ... ok
+test_stacked_base_ref_with_slashes (test_pr_scope.PrScopeTests.test_stacked_base_ref_with_slashes) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK

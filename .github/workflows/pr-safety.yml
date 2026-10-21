@@ -1,0 +1,73 @@
+name: PR safety (offline)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-safety-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scope-and-syntax:
+    name: Scope, data and syntax guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Block accidental cross-agent files and committed GIS assets
+        env:
+          BASE_REF: ${{ github.base_ref || 'main' }}
+        run: |
+          python scripts/ci/check_pr_scope.py --base "origin/$BASE_REF"
+          git diff --check "origin/$BASE_REF"...HEAD
+      - name: Verify Python syntax
+        run: python -m compileall -q src scripts tests
+      - name: Verify PR guard tests
+        run: python -m unittest discover -s tests -p 'test_pr_scope.py' -v
+      - name: Verify worker diagnostic without credentials or model execution
+        run: |
+          python scripts/ci/check_worker_cli.py
+          python -m unittest discover -s tests -p 'test_worker_cli.py' -v
+
+  synthetic-tests:
+    name: C1/C2/ledger offline synthetic tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install scientific Python dependencies (no GIS downloads)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest pandas scipy matplotlib
+      - name: Run available synthetic tests only
+        env:
+          RUINS_DATA_ROOT: /nonexistent-ci-drive-root
+        shell: bash
+        run: |
+          tests=()
+          for file in tests/test_phase1c1.py tests/test_phase1c2_synthetic.py tests/test_phase0_ledger_append.py; do
+            if [[ -f "$file" ]]; then tests+=("$file"); fi
+          done
+          if (( ${#tests[@]} == 0 )); then
+            echo "No Phase 1-C focused test files in this checkout yet."
+          else
+            python -m pytest -q "${tests[@]}"
+          fi
