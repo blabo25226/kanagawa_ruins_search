@@ -1,5 +1,7 @@
 # Phase 1-C coordination plan (2026-10-21)
 
+> **Latest planning update (2026-10-22):** [Phase 1-C integration checkpoint / proposed main baseline](20261022_integration_checkpoint.md) supersedes the status snapshot and merge-order below. Historical links and original rationale are retained here.
+
 > Status at review time; verify GitHub's current state before taking action. This document is a coordination plan, **not** authorization to change protected Google Drive files, bypass access limits, or merge PRs.
 
 ## Baseline and current work
