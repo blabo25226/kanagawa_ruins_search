@@ -1,0 +1,45 @@
+# Phase 1-C2 analysis regions (analysis convention, not an official designation).
+# Basis: Kanagawa Prefecture's five 地域政策圏 (川崎・横浜, 三浦半島, 湘南, 県央, 県西).
+# 県央 is split into 相模原市 (excluding the former 津久井郡) and the remaining 県央 municipalities;
+# the former 津久井郡 four towns (merged into 相模原市 in 2006/2007) are separated using
+# the CODH historical administrative boundaries as of 2005-01-01 (centroid-in-polygon).
+# Municipality codes follow N03 (2026). Membership is by 100 m cell centroid.
+
+[regions.R1_yokohama_kawasaki]
+label = "横浜・川崎"
+basis = "地域政策圏: 川崎・横浜"
+muni_codes = [
+  "14101", "14102", "14103", "14104", "14105", "14106", "14107", "14108", "14109",
+  "14110", "14111", "14112", "14113", "14114", "14115", "14116", "14117", "14118",
+  "14131", "14132", "14133", "14134", "14135", "14136", "14137",
+]
+
+[regions.R2_miura]
+label = "三浦半島"
+basis = "地域政策圏: 三浦半島"
+muni_codes = ["14201", "14204", "14208", "14210", "14301"]
+
+[regions.R3_shonan]
+label = "湘南"
+basis = "地域政策圏: 湘南"
+muni_codes = ["14203", "14205", "14207", "14211", "14214", "14321", "14341", "14342"]
+
+[regions.R4_kenou]
+label = "県央（相模原市を除く）"
+basis = "地域政策圏: 県央 minus 相模原市"
+muni_codes = ["14212", "14213", "14215", "14216", "14218", "14401", "14402"]
+
+[regions.R5_sagamihara]
+label = "相模原（旧津久井郡を除く）"
+basis = "相模原市 14151-14153; 14151 cells outside CODH 2005 former 津久井郡 towns"
+muni_codes = ["14151", "14152", "14153"]
+
+[regions.R6_tsukui]
+label = "津久井（旧津久井郡4町）"
+basis = "相模原市緑区 cells inside CODH 2005-01-01 boundaries of 城山・津久井・相模湖・藤野"
+old_tsukui_gun = true
+
+[regions.R7_kensei]
+label = "県西"
+basis = "地域政策圏: 県西"
+muni_codes = ["14206", "14217", "14361", "14362", "14363", "14364", "14366", "14382", "14383", "14384"]
