@@ -1,7 +1,7 @@
 # Codex 作業依頼：Phase 1-C1オフライン再開前監査と45メッシュ状態表
 
-**担当**: Codex（次の独立作業）  
-**ベース**: 最新`origin/main`、専用ブランチ `codex/phase-next-c1-offline-preflight`  
+**担当**: Codex（次の独立作業）
+**ベース**: 最新`origin/main`、専用ブランチ `codex/phase-next-c1-offline-preflight`
 **作業場所**: 別worktree。既存作業ブランチ、C2ファイル、Drive、raw、provenance、認証・rclone設定を変更しない。
 
 ## まず読む資料
