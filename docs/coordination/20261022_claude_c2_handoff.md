@@ -1,7 +1,7 @@
 # Claude Code 作業依頼：Phase 1-C2品質監査と欠損4 ZIPの安全な拡張設計
 
-**担当**: Claude Code（次の独立作業）  
-**ベース**: 最新`origin/main`、専用ブランチ `claude/phase-next-c2-coverage-qa`  
+**担当**: Claude Code（次の独立作業）
+**ベース**: 最新`origin/main`、専用ブランチ `claude/phase-next-c2-coverage-qa`
 **作業場所**: 別worktree。C1変更・既存派生GISの上書き・Driveアクセス・新規取得・CLI間自動委任は禁止。
 
 ## まず読む資料
