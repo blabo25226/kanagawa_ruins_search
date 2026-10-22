@@ -127,6 +127,10 @@ python scripts/fetch_sources.py --execute --all-approved
 
 使う座標系はデータ単位で記録。2026年更新の国土地理院基盤地図情報ではJGD2024への移行があり、国土数値情報 N03（2026版）ではJGD2011と明記されるため、**CRSを推測して統合しない**。
 
+## 次サイクル（2026-10-22）
+
+[次期研究ロードマップ](docs/coordination/20261022_next_cycle_roadmap.md)／[データ準備状況](docs/coordination/20261022_data_readiness.md)／[Codex C1 handoff](docs/coordination/20261022_codex_c1_handoff.md)／[Claude Code C2 handoff](docs/coordination/20261022_claude_c2_handoff.md)。**GitHub上の机上監査とオフライン準備のみ**。Driveの実行・新規データ取得・Phase 1-D実分析は別途許可制。
+
 ## ドキュメント
 
 - [初回指示書](firstinstruction.md)
