@@ -1,0 +1,114 @@
+{
+  "rotation": {
+    "elapsed_days": 12,
+    "week": 2,
+    "region_index": 5,
+    "region": "R6"
+  },
+  "has_r6_coverage_row": false,
+  "h1_aux_relation_supported": true,
+  "h2_outflow_leader_differs_from_rate_leader": true,
+  "h3_ge5_recomputed": true,
+  "h4_no_old_town_split": true,
+  "agri": {
+    "loss_km2": 1.1311069876,
+    "to_forest_km2": 0.2932321945,
+    "to_wasteland_km2": 0.0,
+    "forest_wasteland_share_of_loss": 0.2592435531869399,
+    "residual_unnamed_km2": 0.8378747930999999,
+    "published_agri_to_building_km2": 0.7,
+    "residual_minus_published_km2": 0.13787479309999995
+  },
+  "building_gain": {
+    "gain_km2": 1.2463277473,
+    "forest_to_building_km2": 0.4398518773,
+    "unnamed_remainder_km2": 0.8064758700000001
+  },
+  "forest": {
+    "inflow_km2": 1.8225500286,
+    "net_km2": -0.0942970612,
+    "outflow_km2": 1.9168470898,
+    "max_outflow_landscape": "other_mixed",
+    "max_forestation_rate_landscape": "forest_dominant",
+    "by_landscape": {
+      "agri_mixed": {
+        "to_forest_km2": 0.1885215064,
+        "forest_net_km2": -0.0314548496,
+        "outflow_km2": 0.219976356,
+        "forestation_rate": 0.0205461777,
+        "agri_to_forest_km2": 0.0733104711,
+        "agri_loss_km2": 0.3770039743,
+        "land_km2": 16.1724706162
+      },
+      "forest_dominant": {
+        "to_forest_km2": 0.7227178752,
+        "forest_net_km2": -9.04953e-05,
+        "outflow_km2": 0.7228083705,
+        "forestation_rate": 0.0714284433,
+        "agri_to_forest_km2": 0.1675616485,
+        "agri_loss_km2": 0.2513757243,
+        "land_km2": 170.7784639589
+      },
+      "other_mixed": {
+        "to_forest_km2": 0.8694153034,
+        "forest_net_km2": -0.0941730803,
+        "outflow_km2": 0.9635883837,
+        "forestation_rate": 0.0360919986,
+        "agri_to_forest_km2": 0.0418876751,
+        "agri_loss_km2": 0.3979760435,
+        "land_km2": 47.1831305982
+      },
+      "urban": {
+        "to_forest_km2": 0.0418953435,
+        "forest_net_km2": 0.0314213641,
+        "outflow_km2": 0.0104739794,
+        "forestation_rate": 0.0108997103,
+        "agri_to_forest_km2": 0.0104723998,
+        "agri_loss_km2": 0.1047512456,
+        "land_km2": 4.2417303969
+      }
+    }
+  },
+  "components": {
+    "share_1": 0.5916825393,
+    "share_2": 0.1834487712,
+    "share_3_4": 0.1282075015,
+    "share_ge5": 0.096661188,
+    "changed_km2": 5.3104914132,
+    "ge5_km2": 0.5133184088637108,
+    "complement_of_1_2": 0.22486868949999997,
+    "complement_km2": 1.194163244687287,
+    "gap_pp": 12.820750149999999
+  },
+  "focus_ge5": {
+    "building_to_forest_cells": 28,
+    "agri_to_forest_cells": 28,
+    "building_max_component": 1,
+    "agri_max_component": 3,
+    "building_ge5": 0.0,
+    "agri_ge5": 0.0
+  },
+  "gsi_anno": {
+    "zoom": 15,
+    "unique_tiles": 39,
+    "tiles_ok": 37,
+    "focus_cells": 56,
+    "focus_cells_with_shrine_annotation": 0,
+    "note": "現行注記。旧版の鳥居記号ではない。"
+  },
+  "bunkazai_rows": 179,
+  "bunkazai_lat_nonempty": 0,
+  "osm_worship_in_r6_cells": 12,
+  "osm_historic_in_r6_cells": 38,
+  "lost_site_excluded": {
+    "admin": 221
+  },
+  "lost_sites": {
+    "total": 0,
+    "高": 0,
+    "中": 0,
+    "低": 0,
+    "shrine_candidates": 0,
+    "old_map_torii_compared": false
+  }
+}
