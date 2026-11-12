@@ -1,0 +1,451 @@
+{
+  "date": "2026-11-13",
+  "region": "R5",
+  "week": 3,
+  "elapsed_days": 18,
+  "rotation": "18 mod 7 = 4, floor(18/7)+1 = 3",
+  "prior_candidate_rows": 0,
+  "adopted_lost_sites": 0,
+  "rows": [
+    {
+      "id": "R5-001",
+      "status": "状態変化",
+      "muni_name": "相模原市緑区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV001"
+    },
+    {
+      "id": "R5-002",
+      "status": "状態変化",
+      "muni_name": "相模原市緑区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV001"
+    },
+    {
+      "id": "R5-003",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV002"
+    },
+    {
+      "id": "R5-004",
+      "status": "状態変化",
+      "muni_name": "相模原市（緑区・中央区）",
+      "category": "神社",
+      "axis_existed": "強",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": "記録のみ",
+      "lead_id": "EV003"
+    },
+    {
+      "id": "R5-005",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV004"
+    },
+    {
+      "id": "R5-006",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV005"
+    },
+    {
+      "id": "R5-007",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV006"
+    },
+    {
+      "id": "R5-008",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV007"
+    },
+    {
+      "id": "R5-009",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV008"
+    },
+    {
+      "id": "R5-010",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV009"
+    },
+    {
+      "id": "R5-011",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV010"
+    },
+    {
+      "id": "R5-012",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV011"
+    },
+    {
+      "id": "R5-013",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV012"
+    },
+    {
+      "id": "R5-014",
+      "status": "状態変化",
+      "muni_name": "相模原市",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV013"
+    },
+    {
+      "id": "R5-015",
+      "status": "状態変化",
+      "muni_name": "相模原市",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低",
+      "lead_id": "EV014"
+    },
+    {
+      "id": "R5-016",
+      "status": "状態変化",
+      "muni_name": "相模原市中央区",
+      "category": "寺院",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "中",
+      "confidence": "中",
+      "lead_id": "EV015"
+    },
+    {
+      "id": "R5-017",
+      "status": "状態変化",
+      "muni_name": "相模原市南区",
+      "category": "寺院",
+      "axis_existed": "強",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": "記録のみ",
+      "lead_id": "EV016"
+    },
+    {
+      "id": "R5-018",
+      "status": "状態変化",
+      "muni_name": "相模原市",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": "記録のみ",
+      "lead_id": "PDF09"
+    }
+  ],
+  "counts": {
+    "状態変化": 18
+  },
+  "by_category": {
+    "神社": 16,
+    "寺院": 2
+  },
+  "by_confidence": {
+    "低": 14,
+    "記録のみ": 3,
+    "中": 1
+  },
+  "by_muni": {
+    "相模原市緑区": 2,
+    "相模原市中央区": 11,
+    "相模原市（緑区・中央区）": 1,
+    "相模原市": 3,
+    "相模原市南区": 1
+  },
+  "external_leads": {
+    "ev_rows": 16,
+    "recorded_rows": 18,
+    "adopted_as_lost": 0,
+    "lead_checks": [
+      {
+        "lead_id": "EV001",
+        "parts": 2,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV002",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV003",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": true,
+        "record_type_class": "未実行"
+      },
+      {
+        "lead_id": "EV004",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV005",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV006",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV007",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV008",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV009",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV010",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV011",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV012",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV013",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV014",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": false,
+        "record_type_class": "合祀の記録"
+      },
+      {
+        "lead_id": "EV015",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": true,
+        "record_type_class": "廃堂と再建"
+      },
+      {
+        "lead_id": "EV016",
+        "parts": 1,
+        "any_name_in_html": true,
+        "any_name_in_readable_pdf": true,
+        "record_type_class": "再建の負例"
+      }
+    ],
+    "opinion_letter_added": true,
+    "instagram_r5_used_as_evidence": false,
+    "haikyo_info_fetched": false
+  },
+  "documents": {
+    "pdfs_fetched": 10,
+    "pdfs_body_read": [
+      "PDF01",
+      "PDF09",
+      "PDF10"
+    ],
+    "pdfs_image_body_unread": [
+      "PDF02",
+      "PDF03",
+      "PDF04",
+      "PDF05",
+      "PDF06",
+      "PDF07",
+      "PDF08"
+    ],
+    "license_sentence_found": true,
+    "catalog_items_parsed": 52,
+    "current_photo_items": 9,
+    "former_site_photo_items": 1,
+    "caption_wards": 6
+  },
+  "bunkazai": {
+    "opened": true,
+    "rows": 179,
+    "lat_nonempty": 0,
+    "lon_nonempty": 0
+  },
+  "gsi": {
+    "fetched": true,
+    "chars": 341721,
+    "旧版": 0,
+    "迅速測図": 0,
+    "旧版地図": 0,
+    "tiles_fetched": 0,
+    "reason": "合祀CSVに座標欄が無く、一覧に旧版と迅速測図のタイル名が無いためタイルは取っていない"
+  },
+  "osm": {
+    "ok": false,
+    "error": "TimeoutError: The read operation timed out",
+    "named": null
+  },
+  "wikidata": {
+    "ok": false,
+    "error": "HTTPError: HTTP Error 429: Aggressively rate-limiting to 1 req / min - this rule was created during active wdqs outage (797a132)"
+  },
+  "landuse": {
+    "thresholds_unchanged": {
+      "ge5_max": 0.2,
+      "complement_gap": 0.1,
+      "forest_share_of_building_loss_max": 0.1
+    },
+    "h1_still_supported": true,
+    "h2_still_supported": true,
+    "h3_still_supported": true,
+    "h4_still_supported": true,
+    "r5_share_ge5": 0.1362492038,
+    "r5_ge5_km2": 0.7438004234803341,
+    "r5_complement_of_1_2": 0.2859831460000001,
+    "r5_complement_km2": 1.5612156193975375,
+    "r5_building_loss_residual_km2": 2.2108098728999996,
+    "r5_forest_wasteland_share_of_building_loss": 0.06223107363904943,
+    "published_ward_building_net_km2": {
+      "中央区": -0.1466191364,
+      "南区": -0.1152759767,
+      "緑区_区行はR6を含む": 0.5970111006
+    },
+    "focus_ge5_building_to_forest": 0.0,
+    "focus_ge5_agri_to_forest": 0.0,
+    "focus_cells_building_to_forest": 14,
+    "focus_cells_agri_to_forest": 3
+  },
+  "cell_slices": {
+    "opened": true,
+    "n_r5": 8646,
+    "building_to_forest_cells": 14,
+    "agri_to_forest_cells": 3,
+    "slices": {
+      "相模原市中央区": {
+        "n_cells": 3516,
+        "building_2014_km2": 27.80325814560577,
+        "building_net_km2": -0.14661913643696423
+      },
+      "相模原市南区": {
+        "n_cells": 3650,
+        "building_2014_km2": 24.870345051045728,
+        "building_net_km2": -0.11527597673318368
+      },
+      "相模原市緑区": {
+        "n_cells": 1480,
+        "building_2014_km2": 11.2479928559961,
+        "building_net_km2": -0.10473100075182096
+      }
+    },
+    "all_slice_nets_negative": true
+  },
+  "rules": {
+    "high_confidence_requires_old_map_symbol": true,
+    "merger_record_alone_is_not_a_lost_site": true,
+    "image_pdf_below_char_threshold_is_unread": 80
+  }
+}
