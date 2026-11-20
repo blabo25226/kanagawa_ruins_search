@@ -1,0 +1,87 @@
+{
+  "rotation": {
+    "elapsed_days": 13,
+    "week": 2,
+    "region_index": 6,
+    "region": "R7"
+  },
+  "h1_agri_gain_source_unfilled": true,
+  "h2_building_gain_source_unfilled": true,
+  "h3_week1_11_3_is_share_ge5": true,
+  "h4_plain_agri_net_exceeds_mountain": true,
+  "agri_gain": {
+    "implied_km2": 1.2499363733,
+    "forest_to_agri_km2": 0.5672299492,
+    "wasteland_to_agri_km2": 0.1575334817,
+    "unnamed_remainder_km2": 0.5251729423999999,
+    "published_agri_to_building_km2": 0.49,
+    "remainder_minus_published_km2": 0.03517294239999991
+  },
+  "building_gain": {
+    "gain_km2": 0.8927711415,
+    "forest_to_building_km2": 0.1785292096,
+    "wasteland_to_building_km2": 0.0525150686,
+    "unnamed_remainder_km2": 0.6617268633000001
+  },
+  "groups": {
+    "mountain_land_share": 0.883217257774611,
+    "mountain_land_km2": 262.0978875277,
+    "plain_land_km2": 22.9737661663,
+    "mountain_agri_net_km2": 0.07349372779999999,
+    "plain_agri_net_km2": 0.18908130159999997,
+    "mountain_agri_base_km2": 7.89702954233817,
+    "plain_agri_base_km2": 7.132596882198678,
+    "missing_muni_rows": 0
+  },
+  "components": {
+    "share_1": 0.5901262083,
+    "share_2": 0.1625472904,
+    "share_3_4": 0.1342711944,
+    "share_ge5": 0.113055307,
+    "changed_km2": 5.9435518242,
+    "ge5_km2": 0.671950076155341,
+    "complement_of_1_2": 0.24732650130000006,
+    "complement_km2": 1.469997877974619,
+    "gap_pp": 13.427119430000007,
+    "week1_cited_share": 0.113
+  },
+  "focus": {
+    "building_to_forest_cells": 24,
+    "agri_to_forest_cells": 14,
+    "building_ge5": 0.0,
+    "agri_ge5": 0.0,
+    "building_max": 2,
+    "agri_max": 2
+  },
+  "gsi_anno": {
+    "zoom": 15,
+    "unique_tiles": 23,
+    "tiles_ok": 22,
+    "focus_cells": 38,
+    "focus_cells_on_failed_tiles": 2,
+    "focus_cells_with_shrine_annotation": 0,
+    "note": "現行注記。404は未確認であり、注記が無いという意味ではない。旧版の鳥居記号ではない。"
+  },
+  "osm_worship_unique_in_r7_cells": 32,
+  "p32_in_r7_cells": 13,
+  "lost_site_excluded": {
+    "admin": 221
+  },
+  "lost_sites": {
+    "total": 1,
+    "高": 0,
+    "中": 1,
+    "低": 0,
+    "shrine_candidates": 0,
+    "old_map_torii_compared": false,
+    "by_municipality": [
+      {
+        "muni_name": "中井町",
+        "total": 1,
+        "ids": [
+          "R7-001"
+        ]
+      }
+    ]
+  }
+}

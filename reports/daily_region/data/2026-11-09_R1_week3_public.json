@@ -1,0 +1,409 @@
+{
+  "rotation": {
+    "start": "2026-10-26",
+    "date": "2026-11-09",
+    "elapsed_days": 14,
+    "week": 3,
+    "region_index": 0,
+    "region": "R1"
+  },
+  "thresholds": {
+    "tol_km2": 0.015,
+    "close_km2": 0.05,
+    "material_other_km2": 1.0,
+    "single_type_share": 0.5,
+    "other_share_min": 0.5,
+    "forest_waste_share_max": 0.15,
+    "ge5_cited": 0.096,
+    "ge5_match": 0.01,
+    "complement_gap": 0.1
+  },
+  "h1_other_net_closed_by_cells_not_by_public_table": true,
+  "h2_forest_net_not_equal_to_forest_to_building": true,
+  "h3_tsuzuki_forest_gain_one_type_over_half": true,
+  "h4_kawasaki_building_loss_mostly_other": true,
+  "h5_week2_9_6_is_share_ge5": true,
+  "other": {
+    "json_net_km2": 5.192695696,
+    "cell_gain_km2": 10.267776591005415,
+    "cell_loss_km2": 5.0750808949914425,
+    "cell_net_km2": 5.192695696013972,
+    "gain_by_source_km2": {
+      "agri": 1.1852267091512316,
+      "building": 6.554655689715898,
+      "forest": 1.132584708528852,
+      "golf": 0.03143580637418165,
+      "sea": 0.5562464915699286,
+      "transport": 0.5663152589037663,
+      "wasteland": 0.08395335949521719,
+      "water": 0.15735856726633868
+    },
+    "loss_by_destination_km2": {
+      "agri": 0.09433345149200087,
+      "building": 3.932088317751391,
+      "forest": 0.4509073804416432,
+      "sea": 0.0314627553794034,
+      "transport": 0.4824082420805935,
+      "wasteland": 0.05242700317568291,
+      "water": 0.03145374467072744
+    },
+    "building_to_other_km2": 6.554655689715898,
+    "net_minus_building_to_other_km2": -1.3619599937019258,
+    "breakdown_columns": [],
+    "area_table_has_other_transition": false
+  },
+  "forest": {
+    "json_net_km2": -4.3728285108,
+    "cell_gain_km2": 2.474395156143051,
+    "cell_loss_km2": 6.847223666937016,
+    "cell_net_km2": -4.3728285107939655,
+    "loss_by_destination_km2": {
+      "agri": 0.8807637976375033,
+      "building": 4.361832964224253,
+      "golf": 0.13632840138224897,
+      "other": 1.132584708528852,
+      "transport": 0.2937630172112946,
+      "wasteland": 0.041950777952864275
+    },
+    "gain_by_source_km2": {
+      "agri": 0.4927005634869892,
+      "building": 1.0798292999052759,
+      "golf": 0.20980214932896302,
+      "other": 0.4509073804416432,
+      "transport": 0.07336385590317891,
+      "wasteland": 0.13634379501286892,
+      "water": 0.031448112064131874
+    },
+    "to_building_km2": 4.361832964224253,
+    "to_non_building_km2": 2.4853907027127633,
+    "json_reverse_building_to_forest_km2": 4.3618329642,
+    "abs_net_minus_to_building_km2": 0.010995546569712467
+  },
+  "tsuzuki": {
+    "json_forest_net_km2": 0.1047898016,
+    "cell_forest_net_km2": 0.10478980155469285,
+    "by_landscape": {
+      "agri_mixed": {
+        "net_km2": 0.03143971391747642,
+        "gain_km2": 0.07336146776365116,
+        "loss_km2": 0.041921753846174734,
+        "land_km2": 3.678561560924
+      },
+      "urban": {
+        "net_km2": 0.07335008763721643,
+        "gain_km2": 0.17811492838486126,
+        "loss_km2": 0.10476484074764483,
+        "land_km2": 24.15292964317211
+      }
+    },
+    "top_type": "urban",
+    "top_share": 0.6999735331966717
+  },
+  "kawasaki_ward": {
+    "json_building_loss_km2": 1.488432581,
+    "cell_building_loss_km2": 1.4884325810477654,
+    "by_destination_km2": {
+      "other": 1.2159100865066728,
+      "sea": 0.01048478544022244,
+      "transport": 0.24107873776597183,
+      "water": 0.020958971334898574
+    },
+    "other_share": 0.8169063899761899,
+    "forest_wasteland_share": 0.0,
+    "building_to_forest_km2": 0.0,
+    "building_to_wasteland_km2": 0.0
+  },
+  "components": {
+    "share_1": 0.5871296336,
+    "share_2": 0.2017919209,
+    "share_3_4": 0.1147568716,
+    "share_ge5": 0.0963215739,
+    "changed_km2": 32.8941910658,
+    "ge5_km2": 3.1684202556251746,
+    "complement_of_1_2": 0.21107844549999996,
+    "complement_km2": 6.943254716149051,
+    "gap": 0.11475687159999996,
+    "focus_building_to_forest_ge5": 0.0,
+    "focus_agri_to_forest_ge5": 0.0,
+    "focus_building_cells": 103,
+    "focus_agri_cells": 47
+  },
+  "published_agri_to_building_km2": 3.73,
+  "cell_agri_to_building_km2": 3.7326167362648723,
+  "gsi_anno": {
+    "zoom": 15,
+    "unique_tiles": 142,
+    "tiles_ok": 135,
+    "tiles_failed": 7,
+    "focus_cells": 150,
+    "focus_cells_on_failed_centroid_tile": 15,
+    "focus_cells_whose_centroid_tile_returned": 135,
+    "focus_cells_intersecting_shrine_annotation": 0,
+    "note": "現行注記。404は未確認。旧版の鳥居記号ではない。居住地名ftCode 0210は施設記号に使わない。"
+  },
+  "osm_worship_unique_in_r1_admin": 1304,
+  "osm_features_unique_in_r1_admin": 2960,
+  "p32_in_r1_admin": 87,
+  "wikidata_ended_with_coord": 367,
+  "wikidata_shrine_like_with_coord": 2,
+  "wikidata_shrine_like_in_r1": 0,
+  "literature_keyword_counts": [
+    {
+      "file": "Fujita2007_ShrineLocationGIS.pdf",
+      "pages": 13,
+      "chars": 23406,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "Oda2015_ShrineMerger.pdf",
+      "pages": 1,
+      "chars": 1541,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 7,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "Kanaki2003_AbandonedSettlements.pdf",
+      "pages": 8,
+      "chars": 33300,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "Wood2024_MapReader.pdf",
+      "pages": 4,
+      "chars": 10527,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "Tani2017_KonjakuMap.pdf",
+      "pages": 0,
+      "chars": 0,
+      "counts": {},
+      "error": "DependencyError"
+    },
+    {
+      "file": "Tabayashi2026_OldMapGeoreferencingAI.pdf",
+      "pages": 1,
+      "chars": 996,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "Luft2021_HistoricalMapGeoreferencing.pdf",
+      "pages": 19,
+      "chars": 65674,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 0,
+        "川崎": 0
+      },
+      "error": ""
+    },
+    {
+      "file": "kanagawa_bunkazai_mokuroku_r07.pdf",
+      "pages": 114,
+      "chars": 177895,
+      "counts": {
+        "廃社": 0,
+        "廃寺": 0,
+        "合祀": 0,
+        "廃村": 0,
+        "横浜": 303,
+        "川崎": 105
+      },
+      "error": ""
+    }
+  ],
+  "fudoki_manifest_has_coordinate": false,
+  "old_map_torii_compared": false,
+  "lost_sites": {
+    "prior_r1": 24,
+    "maintained": 24,
+    "maintained_anno_unverified": 1,
+    "upgraded": 0,
+    "rejected": 0,
+    "reject_reason_counts": {},
+    "new_shrine": 0,
+    "new_shrine_rejected_still_named": 0,
+    "adopted": 24,
+    "高": 0,
+    "中": 24,
+    "低": 0,
+    "shrine_adopted": 0,
+    "by_municipality_revalidation": [
+      {
+        "muni_name": "川崎市中原区",
+        "input": 2,
+        "maintained": 2,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-002",
+          "R1-023"
+        ]
+      },
+      {
+        "muni_name": "川崎市多摩区",
+        "input": 1,
+        "maintained": 1,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-024"
+        ]
+      },
+      {
+        "muni_name": "川崎市川崎区",
+        "input": 2,
+        "maintained": 2,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-020",
+          "R1-021"
+        ]
+      },
+      {
+        "muni_name": "川崎市幸区",
+        "input": 1,
+        "maintained": 1,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-022"
+        ]
+      },
+      {
+        "muni_name": "横浜市中区",
+        "input": 3,
+        "maintained": 3,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-012",
+          "R1-013",
+          "R1-014"
+        ]
+      },
+      {
+        "muni_name": "横浜市保土ケ谷区",
+        "input": 1,
+        "maintained": 1,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-015"
+        ]
+      },
+      {
+        "muni_name": "横浜市戸塚区",
+        "input": 2,
+        "maintained": 2,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-016",
+          "R1-017"
+        ]
+      },
+      {
+        "muni_name": "横浜市旭区",
+        "input": 1,
+        "maintained": 1,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-018"
+        ]
+      },
+      {
+        "muni_name": "横浜市瀬谷区",
+        "input": 1,
+        "maintained": 1,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-019"
+        ]
+      },
+      {
+        "muni_name": "横浜市神奈川区",
+        "input": 5,
+        "maintained": 5,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-001",
+          "R1-006",
+          "R1-007",
+          "R1-008",
+          "R1-009"
+        ]
+      },
+      {
+        "muni_name": "横浜市西区",
+        "input": 2,
+        "maintained": 2,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-010",
+          "R1-011"
+        ]
+      },
+      {
+        "muni_name": "横浜市鶴見区",
+        "input": 3,
+        "maintained": 3,
+        "rejected": 0,
+        "upgraded": 0,
+        "ids": [
+          "R1-003",
+          "R1-004",
+          "R1-005"
+        ]
+      }
+    ],
+    "by_municipality_new": []
+  }
+}

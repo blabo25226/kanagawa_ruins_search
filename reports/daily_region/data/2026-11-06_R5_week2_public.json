@@ -1,0 +1,113 @@
+{
+  "h1_supported": true,
+  "h2_supported": true,
+  "h3_supported": true,
+  "h4_supported": true,
+  "rate_bases_km2": {
+    "R5_agri": 8.341280424802221,
+    "R6_agri": 12.170450233329747,
+    "R5_building": 63.921596055500366,
+    "R6_building": 16.516015146638257
+  },
+  "rate_bases_all_at_least_0_5": true,
+  "r5": {
+    "land_km2": 90.5891898199,
+    "n_cells": 8646,
+    "agri_to_forest_rate": 0.0037695681,
+    "agri_to_forest_km2": 0.0314430242,
+    "building_to_forest_or_wasteland_rate": 0.002295172,
+    "building_to_forest_km2": 0.1467110587,
+    "building_to_wasteland_km2": 0.0,
+    "building_loss_km2": 2.3575209316,
+    "building_gain_km2": 1.9908948177,
+    "building_net_km2": -0.3666261139,
+    "forest_wasteland_share_of_building_loss": 0.06223107363904943,
+    "building_loss_residual_km2": 2.2108098728999996
+  },
+  "r6": {
+    "agri_to_forest_rate": 0.0240937836,
+    "agri_to_forest_km2": 0.2932321945,
+    "building_to_forest_or_wasteland_rate": 0.0177542656,
+    "building_to_forest_km2": 0.29322972,
+    "building_net_km2": 0.7017421014
+  },
+  "components": {
+    "share_1": 0.5239924261,
+    "share_2": 0.1900244279,
+    "share_3_4": 0.1497339421,
+    "share_ge5": 0.1362492038,
+    "changed_km2": 5.4591175782,
+    "ge5_km2": 0.7438004234803341,
+    "complement_of_1_2": 0.2859831460000001,
+    "complement_km2": 1.5612156193975375,
+    "gap_pp": 14.973394220000008
+  },
+  "wards_published_building_net_km2": {
+    "中央区": -0.1466191364,
+    "南区": -0.1152759767,
+    "緑区_区行はR6を含む": 0.5970111006
+  },
+  "focus_ge5": {
+    "building_to_forest": 0.0,
+    "agri_to_forest": 0.0,
+    "building_to_forest_cells": 14,
+    "agri_to_forest_cells": 3
+  },
+  "landscape_types_are_region_only": true,
+  "landscape_names": [
+    "agri_mixed",
+    "forest_dominant",
+    "other_mixed",
+    "urban"
+  ],
+  "r5_cell_slices_building_net": {
+    "相模原市中央区": {
+      "building_2014_km2": 27.80325814560585,
+      "building_net_km2": -0.14661913643696778,
+      "n_cells": 3516
+    },
+    "相模原市南区": {
+      "building_2014_km2": 24.87034505104574,
+      "building_net_km2": -0.11527597673320145,
+      "n_cells": 3650
+    },
+    "相模原市緑区": {
+      "building_2014_km2": 11.247992855996099,
+      "building_net_km2": -0.10473100075181918,
+      "n_cells": 1480
+    }
+  },
+  "r5_cell_slices_all_negative": true,
+  "gsi_anno": {
+    "zoom": 15,
+    "unique_tiles": 12,
+    "tiles_ok": 12,
+    "focus_cells": 17,
+    "focus_cells_with_shrine_annotation": 0,
+    "note": "現行の注記。旧版地形図の鳥居記号ではない。"
+  },
+  "bunkazai": {
+    "rows": 179,
+    "rows_with_coordinates": 0,
+    "in_r5_cells": 0,
+    "in_r5_name_has_sha": 0,
+    "by_muni": {}
+  },
+  "osm_worship_in_r5_cells": 137,
+  "bunkazai_sha_within_200m_of_osm_worship": 0,
+  "lost_site_excluded": {
+    "admin_merger": 221,
+    "other_type": 9,
+    "still_named": 1
+  },
+  "lost_sites": {
+    "total": 0,
+    "高": 0,
+    "中": 0,
+    "低": 0,
+    "by_category": {},
+    "by_municipality": [],
+    "shrine_candidates": 0,
+    "old_map_torii_compared": false
+  }
+}
