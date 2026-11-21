@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-12",
+  "region": "R4",
+  "week": 3,
+  "elapsed_days": 17,
+  "rotation": "17 mod 7 = 3, floor(17/7)+1 = 3",
+  "rows": [
+    {
+      "id": "R4-001",
+      "status": "再検証",
+      "muni_name": "海老名市",
+      "category": "駅",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R4-002",
+      "status": "再検証",
+      "muni_name": "海老名市",
+      "category": "駅",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R4-003",
+      "status": "再検証",
+      "muni_name": "海老名市",
+      "category": "駅",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R4-004",
+      "status": "再検証",
+      "muni_name": "座間市",
+      "category": "集落",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R4-005",
+      "status": "棄却",
+      "muni_name": "厚木市",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": "記録のみ"
+    },
+    {
+      "id": "R4-006",
+      "status": "棄却",
+      "muni_name": "厚木市",
+      "category": "神社",
+      "axis_existed": "中",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": "記録のみ"
+    },
+    {
+      "id": "R4-007",
+      "status": "新規",
+      "muni_name": "海老名市",
+      "category": "駅",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    }
+  ],
+  "counts": {
+    "再検証": 4,
+    "棄却": 2,
+    "新規": 1
+  },
+  "by_category": {
+    "駅": 4,
+    "集落": 1,
+    "神社": 2
+  },
+  "by_muni": {
+    "海老名市": 4,
+    "座間市": 1,
+    "厚木市": 2
+  },
+  "rules": {
+    "live_station_m": 1000.0,
+    "historic_or_p32_m": 400.0,
+    "high_confidence_without_old_topo": false
+  },
+  "admin_coarse_bbox": {
+    "west": 139.16,
+    "south": 35.39,
+    "east": 139.48,
+    "north": 35.56
+  },
+  "query_bbox": {
+    "south": 35.34,
+    "west": 139.11,
+    "north": 35.61,
+    "east": 139.53
+  },
+  "existing_end_dates_refetched": {
+    "R4-001": true,
+    "R4-002": true,
+    "R4-003": true,
+    "R4-004": true
+  },
+  "wikidata_direct_class_counts": {
+    "school": 4,
+    "incident": 1,
+    "station": 4,
+    "fiction": 1,
+    "military_unit": 1,
+    "place_name": 1
+  },
+  "wikidata_direct_fetched": true,
+  "category_pages": 19,
+  "category_inside_not_already": 3,
+  "category_outside": 14,
+  "category_no_coord": 1,
+  "stations_blocked_by_failed_check": 0,
+  "stations_inside_without_id": 2,
+  "osm_tag_counts": {
+    "fetched": true,
+    "worship_inside_r4": 975,
+    "abandoned_worship_inside_r4": 0,
+    "abandoned_highway_inside_r4": 0
+  },
+  "live_stations_fetched": true,
+  "historic_fetched": true,
+  "gsi": {
+    "fetched": true,
+    "old_edition_string": 0
+  },
+  "kenou_pdf": {
+    "fetched": true,
+    "retained": false,
+    "pages": 9,
+    "priority_names_present": false,
+    "inari_mentions": 3,
+    "extant_phrase": true
+  },
+  "landuse": {
+    "cell_km2": 0.010487405672301024,
+    "cross_tab_tables": [],
+    "atsugi_agri_to_forest_km2": 0.3041864006,
+    "atsugi_agri_loss_km2": 2.0769179119,
+    "atsugi_fw_of_loss": 0.14646048303455822,
+    "atsugi_margin_cells": -9.20099902923163,
+    "region_fw_of_loss": 0.09818321338454604,
+    "region_margin_cells": 0.7032286821400215,
+    "share_ge5": 0.0954408818,
+    "share_ge5_km2": 1.2062658454358017,
+    "complement_3plus": 0.22655648079999996,
+    "focus_building_to_forest_ge5": 0.0,
+    "focus_agri_to_forest_ge5": 0.0,
+    "recovery_gap_south_minus_atsugi": 0.042504069489227914,
+    "forest_net_aikawa": 0.1152635178,
+    "forest_net_kiyokawa": -0.062820577,
+    "building_to_forest_aikawa": 0.0733636422,
+    "building_to_forest_kiyokawa": 0.0734183765,
+    "thresholds_unchanged": {
+      "ten": 0.1,
+      "ge5_max": 0.1,
+      "recovery_gap_line": 0.1,
+      "rate_base_floor_km2": 0.5
+    }
+  },
+  "external_leads_rejected": [
+    "R4-005",
+    "R4-006"
+  ],
+  "new_or_rejected_stations": [
+    "R4-007"
+  ],
+  "archives": {
+    "fetched": true,
+    "four_hits": true,
+    "aiko_in_result": false,
+    "koza_in_result": false,
+    "office_count": 4
+  }
+}

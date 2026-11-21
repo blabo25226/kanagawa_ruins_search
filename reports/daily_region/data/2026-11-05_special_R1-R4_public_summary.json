@@ -1,0 +1,417 @@
+{
+  "round": "2026-11-05 special R1-R4",
+  "note": "件数のみ。名称・座標・大字以下は含まない。詳細は非公開の内部資料。",
+  "confidence_policy": "高は0。地理院地形図記号を未照合のため。",
+  "by_region": {
+    "R1": {
+      "total": 24,
+      "高": 0,
+      "中": 24,
+      "低": 0,
+      "by_category": {
+        "facility": 2,
+        "station": 22
+      }
+    },
+    "R2": {
+      "total": 4,
+      "高": 0,
+      "中": 4,
+      "低": 0,
+      "by_category": {
+        "facility": 3,
+        "station": 1
+      }
+    },
+    "R3": {
+      "total": 6,
+      "高": 0,
+      "中": 6,
+      "低": 0,
+      "by_category": {
+        "facility": 1,
+        "station": 5
+      }
+    },
+    "R4": {
+      "total": 4,
+      "高": 0,
+      "中": 3,
+      "低": 1,
+      "by_category": {
+        "station": 3,
+        "town_name": 1
+      }
+    }
+  },
+  "by_municipality": [
+    {
+      "region": "R1",
+      "muni_code": "14101",
+      "muni_name": "横浜市鶴見区",
+      "total": 3,
+      "高": 0,
+      "中": 3,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14102",
+      "muni_name": "横浜市神奈川区",
+      "total": 5,
+      "高": 0,
+      "中": 5,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14103",
+      "muni_name": "横浜市西区",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14104",
+      "muni_name": "横浜市中区",
+      "total": 3,
+      "高": 0,
+      "中": 3,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14106",
+      "muni_name": "横浜市保土ケ谷区",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14110",
+      "muni_name": "横浜市戸塚区",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14112",
+      "muni_name": "横浜市旭区",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14114",
+      "muni_name": "横浜市瀬谷区",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14131",
+      "muni_name": "川崎市川崎区",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14132",
+      "muni_name": "川崎市幸区",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14133",
+      "muni_name": "川崎市中原区",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R1",
+      "muni_code": "14135",
+      "muni_name": "川崎市多摩区",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R2",
+      "muni_code": "14201",
+      "muni_name": "横須賀市",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R2",
+      "muni_code": "14204",
+      "muni_name": "鎌倉市",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R3",
+      "muni_code": "14205",
+      "muni_name": "藤沢市",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R3",
+      "muni_code": "14211",
+      "muni_name": "秦野市",
+      "total": 2,
+      "高": 0,
+      "中": 2,
+      "低": 0
+    },
+    {
+      "region": "R3",
+      "muni_code": "14321",
+      "muni_name": "寒川町",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R3",
+      "muni_code": "14342",
+      "muni_name": "二宮町",
+      "total": 1,
+      "高": 0,
+      "中": 1,
+      "低": 0
+    },
+    {
+      "region": "R4",
+      "muni_code": "14215",
+      "muni_name": "海老名市",
+      "total": 3,
+      "高": 0,
+      "中": 3,
+      "低": 0
+    },
+    {
+      "region": "R4",
+      "muni_code": "14216",
+      "muni_name": "座間市",
+      "total": 1,
+      "高": 0,
+      "中": 0,
+      "低": 1
+    }
+  ],
+  "atsugi_priority": {
+    "agri_to_forest_cells": 29,
+    "building_to_forest_cells": 11,
+    "agri_to_forest_cells_within_100m_of_osm_worship_2026": 15,
+    "candidate_ids_in_agri_to_forest_cell": [],
+    "candidate_ids_in_building_to_forest_cell": []
+  },
+  "excluded_counts": {
+    "osm2018_generic_or_unnamed": 813,
+    "osm2018_outside_r1r4": 1125,
+    "worship_named_in_region": 816,
+    "worship_still_within_80m": 805,
+    "worship_other_religion": 163,
+    "worship_same_stem_within_400m": 4,
+    "place_named_in_region": 645,
+    "place_gap_not_adopted": 452,
+    "place_same_stem_within_500m": 193,
+    "worship_gap_not_adopted": 7,
+    "wikidata_admin_merger": 221,
+    "wikidata_excluded_type": 13,
+    "wikidata_not_target_class": 4,
+    "wikidata_no_point": 1,
+    "station_stem_within_1000m_of_railway": 2,
+    "wikidata_still_named_on_osm_or_p32": 10,
+    "wikidata_outside_r1r4": 22,
+    "school_footprint_not_gone": 55
+  },
+  "osm_worship_points_in_bbox_2026": 5984,
+  "candidate_ids_by_municipality": [
+    {
+      "region": "R1",
+      "muni_name": "横浜市鶴見区",
+      "ids": [
+        "R1-003:中",
+        "R1-004:中",
+        "R1-005:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "ids": [
+        "R1-001:中",
+        "R1-006:中",
+        "R1-007:中",
+        "R1-008:中",
+        "R1-009:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市西区",
+      "ids": [
+        "R1-010:中",
+        "R1-011:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市中区",
+      "ids": [
+        "R1-012:中",
+        "R1-013:中",
+        "R1-014:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市保土ケ谷区",
+      "ids": [
+        "R1-015:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市戸塚区",
+      "ids": [
+        "R1-016:中",
+        "R1-017:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市旭区",
+      "ids": [
+        "R1-018:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "横浜市瀬谷区",
+      "ids": [
+        "R1-019:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "川崎市川崎区",
+      "ids": [
+        "R1-020:中",
+        "R1-021:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "川崎市幸区",
+      "ids": [
+        "R1-022:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "川崎市中原区",
+      "ids": [
+        "R1-002:中",
+        "R1-023:中"
+      ]
+    },
+    {
+      "region": "R1",
+      "muni_name": "川崎市多摩区",
+      "ids": [
+        "R1-024:中"
+      ]
+    },
+    {
+      "region": "R2",
+      "muni_name": "横須賀市",
+      "ids": [
+        "R2-001:中",
+        "R2-004:中"
+      ]
+    },
+    {
+      "region": "R2",
+      "muni_name": "鎌倉市",
+      "ids": [
+        "R2-002:中",
+        "R2-003:中"
+      ]
+    },
+    {
+      "region": "R3",
+      "muni_name": "藤沢市",
+      "ids": [
+        "R3-001:中",
+        "R3-002:中"
+      ]
+    },
+    {
+      "region": "R3",
+      "muni_name": "秦野市",
+      "ids": [
+        "R3-003:中",
+        "R3-004:中"
+      ]
+    },
+    {
+      "region": "R3",
+      "muni_name": "寒川町",
+      "ids": [
+        "R3-005:中"
+      ]
+    },
+    {
+      "region": "R3",
+      "muni_name": "二宮町",
+      "ids": [
+        "R3-006:中"
+      ]
+    },
+    {
+      "region": "R4",
+      "muni_name": "海老名市",
+      "ids": [
+        "R4-001:中",
+        "R4-002:中",
+        "R4-003:中"
+      ]
+    },
+    {
+      "region": "R4",
+      "muni_name": "座間市",
+      "ids": [
+        "R4-004:低"
+      ]
+    }
+  ]
+}

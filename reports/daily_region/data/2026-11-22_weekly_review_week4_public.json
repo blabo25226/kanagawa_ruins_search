@@ -1,0 +1,1610 @@
+{
+  "date": "2026-11-22",
+  "window": [
+    "2026-11-16",
+    "2026-11-17",
+    "2026-11-18",
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-21",
+    "2026-11-22"
+  ],
+  "not_conducted": [
+    "2026-11-19",
+    "2026-11-20"
+  ],
+  "previous_window": [
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-14",
+    "2026-11-15"
+  ],
+  "week": {
+    "rows": 197,
+    "by_status": {
+      "再検証": 55,
+      "負例": 46,
+      "保留": 45,
+      "状態変化": 26,
+      "棄却": 15,
+      "新規": 10
+    },
+    "by_class": {
+      "廃施設": 8,
+      "廃駅・廃線": 37,
+      "負例": 46,
+      "保留": 45,
+      "状態変化": 26,
+      "棄却": 15,
+      "廃社": 18,
+      "消失集落": 1,
+      "廃道": 1
+    },
+    "by_confidence": {
+      "中": 44,
+      "負例": 46,
+      "低": 96,
+      "棄却": 5,
+      "保留": 6
+    },
+    "by_raw_type": {
+      "施設": 39,
+      "廃駅": 25,
+      "信号場": 1,
+      "神社": 89,
+      "隧道": 17,
+      "駅": 13,
+      "廃道": 5,
+      "地形": 1,
+      "鉄道施設": 1,
+      "消失集落": 1,
+      "寺院": 2,
+      "廃施設": 2,
+      "石造物": 1
+    },
+    "axis_existence": {
+      "強": 107,
+      "中": 41,
+      "低": 43,
+      "未確認": 6
+    },
+    "axis_loss": {
+      "強": 54,
+      "なし": 71,
+      "未確認": 47,
+      "中": 24,
+      "低": 1
+    },
+    "axis_remains": {
+      "未確認": 139,
+      "対象外": 39,
+      "中": 13,
+      "低": 6
+    },
+    "high": 0,
+    "mid": 44,
+    "low": 96
+  },
+  "previous": {
+    "rows": 119,
+    "by_status": {
+      "再検証": 39,
+      "新規": 27,
+      "棄却": 7,
+      "状態変化": 27,
+      "負例": 13,
+      "保留": 6
+    },
+    "by_class": {
+      "廃施設": 8,
+      "廃駅・廃線": 38,
+      "廃社": 18,
+      "棄却": 7,
+      "消失集落": 2,
+      "状態変化": 27,
+      "負例": 13,
+      "保留": 6
+    },
+    "by_confidence": {
+      "中": 46,
+      "低": 44,
+      "棄却": 5,
+      "記録のみ": 5,
+      "負例": 13,
+      "保留": 6
+    },
+    "by_raw_type": {
+      "facility": 2,
+      "station": 22,
+      "施設": 12,
+      "駅": 14,
+      "神社": 51,
+      "集落": 1,
+      "寺院": 4,
+      "廃道": 2,
+      "廃駅": 4,
+      "鉄道施設": 1,
+      "消失集落": 1,
+      "廃施設": 2,
+      "隧道": 2,
+      "石造物": 1
+    },
+    "axis_existence": {
+      "軸なし": 24,
+      "強": 48,
+      "中": 38,
+      "未確認": 6,
+      "低": 3
+    },
+    "axis_loss": {
+      "軸なし": 24,
+      "中": 41,
+      "強": 22,
+      "なし": 21,
+      "未確認": 10,
+      "低": 1
+    },
+    "axis_remains": {
+      "軸なし": 24,
+      "中": 9,
+      "未確認": 72,
+      "対象外": 8,
+      "低": 6
+    },
+    "high": 0,
+    "mid": 46,
+    "low": 44
+  },
+  "by_day": {
+    "2026-11-16": {
+      "state": "実施",
+      "rows": 65,
+      "by_status": {
+        "再検証": 24,
+        "負例": 21,
+        "保留": 12,
+        "状態変化": 4,
+        "棄却": 4
+      },
+      "by_class": {
+        "廃施設": 2,
+        "廃駅・廃線": 22,
+        "負例": 21,
+        "保留": 12,
+        "状態変化": 4,
+        "棄却": 4
+      },
+      "by_confidence": {
+        "中": 24,
+        "負例": 21,
+        "低": 20
+      },
+      "ids": [
+        "R1-001",
+        "R1-002",
+        "R1-003",
+        "R1-004",
+        "R1-005",
+        "R1-006",
+        "R1-007",
+        "R1-008",
+        "R1-009",
+        "R1-010",
+        "R1-011",
+        "R1-012",
+        "R1-013",
+        "R1-014",
+        "R1-015",
+        "R1-016",
+        "R1-017",
+        "R1-018",
+        "R1-019",
+        "R1-020",
+        "R1-021",
+        "R1-022",
+        "R1-023",
+        "R1-024",
+        "R1-025",
+        "R1-026",
+        "R1-027",
+        "R1-028",
+        "R1-029",
+        "R1-030",
+        "R1-031",
+        "R1-032",
+        "R1-033",
+        "R1-034",
+        "R1-035",
+        "R1-036",
+        "R1-037",
+        "R1-038",
+        "R1-039",
+        "R1-040",
+        "R1-041",
+        "R1-042",
+        "R1-043",
+        "R1-044",
+        "R1-045",
+        "R1-046",
+        "R1-047",
+        "R1-048",
+        "R1-049",
+        "R1-050",
+        "R1-051",
+        "R1-052",
+        "R1-053",
+        "R1-054",
+        "R1-055",
+        "R1-056",
+        "R1-057",
+        "R1-058",
+        "R1-059",
+        "R1-060",
+        "R1-061",
+        "R1-062",
+        "R1-063",
+        "R1-064",
+        "R1-065"
+      ]
+    },
+    "2026-11-17": {
+      "state": "実施",
+      "rows": 48,
+      "by_status": {
+        "再検証": 22,
+        "棄却": 3,
+        "負例": 3,
+        "状態変化": 5,
+        "保留": 15
+      },
+      "by_class": {
+        "廃施設": 3,
+        "廃駅・廃線": 1,
+        "廃社": 18,
+        "棄却": 3,
+        "負例": 3,
+        "状態変化": 5,
+        "保留": 15
+      },
+      "by_confidence": {
+        "中": 4,
+        "低": 40,
+        "棄却": 1,
+        "負例": 3
+      },
+      "ids": [
+        "R2-001",
+        "R2-002",
+        "R2-003",
+        "R2-004",
+        "R2-005",
+        "R2-006",
+        "R2-007",
+        "R2-008",
+        "R2-009",
+        "R2-010",
+        "R2-011",
+        "R2-012",
+        "R2-013",
+        "R2-014",
+        "R2-015",
+        "R2-016",
+        "R2-017",
+        "R2-018",
+        "R2-019",
+        "R2-020",
+        "R2-021",
+        "R2-022",
+        "R2-023",
+        "R2-024",
+        "R2-025",
+        "R2-026",
+        "R2-027",
+        "R2-028",
+        "R2-029",
+        "R2-030",
+        "R2-031",
+        "R2-032",
+        "R2-033",
+        "R2-034",
+        "R2-035",
+        "R2-036",
+        "R2-037",
+        "R2-038",
+        "R2-039",
+        "R2-040",
+        "R2-041",
+        "R2-042",
+        "R2-043",
+        "R2-044",
+        "R2-045",
+        "R2-046",
+        "R2-047",
+        "R2-048"
+      ]
+    },
+    "2026-11-18": {
+      "state": "実施",
+      "rows": 34,
+      "by_status": {
+        "再検証": 8,
+        "棄却": 6,
+        "状態変化": 3,
+        "負例": 2,
+        "新規": 3,
+        "保留": 12
+      },
+      "by_class": {
+        "廃施設": 1,
+        "廃駅・廃線": 10,
+        "棄却": 6,
+        "状態変化": 3,
+        "負例": 2,
+        "保留": 12
+      },
+      "by_confidence": {
+        "中": 11,
+        "棄却": 2,
+        "低": 19,
+        "負例": 2
+      },
+      "ids": [
+        "R3-001",
+        "R3-002",
+        "R3-003",
+        "R3-004",
+        "R3-005",
+        "R3-006",
+        "R3-007",
+        "R3-008",
+        "R3-009",
+        "R3-010",
+        "R3-011",
+        "R3-012",
+        "R3-013",
+        "R3-014",
+        "R3-015",
+        "R3-016",
+        "R3-017",
+        "R3-018",
+        "R3-019",
+        "R3-020",
+        "R3-021",
+        "R3-022",
+        "R3-023",
+        "R3-024",
+        "R3-025",
+        "R3-026",
+        "R3-027",
+        "R3-028",
+        "R3-029",
+        "R3-030",
+        "R3-031",
+        "R3-032",
+        "R3-033",
+        "R3-034"
+      ]
+    },
+    "2026-11-19": {
+      "state": "未実施",
+      "rows": null
+    },
+    "2026-11-20": {
+      "state": "未実施",
+      "rows": null
+    },
+    "2026-11-21": {
+      "state": "実施",
+      "rows": 20,
+      "by_status": {
+        "負例": 8,
+        "状態変化": 10,
+        "棄却": 2
+      },
+      "by_class": {
+        "負例": 8,
+        "状態変化": 10,
+        "棄却": 2
+      },
+      "by_confidence": {
+        "負例": 8,
+        "低": 9,
+        "中": 1,
+        "棄却": 2
+      },
+      "ids": [
+        "R6-001",
+        "R6-002",
+        "R6-003",
+        "R6-004",
+        "R6-005",
+        "R6-006",
+        "R6-007",
+        "R6-008",
+        "R6-009",
+        "R6-010",
+        "R6-011",
+        "R6-012",
+        "R6-013",
+        "R6-014",
+        "R6-015",
+        "R6-016",
+        "R6-017",
+        "R6-018",
+        "R6-019",
+        "R6-020"
+      ]
+    },
+    "2026-11-22": {
+      "state": "実施",
+      "rows": 30,
+      "by_status": {
+        "再検証": 1,
+        "新規": 7,
+        "状態変化": 4,
+        "負例": 12,
+        "保留": 6
+      },
+      "by_class": {
+        "廃駅・廃線": 4,
+        "状態変化": 4,
+        "消失集落": 1,
+        "負例": 12,
+        "保留": 6,
+        "廃施設": 2,
+        "廃道": 1
+      },
+      "by_confidence": {
+        "中": 4,
+        "低": 8,
+        "負例": 12,
+        "保留": 6
+      },
+      "ids": [
+        "HOLD-1",
+        "HOLD-2",
+        "R7-001",
+        "R7-002",
+        "R7-003",
+        "R7-004",
+        "R7-005",
+        "R7-006",
+        "R7-007",
+        "R7-008",
+        "R7-009",
+        "R7-010",
+        "R7-011",
+        "R7-012",
+        "R7-013",
+        "R7-014",
+        "R7-015",
+        "R7-016",
+        "R7-017",
+        "R7-018",
+        "R7-019",
+        "R7-020",
+        "R7-021",
+        "R7-022",
+        "R7-023",
+        "R7-024",
+        "R7-025",
+        "R7-026",
+        "R7-027",
+        "R7-028"
+      ]
+    }
+  },
+  "repeated_ids_across_days_in_week": [],
+  "cross_region_same_name_groups": [
+    {
+      "ids": [
+        "R1-047",
+        "R2-019"
+      ],
+      "munis": [
+        "三浦市",
+        "横浜市神奈川区"
+      ],
+      "days": [
+        "2026-11-16",
+        "2026-11-17"
+      ]
+    }
+  ],
+  "same_day_shared_name_groups": [
+    {
+      "ids": [
+        "R2-010",
+        "R2-011",
+        "R2-013",
+        "R2-015",
+        "R2-020",
+        "R2-023"
+      ],
+      "munis": [
+        "三浦市",
+        "横須賀市",
+        "葉山町"
+      ],
+      "days": [
+        "2026-11-17"
+      ]
+    },
+    {
+      "ids": [
+        "R2-012",
+        "R2-014"
+      ],
+      "munis": [
+        "横須賀市",
+        "葉山町"
+      ],
+      "days": [
+        "2026-11-17"
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "date": "2026-10-26",
+      "region": "R1",
+      "week": 1,
+      "elapsed_days": 0,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-26_R1_week1.md"
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "region": "R2",
+      "week": 1,
+      "elapsed_days": 1,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-27_R2_week1.md"
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "region": "R3",
+      "week": 1,
+      "elapsed_days": 2,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-28_R3_week1.md"
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "region": "R4",
+      "week": 1,
+      "elapsed_days": 3,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-29_R4_week1.md"
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "region": "R5",
+      "week": 1,
+      "elapsed_days": 4,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-30_R5_week1.md"
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "region": "R6",
+      "week": 1,
+      "elapsed_days": 5,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-10-31_R6_week1.md"
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "region": "R7",
+      "week": 1,
+      "elapsed_days": 6,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-01_R7_week1.md"
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "region": "R1",
+      "week": 2,
+      "elapsed_days": 7,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-02_R1_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "region": "R2",
+      "week": 2,
+      "elapsed_days": 8,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-03_R2_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "region": "R3",
+      "week": 2,
+      "elapsed_days": 9,
+      "state": "候補DBなし",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-04_R3_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "region": "R4",
+      "week": 2,
+      "elapsed_days": 10,
+      "state": "候補DBあり",
+      "candidate_rows": 38,
+      "report_files": [
+        "2026-11-05_R4_week2.md",
+        "2026-11-05_special_R1-R4_lost_sites.md"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "region": "R5",
+      "week": 2,
+      "elapsed_days": 11,
+      "state": "候補CSVは空",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-06_R5_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "region": "R6",
+      "week": 2,
+      "elapsed_days": 12,
+      "state": "候補CSVは空",
+      "candidate_rows": 0,
+      "report_files": [
+        "2026-11-07_R6_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "region": "R7",
+      "week": 2,
+      "elapsed_days": 13,
+      "state": "候補DBあり",
+      "candidate_rows": 1,
+      "report_files": [
+        "2026-11-08_R7_week2.md"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "region": "R1",
+      "week": 3,
+      "elapsed_days": 14,
+      "state": "候補DBあり",
+      "candidate_rows": 24,
+      "report_files": [
+        "2026-11-09_R1_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "region": "R2",
+      "week": 3,
+      "elapsed_days": 15,
+      "state": "候補DBあり",
+      "candidate_rows": 23,
+      "report_files": [
+        "2026-11-10_R2_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "region": "R3",
+      "week": 3,
+      "elapsed_days": 16,
+      "state": "候補DBあり",
+      "candidate_rows": 10,
+      "report_files": [
+        "2026-11-11_R3_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "region": "R4",
+      "week": 3,
+      "elapsed_days": 17,
+      "state": "候補DBあり",
+      "candidate_rows": 7,
+      "report_files": [
+        "2026-11-12_R4_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "region": "R5",
+      "week": 3,
+      "elapsed_days": 18,
+      "state": "候補DBあり",
+      "candidate_rows": 18,
+      "report_files": [
+        "2026-11-13_R5_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "region": "R6",
+      "week": 3,
+      "elapsed_days": 19,
+      "state": "候補DBあり",
+      "candidate_rows": 15,
+      "report_files": [
+        "2026-11-14_R6_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "region": "R7",
+      "week": 3,
+      "elapsed_days": 20,
+      "state": "候補DBあり",
+      "candidate_rows": 22,
+      "report_files": [
+        "2026-11-15_R7_week3.md"
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "region": "R1",
+      "week": 4,
+      "elapsed_days": 21,
+      "state": "候補DBあり",
+      "candidate_rows": 65,
+      "report_files": [
+        "2026-11-16_R1_week4.md"
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "region": "R2",
+      "week": 4,
+      "elapsed_days": 22,
+      "state": "候補DBあり",
+      "candidate_rows": 48,
+      "report_files": [
+        "2026-11-17_R2_week4.md"
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "region": "R3",
+      "week": 4,
+      "elapsed_days": 23,
+      "state": "候補DBあり",
+      "candidate_rows": 34,
+      "report_files": [
+        "2026-11-18_R3_week4.md"
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "region": "R4",
+      "week": 4,
+      "elapsed_days": 24,
+      "state": "未実施",
+      "candidate_rows": null,
+      "report_files": []
+    },
+    {
+      "date": "2026-11-20",
+      "region": "R5",
+      "week": 4,
+      "elapsed_days": 25,
+      "state": "未実施",
+      "candidate_rows": null,
+      "report_files": []
+    },
+    {
+      "date": "2026-11-21",
+      "region": "R6",
+      "week": 4,
+      "elapsed_days": 26,
+      "state": "候補DBあり",
+      "candidate_rows": 20,
+      "report_files": [
+        "2026-11-21_R6_week4.md"
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "region": "R7",
+      "week": 4,
+      "elapsed_days": 27,
+      "state": "候補DBあり",
+      "candidate_rows": 30,
+      "report_files": []
+    }
+  ],
+  "latest_by_region_day": {
+    "R1": "2026-11-16",
+    "R2": "2026-11-17",
+    "R3": "2026-11-18",
+    "R4": "2026-11-12",
+    "R5": "2026-11-13",
+    "R6": "2026-11-21",
+    "R7": "2026-11-22"
+  },
+  "latest_stock": {
+    "rows": 222,
+    "by_status": {
+      "再検証": 59,
+      "負例": 46,
+      "保留": 45,
+      "状態変化": 44,
+      "棄却": 17,
+      "新規": 11
+    },
+    "by_class": {
+      "廃施設": 8,
+      "廃駅・廃線": 41,
+      "負例": 46,
+      "保留": 45,
+      "状態変化": 44,
+      "棄却": 17,
+      "廃社": 18,
+      "消失集落": 2,
+      "廃道": 1
+    },
+    "by_confidence": {
+      "中": 49,
+      "負例": 46,
+      "低": 111,
+      "棄却": 5,
+      "記録のみ": 5,
+      "保留": 6
+    },
+    "by_raw_type": {
+      "施設": 39,
+      "廃駅": 25,
+      "信号場": 1,
+      "神社": 107,
+      "隧道": 17,
+      "駅": 17,
+      "廃道": 5,
+      "地形": 1,
+      "集落": 1,
+      "寺院": 4,
+      "鉄道施設": 1,
+      "消失集落": 1,
+      "廃施設": 2,
+      "石造物": 1
+    },
+    "axis_existence": {
+      "強": 115,
+      "中": 58,
+      "低": 43,
+      "未確認": 6
+    },
+    "axis_loss": {
+      "強": 56,
+      "なし": 76,
+      "未確認": 47,
+      "中": 42,
+      "低": 1
+    },
+    "axis_remains": {
+      "未確認": 163,
+      "対象外": 39,
+      "中": 14,
+      "低": 6
+    },
+    "high": 0,
+    "mid": 49,
+    "low": 111
+  },
+  "latest_medium_and_high": [
+    {
+      "id": "R1-001",
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-002",
+      "region": "R1",
+      "muni_name": "川崎市中原区",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-003",
+      "region": "R1",
+      "muni_name": "横浜市鶴見区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-004",
+      "region": "R1",
+      "muni_name": "横浜市鶴見区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-005",
+      "region": "R1",
+      "muni_name": "横浜市鶴見区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-006",
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-007",
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-008",
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-009",
+      "region": "R1",
+      "muni_name": "横浜市神奈川区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-010",
+      "region": "R1",
+      "muni_name": "横浜市西区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-011",
+      "region": "R1",
+      "muni_name": "横浜市西区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-012",
+      "region": "R1",
+      "muni_name": "横浜市中区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-013",
+      "region": "R1",
+      "muni_name": "横浜市中区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-014",
+      "region": "R1",
+      "muni_name": "横浜市中区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-015",
+      "region": "R1",
+      "muni_name": "横浜市保土ケ谷区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-016",
+      "region": "R1",
+      "muni_name": "横浜市戸塚区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-017",
+      "region": "R1",
+      "muni_name": "横浜市戸塚区",
+      "category": "廃駅・廃線",
+      "raw_type": "信号場",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-018",
+      "region": "R1",
+      "muni_name": "横浜市旭区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-019",
+      "region": "R1",
+      "muni_name": "横浜市瀬谷区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-020",
+      "region": "R1",
+      "muni_name": "川崎市川崎区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-021",
+      "region": "R1",
+      "muni_name": "川崎市川崎区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-022",
+      "region": "R1",
+      "muni_name": "川崎市幸区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-023",
+      "region": "R1",
+      "muni_name": "川崎市中原区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R1-024",
+      "region": "R1",
+      "muni_name": "川崎市多摩区",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R2-001",
+      "region": "R2",
+      "muni_name": "横須賀市",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R2-002",
+      "region": "R2",
+      "muni_name": "鎌倉市",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R2-003",
+      "region": "R2",
+      "muni_name": "鎌倉市",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R2-004",
+      "region": "R2",
+      "muni_name": "横須賀市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-001",
+      "region": "R3",
+      "muni_name": "藤沢市",
+      "category": "廃施設",
+      "raw_type": "施設",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-002",
+      "region": "R3",
+      "muni_name": "藤沢市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-003",
+      "region": "R3",
+      "muni_name": "秦野市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R3-004",
+      "region": "R3",
+      "muni_name": "秦野市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-005",
+      "region": "R3",
+      "muni_name": "寒川町",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R3-006",
+      "region": "R3",
+      "muni_name": "二宮町",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-008",
+      "region": "R3",
+      "muni_name": "二宮町",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R3-010",
+      "region": "R3",
+      "muni_name": "茅ヶ崎市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-015",
+      "region": "R3",
+      "muni_name": "寒川町",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-016",
+      "region": "R3",
+      "muni_name": "寒川町",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R3-017",
+      "region": "R3",
+      "muni_name": "茅ヶ崎市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R4-001",
+      "region": "R4",
+      "muni_name": "海老名市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R4-002",
+      "region": "R4",
+      "muni_name": "海老名市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R4-003",
+      "region": "R4",
+      "muni_name": "海老名市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R4-007",
+      "region": "R4",
+      "muni_name": "海老名市",
+      "category": "廃駅・廃線",
+      "raw_type": "駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R5-016",
+      "region": "R5",
+      "muni_name": "相模原市中央区",
+      "category": "状態変化",
+      "raw_type": "寺院",
+      "status": "状態変化",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R6-003",
+      "region": "R6",
+      "muni_name": "相模原市緑区",
+      "category": "状態変化",
+      "raw_type": "廃道",
+      "status": "状態変化",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "なし",
+      "axis_remains": "中"
+    },
+    {
+      "id": "R7-001",
+      "region": "R7",
+      "muni_name": "中井町",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "再検証",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "低"
+    },
+    {
+      "id": "R7-002",
+      "region": "R7",
+      "muni_name": "中井町",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "低"
+    },
+    {
+      "id": "R7-003",
+      "region": "R7",
+      "muni_name": "小田原市",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    },
+    {
+      "id": "R7-004",
+      "region": "R7",
+      "muni_name": "小田原市",
+      "category": "廃駅・廃線",
+      "raw_type": "廃駅",
+      "status": "新規",
+      "confidence": "中",
+      "axis_existed": "中",
+      "axis_abolished": "中",
+      "axis_remains": "未確認"
+    }
+  ],
+  "first_seen_method": {
+    "exhibition_merger": {
+      "rows": 18,
+      "状態変化": 18,
+      "conf:低": 14,
+      "conf:記録のみ": 3,
+      "existence_strong": 3,
+      "conf:中": 1,
+      "loss_strong": 1,
+      "remains_mid_or_strong": 1
+    },
+    "external_secondary": {
+      "rows": 121,
+      "棄却": 14,
+      "conf:記録のみ": 2,
+      "負例": 40,
+      "conf:負例": 40,
+      "状態変化": 20,
+      "conf:低": 70,
+      "remains_mid_or_strong": 7,
+      "conf:中": 1,
+      "existence_strong": 36,
+      "conf:棄却": 2,
+      "保留": 45,
+      "conf:保留": 6,
+      "新規": 2
+    },
+    "municipal_dam_page": {
+      "rows": 3,
+      "新規": 1,
+      "conf:低": 2,
+      "負例": 1,
+      "conf:負例": 1,
+      "existence_strong": 2,
+      "状態変化": 1
+    },
+    "near_current_station": {
+      "rows": 2,
+      "棄却": 2,
+      "conf:棄却": 2,
+      "existence_strong": 2,
+      "loss_strong": 1
+    },
+    "old_road_official": {
+      "rows": 2,
+      "負例": 1,
+      "conf:負例": 1,
+      "existence_strong": 1,
+      "remains_mid_or_strong": 1,
+      "新規": 1,
+      "conf:低": 1
+    },
+    "operator_or_notice": {
+      "rows": 12,
+      "新規": 9,
+      "conf:中": 9,
+      "existence_strong": 10,
+      "loss_strong": 8,
+      "状態変化": 3,
+      "conf:低": 3,
+      "remains_mid_or_strong": 1
+    },
+    "shrine_agency_origin": {
+      "rows": 6,
+      "負例": 4,
+      "conf:負例": 4,
+      "existence_strong": 3,
+      "状態変化": 2,
+      "conf:低": 2
+    },
+    "shrine_register_catalog": {
+      "rows": 19,
+      "新規": 18,
+      "conf:低": 18,
+      "existence_strong": 19,
+      "loss_strong": 15,
+      "棄却": 1,
+      "conf:棄却": 1
+    },
+    "wikidata_end_date": {
+      "rows": 39,
+      "既存": 39,
+      "conf:中": 38,
+      "conf:低": 1
+    }
+  },
+  "high_confidence_week": 0,
+  "high_confidence_stock": 0
+}

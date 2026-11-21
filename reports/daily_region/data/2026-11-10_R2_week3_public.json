@@ -1,0 +1,493 @@
+{
+  "date": "2026-11-10",
+  "region": "R2",
+  "week": 3,
+  "elapsed_days": 15,
+  "rotation": "15 mod 7 = 1, floor(15/7)+1 = 3",
+  "municipalities": [
+    "横須賀市",
+    "鎌倉市",
+    "逗子市",
+    "三浦市",
+    "葉山町"
+  ],
+  "archives": {
+    "entries_parsed": 308,
+    "kinds": {
+      "listed": 287,
+      "strike": 15,
+      "merge": 2,
+      "relocate": 1,
+      "truncated": 2,
+      "rename": 1
+    },
+    "truncated_catalog_nos": [
+      253,
+      301
+    ],
+    "register_images_fetched": false,
+    "new_from_catalog": 18,
+    "rejected_from_catalog": 1
+  },
+  "candidates": [
+    {
+      "id": "R2-001",
+      "status": "再検証",
+      "category": "施設",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "中",
+      "confidence": "中"
+    },
+    {
+      "id": "R2-002",
+      "status": "再検証",
+      "category": "施設",
+      "muni_name": "鎌倉市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R2-003",
+      "status": "再検証",
+      "category": "施設",
+      "muni_name": "鎌倉市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R2-004",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R2-005",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-006",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-007",
+      "status": "棄却",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": null
+    },
+    {
+      "id": "R2-008",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-009",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-010",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-011",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-012",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-013",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "葉山町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-014",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "葉山町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-015",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "葉山町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-016",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "葉山町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-017",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "葉山町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-018",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "三浦市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-019",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "三浦市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-020",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "三浦市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-021",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "三浦市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-022",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "三浦市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    },
+    {
+      "id": "R2-023",
+      "status": "新規",
+      "category": "神社",
+      "muni_name": "横須賀市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "低"
+    }
+  ],
+  "counts": {
+    "reverified": 4,
+    "new": 18,
+    "rejected": 1,
+    "by_muni_status": {
+      "三浦市|新規": 5,
+      "横須賀市|再検証": 2,
+      "横須賀市|新規": 8,
+      "横須賀市|棄却": 1,
+      "葉山町|新規": 5,
+      "鎌倉市|再検証": 2
+    },
+    "by_category_status": {
+      "施設|再検証": 3,
+      "神社|新規": 18,
+      "神社|棄却": 1,
+      "駅|再検証": 1
+    },
+    "by_axis_existed": {
+      "強": 22
+    },
+    "by_axis_abolished": {
+      "中": 7,
+      "強": 15
+    },
+    "by_axis_remains": {
+      "中": 1,
+      "未確認": 21
+    },
+    "confidence_new": {
+      "低": 18
+    }
+  },
+  "osm": {
+    "fetched": true,
+    "counts": {
+      "in_r2_railway": 152,
+      "muni_鎌倉市": 937,
+      "outside_r2": 615,
+      "muni_横須賀市": 581,
+      "muni_逗子市": 129,
+      "muni_三浦市": 207,
+      "in_r2_worship": 546,
+      "in_r2_historic": 1215,
+      "in_r2_historic_ruins": 11,
+      "muni_葉山町": 59
+    },
+    "adopted_from_osm_tag_alone": 0
+  },
+  "wikidata": {
+    "fetched": false,
+    "counts": {
+      "query_failed": 1
+    },
+    "new_ids": []
+  },
+  "annotation": {
+    "R2-001": {
+      "unverified": false,
+      "hit": false,
+      "fetched": 1,
+      "failed": 0
+    },
+    "R2-002": {
+      "unverified": false,
+      "hit": false,
+      "fetched": 2,
+      "failed": 0
+    },
+    "R2-003": {
+      "unverified": false,
+      "hit": false,
+      "fetched": 1,
+      "failed": 0
+    },
+    "R2-004": {
+      "unverified": false,
+      "hit": false,
+      "fetched": 2,
+      "failed": 0
+    }
+  },
+  "aerial_1961_1969": {
+    "R2-001": {
+      "fetched": true,
+      "http_404": false
+    },
+    "R2-002": {
+      "fetched": true,
+      "http_404": false
+    },
+    "R2-003": {
+      "fetched": true,
+      "http_404": false
+    },
+    "R2-004": {
+      "fetched": true,
+      "http_404": false
+    }
+  },
+  "old_topo_tiles_fetched": false,
+  "fudoki": {
+    "manifest_read": true,
+    "miura_volumes": [
+      "巻之百七　三浦郡一",
+      "巻之百八　三浦郡二",
+      "巻之百九　三浦郡三",
+      "巻之百十　三浦郡四",
+      "巻之百十一　三浦郡五",
+      "巻之百十二　三浦郡六",
+      "巻之百十三　三浦郡七",
+      "巻之百十四　三浦郡八",
+      "巻之百十五　三浦郡九"
+    ],
+    "page_images_fetched": false,
+    "transcribed": false,
+    "used_as_existence_evidence": false
+  },
+  "not_adopted_without_id": {
+    "catalog_listed_without_merger_language": 287,
+    "catalog_truncated": 2,
+    "osm_tag_alone": "IDを付けていない。件数は osm.counts。",
+    "modern_abandoned_housing": "検索で見た住宅開発の中止地は、消滅集落にしない。ページは保存していない。",
+    "personal_blogs": "検索結果の抜粋のみ。全文は未取得。採用の根拠にしていない。"
+  },
+  "landuse_inventory": {
+    "cell_km2": 0.010503603267100753,
+    "r2_land_km2": 15.3247571667,
+    "r2_n_cells": 1459,
+    "r2_coverage": 0.074073884,
+    "r2_scope": "excluded",
+    "urban_land_km2": 10.6086,
+    "urban_building_gain_km2": 0.2416,
+    "urban_building_loss_km2": 0.1576,
+    "urban_building_gain_cells": 23.0,
+    "urban_building_loss_cells": 15.0,
+    "urban_spatial_bias_in_aggregate": false,
+    "r2_forest_land_km2": 0.3362,
+    "r2_forest_changed_km2": 0.0,
+    "r2_forest_cells": 32.0,
+    "forest_dominant_by_region": [
+      {
+        "region": "R1_yokohama_kawasaki",
+        "n_cells": null,
+        "land_km2": 3.726,
+        "changed_km2": 0.2624,
+        "forest_net_change_km2": -0.1574,
+        "rate_usable": true
+      },
+      {
+        "region": "R2_miura",
+        "n_cells": 32,
+        "land_km2": 0.3362,
+        "changed_km2": 0.0,
+        "forest_net_change_km2": 0.0,
+        "rate_usable": false
+      },
+      {
+        "region": "R3_shonan",
+        "n_cells": null,
+        "land_km2": 63.439,
+        "changed_km2": 0.8188,
+        "forest_net_change_km2": 0.1783,
+        "rate_usable": true
+      },
+      {
+        "region": "R4_kenou",
+        "n_cells": null,
+        "land_km2": 90.2454,
+        "changed_km2": 0.9857,
+        "forest_net_change_km2": 0.1573,
+        "rate_usable": true
+      },
+      {
+        "region": "R5_sagamihara",
+        "n_cells": null,
+        "land_km2": 0.1362,
+        "changed_km2": 0.0209,
+        "forest_net_change_km2": -0.0209,
+        "rate_usable": false
+      },
+      {
+        "region": "R6_tsukui",
+        "n_cells": null,
+        "land_km2": 170.7785,
+        "changed_km2": 1.6341,
+        "forest_net_change_km2": -0.0001,
+        "rate_usable": true
+      },
+      {
+        "region": "R7_kensei",
+        "n_cells": null,
+        "land_km2": 234.6277,
+        "changed_km2": 2.2148,
+        "forest_net_change_km2": 0.0734,
+        "rate_usable": true
+      }
+    ],
+    "formula": "gain_cells = region_landscape[R2, urban].building_gain_km2 / (region[R2].land_km2 / region[R2].n_cells). 類型内の増加セルと減少セルの位置の偏りは、この集計の列に無い。"
+  },
+  "baseline": {
+    "unique_ids": 39,
+    "by_region": {
+      "R2": 4,
+      "R3": 6,
+      "R4": 4,
+      "R7": 1,
+      "R1": 24
+    },
+    "by_category": {
+      "facility": 6,
+      "station": 32,
+      "town_name": 1
+    },
+    "by_confidence": {
+      "中": 38,
+      "低": 1
+    },
+    "by_status": {
+      "既存": 15,
+      "再検証": 24
+    },
+    "three_axis": "未評価",
+    "shrine_count": 0,
+    "rejected_ids": 0,
+    "r5_rows": 0,
+    "r6_rows": 0
+  },
+  "high_confidence": 0
+}

@@ -1,0 +1,271 @@
+{
+  "date": "2026-11-11",
+  "region": "R3",
+  "week": 3,
+  "elapsed_days": 16,
+  "rotation": "16 mod 7 = 2, floor(16/7)+1 = 3",
+  "rules": {
+    "live_station_m": 1000.0,
+    "historic_or_p32_m": 400.0,
+    "high_confidence_without_old_topo": false,
+    "old_topo_fetched": false,
+    "old_topo_phrase_in_tile_list": false
+  },
+  "archives": {
+    "ashigara_kami": {
+      "entries": 66,
+      "merge": 0,
+      "strike": 0,
+      "relocate": 0,
+      "rename": 0,
+      "abolished_word": 0,
+      "enshrine_merge": 0,
+      "osumi": 2,
+      "yurugi": 0,
+      "koza": 0,
+      "kamakura": 0,
+      "ashigara_kami": 65
+    },
+    "kamakura": {
+      "entries": 142,
+      "merge": 0,
+      "strike": 0,
+      "relocate": 0,
+      "rename": 0,
+      "abolished_word": 0,
+      "enshrine_merge": 0,
+      "osumi": 0,
+      "yurugi": 0,
+      "koza": 0,
+      "kamakura": 143,
+      "ashigara_kami": 0
+    }
+  },
+  "archive_search": {
+    "fetched": true,
+    "mentions_osumi": false,
+    "mentions_yurugi": false,
+    "mentions_koza": false,
+    "mentions_kamakura": false,
+    "mentions_ashigara": false,
+    "mentions_miura": false,
+    "title_hits": 0
+  },
+  "stations_on_line_page": 8,
+  "outside_region_stations": 2,
+  "outside_muni_counts": {
+    "中井町": 2
+  },
+  "unresolved_stations": 0,
+  "wikidata": {
+    "muni_qids_resolved": 8,
+    "fetched": true,
+    "extra_skipped": {
+      "muni_failed:大磯町": 1,
+      "muni_failed:寒川町": 1,
+      "muni_failed:平塚市": 1,
+      "muni_failed:秦野市": 1,
+      "bad_coord": 1,
+      "already": 4,
+      "institution": 2,
+      "other": 1
+    },
+    "extra_rows": 1
+  },
+  "osm": {
+    "fetched": true,
+    "counts": {
+      "outside_r3": 1951,
+      "kind_railway": 49,
+      "kind_worship": 645,
+      "kind_historic": 975,
+      "historic_ruins": 1
+    },
+    "live_stations_in_r3": 37
+  },
+  "tiles": {
+    "anno_fetched": 18,
+    "anno_failed": 0,
+    "aerial_ok": 9,
+    "aerial_404": 0,
+    "points": 9
+  },
+  "candidates": [
+    {
+      "id": "R3-001",
+      "status": "再検証",
+      "category": "施設",
+      "muni_name": "藤沢市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-002",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "藤沢市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-003",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "秦野市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-004",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "秦野市",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-005",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "寒川町",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-006",
+      "status": "再検証",
+      "category": "駅",
+      "muni_name": "二宮町",
+      "axis_existed": "強",
+      "axis_abolished": "中",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-007",
+      "status": "棄却",
+      "category": "駅",
+      "muni_name": "秦野市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": null
+    },
+    {
+      "id": "R3-008",
+      "status": "新規",
+      "category": "駅",
+      "muni_name": "二宮町",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    },
+    {
+      "id": "R3-009",
+      "status": "棄却",
+      "category": "駅",
+      "muni_name": "二宮町",
+      "axis_existed": "強",
+      "axis_abolished": "なし",
+      "axis_remains": "未確認",
+      "confidence": null
+    },
+    {
+      "id": "R3-010",
+      "status": "新規",
+      "category": "駅",
+      "muni_name": "茅ヶ崎市",
+      "axis_existed": "強",
+      "axis_abolished": "強",
+      "axis_remains": "未確認",
+      "confidence": "中"
+    }
+  ],
+  "counts": {
+    "ids": 10,
+    "by_status": {
+      "再検証": 6,
+      "棄却": 2,
+      "新規": 2
+    },
+    "adopted_by_category": {
+      "施設": 1,
+      "駅": 7
+    },
+    "adopted_by_confidence": {
+      "中": 8
+    },
+    "new_by_muni": {
+      "二宮町": 1,
+      "茅ヶ崎市": 1
+    }
+  },
+  "landuse_inventory": {
+    "cross_tab_tables": [],
+    "agri_to_building_column_present": false,
+    "agri_loss_km2": 7.7165757612,
+    "agri_net_change_km2": -4.9236578747,
+    "agri_gross_gain_km2_derived": 2.7929178864999997,
+    "gain_formula": "agri_loss_km2 + agri_net_change_km2",
+    "reverse_into_agri": [
+      {
+        "forward": "agri->forest",
+        "reverse_area_km2": 0.9344809511
+      },
+      {
+        "forward": "agri->wasteland",
+        "reverse_area_km2": 0.1994660254
+      }
+    ],
+    "named_reverse_into_agri_km2": 1.1339469764999999,
+    "unnamed_gain_km2": 1.6589709099999999,
+    "landscape_max_changed_share": 0.49918210921821404,
+    "landscapes": [
+      {
+        "landscape": "agri_mixed",
+        "land_km2": 105.4339806525,
+        "changed_km2": 10.1940135395,
+        "agri_2014_km2": 47.656252173897144,
+        "agri_net_change_km2": -3.0547267043
+      },
+      {
+        "landscape": "forest_dominant",
+        "land_km2": 63.4389862584,
+        "changed_km2": 0.8188368946,
+        "agri_2014_km2": 1.4487924733783082,
+        "agri_net_change_km2": -0.1154691131
+      },
+      {
+        "landscape": "other_mixed",
+        "land_km2": 19.7829248578,
+        "changed_km2": 1.7641669374,
+        "agri_2014_km2": 2.5410633434360688,
+        "agri_net_change_km2": -0.0735443718
+      },
+      {
+        "landscape": "urban",
+        "land_km2": 121.5174812718,
+        "changed_km2": 7.6444147096,
+        "agri_2014_km2": 12.642255469675558,
+        "agri_net_change_km2": -1.6799176855
+      }
+    ],
+    "threshold_50_not_moved": true,
+    "backfill_reports_present": {
+      "2026-11-02": true,
+      "2026-11-03": true
+    },
+    "wasteland_destination_column_present": false
+  }
+}
